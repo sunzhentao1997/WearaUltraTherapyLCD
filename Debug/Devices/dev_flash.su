@@ -1,0 +1,2 @@
+../Devices/dev_flash.c:23:19:DevFlash_Write	80	static
+../Devices/dev_flash.c:79:6:DevFlash_Read	32	static

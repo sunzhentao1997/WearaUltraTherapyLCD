@@ -1,0 +1,3 @@
+../Devices/dev_adc.c:21:6:DevAdc_Init	8	static
+../Devices/dev_adc.c:26:6:DevAdc_MainFunc	16	static
+../Devices/dev_adc.c:54:17:AdcSampleFilt	32	static
