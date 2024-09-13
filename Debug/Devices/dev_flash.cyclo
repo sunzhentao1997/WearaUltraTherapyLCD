@@ -1,2 +1,0 @@
-../Devices/dev_flash.c:23:19:DevFlash_Write	9
-../Devices/dev_flash.c:79:6:DevFlash_Read	2

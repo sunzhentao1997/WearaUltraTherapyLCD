@@ -1,0 +1,12 @@
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
+wearaultratherapylcd\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+wearaultratherapylcd\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+wearaultratherapylcd\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+wearaultratherapylcd\list.o: ../Core/Inc/FreeRTOSConfig.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+wearaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

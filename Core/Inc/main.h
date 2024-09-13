@@ -49,8 +49,6 @@ extern "C" {
 
 /* USER CODE END EM */
 
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -59,21 +57,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define CHARGE_STATE_Pin GPIO_PIN_0
-#define CHARGE_STATE_GPIO_Port GPIOC
-#define CHARGE_STATE_EXTI_IRQn EXTI0_IRQn
-#define B_SCLK_Pin GPIO_PIN_15
-#define B_SCLK_GPIO_Port GPIOA
-#define B_DATA_Pin GPIO_PIN_10
-#define B_DATA_GPIO_Port GPIOC
-#define B_FSYNC_Pin GPIO_PIN_11
-#define B_FSYNC_GPIO_Port GPIOC
-#define A_SCLK_Pin GPIO_PIN_3
-#define A_SCLK_GPIO_Port GPIOB
-#define A_DATA_Pin GPIO_PIN_5
-#define A_DATA_GPIO_Port GPIOB
-#define A_FSYNC_Pin GPIO_PIN_6
-#define A_FSYNC_GPIO_Port GPIOB
+#define T_CS_Pin GPIO_PIN_8
+#define T_CS_GPIO_Port GPIOI
+#define T_SCK_Pin GPIO_PIN_6
+#define T_SCK_GPIO_Port GPIOH
+#define T_PEN_Pin GPIO_PIN_7
+#define T_PEN_GPIO_Port GPIOH
+#define T_MISO_Pin GPIO_PIN_3
+#define T_MISO_GPIO_Port GPIOG
+#define T_MOSI_Pin GPIO_PIN_3
+#define T_MOSI_GPIO_Port GPIOI
+#define LTDC_BL_Pin GPIO_PIN_5
+#define LTDC_BL_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

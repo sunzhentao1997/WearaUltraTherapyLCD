@@ -1,2 +1,0 @@
-../Devices/dev_mpc5043.c:17:6:DevMPC5043_MainFunc	26
-../Devices/dev_mpc5043.c:94:6:HAL_GPIO_EXTI_Callback	17
