@@ -1,0 +1,13 @@
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_tlsf.c
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+wearaultratherapylcd\lv_tlsf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+wearaultratherapylcd\lv_tlsf.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+wearaultratherapylcd\lv_tlsf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_tlsf.h
+wearaultratherapylcd\lv_tlsf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
+wearaultratherapylcd\lv_tlsf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_log.h
+wearaultratherapylcd\lv_tlsf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_assert.h

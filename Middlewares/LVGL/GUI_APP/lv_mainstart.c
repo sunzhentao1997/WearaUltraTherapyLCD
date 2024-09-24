@@ -17,9 +17,11 @@
  *
  ****************************************************************************************************
  */
- 
 #include "lv_mainstart.h"
+#include "gui_guider.h"
+#include "events_init.h"
 #include "lvgl.h"
+
 #include <stdio.h>
 
 
@@ -29,7 +31,7 @@
 
 static const lv_font_t *font;                                                       /* 定义字体 */
 static lv_obj_t *slider_label;                                                      /* 音量百分比标签 */
-
+lv_ui guider_ui;
 
 /**
  * @brief  滑块事件回调
@@ -91,5 +93,6 @@ static void lv_example_slider(void)
  */
 void lv_mainstart(void)
 {
-    lv_example_slider();
+    setup_ui(&guider_ui);
+   	events_init(&guider_ui);
 }

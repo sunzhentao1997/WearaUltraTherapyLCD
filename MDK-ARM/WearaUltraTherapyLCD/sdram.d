@@ -1,5 +1,5 @@
-wearaultratherapylcd\sdram.o: ..\Devices\Lvgl\sdram.c
-wearaultratherapylcd\sdram.o: ..\Devices\Lvgl\sdram.h
+wearaultratherapylcd\sdram.o: ..\Devices\Screen\sdram.c
+wearaultratherapylcd\sdram.o: ..\Devices\Screen\sdram.h
 wearaultratherapylcd\sdram.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 wearaultratherapylcd\sdram.o: ../Core/Inc/main.h
 wearaultratherapylcd\sdram.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

@@ -1,0 +1,17 @@
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_bidi.c
+wearaultratherapylcd\lv_bidi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_bidi.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+wearaultratherapylcd\lv_bidi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+wearaultratherapylcd\lv_bidi.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+wearaultratherapylcd\lv_bidi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_txt.h
+wearaultratherapylcd\lv_bidi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_area.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_font.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_symbol_def.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_printf.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+wearaultratherapylcd\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../misc/lv_mem.h
+wearaultratherapylcd\lv_bidi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

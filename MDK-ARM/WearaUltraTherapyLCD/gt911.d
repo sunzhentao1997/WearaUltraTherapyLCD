@@ -1,5 +1,5 @@
-wearaultratherapylcd\gt911.o: ..\Devices\Lvgl\gt911.c
-wearaultratherapylcd\gt911.o: ..\Devices\Lvgl\gt911.h
+wearaultratherapylcd\gt911.o: ..\Devices\Screen\gt911.c
+wearaultratherapylcd\gt911.o: ..\Devices\Screen\gt911.h
 wearaultratherapylcd\gt911.o: ../Core/Inc/main.h
 wearaultratherapylcd\gt911.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 wearaultratherapylcd\gt911.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -36,6 +36,6 @@ wearaultratherapylcd\gt911.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 wearaultratherapylcd\gt911.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 wearaultratherapylcd\gt911.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 wearaultratherapylcd\gt911.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-wearaultratherapylcd\gt911.o: ..\Devices\Lvgl\touch.h
-wearaultratherapylcd\gt911.o: ..\Devices\Lvgl\ltdc.h
+wearaultratherapylcd\gt911.o: ..\Devices\Screen\touch.h
+wearaultratherapylcd\gt911.o: ..\Devices\Screen\ltdcRGB.h
 wearaultratherapylcd\gt911.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
