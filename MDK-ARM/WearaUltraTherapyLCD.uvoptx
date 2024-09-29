@@ -158,7 +158,7 @@
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>t,0x0A</ItemText>
+          <ItemText>temp</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -215,7 +215,7 @@
 
   <Group>
     <GroupName>Application/MDK-ARM</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -235,7 +235,7 @@
 
   <Group>
     <GroupName>Application/User/Core</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -759,7 +759,7 @@
 
   <Group>
     <GroupName>Middlewares/lvgl/examples/porting</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -2771,7 +2771,7 @@
 
   <Group>
     <GroupName>Middlewares/LVGL/GUI_APP</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -2830,8 +2830,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_screen.c</PathWithFileName>
-      <FilenameWithoutPath>setup_scr_screen.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_Config.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_Config.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -2842,14 +2842,62 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_screen_1.c</PathWithFileName>
-      <FilenameWithoutPath>setup_scr_screen_1.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_freq.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_freq.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>16</GroupNumber>
       <FileNumber>210</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_lii.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_lii.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>16</GroupNumber>
+      <FileNumber>211</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_main.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_main.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>16</GroupNumber>
+      <FileNumber>212</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_param.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_param.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>16</GroupNumber>
+      <FileNumber>213</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\setup_scr_vibration.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_vibration.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>16</GroupNumber>
+      <FileNumber>214</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2863,37 +2911,25 @@
 
   <Group>
     <GroupName>Middlewares/LVGL/GUI_APP/GUI_FONT</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>17</GroupNumber>
-      <FileNumber>211</FileNumber>
+      <FileNumber>215</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_Alatsi_Regular_24.c</PathWithFileName>
-      <FilenameWithoutPath>lv_font_Alatsi_Regular_24.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_siyuan_40.c</PathWithFileName>
+      <FilenameWithoutPath>lv_customer_font_siyuan_40.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>17</GroupNumber>
-      <FileNumber>212</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_arial_36.c</PathWithFileName>
-      <FilenameWithoutPath>lv_font_arial_36.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>17</GroupNumber>
-      <FileNumber>213</FileNumber>
+      <FileNumber>216</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2905,7 +2941,7 @@
     </File>
     <File>
       <GroupNumber>17</GroupNumber>
-      <FileNumber>214</FileNumber>
+      <FileNumber>217</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2917,13 +2953,109 @@
     </File>
     <File>
       <GroupNumber>17</GroupNumber>
-      <FileNumber>215</FileNumber>
+      <FileNumber>218</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\myFont14.c</PathWithFileName>
-      <FilenameWithoutPath>myFont14.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_16.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuan_16.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>219</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_25.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuan_25.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>220</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_27.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuan_27.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>221</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_33.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuan_33.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>222</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_40.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuan_40.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>223</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_30.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuanB_30.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>224</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_36.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuanB_36.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>225</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_60.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuanB_60.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>17</GroupNumber>
+      <FileNumber>226</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_70.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_siyuanB_70.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -2937,7 +3069,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>216</FileNumber>
+      <FileNumber>227</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2949,7 +3081,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>217</FileNumber>
+      <FileNumber>228</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2961,7 +3093,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>218</FileNumber>
+      <FileNumber>229</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2973,7 +3105,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>219</FileNumber>
+      <FileNumber>230</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -2985,19 +3117,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>220</FileNumber>
-      <FileType>5</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Devices\Screen\dev_gt911.h</PathWithFileName>
-      <FilenameWithoutPath>dev_gt911.h</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>18</GroupNumber>
-      <FileNumber>221</FileNumber>
+      <FileNumber>231</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3009,7 +3129,19 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>222</FileNumber>
+      <FileNumber>232</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Devices\Screen\dev_gt911.h</PathWithFileName>
+      <FilenameWithoutPath>dev_gt911.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>18</GroupNumber>
+      <FileNumber>233</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3021,7 +3153,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>223</FileNumber>
+      <FileNumber>234</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3033,19 +3165,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>224</FileNumber>
-      <FileType>5</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Devices\Screen\dev_malloc.h</PathWithFileName>
-      <FilenameWithoutPath>dev_malloc.h</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>18</GroupNumber>
-      <FileNumber>225</FileNumber>
+      <FileNumber>235</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3057,7 +3177,43 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>226</FileNumber>
+      <FileNumber>236</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Devices\Screen\dev_malloc.h</PathWithFileName>
+      <FilenameWithoutPath>dev_malloc.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>18</GroupNumber>
+      <FileNumber>237</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Devices\Screen\dev_beep.c</PathWithFileName>
+      <FilenameWithoutPath>dev_beep.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>18</GroupNumber>
+      <FileNumber>238</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Devices\Screen\dev_beep.h</PathWithFileName>
+      <FilenameWithoutPath>dev_beep.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>18</GroupNumber>
+      <FileNumber>239</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3069,7 +3225,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>227</FileNumber>
+      <FileNumber>240</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>

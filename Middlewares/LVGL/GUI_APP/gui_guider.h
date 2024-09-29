@@ -18,24 +18,82 @@ extern "C" {
 typedef struct
 {
   
-	lv_obj_t *screen;
-	bool screen_del;
-	lv_obj_t *screen_arc_1;
-	lv_obj_t *screen_spangroup_1;
-	lv_span_t *screen_spangroup_1_span;
-	lv_obj_t *screen_btn_1;
-	lv_obj_t *screen_btn_1_label;
-	lv_obj_t *screen_btn_2;
-	lv_obj_t *screen_btn_2_label;
-	lv_obj_t *screen_btn_3;
-	lv_obj_t *screen_btn_3_label;
-	lv_obj_t *screen_1;
-	bool screen_1_del;
-	lv_obj_t *screen_1_btn_1;
-	lv_obj_t *screen_1_btn_1_label;
-	lv_obj_t *screen_1_btnm_1;
-	lv_obj_t *screen_1_btn_2;
-	lv_obj_t *screen_1_btn_2_label;
+	lv_obj_t *param;
+	bool param_del;
+	lv_obj_t *param_label_1;
+	lv_obj_t *param_label_2;
+	lv_obj_t *param_btn_1;
+	lv_obj_t *param_btn_1_label;
+	lv_obj_t *param_btn_2;
+	lv_obj_t *param_btn_2_label;
+	lv_obj_t *param_label_3;
+	lv_obj_t *param_label_4;
+	lv_obj_t *param_label_5;
+	lv_obj_t *param_label_6;
+	lv_obj_t *lii;
+	bool lii_del;
+	lv_obj_t *lii_btn_1;
+	lv_obj_t *lii_btn_1_label;
+	lv_obj_t *lii_btn_2;
+	lv_obj_t *lii_btn_2_label;
+	lv_obj_t *vibration;
+	bool vibration_del;
+	lv_obj_t *vibration_label_1;
+	lv_obj_t *vibration_label_2;
+	lv_obj_t *vibration_btn_1;
+	lv_obj_t *vibration_btn_1_label;
+	lv_obj_t *vibration_btn_2;
+	lv_obj_t *vibration_btn_2_label;
+	lv_obj_t *vibration_slider_1;
+	lv_obj_t *vibration_label_3;
+	lv_obj_t *freq;
+	bool freq_del;
+	lv_obj_t *freq_label_1;
+	lv_obj_t *freq_roller_1;
+	lv_obj_t *freq_label_2;
+	lv_obj_t *freq_label_3;
+	lv_obj_t *freq_btn_1;
+	lv_obj_t *freq_btn_1_label;
+	lv_obj_t *freq_btn_2;
+	lv_obj_t *freq_btn_2_label;
+	lv_obj_t *Config;
+	bool Config_del;
+	lv_obj_t *Config_btn_6;
+	lv_obj_t *Config_btn_6_label;
+	lv_obj_t *Config_btn_5;
+	lv_obj_t *Config_btn_5_label;
+	lv_obj_t *Config_btn_4;
+	lv_obj_t *Config_btn_4_label;
+	lv_obj_t *Config_btn_3;
+	lv_obj_t *Config_btn_3_label;
+	lv_obj_t *Config_btn_1;
+	lv_obj_t *Config_btn_1_label;
+	lv_obj_t *Config_label_1;
+	lv_obj_t *Config_btn_7;
+	lv_obj_t *Config_btn_7_label;
+	lv_obj_t *main;
+	bool main_del;
+	lv_obj_t *main_label_2;
+	lv_obj_t *main_arc_1;
+	lv_obj_t *main_label_3;
+	lv_obj_t *main_label_4;
+	lv_obj_t *main_label_6;
+	lv_obj_t *main_label_7;
+	lv_obj_t *main_btn_3;
+	lv_obj_t *main_btn_3_label;
+	lv_obj_t *main_btn_4;
+	lv_obj_t *main_btn_4_label;
+	lv_obj_t *main_btn_5;
+	lv_obj_t *main_btn_5_label;
+	lv_obj_t *main_btn_6;
+	lv_obj_t *main_btn_6_label;
+	lv_obj_t *main_btn_2;
+	lv_obj_t *main_btn_2_label;
+	lv_obj_t *main_btn_1;
+	lv_obj_t *main_btn_1_label;
+	lv_obj_t *main_label_5;
+	lv_obj_t *main_btn_7;
+	lv_obj_t *main_btn_7_label;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -58,13 +116,24 @@ void setup_ui(lv_ui *ui);
 extern lv_ui guider_ui;
 
 
-void setup_scr_screen(lv_ui *ui);
-void setup_scr_screen_1(lv_ui *ui);
+void setup_scr_param(lv_ui *ui);
+void setup_scr_lii(lv_ui *ui);
+void setup_scr_vibration(lv_ui *ui);
+void setup_scr_freq(lv_ui *ui);
+void setup_scr_Config(lv_ui *ui);
+void setup_scr_main(lv_ui *ui);
 
-LV_FONT_DECLARE(lv_font_arial_36)
+LV_FONT_DECLARE(lv_font_siyuanB_36)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_siyuan_16)
+LV_FONT_DECLARE(lv_font_siyuanB_30)
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
-LV_FONT_DECLARE(lv_font_Alatsi_Regular_24)
+LV_FONT_DECLARE(lv_font_siyuan_25)
+LV_FONT_DECLARE(lv_font_siyuan_27)
+LV_FONT_DECLARE(lv_font_siyuan_33)
+LV_FONT_DECLARE(lv_font_siyuanB_70)
+LV_FONT_DECLARE(lv_font_siyuan_40)
+LV_FONT_DECLARE(lv_font_siyuanB_60)
 
 
 #ifdef __cplusplus

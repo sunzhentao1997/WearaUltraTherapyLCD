@@ -29,6 +29,7 @@
 #include "lvgl.h"
 #include "dev_gt911.h"
 #include "dev_ltdc.h"
+#include "dev_beep.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -123,14 +124,12 @@ void MX_FREERTOS_Init(void) {
 void ScreenRGBTask(void *argument)
 {
   /* USER CODE BEGIN ScreenRGBTask */
-//	static uint8_t Count = 0;
-	uint8_t mode;
+	uint8_t mode = 0x01;
 	lv_mainstart();                 /* 测试的demo */;
   /* Infinite loop */
   for(;;)
   {
 		lv_timer_handler();         /* LVGL计时�? */
-		my_slider();
     osDelay(5);
   }
   /* USER CODE END ScreenRGBTask */

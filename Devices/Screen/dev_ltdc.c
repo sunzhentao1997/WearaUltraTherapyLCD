@@ -127,21 +127,39 @@ void ltdc_draw_point(uint16_t x, uint16_t y, uint32_t color)
  */
 void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t color)
 { 
-		uint16_t fillw,fillh;
-		uint16_t x,y,i,j;
-		fillw=((ex-sx)>0)?(ex-sx+1):(sx-ex + 1);
-		fillh=((ey-sy)>0)?(ey-sy+1):(sy - ey + 1);
-		x= LV_FIND_MIN(sx,ex);
-		y = LV_FIND_MIN(sy,ey);
-		
-		for(i=y;i<y+ fillh ;i ++)
-		{
-				for(j =x ;j<x+ fillw ;j ++)
-				{
-					ltdc_draw_point(j,i,(uint16_t)color);
-					color ++;
-				}
-		}                            /* 清除传输完成标志 */
+    uint32_t psx, psy, pex, pey;   /* 以LCD面板为基准的坐标系,不随横竖屏变化而变化 */
+    uint32_t timeout = 0; 
+    uint16_t offline;
+    uint32_t addr;
+  
+		psx = sx;
+		psy = sy;
+		pex = ex;
+		pey = ey;
+    
+    offline = lcdltdc.pwidth - (pex - psx + 1);
+    addr = ((uint32_t)g_ltdc_framebuf[lcdltdc.activelayer] + lcdltdc.pixsize * (lcdltdc.pwidth * psy + psx));
+
+    RCC->AHB1ENR |= 1 << 23;            /* 使能DM2D时钟 */
+
+    DMA2D->CR = 0 << 16;                /* 存储器到存储器模式 */
+    DMA2D->FGPFCCR = LTDC_PIXFORMAT;    /* 设置颜色格式 */
+    DMA2D->FGOR = 0;                    /* 前景层行偏移为0 */
+    DMA2D->OOR = offline;               /* 设置行偏移 */
+    DMA2D->CR &= ~(1 << 0);             /* 先停止DMA2D */
+    DMA2D->FGMAR = (uint32_t)color;     /* 源地址 */
+    DMA2D->OMAR = addr;                 /* 输出存储器地址 */
+    DMA2D->NLR = (pey - psy + 1) | ((pex - psx + 1) << 16); /* 设定行数寄存器 */
+    DMA2D->CR |= 1 << 0;                /* 启动DMA2D */
+
+    while ((DMA2D->ISR & (1 << 1)) == 0)/* 等待传输完成 */
+    {
+        timeout++;
+
+        if (timeout > 0X1FFFFF)break;   /* 超时退出 */
+    }
+
+    DMA2D->IFCR |= 1 << 1;              /* 清除传输完成标志 */
 }
 
 /**
@@ -159,27 +177,16 @@ void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t colo
 void ltdc_color_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t *color)
 {	
 		
-#if 0
+#if 1
     uint32_t psx, psy, pex, pey;   /* 以LCD面板为基准的坐标系,不随横竖屏变化而变化 */
     uint32_t timeout = 0; 
     uint16_t offline;
     uint32_t addr;
   
-    /* 坐标系转换 */
-    if (lcdltdc.dir)               /* 横屏 */
-    {
-        psx = sx;
-        psy = sy;
-        pex = ex;
-        pey = ey;
-    }
-    else                          /* 竖屏 */
-    {
-        psx = sy;
-        psy = lcdltdc.pheight - ex;// - 1;
-        pex = ey;
-        pey = lcdltdc.pheight - sx - 1;
-    }
+		psx = sx;
+		psy = sy;
+		pex = ex;
+		pey = ey;
     
     offline = lcdltdc.pwidth - (pex - psx + 1);
     addr = ((uint32_t)g_ltdc_framebuf[lcdltdc.activelayer] + lcdltdc.pixsize * (lcdltdc.pwidth * psy + psx));

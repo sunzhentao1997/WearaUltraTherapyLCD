@@ -46,7 +46,7 @@ static lv_coord_t knob_get_extra_size(lv_obj_t * obj);
  **********************/
 const lv_obj_class_t lv_arc_class  = {
     .constructor_cb = lv_arc_constructor,
-    .event_cb = NULL,
+    .event_cb = lv_arc_event,
     .instance_size = sizeof(lv_arc_t),
     .editable = LV_OBJ_CLASS_EDITABLE_TRUE,
     .base_class = &lv_obj_class

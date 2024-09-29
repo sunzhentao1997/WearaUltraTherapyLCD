@@ -176,3 +176,4 @@ wearaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/
 wearaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h
 wearaultratherapylcd\freertos.o: ../Devices/Screen/dev_gt911.h
 wearaultratherapylcd\freertos.o: ../Devices/Screen/dev_ltdc.h
+wearaultratherapylcd\freertos.o: ../Devices/Screen/dev_beep.h

@@ -17,7 +17,7 @@
 /*********************
  *      DEFINES
  *********************/
-#define USE_SRAM        0       /* ä½¿ç”¨å¤–éƒ¨sramä¸º1ï¼Œå¦åˆ™ä¸º0 */
+#define USE_SRAM        1       /* ä½¿ç”¨å¤–éƒ¨sramä¸º1ï¼Œå¦åˆ™ä¸º0 */
 #ifdef USE_SRAM
 #include "dev_malloc.h"
 #endif
@@ -112,7 +112,7 @@ void lv_port_disp_init(void)
     /* å•ç¼“å†²åŒºç¤ºä¾‹) */
     static lv_disp_draw_buf_t draw_buf_dsc_1;
 #if USE_SRAM
-    static lv_color_t buf_1 = mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);              /* ÉèÖÃ»º³åÇøµÄ´óĞ¡ÎªÆÁÄ»µÄÈ«³ß´ç´óĞ¡ */
+    lv_color_t* buf_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);              /* ÉèÖÃ»º³åÇøµÄ´óĞ¡ÎªÆÁÄ»µÄÈ«³ß´ç´óĞ¡ */
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * MY_DISP_VER_RES);     /* ³õÊ¼»¯ÏÔÊ¾»º³åÇø */
 #else
     static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                                              /* ÉèÖÃ»º³åÇøµÄ´óĞ¡Îª 10 ĞĞÆÁÄ»µÄ´óĞ¡ */

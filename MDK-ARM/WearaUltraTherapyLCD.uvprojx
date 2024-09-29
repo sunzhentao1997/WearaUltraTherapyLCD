@@ -3261,14 +3261,34 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\lv_mainstart.c</FilePath>
             </File>
             <File>
-              <FileName>setup_scr_screen.c</FileName>
+              <FileName>setup_scr_Config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_screen.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_Config.c</FilePath>
             </File>
             <File>
-              <FileName>setup_scr_screen_1.c</FileName>
+              <FileName>setup_scr_freq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_screen_1.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_freq.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup_scr_lii.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_lii.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup_scr_main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_main.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup_scr_param.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_param.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup_scr_vibration.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_vibration.c</FilePath>
             </File>
             <File>
               <FileName>widgets_init.c</FileName>
@@ -3281,14 +3301,9 @@
           <GroupName>Middlewares/LVGL/GUI_APP/GUI_FONT</GroupName>
           <Files>
             <File>
-              <FileName>lv_font_Alatsi_Regular_24.c</FileName>
+              <FileName>lv_customer_font_siyuan_40.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_Alatsi_Regular_24.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_font_arial_36.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_arial_36.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_siyuan_40.c</FilePath>
             </File>
             <File>
               <FileName>lv_font_montserratMedium_12.c</FileName>
@@ -3301,9 +3316,49 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_montserratMedium_16.c</FilePath>
             </File>
             <File>
-              <FileName>myFont14.c</FileName>
+              <FileName>lv_font_siyuan_16.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\myFont14.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_16.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuan_25.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_25.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuan_27.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_27.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuan_33.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_33.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuan_40.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuan_40.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuanB_30.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_30.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuanB_36.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_36.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuanB_60.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_60.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_siyuanB_70.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_siyuanB_70.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3331,14 +3386,14 @@
               <FilePath>..\Devices\Screen\dev_sdram.h</FilePath>
             </File>
             <File>
-              <FileName>dev_gt911.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Devices\Screen\dev_gt911.h</FilePath>
-            </File>
-            <File>
               <FileName>dev_gt911.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Devices\Screen\dev_gt911.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_gt911.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Screen\dev_gt911.h</FilePath>
             </File>
             <File>
               <FileName>dev_touch.c</FileName>
@@ -3351,14 +3406,24 @@
               <FilePath>..\Devices\Screen\dev_touch.h</FilePath>
             </File>
             <File>
+              <FileName>dev_malloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Screen\dev_malloc.c</FilePath>
+            </File>
+            <File>
               <FileName>dev_malloc.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Devices\Screen\dev_malloc.h</FilePath>
             </File>
             <File>
-              <FileName>dev_malloc.c</FileName>
+              <FileName>dev_beep.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Devices\Screen\dev_malloc.c</FilePath>
+              <FilePath>..\Devices\Screen\dev_beep.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_beep.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Screen\dev_beep.h</FilePath>
             </File>
             <File>
               <FileName>ST7701.c</FileName>

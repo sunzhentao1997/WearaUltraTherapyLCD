@@ -79,6 +79,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+
   HAL_Init();
 
   /* USER CODE BEGIN Init */
@@ -99,11 +100,11 @@ int main(void)
   MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
 	st7701_init();
-	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
-	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
-	lv_init();                                          /* lvgl系统初始�? */
-	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
-	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
+	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存池 */
+	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存池 */
+	lv_init();                                          /* lvgl系统初始化 */
+	lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
+	lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
   /* USER CODE END 2 */
 
   /* Init scheduler */

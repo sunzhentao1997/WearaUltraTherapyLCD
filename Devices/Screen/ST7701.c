@@ -66,14 +66,21 @@ static void SPI_WriteData(uint8_t data)
 		
 		ST7701_CS(1);
 }
+
+/*******************************************************************************************
+ * 
+ *													ST7701S芯片初始化，有屏幕厂家提供
+ *
+ *******************************************************************************************/
+
 void st7701_init(void)
 {
 	 HAL_Delay(50);
 	 ST7701_CS(0);
 	 HAL_Delay(1);
 	
-	SPI_WriteComm(0xFF);
-	SPI_WriteData(0x77);
+	SPI_WriteComm(0xFF);        //命令BK选择
+	SPI_WriteData(0x77);				
 	SPI_WriteData(0x01);
 	SPI_WriteData(0x00);
 	SPI_WriteData(0x00);
@@ -89,22 +96,22 @@ void st7701_init(void)
 	SPI_WriteData(0x00);
 	SPI_WriteData(0x10);
 
-	SPI_WriteComm(0xC0);
-	SPI_WriteData(0x63);
+	SPI_WriteComm(0xC0);     //显示线设置
+	SPI_WriteData(0x63);		 //[0x63,0x00]  EX = (0x63+1)*8 = 800
 	SPI_WriteData(0x00);
 
-	SPI_WriteComm(0xC1);
-	SPI_WriteData(0x0A);
-	SPI_WriteData(0x0C);
+	SPI_WriteComm(0xC1);		//门廊控制
+	SPI_WriteData(0x0A);		//VBP:10
+	SPI_WriteData(0x0C);		//VFP:12
 
-	SPI_WriteComm(0xC2);
-	SPI_WriteData(0x01);
-	SPI_WriteData(0x08);
+	SPI_WriteComm(0xC2);		//反转选择和频率控制
+	SPI_WriteData(0x01);		//
+	SPI_WriteData(0x08);		//PCLK = 512 + ((0x08 & 0xF) * 16)
 
-	SPI_WriteComm(0xCC);
+	SPI_WriteComm(0xCC);		//
 	SPI_WriteData(0x18);
 
-	SPI_WriteComm(0xB0);
+	SPI_WriteComm(0xB0);    //正电压控制
 	SPI_WriteData(0x00);
 	SPI_WriteData(0x08);
 	SPI_WriteData(0x10);
@@ -122,7 +129,7 @@ void st7701_init(void)
 	SPI_WriteData(0x30);
 	SPI_WriteData(0x1F);
 
-	SPI_WriteComm(0xB1);
+	SPI_WriteComm(0xB1);    //负电压控制
 	SPI_WriteData(0x00);
 	SPI_WriteData(0x11);
 	SPI_WriteData(0x18);
@@ -140,7 +147,7 @@ void st7701_init(void)
 	SPI_WriteData(0x30);
 	SPI_WriteData(0x1F);
 
-	SPI_WriteComm(0xFF);
+	SPI_WriteComm(0xFF);    
 	SPI_WriteData(0x77);
 	SPI_WriteData(0x01);
 	SPI_WriteData(0x00);
@@ -150,7 +157,7 @@ void st7701_init(void)
 	SPI_WriteComm(0xB0);
 	SPI_WriteData(0x4D);
 
-	SPI_WriteComm(0xB1);
+	SPI_WriteComm(0xB1);      //亮度电压控制
 	SPI_WriteData(0x31);
 
 	SPI_WriteComm(0xB2);
@@ -358,18 +365,18 @@ void st7701_init(void)
 	SPI_WriteData(0x00);
 	SPI_WriteData(0x12);
 
-	SPI_WriteComm(0xD1);
+	SPI_WriteComm(0xD1);				//MIPI设置
 	SPI_WriteData(0x00);
 
 
 	SPI_WriteComm(0x36);				//颜色格式
 	SPI_WriteData(0x00);				//0x80:BGR格式	0x00:RGB格式
 
-	SPI_WriteComm(0x11);
+	SPI_WriteComm(0x11);				//关闭休眠模式
 	st7701_delay(120);
 
 
-	SPI_WriteComm(0x29);      
+	SPI_WriteComm(0x29);      //显示开
 	st7701_delay(120);
 }
 
