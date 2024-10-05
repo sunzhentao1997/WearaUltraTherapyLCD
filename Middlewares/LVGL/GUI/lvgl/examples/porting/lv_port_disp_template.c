@@ -17,7 +17,7 @@
 /*********************
  *      DEFINES
  *********************/
-#define USE_SRAM        1       /* 使用外部sram为1，否则为0 */
+#define USE_SRAM        0       /* 使用外部sram为1，否则为0 */
 #ifdef USE_SRAM
 #include "dev_malloc.h"
 #endif
@@ -112,7 +112,7 @@ void lv_port_disp_init(void)
     /* 单缓冲区示例) */
     static lv_disp_draw_buf_t draw_buf_dsc_1;
 #if USE_SRAM
-    lv_color_t* buf_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);              /* ���û������Ĵ�СΪ��Ļ��ȫ�ߴ��С */
+    static lv_color_t buf_1 = mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);              /* ���û������Ĵ�СΪ��Ļ��ȫ�ߴ��С */
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * MY_DISP_VER_RES);     /* ��ʼ����ʾ������ */
 #else
     static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                                              /* ���û������Ĵ�СΪ 10 ����Ļ�Ĵ�С */
@@ -143,8 +143,8 @@ void lv_port_disp_init(void)
     /* 设置显示设备的分辨率
      * 这里为了适配正点原子的多款屏幕，采用了动态获取的方式，
      * 在实际项目中，通常所使用的屏幕大小是固定的，因此可以直接设置为屏幕的大小 */    
-		disp_drv.hor_res = 480;//lcdltdc.width;
-    disp_drv.ver_res = 800;//lcdltdc.height;
+		disp_drv.hor_res = lcdltdc.width;
+    disp_drv.ver_res = lcdltdc.height;
 
     /* 用来将缓冲区的内容复制到显示设备 */
     disp_drv.flush_cb = disp_flush;
@@ -177,7 +177,7 @@ static void disp_init(void)
 {
     /*You code here*/
     ltdc_init();         /* 初始化LCD */ 
-		//ltdc_display_dir(0);   /* 1:设置横屏 */
+		ltdc_display_dir(0);   /* 1:设置横屏 */
 }
 
 /**

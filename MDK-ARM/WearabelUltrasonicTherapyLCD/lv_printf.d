@@ -1,0 +1,10 @@
+wearabelultrasonictherapylcd\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_printf.c
+wearabelultrasonictherapylcd\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_printf.h
+wearabelultrasonictherapylcd\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+wearabelultrasonictherapylcd\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+wearabelultrasonictherapylcd\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+wearabelultrasonictherapylcd\lv_printf.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+wearabelultrasonictherapylcd\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+wearabelultrasonictherapylcd\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+wearabelultrasonictherapylcd\lv_printf.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+wearabelultrasonictherapylcd\lv_printf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

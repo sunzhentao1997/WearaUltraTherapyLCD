@@ -53,7 +53,7 @@
 #define LV_MEM_CUSTOM                       0
 #if LV_MEM_CUSTOM == 0
      /* `lv_mem_alloc()`可获得的内存大小(以字节为单位)(>= 2kB) */
-    #define LV_MEM_SIZE                     (50U * 1024U)          /*[字节]*/
+    #define LV_MEM_SIZE                     (48U * 1024U)          /*[字节]*/
 
     /* 为内存池设置一个地址，而不是将其作为普通数组分配。也可以在外部SRAM中。 */
     #define LV_MEM_ADR                      0     /*0: 未使用*/
@@ -85,10 +85,10 @@
                                         
  ***********************************************************************************/
 /* 默认的显示刷新周期。LVGL使用这个周期重绘修改过的区域 */
-#define LV_DISP_DEF_REFR_PERIOD             16     /*[ms]*/
+#define LV_DISP_DEF_REFR_PERIOD             15     /*[ms]*/
 
 /* 输入设备的读取周期(以毫秒为单位) */
-#define LV_INDEV_DEF_READ_PERIOD            30     /*[ms]*/
+#define LV_INDEV_DEF_READ_PERIOD            15     /*[ms]*/
 
 /* 使用自定义tick源，以毫秒为单位告诉运行时间。它不需要手动更新 `lv_tick_inc()` */
 #define LV_TICK_CUSTOM                      1
@@ -156,7 +156,7 @@
 #endif
 
 /* 为旋转分配的最大缓冲区大小。仅在显示驱动程序中启用软件旋转时使用 */
-#define LV_DISP_ROT_MAX_BUF                 (48*1024)
+#define LV_DISP_ROT_MAX_BUF                 (40*1024)
 
 /*-------------
  * 2. GPU

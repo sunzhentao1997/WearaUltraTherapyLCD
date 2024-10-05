@@ -1,0 +1,15 @@
+wearabelultrasonictherapylcd\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\lv_hal_tick.c
+wearabelultrasonictherapylcd\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\lv_hal_tick.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../lv_conf_internal.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../lv_conf_kconfig.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Core/Inc/FreeRTOSConfig.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+wearabelultrasonictherapylcd\lv_hal_tick.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h

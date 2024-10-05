@@ -19,8 +19,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "adc.h"
 #include "dma2d.h"
 #include "ltdc.h"
+#include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 #include "fmc.h"
 
@@ -29,7 +32,7 @@
 #include "dev_malloc.h"
 #include "lv_port_disp_template.h"
 #include "lv_port_indev_template.h"
-#include "ST7701.h"
+#include "dev_st7701.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -79,7 +82,6 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-
   HAL_Init();
 
   /* USER CODE BEGIN Init */
@@ -95,9 +97,13 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA2D_Init();
+  MX_ADC1_Init();
   MX_FMC_Init();
   MX_LTDC_Init();
-  MX_DMA2D_Init();
+  MX_TIM2_Init();
+  MX_TIM9_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	st7701_init();
 	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存池 */
@@ -105,6 +111,7 @@ int main(void)
 	lv_init();                                          /* lvgl系统初始化 */
 	lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
 	lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -187,7 +194,7 @@ void SystemClock_Config(void)
 
 /**
   * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM4 interrupt took place, inside
+  * @note   This function is called  when TIM14 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
@@ -198,7 +205,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM4) {
+  if (htim->Instance == TIM14) {
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */

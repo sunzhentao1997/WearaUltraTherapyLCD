@@ -1,0 +1,13 @@
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_lru.c
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_lru.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+wearabelultrasonictherapylcd\lv_lru.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+wearabelultrasonictherapylcd\lv_lru.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+wearabelultrasonictherapylcd\lv_lru.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_math.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
+wearabelultrasonictherapylcd\lv_lru.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_assert.h
+wearabelultrasonictherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_log.h

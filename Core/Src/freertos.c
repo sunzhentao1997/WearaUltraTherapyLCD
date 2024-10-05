@@ -25,11 +25,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "dev_app.h"
 #include "lv_mainstart.h"
 #include "lvgl.h"
 #include "dev_gt911.h"
 #include "dev_ltdc.h"
-#include "dev_beep.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,17 +52,29 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-/* Definitions for ScreenRGB */
-osThreadId_t ScreenRGBHandle;
-uint32_t ScreenRGBBuffer[ 1024 ];
-osStaticThreadDef_t ScreenRGBControlBlock;
-const osThreadAttr_t ScreenRGB_attributes = {
-  .name = "ScreenRGB",
-  .cb_mem = &ScreenRGBControlBlock,
-  .cb_size = sizeof(ScreenRGBControlBlock),
-  .stack_mem = &ScreenRGBBuffer[0],
-  .stack_size = sizeof(ScreenRGBBuffer),
+/* Definitions for ScreenLCD */
+osThreadId_t ScreenLCDHandle;
+uint32_t ScreenLCDBuffer[ 1024 ];
+osStaticThreadDef_t ScreenLCDControlBlock;
+const osThreadAttr_t ScreenLCD_attributes = {
+  .name = "ScreenLCD",
+  .cb_mem = &ScreenLCDControlBlock,
+  .cb_size = sizeof(ScreenLCDControlBlock),
+  .stack_mem = &ScreenLCDBuffer[0],
+  .stack_size = sizeof(ScreenLCDBuffer),
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for UltraApp */
+osThreadId_t UltraAppHandle;
+uint32_t UltraAppBuffer[ 128 ];
+osStaticThreadDef_t UltraAppControlBlock;
+const osThreadAttr_t UltraApp_attributes = {
+  .name = "UltraApp",
+  .cb_mem = &UltraAppControlBlock,
+  .cb_size = sizeof(UltraAppControlBlock),
+  .stack_mem = &UltraAppBuffer[0],
+  .stack_size = sizeof(UltraAppBuffer),
+  .priority = (osPriority_t) osPriorityLow,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,7 +82,8 @@ const osThreadAttr_t ScreenRGB_attributes = {
 
 /* USER CODE END FunctionPrototypes */
 
-void ScreenRGBTask(void *argument);
+void ScreenLCDTask(void *argument);
+void UltraAppTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -101,8 +114,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of ScreenRGB */
-  ScreenRGBHandle = osThreadNew(ScreenRGBTask, NULL, &ScreenRGB_attributes);
+  /* creation of ScreenLCD */
+  ScreenLCDHandle = osThreadNew(ScreenLCDTask, NULL, &ScreenLCD_attributes);
+
+  /* creation of UltraApp */
+  UltraAppHandle = osThreadNew(UltraAppTask, NULL, &UltraApp_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -114,25 +130,47 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_ScreenRGBTask */
+/* USER CODE BEGIN Header_ScreenLCDTask */
 /**
-  * @brief  Function implementing the ScreenRGB thread.
+  * @brief  Function implementing the ScreenLCD thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_ScreenRGBTask */
-void ScreenRGBTask(void *argument)
+/* USER CODE END Header_ScreenLCDTask */
+void ScreenLCDTask(void *argument)
 {
-  /* USER CODE BEGIN ScreenRGBTask */
-	uint8_t mode = 0x01;
-	lv_mainstart();                 /* 测试的demo */;
+  /* USER CODE BEGIN ScreenLCDTask */
+  lv_mainstart();
+	/* Infinite loop */
+  for(;;)
+  {
+		lv_timer_handler();
+    osDelay(5);
+  }
+  /* USER CODE END ScreenLCDTask */
+}
+
+/* USER CODE BEGIN Header_UltraAppTask */
+/**
+* @brief Function implementing the UltraApp thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_UltraAppTask */
+void UltraAppTask(void *argument)
+{
+  /* USER CODE BEGIN UltraAppTask */
+	//DevAdc_Init();
+	//DevSystem_Init();
   /* Infinite loop */
   for(;;)
   {
-		lv_timer_handler();         /* LVGL计时�? */
+		DevAdc_MainFunc();
+		DevMPC5043_MainFunc();
+		
     osDelay(5);
   }
-  /* USER CODE END ScreenRGBTask */
+  /* USER CODE END UltraAppTask */
 }
 
 /* Private application code --------------------------------------------------*/
