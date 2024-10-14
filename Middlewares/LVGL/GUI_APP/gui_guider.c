@@ -64,17 +64,17 @@ void ui_animation(void * var, int32_t duration, int32_t delay, int32_t start_val
 void init_scr_del_flag(lv_ui *ui)
 {
   
-	ui->param_del = true;
-	ui->lii_del = true;
-	ui->vibration_del = true;
-	ui->freq_del = true;
-	ui->Config_del = true;
 	ui->main_del = true;
+	ui->config_del = true;
+	ui->param_del = true;
+	ui->light_del = true;
+	ui->freq_del = true;
+	ui->vibra_del = true;
 }
 
 void setup_ui(lv_ui *ui)
 {
 	init_scr_del_flag(ui);
-	setup_scr_Config(ui);
-	lv_scr_load(ui->Config);
+	setup_scr_main(ui);
+	lv_scr_load(ui->main);
 }

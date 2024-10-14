@@ -7,17 +7,9 @@
 
 #include "dev_flash.h"
 
-const FLASH_BLOCK Flash_Block[8] =
+const FLASH_BLOCK Flash_Block[1] =
 {
-	{.bank = FLASH_SECTOR_1,.flash_addr = 0x8004000,.size = 16384},
-	{.bank = FLASH_SECTOR_2,.flash_addr = 0x8008000,.size = 16384},
-	{.bank = FLASH_SECTOR_3,.flash_addr = 0x800c000,.size = 16384},
-	{.bank = FLASH_SECTOR_4,.flash_addr = 0x8010000,.size = 65536},
-	{.bank = FLASH_SECTOR_5,.flash_addr = 0x8020000,.size = 65536},
-	{.bank = FLASH_SECTOR_6,.flash_addr = 0x8040000,.size = 131072},
-	{.bank = FLASH_SECTOR_7,.flash_addr = 0x8060000,.size = 131072},
-	{.bank = FLASH_SECTOR_8,.flash_addr = 0x8080000,.size = 0},
-
+	{.bank = FLASH_SECTOR_23,.start_addr = 0x81E0000,.stop_addr = 0x81FFFFF,.size = 131072},
 };
 
 HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
@@ -30,21 +22,14 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 	HAL_StatusTypeDef status = HAL_BUSY;
 	FLASH_EraseInitTypeDef EraseInitStruct;
 
-	if((addr < Flash_Block[0].flash_addr) && (addr > Flash_Block[6].flash_addr))
+	if((addr < Flash_Block[0].start_addr) && (addr > Flash_Block[0].stop_addr))
 	{
 		return HAL_ERROR;
 	}
 
-	for(tag_i = 0;tag_i < 7;tag_i++)
-	{
-		if((addr >= Flash_Block[tag_i].flash_addr) && (addr < Flash_Block[tag_i+1].flash_addr))
-		{
-			sector = Flash_Block[tag_i].bank;
-			break;
-		}
-	}
-
 	HAL_FLASH_Unlock();
+	
+	sector = Flash_Block[0].bank;
 
 	EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
 	EraseInitStruct.NbSectors = 1;

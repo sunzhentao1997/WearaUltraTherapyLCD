@@ -127,6 +127,8 @@ void ltdc_draw_point(uint16_t x, uint16_t y, uint32_t color)
  */
 void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t color)
 { 
+	
+	#if 1
     uint32_t psx, psy, pex, pey;   /* 以LCD面板为基准的坐标系,不随横竖屏变化而变化 */
     uint32_t timeout = 0; 
     uint16_t offline;
@@ -160,6 +162,23 @@ void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t colo
     }
 
     DMA2D->IFCR |= 1 << 1;              /* 清除传输完成标志 */
+		#else
+		uint16_t fillw,fillh;
+		uint16_t x,y,i,j;
+		fillw=((ex-sx)>0)?(ex-sx+1):(sx-ex + 1);
+		fillh=((ey-sy)>0)?(ey-sy+1):(sy - ey + 1);
+		x= 0;//LV_FIND_MIN(sx,ex);
+		y = 0;//LV_FIND_MIN(sy,ey);
+		
+		for(i=0;i<480 ;i ++)
+		{
+				for(j =0 ;j< 800 ;j ++)
+				{
+					ltdc_draw_point(j,i,color);
+					color ++;
+				}
+		}
+		#endif
 }
 
 /**

@@ -20,7 +20,7 @@ extern "C" {
 #include "font/lv_font.h"
 #endif
 
-LV_FONT_DECLARE(lv_customer_font_siyuan_40)
+LV_FONT_DECLARE(lv_customer_font_NSHRegular_40)
 
 
 #ifdef __cplusplus

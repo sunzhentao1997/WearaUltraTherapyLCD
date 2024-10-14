@@ -1,0 +1,12 @@
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
+weaultratherapylcd\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+weaultratherapylcd\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+weaultratherapylcd\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+weaultratherapylcd\list.o: ../Core/Inc/FreeRTOSConfig.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+weaultratherapylcd\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

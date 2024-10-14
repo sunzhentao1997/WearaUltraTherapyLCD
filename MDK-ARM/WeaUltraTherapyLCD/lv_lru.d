@@ -1,0 +1,13 @@
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_lru.c
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_lru.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+weaultratherapylcd\lv_lru.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+weaultratherapylcd\lv_lru.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+weaultratherapylcd\lv_lru.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_math.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
+weaultratherapylcd\lv_lru.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_assert.h
+weaultratherapylcd\lv_lru.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_log.h

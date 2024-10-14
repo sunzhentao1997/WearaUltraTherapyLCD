@@ -55,26 +55,26 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, CT_RST_Pin|LCD_BL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(CT_RST_GPIO_Port, CT_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, WAVE_A_EN_Pin|LCD_RESET_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, MOTOR_GATE_Pin|MPDCDC_EN_Pin|WAVE_B_EN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LCD_BL_Pin|MOTOR_GATE_Pin|MPDCDC_EN_Pin|WAVE_B_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LCD_SPI_CS_Pin|LCD_SPI_SCL_Pin|LCD_SPI_SDL_Pin|LTDCDC_EN_Pin
-                          |PWM_WAVE_B_EN_Pin|PWM_WAVE_A_EN_Pin|CT_SCL_Pin|CT_SDA_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LCD_SPI_CS_Pin|LCD_SPI_SCL_Pin|LCD_SPI_SDA_Pin|LTDCDC_EN_Pin
+                          |PWM_WAVE_B_EN_Pin|PWM_WAVE_A_EN_Pin|CT_SCK_Pin|CT_SDA_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, KEY_CONTROL_Pin|A_SCLK_Pin|A_SDATA_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, KEY_CONTROL_Pin|B_SCLK_Pin|B_SDATA_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, CONTROL_CLOSE_Pin|B_SCLK_Pin|B_SDATA_Pin|B_FSYNC_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, CONTROL_CLOSE_Pin|A_SCLK_Pin|A_SDATA_Pin|A_FSYNC_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(A_FSYNC_GPIO_Port, A_FSYNC_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(B_FSYNC_GPIO_Port, B_FSYNC_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = CT_INT_Pin;
@@ -82,12 +82,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CT_INT_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PEPin PEPin */
-  GPIO_InitStruct.Pin = CT_RST_Pin|LCD_BL_Pin;
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = CT_RST_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+  HAL_GPIO_Init(CT_RST_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PFPin PFPin */
   GPIO_InitStruct.Pin = WAVE_A_EN_Pin|LCD_RESET_Pin;
@@ -96,51 +96,70 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PAPin PAPin PAPin */
-  GPIO_InitStruct.Pin = MOTOR_GATE_Pin|MPDCDC_EN_Pin|WAVE_B_EN_Pin;
+  /*Configure GPIO pins : PAPin PAPin PAPin PAPin */
+  GPIO_InitStruct.Pin = LCD_BL_Pin|MOTOR_GATE_Pin|MPDCDC_EN_Pin|WAVE_B_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PBPin PBPin PBPin PBPin
-                           PBPin PBPin */
-  GPIO_InitStruct.Pin = LCD_SPI_CS_Pin|LCD_SPI_SCL_Pin|LCD_SPI_SDL_Pin|LTDCDC_EN_Pin
-                          |PWM_WAVE_B_EN_Pin|PWM_WAVE_A_EN_Pin;
+  /*Configure GPIO pins : PBPin PBPin PBPin */
+  GPIO_InitStruct.Pin = LCD_SPI_CS_Pin|LCD_SPI_SCL_Pin|LCD_SPI_SDA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PDPin PDPin PDPin */
-  GPIO_InitStruct.Pin = KEY_CONTROL_Pin|A_SCLK_Pin|A_SDATA_Pin;
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = KEY_CONTROL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+  HAL_GPIO_Init(KEY_CONTROL_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = CHARGE_STATE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CHARGE_STATE_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = CONTROL_CLOSE_Pin|B_SCLK_Pin|B_SDATA_Pin|B_FSYNC_Pin;
+  /*Configure GPIO pins : PCPin PCPin */
+  GPIO_InitStruct.Pin = CONTROL_CLOSE_Pin|A_FSYNC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : PCPin PCPin */
+  GPIO_InitStruct.Pin = A_SCLK_Pin|A_SDATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PDPin PDPin */
+  GPIO_InitStruct.Pin = B_SCLK_Pin|B_SDATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = A_FSYNC_Pin;
+  GPIO_InitStruct.Pin = B_FSYNC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(A_FSYNC_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(B_FSYNC_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PBPin PBPin PBPin */
+  GPIO_InitStruct.Pin = LTDCDC_EN_Pin|PWM_WAVE_B_EN_Pin|PWM_WAVE_A_EN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin */
-  GPIO_InitStruct.Pin = CT_SCL_Pin|CT_SDA_Pin;
+  GPIO_InitStruct.Pin = CT_SCK_Pin|CT_SDA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;

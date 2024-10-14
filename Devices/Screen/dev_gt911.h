@@ -5,13 +5,13 @@
 
 
 /* CT_IIC 引脚 定义 */
-#define CT_IIC_SCL_GPIO_PORT              GPIOH
+#define CT_IIC_SCL_GPIO_PORT              GPIOB
 #define CT_IIC_SCL_GPIO_PIN               GPIO_PIN_6
-#define CT_IIC_SCL_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOH_CLK_ENABLE(); }while(0)    /* PH口时钟使能 */
+#define CT_IIC_SCL_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)    /* PB口时钟使能 */
 
-#define CT_IIC_SDA_GPIO_PORT              GPIOI
-#define CT_IIC_SDA_GPIO_PIN               GPIO_PIN_3
-#define CT_IIC_SDA_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOI_CLK_ENABLE(); }while(0)    /* PI口时钟使能 */
+#define CT_IIC_SDA_GPIO_PORT              GPIOB
+#define CT_IIC_SDA_GPIO_PIN               GPIO_PIN_7
+#define CT_IIC_SDA_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)    /* PB口时钟使能 */
 
 /******************************************************************************************/
 
@@ -42,13 +42,13 @@ void ct_iic_nack(void);                      /* IIC不发送ACK信号 */
 /******************************************************************************************/
 /* GT9XXX INT 和 RST 引脚 定义 */
 
-#define GT9XXX_RST_GPIO_PORT            GPIOI
-#define GT9XXX_RST_GPIO_PIN             GPIO_PIN_8
-#define GT9XXX_RST_GPIO_CLK_ENABLE()    do{ __HAL_RCC_GPIOI_CLK_ENABLE(); }while(0)       /* PI口时钟使能 */
+#define GT9XXX_RST_GPIO_PORT            GPIOE
+#define GT9XXX_RST_GPIO_PIN             GPIO_PIN_4
+#define GT9XXX_RST_GPIO_CLK_ENABLE()    do{ __HAL_RCC_GPIOE_CLK_ENABLE(); }while(0)       /* PE口时钟使能 */
 
-#define GT9XXX_INT_GPIO_PORT            GPIOH
-#define GT9XXX_INT_GPIO_PIN             GPIO_PIN_7
-#define GT9XXX_INT_GPIO_CLK_ENABLE()    do{ __HAL_RCC_GPIOH_CLK_ENABLE(); }while(0)       /* PH口时钟使能 */
+#define GT9XXX_INT_GPIO_PORT            GPIOE
+#define GT9XXX_INT_GPIO_PIN             GPIO_PIN_3
+#define GT9XXX_INT_GPIO_CLK_ENABLE()    do{ __HAL_RCC_GPIOE_CLK_ENABLE(); }while(0)       /* PE口时钟使能 */
 
 /******************************************************************************************/
 

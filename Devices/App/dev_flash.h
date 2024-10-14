@@ -14,7 +14,8 @@
 typedef struct
 {
 	uint32_t bank;
-	uint32_t flash_addr;
+	uint32_t start_addr;
+	uint32_t stop_addr;
 	uint32_t size;
 }FLASH_BLOCK;
 

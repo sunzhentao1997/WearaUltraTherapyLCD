@@ -28,13 +28,13 @@ void ct_iic_init(void)
 {
     GPIO_InitTypeDef gpio_init_struct;
     
-    gpio_init_struct.Pin = CT_IIC_SCL_GPIO_PIN;              /* PH6 */
+    gpio_init_struct.Pin = CT_IIC_SCL_GPIO_PIN;              /* PB6 */
     gpio_init_struct.Mode = GPIO_MODE_OUTPUT_OD;             /* 开漏输出 */
     gpio_init_struct.Pull = GPIO_PULLUP;                     /* 上拉 */
-    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                /* 高速 */
+    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;                /* 高速 */
     HAL_GPIO_Init(CT_IIC_SCL_GPIO_PORT, &gpio_init_struct);  /* 初始化 */
 
-    gpio_init_struct.Pin = CT_IIC_SDA_GPIO_PIN;              /* PI3 */
+    gpio_init_struct.Pin = CT_IIC_SDA_GPIO_PIN;              /* PB3 */
     HAL_GPIO_Init(CT_IIC_SDA_GPIO_PORT, &gpio_init_struct);  /* 初始化 */
   
     CT_IIC_SDA(1);
@@ -267,8 +267,8 @@ uint8_t gt9xxx_init(void)
     GPIO_InitTypeDef gpio_init_struct;
     uint8_t temp[5];
 
-    GT9XXX_RST_GPIO_CLK_ENABLE();                           /* RST引脚时钟使能 */
-    GT9XXX_INT_GPIO_CLK_ENABLE();                           /* INT引脚时钟使能 */
+    //GT9XXX_RST_GPIO_CLK_ENABLE();                           /* RST引脚时钟使能 */
+    GT9XXX_INT_GPIO_CLK_ENABLE();                           /* RET INT引脚时钟使能 */
 
     gpio_init_struct.Pin = GT9XXX_RST_GPIO_PIN;
     gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;            /* 推挽输出 */

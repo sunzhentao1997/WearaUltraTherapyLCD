@@ -9,10 +9,10 @@
 #define LTDC_FRAME_BUF_ADDR             0XC0000000
 
 /* LTDC背光控制 */
-#define LTDC_BL(x)		do{ x ? \
-													HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET) : \
-													HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_RESET); \
-												}while(0)
+#define LTDC_BL(x)   do{ x ? \
+                      HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET) : \
+                      HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_RESET); \
+                     }while(0)
 
 /* LCD重要参数集 */
 typedef struct

@@ -1,0 +1,14 @@
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+weaultratherapylcd\stream_buffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+weaultratherapylcd\stream_buffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+weaultratherapylcd\stream_buffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+weaultratherapylcd\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+weaultratherapylcd\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h

@@ -6,9 +6,23 @@ extern TIM_HandleTypeDef htim2;
 #define MOTOR_CH1			TIM_CHANNEL_2
 #define MOTOR_CH2			TIM_CHANNEL_3
 
+uint16_t FlashStoreBuff[7] = {0};
+uint8_t ParamChangeFlg[3] = {0};
+uint8_t FreqParam_A = 0;
+uint8_t FreqParam_B = 0;
+uint8_t VibraParam = 0;
+uint8_t Low_Battery_Flg = 0;
 uint8_t WorkStartFlg = 0;
 uint8_t WorkFinish = 0;
+uint32_t u32_FreqParam_A = 0;
+uint32_t u32_FreqParam_B = 0;
 Dev_Work_State DevWorkState = IDLE_STATE;
+
+static void UltraParam_Init(void)
+{
+		
+
+}
 
 void DevSystem_Init(void)
 {
@@ -16,8 +30,8 @@ void DevSystem_Init(void)
 		AD9833_InitIo(AD9833_CH_A);
 		AD9833_InitIo(AD9833_CH_B);
 	
-		AD9833_SetPara(AD9833_CH_A,AD9833_REG_FREQ0,1200000,AD9833_REG_PHASE1,2048,AD9833_OUT_TRIANGLE);
-		AD9833_SetPara(AD9833_CH_B,AD9833_REG_FREQ0,1200000,AD9833_REG_PHASE1,2048,AD9833_OUT_TRIANGLE);
+		AD9833_SetPara(AD9833_CH_A,AD9833_REG_FREQ0,1270000,AD9833_REG_PHASE1,2048,AD9833_OUT_TRIANGLE);
+		AD9833_SetPara(AD9833_CH_B,AD9833_REG_FREQ0,1270000,AD9833_REG_PHASE1,2048,AD9833_OUT_TRIANGLE);
 }
 
 void DevAPP_MainFunc(void)
