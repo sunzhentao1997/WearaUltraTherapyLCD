@@ -183,3 +183,11 @@ weaultratherapylcd\freertos.o: ../Devices/Screen/dev_ltdc.h
 weaultratherapylcd\freertos.o: ../Devices/Screen/dev_beep.h
 weaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI_APP/custom.h
 weaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI_APP/gui_guider.h
+weaultratherapylcd\freertos.o: ../Core/Inc/tim.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_app.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_ad9833.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_adc.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_flash.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_mpc5043.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_control.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_gpio.h

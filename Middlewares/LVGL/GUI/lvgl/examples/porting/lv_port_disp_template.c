@@ -127,8 +127,8 @@ void lv_port_disp_init(void)
 
     /* 全尺寸双缓冲区示例) 并且在下面设置 disp_drv.full_refresh = 1 */
 //    static lv_disp_draw_buf_t draw_buf_dsc_3;
-//    static lv_color_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES];                               /* 设置一个全尺寸的缓冲区 */
-//    static lv_color_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES];                               /* 设置另一个全尺寸的缓冲区 */
+//    lv_color_t* buf_3_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);                               /* 设置一个全尺寸的缓冲区 */
+//    lv_color_t* buf_3_2 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);                               /* 设置另一个全尺寸的缓冲区 */
 //    lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_HOR_RES * MY_DISP_VER_RES);/* 初始化显示缓冲区 */
 
     /*-----------------------------------
@@ -153,7 +153,7 @@ void lv_port_disp_init(void)
     disp_drv.draw_buf = &draw_buf_dsc_1;
 
     /* 全尺寸双缓冲区示例)*/
-    //disp_drv.full_refresh = 1
+    //disp_drv.full_refresh = 1;
 
     /* 如果您有GPU，请使用颜色填充内存阵列
      * 注意，你可以在 lv_conf.h 中使能 LVGL 内置支持的 GPUs
@@ -206,6 +206,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 //    }
 
     /* 在指定区域内填充指定颜色块 */
+		//ltdc_fill(area->x1, area->y1, area->x2, area->y2, 0xFFFFFF);
     ltdc_color_fill(area->x1, area->y1, area->x2, area->y2, (uint16_t *)color_p);
 //    lcd_draw_fast_rgb_color(area->x1,area->y1,area->x2,area->y2,(uint16_t*)color_p);
 

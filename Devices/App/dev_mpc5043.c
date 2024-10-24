@@ -5,14 +5,14 @@
  *      Author: sunzhentao
  */
 
-#include "dev_mpc5043.h"
+#include "dev_app.h"
 
 uint8_t ShuntDownFlg = 0;
 uint8_t StartFlg = 0;
 uint8_t RecvMPC5043Val = 0;
 uint8_t BatteryLevelBuff[4] = {0};
-Battery_Level SendBatteryStateData = 0;
-uint32_t ChargeRecvTime;
+Battery_Level SendBatteryStateData = Boost_Level5;
+uint32_t ChargeRecvTime = 0;
 
 void DevMPC5043_MainFunc(void)
 {

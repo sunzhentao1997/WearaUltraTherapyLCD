@@ -61,12 +61,12 @@ void Error_Handler(void);
 #define CT_INT_GPIO_Port GPIOE
 #define CT_RST_Pin GPIO_PIN_4
 #define CT_RST_GPIO_Port GPIOE
+#define Beep_Pin GPIO_PIN_6
+#define Beep_GPIO_Port GPIOE
 #define WAVE_A_EN_Pin GPIO_PIN_7
 #define WAVE_A_EN_GPIO_Port GPIOF
 #define LCD_RESET_Pin GPIO_PIN_9
 #define LCD_RESET_GPIO_Port GPIOF
-#define LCD_BL_Pin GPIO_PIN_0
-#define LCD_BL_GPIO_Port GPIOA
 #define PWM_MOTOR_A_Pin GPIO_PIN_1
 #define PWM_MOTOR_A_GPIO_Port GPIOA
 #define PWM_MOTOR_B_Pin GPIO_PIN_2
@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define MOTOR_GATE_GPIO_Port GPIOA
 #define VBAT_ADC_Pin GPIO_PIN_5
 #define VBAT_ADC_GPIO_Port GPIOC
+#define BOOT1_Pin GPIO_PIN_2
+#define BOOT1_GPIO_Port GPIOB
 #define LCD_SPI_CS_Pin GPIO_PIN_12
 #define LCD_SPI_CS_GPIO_Port GPIOB
 #define LCD_SPI_SCL_Pin GPIO_PIN_13
@@ -85,6 +87,7 @@ void Error_Handler(void);
 #define KEY_CONTROL_GPIO_Port GPIOD
 #define CHARGE_STATE_Pin GPIO_PIN_13
 #define CHARGE_STATE_GPIO_Port GPIOD
+#define CHARGE_STATE_EXTI_IRQn EXTI15_10_IRQn
 #define CONTROL_CLOSE_Pin GPIO_PIN_9
 #define CONTROL_CLOSE_GPIO_Port GPIOC
 #define MPDCDC_EN_Pin GPIO_PIN_8

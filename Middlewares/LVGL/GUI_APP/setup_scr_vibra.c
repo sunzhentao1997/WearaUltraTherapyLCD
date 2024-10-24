@@ -14,12 +14,19 @@
 #include "widgets_init.h"
 #include "custom.h"
 
+#include "lv_mainstart.h"
 
+static uint16_t MotorVal = 0;
 
 void setup_scr_vibra(lv_ui *ui)
 {
+	 MotorVal = MotorLevel * 5;
 	//Write codes vibra
 	ui->vibra = lv_obj_create(NULL);
+	ui->g_kb_vibra = lv_keyboard_create(ui->vibra);
+	lv_obj_add_event_cb(ui->g_kb_vibra, kb_event_cb, LV_EVENT_ALL, NULL);
+	lv_obj_add_flag(ui->g_kb_vibra, LV_OBJ_FLAG_HIDDEN);
+	lv_obj_set_style_text_font(ui->g_kb_vibra, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_size(ui->vibra, 480, 800);
 	lv_obj_set_scrollbar_mode(ui->vibra, LV_SCROLLBAR_MODE_OFF);
 
@@ -78,7 +85,7 @@ void setup_scr_vibra(lv_ui *ui)
 	ui->vibra_slider_1 = lv_slider_create(ui->vibra);
 	lv_slider_set_range(ui->vibra_slider_1, 0, 20);
 	lv_slider_set_mode(ui->vibra_slider_1, LV_SLIDER_MODE_NORMAL);
-	lv_slider_set_value(ui->vibra_slider_1, 10, LV_ANIM_OFF);
+	lv_slider_set_value(ui->vibra_slider_1, MotorLevel, LV_ANIM_OFF);
 	lv_obj_set_pos(ui->vibra_slider_1, 38, 212);
 	lv_obj_set_size(ui->vibra_slider_1, 406, 26);
 
@@ -104,7 +111,7 @@ void setup_scr_vibra(lv_ui *ui)
 
 	//Write codes vibra_label_3
 	ui->vibra_label_3 = lv_label_create(ui->vibra);
-	lv_label_set_text(ui->vibra_label_3, "50%");
+	lv_label_set_text_fmt(guider_ui.vibra_label_3, "%d%%",MotorVal);
 	lv_label_set_long_mode(ui->vibra_label_3, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->vibra_label_3, 376, 175);
 	lv_obj_set_size(ui->vibra_label_3, 70, 32);

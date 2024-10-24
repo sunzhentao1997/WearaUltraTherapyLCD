@@ -46,3 +46,4 @@ weaultratherapylcd\dev_control.o: ..\Devices\App\dev_flash.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_mpc5043.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_control.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_gpio.h
+weaultratherapylcd\dev_control.o: ../Middlewares/LVGL/GUI_APP/lv_mainstart.h

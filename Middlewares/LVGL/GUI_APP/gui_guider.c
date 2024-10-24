@@ -70,6 +70,8 @@ void init_scr_del_flag(lv_ui *ui)
 	ui->light_del = true;
 	ui->freq_del = true;
 	ui->vibra_del = true;
+	ui->Charge_del = true;
+	ui->lowbattery_del = true;
 }
 
 void setup_ui(lv_ui *ui)

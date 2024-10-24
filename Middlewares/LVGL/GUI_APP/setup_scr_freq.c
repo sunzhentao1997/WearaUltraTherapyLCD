@@ -14,12 +14,16 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-
+#include "lv_mainstart.h"
 
 void setup_scr_freq(lv_ui *ui)
 {
 	//Write codes freq
 	ui->freq = lv_obj_create(NULL);
+	ui->g_kb_freq = lv_keyboard_create(ui->freq);
+	lv_obj_add_event_cb(ui->g_kb_freq, kb_event_cb, LV_EVENT_ALL, NULL);
+	lv_obj_add_flag(ui->g_kb_freq, LV_OBJ_FLAG_HIDDEN);
+	lv_obj_set_style_text_font(ui->g_kb_freq, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_size(ui->freq, 480, 800);
 	lv_obj_set_scrollbar_mode(ui->freq, LV_SCROLLBAR_MODE_OFF);
 
@@ -99,9 +103,10 @@ void setup_scr_freq(lv_ui *ui)
 
 	//Write codes freq_roller_1
 	ui->freq_roller_1 = lv_roller_create(ui->freq);
-	lv_roller_set_options(ui->freq_roller_1, "551\n552\n553\n554\n555\n556\n557\n558\n559\n560\n567\n568\n569\n570\n571\n572\n573\n574\n575\n576\n577\n578\n579\n580\n581\n582\n583\n584\n585\n586\n587\n588\n589\n590\n591\n592\n593\n594\n595\n596\n597\n598\n599\n600\n601\n602\n603\n604\n605\n606\n607\n608\n609\n610\n611\n612\n613\n614\n615\n616\n617\n618\n619\n620\n621\n622\n623\n624\n625\n626\n627\n628\n629\n630\n631\n632\n633\n634\n635\n636\n637\n638\n639\n640\n641\n642\n643\n644\n645\n646\n647\n648\n649\n650\n651\n652\n653\n654\n655\n656\n657\n658\n659\n660\n661\n662\n663\n664\n665\n666\n667\n668\n669\n670\n671\n672\n673\n674\n675\n676\n677\n678\n679\n680\n681\n682\n683\n684\n685\n686\n687\n688\n689\n690\n691\n692\n693\n694\n695\n696\n697\n698\n699\n700", LV_ROLLER_MODE_NORMAL);
+	lv_roller_set_options(ui->freq_roller_1, "551\n552\n553\n554\n555\n556\n557\n558\n559\n560\n561\n562\n563\n564\n565\n566\n567\n568\n569\n570\n571\n572\n573\n574\n575\n576\n577\n578\n579\n580\n581\n582\n583\n584\n585\n586\n587\n588\n589\n590\n591\n592\n593\n594\n595\n596\n597\n598\n599\n600\n601\n602\n603\n604\n605\n606\n607\n608\n609\n610\n611\n612\n613\n614\n615\n616\n617\n618\n619\n620\n621\n622\n623\n624\n625\n626\n627\n628\n629\n630\n631\n632\n633\n634\n635\n636\n637\n638\n639\n640\n641\n642\n643\n644\n645\n646\n647\n648\n649\n650\n651\n652\n653\n654\n655\n656\n657\n658\n659\n660\n661\n662\n663\n664\n665\n666\n667\n668\n669\n670\n671\n672\n673\n674\n675\n676\n677\n678\n679\n680\n681\n682\n683\n684\n685\n686\n687\n688\n689\n690\n691\n692\n693\n694\n695\n696\n697\n698\n699\n700", LV_ROLLER_MODE_NORMAL);
 	lv_obj_set_pos(ui->freq_roller_1, 207, 171);
 	lv_obj_set_width(ui->freq_roller_1, 56);
+	lv_roller_set_selected(ui->freq_roller_1, FreqOffset, LV_ANIM_ON);
 
 	//Write style for freq_roller_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_radius(ui->freq_roller_1, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -136,7 +141,7 @@ void setup_scr_freq(lv_ui *ui)
 	lv_obj_align(ui->freq_btn_1_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->freq_btn_1, 0, LV_STATE_DEFAULT);
 	lv_obj_set_width(ui->freq_btn_1_label, LV_PCT(100));
-	lv_obj_set_pos(ui->freq_btn_1, 38, 695);
+	lv_obj_set_pos(ui->freq_btn_1, 37, 695);
 	lv_obj_set_size(ui->freq_btn_1, 153, 67);
 
 	//Write style for freq_btn_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -159,7 +164,7 @@ void setup_scr_freq(lv_ui *ui)
 	lv_obj_align(ui->freq_btn_2_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->freq_btn_2, 0, LV_STATE_DEFAULT);
 	lv_obj_set_width(ui->freq_btn_2_label, LV_PCT(100));
-	lv_obj_set_pos(ui->freq_btn_2, 288, 695);
+	lv_obj_set_pos(ui->freq_btn_2, 287, 695);
 	lv_obj_set_size(ui->freq_btn_2, 153, 67);
 
 	//Write style for freq_btn_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

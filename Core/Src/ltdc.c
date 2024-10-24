@@ -43,7 +43,7 @@ void MX_LTDC_Init(void)
   hltdc.Init.HSPolarity = LTDC_HSPOLARITY_AL;
   hltdc.Init.VSPolarity = LTDC_VSPOLARITY_AL;
   hltdc.Init.DEPolarity = LTDC_DEPOLARITY_AL;
-  hltdc.Init.PCPolarity = LTDC_PCPOLARITY_IPC;
+  hltdc.Init.PCPolarity = LTDC_PCPOLARITY_IIPC;
   hltdc.Init.HorizontalSync = 1;
   hltdc.Init.VerticalSync = 1;
   hltdc.Init.AccumulatedHBP = 31;
@@ -66,8 +66,8 @@ void MX_LTDC_Init(void)
   pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_RGB565;
   pLayerCfg.Alpha = 255;
   pLayerCfg.Alpha0 = 0;
-  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
-  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
+  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_PAxCA;
+  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_PAxCA;
   pLayerCfg.FBStartAdress = 0xC0000000;
   pLayerCfg.ImageWidth = 480;
   pLayerCfg.ImageHeight = 800;
@@ -98,7 +98,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef* ltdcHandle)
   /** Initializes the peripherals clock
   */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC;
-    PeriphClkInitStruct.PLLSAI.PLLSAIN = 300;
+    PeriphClkInitStruct.PLLSAI.PLLSAIN = 336;
     PeriphClkInitStruct.PLLSAI.PLLSAIR = 3;
     PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_4;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)

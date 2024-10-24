@@ -31,6 +31,8 @@
 #include "dev_ltdc.h"
 #include "dev_beep.h"
 #include "custom.h"
+#include "tim.h"
+#include "dev_app.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,7 +53,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+extern uint32_t BackLedCount;
 /* USER CODE END Variables */
 /* Definitions for ScreenRGB */
 osThreadId_t ScreenRGBHandle;
@@ -63,7 +65,7 @@ const osThreadAttr_t ScreenRGB_attributes = {
   .cb_size = sizeof(ScreenRGBControlBlock),
   .stack_mem = &ScreenRGBBuffer[0],
   .stack_size = sizeof(ScreenRGBBuffer),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityHigh,
 };
 /* Definitions for UltraApp */
 osThreadId_t UltraAppHandle;
@@ -141,10 +143,25 @@ void MX_FREERTOS_Init(void) {
 void ScreenRGBTask(void *argument)
 {
   /* USER CODE BEGIN ScreenRGBTask */
+	
+	static uint8_t StartFlg = 0;
+	uint16_t tempval = 0;
 	lv_mainstart();
   /* Infinite loop */
   for(;;)
   {
+		//ltdc_clear(mode);
+		if((StartFlg == 0) && (BackLedCount > 1500))
+		{
+			  tempval = LightLevel * 10;
+				StartFlg = 1;
+			
+				__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,tempval);
+		}else if(StartFlg == 1)
+		{
+				ScreenFunc();
+		}
+
 		lv_timer_handler();
     osDelay(5);
   }
@@ -161,10 +178,16 @@ void ScreenRGBTask(void *argument)
 void UltraAppTask(void *argument)
 {
   /* USER CODE BEGIN UltraAppTask */
+	DevSystem_Init();
+	DevAdc_Init();
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+		DevAdc_MainFunc();
+		DevAPP_MainFunc();
+		DevMPC5043_MainFunc();
+		UltraParam_Set();
+    osDelay(20);
   }
   /* USER CODE END UltraAppTask */
 }

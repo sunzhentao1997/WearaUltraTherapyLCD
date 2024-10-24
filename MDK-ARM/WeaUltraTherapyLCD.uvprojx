@@ -312,7 +312,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -1868,6 +1868,61 @@
           <GroupName>Middlewares/LVGL/GUI_APP</GroupName>
           <Files>
             <File>
+              <FileName>_1dangL_211x126.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_1dangL_211x126.c</FilePath>
+            </File>
+            <File>
+              <FileName>_2dangL_211x126.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_2dangL_211x126.c</FilePath>
+            </File>
+            <File>
+              <FileName>_battery1_69x35.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_battery1_69x35.c</FilePath>
+            </File>
+            <File>
+              <FileName>_charge_220x400.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_charge_220x400.c</FilePath>
+            </File>
+            <File>
+              <FileName>_chuchang_42x42.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_chuchang_42x42.c</FilePath>
+            </File>
+            <File>
+              <FileName>_liangdu_42x42.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_liangdu_42x42.c</FilePath>
+            </File>
+            <File>
+              <FileName>_lowBatt_41x70.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_lowBatt_41x70.c</FilePath>
+            </File>
+            <File>
+              <FileName>_pinlv_42x42.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_pinlv_42x42.c</FilePath>
+            </File>
+            <File>
+              <FileName>_start_447x117.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_start_447x117.c</FilePath>
+            </File>
+            <File>
+              <FileName>_suo2_50x58.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_suo2_50x58.c</FilePath>
+            </File>
+            <File>
+              <FileName>_zhendong_42x42.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_zhendong_42x42.c</FilePath>
+            </File>
+            <File>
               <FileName>custom.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\custom.c</FilePath>
@@ -1888,6 +1943,11 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\lv_mainstart.c</FilePath>
             </File>
             <File>
+              <FileName>setup_scr_Charge.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_Charge.c</FilePath>
+            </File>
+            <File>
               <FileName>setup_scr_config.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_config.c</FilePath>
@@ -1901,6 +1961,11 @@
               <FileName>setup_scr_light.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_light.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup_scr_lowbattery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_lowbattery.c</FilePath>
             </File>
             <File>
               <FileName>setup_scr_main.c</FileName>
@@ -1963,9 +2028,19 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_NSHMedium_40.c</FilePath>
             </File>
             <File>
+              <FileName>lv_customer_font_NSHMedium_50.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_NSHMedium_50.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_customer_font_NSHRegular_16.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_NSHRegular_16.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_customer_font_NSHRegular_24.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_NSHRegular_24.c</FilePath>
             </File>
             <File>
               <FileName>lv_customer_font_NSHRegular_27.c</FileName>
@@ -1981,6 +2056,11 @@
               <FileName>lv_customer_font_NSHRegular_40.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_NSHRegular_40.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_Alatsi_Regular_24.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_Alatsi_Regular_24.c</FilePath>
             </File>
             <File>
               <FileName>lv_font_montserratMedium_12.c</FileName>
@@ -2033,6 +2113,16 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_NSHRegular_16.c</FilePath>
             </File>
             <File>
+              <FileName>lv_font_NSHRegular_23.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_NSHRegular_23.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_NSHRegular_24.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_NSHRegular_24.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_font_NSHRegular_25.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_NSHRegular_25.c</FilePath>
@@ -2046,6 +2136,11 @@
               <FileName>lv_font_NSHRegular_33.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_NSHRegular_33.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_SourceHanSerifSC_Regular_18.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_font_SourceHanSerifSC_Regular_18.c</FilePath>
             </File>
           </Files>
         </Group>

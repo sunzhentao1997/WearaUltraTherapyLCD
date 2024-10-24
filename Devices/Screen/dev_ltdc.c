@@ -128,7 +128,7 @@ void ltdc_draw_point(uint16_t x, uint16_t y, uint32_t color)
 void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t color)
 { 
 	
-	#if 1
+	#if 0
     uint32_t psx, psy, pex, pey;   /* 以LCD面板为基准的坐标系,不随横竖屏变化而变化 */
     uint32_t timeout = 0; 
     uint16_t offline;
@@ -170,12 +170,12 @@ void ltdc_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t colo
 		x= 0;//LV_FIND_MIN(sx,ex);
 		y = 0;//LV_FIND_MIN(sy,ey);
 		
-		for(i=0;i<480 ;i ++)
+		for(i=0;i<800 ;i ++)
 		{
-				for(j =0 ;j< 800 ;j ++)
+				for(j =0 ;j< 480 ;j ++)
 				{
 					ltdc_draw_point(j,i,color);
-					color ++;
+					//color ++;
 				}
 		}
 		#endif
@@ -298,6 +298,6 @@ void ltdc_init(void)
     ltdc_layer_window_config(0, 0, 0, lcdltdc.pwidth, lcdltdc.pheight);                                  /* 层窗口配置,以LCD面板坐标系为基准,不要随便修改! */
 //	ltdc_layer_window_config(1,0,0,lcdltdc.pwidth,lcdltdc.pheight);                                    /* 层窗口配置,以LCD面板坐标系为基准,不要随便修改! */
     ltdc_select_layer(0);                 /* 选择第1层 */
-    LTDC_BL(1);                           /* 点亮背光 */
+//    LTDC_BL(1);                           /* 点亮背光 */
     ltdc_clear(0XFFFFFFFF);               /* 清屏 */
 }

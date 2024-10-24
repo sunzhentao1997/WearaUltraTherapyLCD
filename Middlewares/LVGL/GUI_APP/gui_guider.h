@@ -20,10 +20,8 @@ typedef struct
   
 	lv_obj_t *main;
 	bool main_del;
-	lv_obj_t *main_label_1;
-	lv_obj_t *main_label_2;
+	lv_obj_t *g_kb_main;
 	lv_obj_t *main_label_3;
-	lv_obj_t *main_label_4;
 	lv_obj_t *main_label_5;
 	lv_obj_t *main_label_6;
 	lv_obj_t *main_paging;
@@ -34,15 +32,25 @@ typedef struct
 	lv_obj_t *main_stop_label;
 	lv_obj_t *main_ulock;
 	lv_obj_t *main_ulock_label;
+	lv_obj_t *main_suo;
+	lv_obj_t *main_label_4;
 	lv_obj_t *main_start;
 	lv_obj_t *main_start_label;
 	lv_obj_t *main_switch2;
 	lv_obj_t *main_switch2_label;
 	lv_obj_t *main_switch1;
 	lv_obj_t *main_switch1_label;
+	lv_obj_t *main_label_2;
+	lv_obj_t *main_label_7;
+	lv_obj_t *main_label_8;
+	lv_obj_t *main_label_9;
+	lv_obj_t *main_label_10;
+	lv_obj_t *main_label_11;
+	lv_obj_t *main_label_12;
 	lv_obj_t *main_arc_1;
 	lv_obj_t *config;
 	bool config_del;
+	lv_obj_t *g_kb_config;
 	lv_obj_t *config_label_1;
 	lv_obj_t *config_param;
 	lv_obj_t *config_param_label;
@@ -56,8 +64,13 @@ typedef struct
 	lv_obj_t *config_save_label;
 	lv_obj_t *config_back;
 	lv_obj_t *config_back_label;
+	lv_obj_t *config_label_2;
+	lv_obj_t *config_label_3;
+	lv_obj_t *config_label_4;
+	lv_obj_t *config_label_5;
 	lv_obj_t *param;
 	bool param_del;
+	lv_obj_t *g_kb_param;
 	lv_obj_t *param_label_1;
 	lv_obj_t *param_label_2;
 	lv_obj_t *param_label_3;
@@ -68,10 +81,30 @@ typedef struct
 	lv_obj_t *param_btn_1_label;
 	lv_obj_t *param_btn_2;
 	lv_obj_t *param_btn_2_label;
+	lv_obj_t *param_btnm_1;
+	lv_obj_t *param_btn_3;
+	lv_obj_t *param_btn_3_label;
+	lv_obj_t *param_btn_4;
+	lv_obj_t *param_btn_4_label;
+	lv_obj_t *param_btn_5;
+	lv_obj_t *param_btn_5_label;
+	lv_obj_t *param_label_7;
+	lv_obj_t *param_btn_6;
+	lv_obj_t *param_btn_6_label;
 	lv_obj_t *light;
 	bool light_del;
+	lv_obj_t *g_kb_light;
+	lv_obj_t *light_label_1;
+	lv_obj_t *light_label_2;
+	lv_obj_t *light_slider_1;
+	lv_obj_t *light_label_3;
+	lv_obj_t *light_btn_1;
+	lv_obj_t *light_btn_1_label;
+	lv_obj_t *light_btn_2;
+	lv_obj_t *light_btn_2_label;
 	lv_obj_t *freq;
 	bool freq_del;
+	lv_obj_t *g_kb_freq;
 	lv_obj_t *freq_label_1;
 	lv_obj_t *freq_label_2;
 	lv_obj_t *freq_label_3;
@@ -82,6 +115,7 @@ typedef struct
 	lv_obj_t *freq_btn_2_label;
 	lv_obj_t *vibra;
 	bool vibra_del;
+	lv_obj_t *g_kb_vibra;
 	lv_obj_t *vibra_label_1;
 	lv_obj_t *vibra_label_2;
 	lv_obj_t *vibra_slider_1;
@@ -90,6 +124,20 @@ typedef struct
 	lv_obj_t *vibra_btn_1_label;
 	lv_obj_t *vibra_btn_2;
 	lv_obj_t *vibra_btn_2_label;
+	lv_obj_t *Charge;
+	bool Charge_del;
+	lv_obj_t *g_kb_Charge;
+	lv_obj_t *Charge_label_1;
+	lv_obj_t *Charge_label_2;
+	lv_obj_t *Charge_label_3;
+	lv_obj_t *Charge_label_4;
+	lv_obj_t *Charge_label_5;
+	lv_obj_t *Charge_label_6;
+	lv_obj_t *lowbattery;
+	bool lowbattery_del;
+	lv_obj_t *g_kb_lowbattery;
+	lv_obj_t *lowbattery_label_1;
+	lv_obj_t *lowbattery_label_2;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -118,17 +166,46 @@ void setup_scr_param(lv_ui *ui);
 void setup_scr_light(lv_ui *ui);
 void setup_scr_freq(lv_ui *ui);
 void setup_scr_vibra(lv_ui *ui);
+void setup_scr_Charge(lv_ui *ui);
+void setup_scr_lowbattery(lv_ui *ui);
 
-LV_FONT_DECLARE(lv_customer_font_NSHBold_36)
-//LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_IMG_DECLARE(_start_447x117);
+
+LV_IMG_DECLARE(_start_447x117);
+
+LV_IMG_DECLARE(_suo2_50x58);
+
+LV_IMG_DECLARE(_start_447x117);
+
+LV_IMG_DECLARE(_2dangL_211x126);
+
+LV_IMG_DECLARE(_1dangL_211x126);
+
+LV_IMG_DECLARE(_battery1_69x35);
+
+LV_IMG_DECLARE(_chuchang_42x42);
+
+LV_IMG_DECLARE(_liangdu_42x42);
+
+LV_IMG_DECLARE(_pinlv_42x42);
+
+LV_IMG_DECLARE(_zhendong_42x42);
+
+LV_IMG_DECLARE(_charge_220x400);
+
+LV_IMG_DECLARE(_lowBatt_41x70);
+
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_customer_font_NSHMedium_50)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_70)
 LV_FONT_DECLARE(lv_customer_font_NSHMedium_40)
 LV_FONT_DECLARE(lv_customer_font_NSHMedium_28)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_60)
-//LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_50)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_33)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_30)
+LV_FONT_DECLARE(lv_customer_font_NSHBold_36)
 LV_FONT_DECLARE(lv_font_NSHRegular_25)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_16)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_27)

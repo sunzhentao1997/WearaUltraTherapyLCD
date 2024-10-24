@@ -52,4 +52,5 @@ void DevGpio_Init(void)
 		DevGpio_SetOutSta(KEY_CONTROL,GPIO_PIN_RESET);
 		DevGpio_SetOutSta(ULTRA_A_EN,GPIO_PIN_RESET);
 		DevGpio_SetOutSta(ULTRA_B_EN,GPIO_PIN_RESET);
+	
 }

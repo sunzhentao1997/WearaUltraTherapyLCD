@@ -85,7 +85,7 @@
                                         
  ***********************************************************************************/
 /* 默认的显示刷新周期。LVGL使用这个周期重绘修改过的区域 */
-#define LV_DISP_DEF_REFR_PERIOD             16     /*[ms]*/
+#define LV_DISP_DEF_REFR_PERIOD             8     /*[ms]*/
 
 /* 输入设备的读取周期(以毫秒为单位) */
 #define LV_INDEV_DEF_READ_PERIOD            30     /*[ms]*/
@@ -167,7 +167,7 @@
 #if LV_USE_GPU_STM32_DMA2D
     /* 必须定义包括目标处理器的CMSIS头的路径
        如。“stm32f769xx.h”或“stm32f429xx.h”*/
-    #define LV_GPU_DMA2D_CMSIS_INCLUDE
+    #define LV_GPU_DMA2D_CMSIS_INCLUDE "stm32f429xx.h"
 #endif
 
 /* ʹ��NXP��PXP GPU iMX RTxxxƽ̨ */

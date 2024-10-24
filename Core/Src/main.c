@@ -34,6 +34,7 @@
 #include "lv_port_disp_template.h"
 #include "lv_port_indev_template.h"
 #include "ST7701.h"
+#include "dev_app.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,7 +55,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+extern uint32_t ScreenCount;
+extern uint32_t StandyTime;
+extern uint32_t ChargeRecvTime;
+extern uint32_t BatteryCount;
+uint32_t BackLedCount = 0;
+uint32_t PowerOnCount = 0;
+extern uint32_t Charge_Time;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -107,15 +114,32 @@ int main(void)
   MX_TIM5_Init();
   MX_TIM9_Init();
   MX_USART1_UART_Init();
+  MX_TIM3_Init();
+  MX_TIM12_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
-	HAL_Delay(200);
+	UltraParam_Init();
 	st7701_init();
 	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
 	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
 	lv_init();                                          /* lvgl系统初始�? */
 	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
 	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
-	HAL_TIM_Base_Start_IT(&htim2);
+	
+	HAL_TIM_Base_Start(&htim2);
+	HAL_TIM_Base_Start(&htim3);
+	HAL_TIM_Base_Start(&htim5);
+	HAL_TIM_Base_Start(&htim9);
+	HAL_TIM_Base_Start_IT(&htim8);
+	HAL_TIM_Base_Start_IT(&htim12);
+
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim9,TIM_CHANNEL_2);
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -213,7 +237,31 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+	//1ms周期
+	if(htim->Instance == TIM8)
+	{
+		  BackLedCount++;
+		  StandyTime++;
+			ScreenCount++;
+		  BatteryCount++;
+		
+			PowerOnCount++;
+			if(PowerOnCount > 1500)
+			{
+					CompleteFlg = 1;
+			}
+			
+			if((Low_Battery_Flg == 1) && (SendBatteryStateData < Boost_Level1))
+			{
+					Charge_Time++;
+			}
+		
+	}
+	
+	if(htim->Instance == TIM12)
+	{
+			ChargeRecvTime++;
+	}
   /* USER CODE END Callback 1 */
 }
 

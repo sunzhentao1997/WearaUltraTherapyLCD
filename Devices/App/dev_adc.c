@@ -26,11 +26,15 @@ void DevAdc_MainFunc(void)
 {
 	static uint8_t AdcInitFlg = 0;
 	static uint8_t SampleCount = 0;
+	
 	uint8_t tag_i = 0;
-	float BatVolTemp = 0.0;
+	float BatVolTemp = 0.0f;
+	
 	HAL_ADC_Start_DMA(&hadc1, &AdcVal, 1);
 
-	BatVolTemp = AdcVal * 3300 / 4096;
+	BatVolTemp = (float)AdcVal * 3300.0f / 4096.0f;
+	BatVolTemp = BatVolTemp / 0.667;
+	
 	if(AdcInitFlg == 0)
 	{
 		for(tag_i = 0;tag_i < 15;tag_i++)

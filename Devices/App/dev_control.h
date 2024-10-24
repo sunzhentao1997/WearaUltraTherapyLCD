@@ -11,8 +11,9 @@ typedef enum
 		CLOSE_STATE,		//关机
 }Dev_Work_State;
 
+void UltraParam_Init(void);
 void DevSystem_Init(void);
-
-
+void DevAPP_MainFunc(void);
+void UltraParam_Set(void);
 
 #endif

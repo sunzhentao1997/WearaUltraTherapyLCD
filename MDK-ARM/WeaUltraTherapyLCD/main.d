@@ -189,3 +189,10 @@ weaultratherapylcd\main.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn
 weaultratherapylcd\main.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h
 weaultratherapylcd\main.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/lv_port_indev_template.h
 weaultratherapylcd\main.o: ../Devices/Screen/ST7701.h
+weaultratherapylcd\main.o: ../Devices/App/dev_app.h
+weaultratherapylcd\main.o: ../Devices/App/dev_ad9833.h
+weaultratherapylcd\main.o: ../Devices/App/dev_adc.h
+weaultratherapylcd\main.o: ../Devices/App/dev_flash.h
+weaultratherapylcd\main.o: ../Devices/App/dev_mpc5043.h
+weaultratherapylcd\main.o: ../Devices/App/dev_control.h
+weaultratherapylcd\main.o: ../Devices/App/dev_gpio.h
