@@ -51,10 +51,12 @@ void ScreenFunc(void)
 	
 		if(SendBatteryStateData < Boost_Level1)
 		{
+				/*进入充电界面*/
 				Screen_Charge();
 			  BatteryStaOld = (uint8_t)SendBatteryStateData;
 		}else if(LowBatteryFlg == 1)
 		{
+			  /*低电量进入低电量界面*/
 			  id = Screen_Id;
 				switch(id)
 				{
@@ -84,6 +86,7 @@ void ScreenFunc(void)
 				Screen_Id = LOWBATTERY_SCREEN;
 		}else
 		{
+				/*充电结束跳转放电界面*/
 				if(BatteryStaOld < Boost_Level1)
 				{
 					ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.Charge_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 100, 100, false, true);
@@ -141,11 +144,21 @@ void Screen_Boost(void)
 		{
 				if(ScreenState != ScreenState_old)
 				{
+						BeepFlg = 2;
+					  BeepCount = 8;
 						SliderVal = 0;
 						ScreenCount = 0;
 						ScreenState_old = ScreenState;
+					  DevWorkState = IDLE_STATE;
 					
 						memcpy(timebuf,"00:00",5);
+					
+						lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_switch2, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_switch1, LV_OBJ_FLAG_HIDDEN);
+					
+						lv_label_set_text(guider_ui.main_label_6, "— — ");
+					  lv_label_set_text(guider_ui.main_change_label, "请选择 ");
 						lv_label_set_text(guider_ui.main_label_3, "治疗已完成 ");
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
 						lv_label_set_text(guider_ui.main_label_2, timebuf);
@@ -177,9 +190,9 @@ void Screen_Boost(void)
 					BoostLevel = SendBatteryStateData;
 			}
 			
-			if((Low_Battery_Flg == 1) && (ScreenState != WORK_STATE))
+			if((Low_Battery_Flg == 1) && (ScreenState != WORK))
 			{
-				LowBatteryFlg = 1;
+					LowBatteryFlg = 1;
 			}
 			
 			if(Screen_Id == MAIN_SCREEN)

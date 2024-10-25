@@ -42,6 +42,7 @@ weaultratherapylcd\dev_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_
 weaultratherapylcd\dev_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\dev_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_adc.h
+weaultratherapylcd\dev_control.o: ..\Devices\App\dev_beep.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_flash.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_mpc5043.h
 weaultratherapylcd\dev_control.o: ..\Devices\App\dev_control.h

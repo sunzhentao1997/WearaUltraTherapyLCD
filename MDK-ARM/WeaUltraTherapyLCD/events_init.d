@@ -174,6 +174,7 @@ weaultratherapylcd\events_init.o: ..\Middlewares\LVGL\GUI_APP\lv_mainstart.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_app.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_ad9833.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_adc.h
+weaultratherapylcd\events_init.o: ../Devices/App/dev_beep.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_flash.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_mpc5043.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_control.h

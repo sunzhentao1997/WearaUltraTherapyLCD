@@ -192,6 +192,7 @@ weaultratherapylcd\main.o: ../Devices/Screen/ST7701.h
 weaultratherapylcd\main.o: ../Devices/App/dev_app.h
 weaultratherapylcd\main.o: ../Devices/App/dev_ad9833.h
 weaultratherapylcd\main.o: ../Devices/App/dev_adc.h
+weaultratherapylcd\main.o: ../Devices/App/dev_beep.h
 weaultratherapylcd\main.o: ../Devices/App/dev_flash.h
 weaultratherapylcd\main.o: ../Devices/App/dev_mpc5043.h
 weaultratherapylcd\main.o: ../Devices/App/dev_control.h

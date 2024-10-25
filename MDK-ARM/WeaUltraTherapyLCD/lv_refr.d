@@ -61,4 +61,3 @@ weaultratherapylcd\lv_refr.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\lv_theme.h
 weaultratherapylcd\lv_refr.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../misc/lv_gc.h
 weaultratherapylcd\lv_refr.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../font/lv_font_fmt_txt.h
 weaultratherapylcd\lv_refr.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../extra/others/snapshot/lv_snapshot.h
-weaultratherapylcd\lv_refr.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../widgets/lv_label.h

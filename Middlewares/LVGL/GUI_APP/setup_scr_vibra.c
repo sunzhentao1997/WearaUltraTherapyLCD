@@ -23,10 +23,6 @@ void setup_scr_vibra(lv_ui *ui)
 	 MotorVal = MotorLevel * 5;
 	//Write codes vibra
 	ui->vibra = lv_obj_create(NULL);
-	ui->g_kb_vibra = lv_keyboard_create(ui->vibra);
-	lv_obj_add_event_cb(ui->g_kb_vibra, kb_event_cb, LV_EVENT_ALL, NULL);
-	lv_obj_add_flag(ui->g_kb_vibra, LV_OBJ_FLAG_HIDDEN);
-	lv_obj_set_style_text_font(ui->g_kb_vibra, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_size(ui->vibra, 480, 800);
 	lv_obj_set_scrollbar_mode(ui->vibra, LV_SCROLLBAR_MODE_OFF);
 
@@ -39,7 +35,7 @@ void setup_scr_vibra(lv_ui *ui)
 	ui->vibra_label_1 = lv_label_create(ui->vibra);
 	lv_label_set_text(ui->vibra_label_1, "LIUS");
 	lv_label_set_long_mode(ui->vibra_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->vibra_label_1, 19, 14);
+	lv_obj_set_pos(ui->vibra_label_1, 24, 27);
 	lv_obj_set_size(ui->vibra_label_1, 84, 45);
 
 	//Write style for vibra_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

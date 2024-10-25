@@ -15,5 +15,6 @@ void UltraParam_Init(void);
 void DevSystem_Init(void);
 void DevAPP_MainFunc(void);
 void UltraParam_Set(void);
+void Low_Battery_Warning(void);
 
 #endif

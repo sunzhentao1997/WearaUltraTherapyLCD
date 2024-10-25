@@ -24,6 +24,7 @@ void events_init_param(lv_ui *ui);
 void events_init_light(lv_ui *ui);
 void events_init_freq(lv_ui *ui);
 void events_init_vibra(lv_ui *ui);
+void events_init_success(lv_ui *ui);
 
 #ifdef __cplusplus
 }

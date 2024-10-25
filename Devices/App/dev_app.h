@@ -3,6 +3,7 @@
 
 #include "dev_ad9833.h"
 #include "dev_adc.h"
+#include "dev_beep.h"
 #include "dev_flash.h"
 #include "dev_mpc5043.h"
 #include "dev_control.h"
@@ -18,6 +19,7 @@ extern uint8_t BatteryLevelBuff[4];
 extern uint32_t ChargeRecvTime;
 extern Battery_Level SendBatteryStateData;
 extern Dev_Work_State DevWorkState;
-
+extern int8_t BeepCount;
+extern uint8_t BeepFlg;
 
 #endif

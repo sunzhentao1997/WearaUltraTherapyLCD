@@ -42,6 +42,7 @@ weaultratherapylcd\dev_gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 weaultratherapylcd\dev_gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\dev_gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 weaultratherapylcd\dev_gpio.o: ..\Devices\App\dev_adc.h
+weaultratherapylcd\dev_gpio.o: ..\Devices\App\dev_beep.h
 weaultratherapylcd\dev_gpio.o: ..\Devices\App\dev_flash.h
 weaultratherapylcd\dev_gpio.o: ..\Devices\App\dev_mpc5043.h
 weaultratherapylcd\dev_gpio.o: ..\Devices\App\dev_control.h

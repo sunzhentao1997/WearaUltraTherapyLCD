@@ -20,7 +20,6 @@ typedef struct
   
 	lv_obj_t *main;
 	bool main_del;
-	lv_obj_t *g_kb_main;
 	lv_obj_t *main_label_3;
 	lv_obj_t *main_label_5;
 	lv_obj_t *main_label_6;
@@ -50,7 +49,6 @@ typedef struct
 	lv_obj_t *main_arc_1;
 	lv_obj_t *config;
 	bool config_del;
-	lv_obj_t *g_kb_config;
 	lv_obj_t *config_label_1;
 	lv_obj_t *config_param;
 	lv_obj_t *config_param_label;
@@ -70,7 +68,6 @@ typedef struct
 	lv_obj_t *config_label_5;
 	lv_obj_t *param;
 	bool param_del;
-	lv_obj_t *g_kb_param;
 	lv_obj_t *param_label_1;
 	lv_obj_t *param_label_2;
 	lv_obj_t *param_label_3;
@@ -93,7 +90,6 @@ typedef struct
 	lv_obj_t *param_btn_6_label;
 	lv_obj_t *light;
 	bool light_del;
-	lv_obj_t *g_kb_light;
 	lv_obj_t *light_label_1;
 	lv_obj_t *light_label_2;
 	lv_obj_t *light_slider_1;
@@ -104,7 +100,6 @@ typedef struct
 	lv_obj_t *light_btn_2_label;
 	lv_obj_t *freq;
 	bool freq_del;
-	lv_obj_t *g_kb_freq;
 	lv_obj_t *freq_label_1;
 	lv_obj_t *freq_label_2;
 	lv_obj_t *freq_label_3;
@@ -115,7 +110,6 @@ typedef struct
 	lv_obj_t *freq_btn_2_label;
 	lv_obj_t *vibra;
 	bool vibra_del;
-	lv_obj_t *g_kb_vibra;
 	lv_obj_t *vibra_label_1;
 	lv_obj_t *vibra_label_2;
 	lv_obj_t *vibra_slider_1;
@@ -126,7 +120,6 @@ typedef struct
 	lv_obj_t *vibra_btn_2_label;
 	lv_obj_t *Charge;
 	bool Charge_del;
-	lv_obj_t *g_kb_Charge;
 	lv_obj_t *Charge_label_1;
 	lv_obj_t *Charge_label_2;
 	lv_obj_t *Charge_label_3;
@@ -135,9 +128,16 @@ typedef struct
 	lv_obj_t *Charge_label_6;
 	lv_obj_t *lowbattery;
 	bool lowbattery_del;
-	lv_obj_t *g_kb_lowbattery;
 	lv_obj_t *lowbattery_label_1;
 	lv_obj_t *lowbattery_label_2;
+	lv_obj_t *success;
+	bool success_del;
+	lv_obj_t *success_label_1;
+	lv_obj_t *success_btn_3;
+	lv_obj_t *success_btn_3_label;
+	lv_obj_t *success_label_3;
+	lv_obj_t *success_label_4;
+	lv_obj_t *success_label_5;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -168,6 +168,7 @@ void setup_scr_freq(lv_ui *ui);
 void setup_scr_vibra(lv_ui *ui);
 void setup_scr_Charge(lv_ui *ui);
 void setup_scr_lowbattery(lv_ui *ui);
+void setup_scr_success(lv_ui *ui);
 
 LV_IMG_DECLARE(_start_447x117);
 
@@ -195,6 +196,7 @@ LV_IMG_DECLARE(_charge_220x400);
 
 LV_IMG_DECLARE(_lowBatt_41x70);
 
+LV_IMG_DECLARE(_success_74x74);
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_customer_font_NSHMedium_50)
@@ -209,7 +211,6 @@ LV_FONT_DECLARE(lv_customer_font_NSHBold_36)
 LV_FONT_DECLARE(lv_font_NSHRegular_25)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_16)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_27)
-
 
 #ifdef __cplusplus
 }

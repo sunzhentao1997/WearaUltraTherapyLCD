@@ -91,6 +91,7 @@ static void main_change_event_handler (lv_event_t *e)
 				lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 				lv_label_set_text(guider_ui.main_change_label, "请选择 ");
 				lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+				lv_label_set_text(guider_ui.main_label_6, "— — ");
 			break;
 			}
 			default:
@@ -181,6 +182,8 @@ static void main_switch2_event_handler (lv_event_t *e)
 		lv_label_set_text(guider_ui.main_change_label, "2档 ");
 		lv_obj_set_style_text_font(guider_ui.main_change, &lv_customer_font_NSHBold_50, 0);
 		lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+		lv_label_set_text(guider_ui.main_label_6, "600");
+		lv_label_set_text(guider_ui.main_label_3, "剩余治疗时间 ");
 		UltraDuty = 66;
 		ScreenState = READY;
 		break;
@@ -204,6 +207,8 @@ static void main_switch1_event_handler (lv_event_t *e)
 		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+		lv_label_set_text(guider_ui.main_label_6, "230");
+		lv_label_set_text(guider_ui.main_label_3, "剩余治疗时间 ");
 		UltraDuty = 25;
 		ScreenState = READY;
 		break;
@@ -230,6 +235,19 @@ void events_init_main (lv_ui *ui)
  *																						配置事件处理
  *
  ****************************************************************************************************/
+static void config_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+	case LV_EVENT_SCREEN_LOADED:
+	{
+		break;
+	}
+    default:
+        break;
+    }
+}
+
 static void config_param_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -291,6 +309,21 @@ static void config_vab_event_handler (lv_event_t *e)
     }
 }
 
+static void config_save_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+//		ui_load_scr_animation(&guider_ui, &guider_ui.success, guider_ui.success_del, &guider_ui.config_del, setup_scr_success, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
+		break;
+	}
+    default:
+        break;
+    }
+}
+
+
 static void config_back_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -309,10 +342,12 @@ static void config_back_event_handler (lv_event_t *e)
 
 void events_init_config (lv_ui *ui)
 {
+	lv_obj_add_event_cb(ui->config, config_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->config_param, config_param_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->config_light, config_light_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->config_freq, config_freq_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->config_vab, config_vab_event_handler, LV_EVENT_ALL, ui);
+	lv_obj_add_event_cb(ui->config_save, config_save_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->config_back, config_back_event_handler, LV_EVENT_ALL, ui);
 }
 
@@ -348,6 +383,7 @@ static void param_btn_1_event_handler (lv_event_t *e)
     switch (code) {
 	case LV_EVENT_CLICKED:
 	{
+//		ui_load_scr_animation(&guider_ui, &guider_ui.success, guider_ui.success_del, &guider_ui.param_del, setup_scr_success, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
 		SlaveFlg = 1;
 		break;
 	}
@@ -629,6 +665,7 @@ static void light_btn_1_event_handler (lv_event_t *e)
     switch (code) {
 	case LV_EVENT_CLICKED:
 	{
+//		ui_load_scr_animation(&guider_ui, &guider_ui.success, guider_ui.success_del, &guider_ui.light_del, setup_scr_success, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
 		SlaveFlg = 1;
 		break;
 	}
@@ -694,6 +731,7 @@ static void freq_btn_1_event_handler (lv_event_t *e)
 	{
 		case LV_EVENT_CLICKED:
 		{
+//				ui_load_scr_animation(&guider_ui, &guider_ui.success, guider_ui.success_del, &guider_ui.freq_del, setup_scr_success, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
 				SlaveFlg = 1;
 				break;
 		}
@@ -757,6 +795,7 @@ static void vibra_btn_1_event_handler (lv_event_t *e)
     switch (code) {
 	case LV_EVENT_CLICKED:
 	{
+//		ui_load_scr_animation(&guider_ui, &guider_ui.success, guider_ui.success_del, &guider_ui.vibra_del, setup_scr_success, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
 		SlaveFlg = 1;
 		break;
 	}
@@ -785,6 +824,25 @@ void events_init_vibra (lv_ui *ui)
 	lv_obj_add_event_cb(ui->vibra_slider_1, vibra_slider_1_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->vibra_btn_1, vibra_btn_1_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->vibra_btn_2, vibra_btn_2_event_handler, LV_EVENT_ALL, ui);
+}
+
+static void success_btn_3_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.success_del, setup_scr_config, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
+		break;
+	}
+    default:
+        break;
+    }
+}
+
+void events_init_success (lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->success_btn_3, success_btn_3_event_handler, LV_EVENT_ALL, ui);
 }
 
 

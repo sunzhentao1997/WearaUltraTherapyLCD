@@ -196,6 +196,7 @@ void DevAPP_MainFunc(void)
 			
 			case CLOSE_STATE:
 				
+					DevGpio_SetOutSta(KEY_CONTROL,GPIO_PIN_SET);
 					DevGpio_SetOutSta(CONTROL_CLOSE,GPIO_PIN_SET);
 			break;
 			

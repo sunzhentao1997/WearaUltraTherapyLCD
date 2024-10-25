@@ -22,10 +22,6 @@ void setup_scr_main(lv_ui *ui)
 {
 	//Write codes main
 	ui->main = lv_obj_create(NULL);
-	ui->g_kb_main = lv_keyboard_create(ui->main);
-	lv_obj_add_event_cb(ui->g_kb_main, kb_event_cb, LV_EVENT_ALL, NULL);
-	lv_obj_add_flag(ui->g_kb_main, LV_OBJ_FLAG_HIDDEN);
-	lv_obj_set_style_text_font(ui->g_kb_main, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_size(ui->main, 480, 800);
 	lv_obj_set_scrollbar_mode(ui->main, LV_SCROLLBAR_MODE_OFF);
 
@@ -82,7 +78,7 @@ void setup_scr_main(lv_ui *ui)
 
 	//Write codes main_label_6
 	ui->main_label_6 = lv_label_create(ui->main);
-	lv_label_set_text(ui->main_label_6, "600");
+	lv_label_set_text(ui->main_label_6, "— — ");
 	lv_label_set_long_mode(ui->main_label_6, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->main_label_6, 75, 473);
 	lv_obj_set_size(ui->main_label_6, 163, 98);
@@ -111,7 +107,7 @@ void setup_scr_main(lv_ui *ui)
 	lv_obj_align(ui->main_paging_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->main_paging, 0, LV_STATE_DEFAULT);
 	lv_obj_set_width(ui->main_paging_label, LV_PCT(100));
-	lv_obj_set_pos(ui->main_paging, 19, 14);
+	lv_obj_set_pos(ui->main_paging, 24, 27);
 	lv_obj_set_size(ui->main_paging, 84, 45);
 
 	//Write style for main_paging, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

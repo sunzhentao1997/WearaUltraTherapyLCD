@@ -180,7 +180,7 @@ weaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/im
 weaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h
 weaultratherapylcd\freertos.o: ../Devices/Screen/dev_gt911.h
 weaultratherapylcd\freertos.o: ../Devices/Screen/dev_ltdc.h
-weaultratherapylcd\freertos.o: ../Devices/Screen/dev_beep.h
+weaultratherapylcd\freertos.o: ../Devices/App/dev_beep.h
 weaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI_APP/custom.h
 weaultratherapylcd\freertos.o: ../Middlewares/LVGL/GUI_APP/gui_guider.h
 weaultratherapylcd\freertos.o: ../Core/Inc/tim.h

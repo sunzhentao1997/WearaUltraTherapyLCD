@@ -173,6 +173,7 @@ weaultratherapylcd\lv_mainstart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx
 weaultratherapylcd\lv_mainstart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\lv_mainstart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_adc.h
+weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_beep.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_flash.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_mpc5043.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_control.h

@@ -20,10 +20,6 @@ void setup_scr_lowbattery(lv_ui *ui)
 {
 	//Write codes lowbattery
 	ui->lowbattery = lv_obj_create(NULL);
-	ui->g_kb_lowbattery = lv_keyboard_create(ui->lowbattery);
-	lv_obj_add_event_cb(ui->g_kb_lowbattery, kb_event_cb, LV_EVENT_ALL, NULL);
-	lv_obj_add_flag(ui->g_kb_lowbattery, LV_OBJ_FLAG_HIDDEN);
-	lv_obj_set_style_text_font(ui->g_kb_lowbattery, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_size(ui->lowbattery, 480, 800);
 	lv_obj_set_scrollbar_mode(ui->lowbattery, LV_SCROLLBAR_MODE_OFF);
 
@@ -36,7 +32,7 @@ void setup_scr_lowbattery(lv_ui *ui)
 	ui->lowbattery_label_1 = lv_label_create(ui->lowbattery);
 	lv_label_set_text(ui->lowbattery_label_1, " 电量过低 ");
 	lv_label_set_long_mode(ui->lowbattery_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->lowbattery_label_1, 0, 336);
+	lv_obj_set_pos(ui->lowbattery_label_1, 1, 336);
 	lv_obj_set_size(ui->lowbattery_label_1, 480, 129);
 
 	//Write style for lowbattery_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

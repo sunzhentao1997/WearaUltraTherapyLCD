@@ -120,11 +120,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	UltraParam_Init();
 	st7701_init();
-	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
-	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
-	lv_init();                                          /* lvgl系统初始�? */
-	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
-	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
+	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
+	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
+	lv_init();                                          /* lvgl系统初始�? */
+	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
+	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
 	
 	HAL_TIM_Base_Start(&htim2);
 	HAL_TIM_Base_Start(&htim3);

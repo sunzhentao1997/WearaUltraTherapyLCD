@@ -20,10 +20,6 @@ void setup_scr_config(lv_ui *ui)
 {
 	//Write codes config
 	ui->config = lv_obj_create(NULL);
-	ui->g_kb_config = lv_keyboard_create(ui->config);
-	lv_obj_add_event_cb(ui->g_kb_config, kb_event_cb, LV_EVENT_ALL, NULL);
-	lv_obj_add_flag(ui->g_kb_config, LV_OBJ_FLAG_HIDDEN);
-	lv_obj_set_style_text_font(ui->g_kb_config, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_size(ui->config, 480, 800);
 	lv_obj_set_scrollbar_mode(ui->config, LV_SCROLLBAR_MODE_OFF);
 
@@ -36,7 +32,7 @@ void setup_scr_config(lv_ui *ui)
 	ui->config_label_1 = lv_label_create(ui->config);
 	lv_label_set_text(ui->config_label_1, "LIUS");
 	lv_label_set_long_mode(ui->config_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->config_label_1, 19, 14);
+	lv_obj_set_pos(ui->config_label_1, 24, 27);
 	lv_obj_set_size(ui->config_label_1, 84, 45);
 
 	//Write style for config_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

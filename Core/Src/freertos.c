@@ -150,7 +150,6 @@ void ScreenRGBTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		//ltdc_clear(mode);
 		if((StartFlg == 0) && (BackLedCount > 1500))
 		{
 			  tempval = LightLevel * 10;
@@ -178,6 +177,8 @@ void ScreenRGBTask(void *argument)
 void UltraAppTask(void *argument)
 {
   /* USER CODE BEGIN UltraAppTask */
+	static uint8_t count = 0;
+	
 	DevSystem_Init();
 	DevAdc_Init();
   /* Infinite loop */
@@ -187,6 +188,15 @@ void UltraAppTask(void *argument)
 		DevAPP_MainFunc();
 		DevMPC5043_MainFunc();
 		UltraParam_Set();
+		Low_Battery_Warning();
+		
+		count++;
+		if(count > 12)
+		{
+			count = 0;
+			Beep_MainFunc();
+		}
+		
     osDelay(20);
   }
   /* USER CODE END UltraAppTask */

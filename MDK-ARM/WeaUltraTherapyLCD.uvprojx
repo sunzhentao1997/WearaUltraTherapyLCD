@@ -81,7 +81,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>1</RunUserProg2>
+            <RunUserProg2>0</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -1987,6 +1987,16 @@
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\widgets_init.c</FilePath>
             </File>
+            <File>
+              <FileName>setup_scr_success.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_success.c</FilePath>
+            </File>
+            <File>
+              <FileName>_success_74x74.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_success_74x74.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2231,6 +2241,16 @@
               <FileName>dev_adc.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Devices\App\dev_adc.h</FilePath>
+            </File>
+            <File>
+              <FileName>dev_beep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\App\dev_beep.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_beep.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\App\dev_beep.h</FilePath>
             </File>
             <File>
               <FileName>dev_control.c</FileName>

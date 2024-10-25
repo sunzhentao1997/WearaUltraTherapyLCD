@@ -174,6 +174,7 @@ weaultratherapylcd\setup_scr_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4
 weaultratherapylcd\setup_scr_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\setup_scr_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 weaultratherapylcd\setup_scr_main.o: ../Devices/App/dev_adc.h
+weaultratherapylcd\setup_scr_main.o: ../Devices/App/dev_beep.h
 weaultratherapylcd\setup_scr_main.o: ../Devices/App/dev_flash.h
 weaultratherapylcd\setup_scr_main.o: ../Devices/App/dev_mpc5043.h
 weaultratherapylcd\setup_scr_main.o: ../Devices/App/dev_control.h

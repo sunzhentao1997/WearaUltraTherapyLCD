@@ -85,7 +85,7 @@
                                         
  ***********************************************************************************/
 /* 默认的显示刷新周期。LVGL使用这个周期重绘修改过的区域 */
-#define LV_DISP_DEF_REFR_PERIOD             8     /*[ms]*/
+#define LV_DISP_DEF_REFR_PERIOD             10     /*[ms]*/
 
 /* 输入设备的读取周期(以毫秒为单位) */
 #define LV_INDEV_DEF_READ_PERIOD            30     /*[ms]*/
@@ -248,7 +248,7 @@
  *-----------*/
 
 /* 1:显示CPU使用率和FPS */
-#define LV_USE_PERF_MONITOR                 1
+#define LV_USE_PERF_MONITOR                 0
 #if LV_USE_PERF_MONITOR
     #define LV_USE_PERF_MONITOR_POS LV_ALIGN_BOTTOM_RIGHT
 #endif
