@@ -81,7 +81,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -1918,6 +1918,11 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\_suo2_50x58.c</FilePath>
             </File>
             <File>
+              <FileName>_success_74x74.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_success_74x74.c</FilePath>
+            </File>
+            <File>
               <FileName>_zhendong_42x42.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\_zhendong_42x42.c</FilePath>
@@ -1936,11 +1941,6 @@
               <FileName>gui_guider.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\gui_guider.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_mainstart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\lv_mainstart.c</FilePath>
             </File>
             <File>
               <FileName>setup_scr_Charge.c</FileName>
@@ -1993,9 +1993,9 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\setup_scr_success.c</FilePath>
             </File>
             <File>
-              <FileName>_success_74x74.c</FileName>
+              <FileName>lv_mainstart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\_success_74x74.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\lv_mainstart.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2198,6 +2198,16 @@
               <FilePath>..\Devices\Screen\dev_sdram.h</FilePath>
             </File>
             <File>
+              <FileName>dev_st7701.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Devices\Screen\dev_st7701.h</FilePath>
+            </File>
+            <File>
+              <FileName>dev_st7701.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Screen\dev_st7701.c</FilePath>
+            </File>
+            <File>
               <FileName>dev_touch.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Devices\Screen\dev_touch.c</FilePath>
@@ -2206,16 +2216,6 @@
               <FileName>dev_touch.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Devices\Screen\dev_touch.h</FilePath>
-            </File>
-            <File>
-              <FileName>ST7701.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Devices\Screen\ST7701.c</FilePath>
-            </File>
-            <File>
-              <FileName>ST7701.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Devices\Screen\ST7701.h</FilePath>
             </File>
           </Files>
         </Group>

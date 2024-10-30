@@ -3,30 +3,28 @@
 #include "events_init.h"
 #include "lvgl.h"
 #include <stdio.h>
+#include "usart.h"
 
 #include "dev_app.h"
 
 static void Screen_Boost(void);
 static void Screen_Charge(void);
 
-extern Battery_Level SendBatteryStateData;
+DEVICESPARAM DevicesParam;													//设备出厂参数
+SCREENID Screen_Id = MAIN_SCREEN;										//屏幕ID
+SCREENSTATE ScreenState = READY;										//屏幕状态
+SCREENSTATE ScreenState_old = READY;								//屏幕历史状态
+lv_ui guider_ui;																		//GUI句柄
 
-DEVICESPARAM DevicesParam;
+uint8_t SlaveFlg = 0;																//数据保存标志位
+uint8_t UltraDuty = 0;															//脉冲占空比
+uint16_t FreqOffset = 0;														//频率偏移
+uint16_t LightLevel = 50;														//亮度
+uint32_t MotorLevel = 0;														//震动等级
 
-lv_ui guider_ui;
-SCREENID Screen_Id = MAIN_SCREEN;
-SCREENSTATE ScreenState = READY;
-SCREENSTATE ScreenState_old = READY;
-int16_t SliderVal = 1800;
-uint32_t MotorLevel = 0;
-uint16_t FreqOffset = 0;
-uint8_t SlaveFlg = 0;
-uint8_t LowBatteryFlg = 0;
-uint16_t LightLevel = 50;
-char timebuf[] = "30:00";
-
-uint32_t ScreenCount = 0;
-uint32_t BatteryCount = 0;
+static int16_t SliderVal = 1800;										//滑块值
+static uint8_t LowBatteryFlg = 0;										//低电量标志位
+static char timebuf[] = "30:00";										//时间显示
 
 void lv_mainstart(void)
 {
@@ -46,7 +44,7 @@ void ScreenFunc(void)
 {
 		uint8_t id = 0;
 		static uint8_t BatteryStaOld = Boost_Level5;
-//		SendBatteryStateData = Boost_Level2;
+//		SendBatteryStateData = Boost_Level3;
 //		LowBatteryFlg = 1;
 	
 		if(SendBatteryStateData < Boost_Level1)
@@ -89,20 +87,21 @@ void ScreenFunc(void)
 				/*充电结束跳转放电界面*/
 				if(BatteryStaOld < Boost_Level1)
 				{
-					ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.Charge_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 100, 100, false, true);
+					ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.Charge_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 50, 50, false, true);
 					BatteryStaOld = (uint8_t)SendBatteryStateData;
 				}
 				Screen_Boost();
 		}
 }
 
-void Screen_Boost(void)
+uint8_t test[5] = {0x31,0x32,0x33,0x34,0x35}; 
+static void Screen_Boost(void)
 {
 		static uint8_t BoostLevel = Boost_Level5;
 		if(ScreenState == WORK)
 		{
 				ScreenState_old = ScreenState;
-			  if(ScreenCount >= 1000)
+			  if(ScreenTime >= 1000)
 				{
 					SliderVal--;
 					if(SliderVal < 0)
@@ -112,8 +111,8 @@ void Screen_Boost(void)
 					}
 					get_time_buff();
 					lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
-					lv_label_set_text(guider_ui.main_label_2, timebuf);
-					ScreenCount = 0;
+					lv_label_set_text(guider_ui.main_time, timebuf);
+					ScreenTime = 0;
 				}
 		}else if(ScreenState == READY)
 		{
@@ -121,22 +120,22 @@ void Screen_Boost(void)
 				{
 						SliderVal = 1800;
 						ScreenState_old = ScreenState;
-						ScreenCount = 0;
+						ScreenTime = 0;
 					
 						memcpy(timebuf,"30:00",5);
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
-						lv_label_set_text(guider_ui.main_label_2, timebuf);
+						lv_label_set_text(guider_ui.main_time, timebuf);
 						
 				}else
 				{
-					if(ScreenCount >= 1500)
+					if(ScreenTime >= 1500)
 					{
 						SliderVal = 1800;
-						ScreenCount = 0;
+						ScreenTime = 0;
 						
 						memcpy(timebuf,"30:00",5);
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
-						lv_label_set_text(guider_ui.main_label_2, timebuf);
+						lv_label_set_text(guider_ui.main_time, timebuf);
 					}
 				}
 				
@@ -145,9 +144,9 @@ void Screen_Boost(void)
 				if(ScreenState != ScreenState_old)
 				{
 						BeepFlg = 2;
-					  BeepCount = 8;
+					  BeepCount = 12;
 						SliderVal = 0;
-						ScreenCount = 0;
+						ScreenTime = 0;
 						ScreenState_old = ScreenState;
 					  DevWorkState = IDLE_STATE;
 					
@@ -157,30 +156,30 @@ void Screen_Boost(void)
 						lv_obj_clear_flag(guider_ui.main_switch2, LV_OBJ_FLAG_HIDDEN);
 						lv_obj_clear_flag(guider_ui.main_switch1, LV_OBJ_FLAG_HIDDEN);
 					
-						lv_label_set_text(guider_ui.main_label_6, "— — ");
+						lv_label_set_text(guider_ui.main_UltraPower, "— — ");
 					  lv_label_set_text(guider_ui.main_change_label, "请选择 ");
 						lv_label_set_text(guider_ui.main_label_3, "治疗已完成 ");
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
-						lv_label_set_text(guider_ui.main_label_2, timebuf);
+						lv_label_set_text(guider_ui.main_time, timebuf);
 				}else
 				{
-						if(ScreenCount >= 1500)
+						if(ScreenTime >= 1500)
 						{
 							SliderVal = 0;
 							memcpy(timebuf,"00:00",5);
 							lv_label_set_text(guider_ui.main_label_3, "治疗已完成 ");
 							lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
-							lv_label_set_text(guider_ui.main_label_2, timebuf);
-							ScreenCount = 0;
+							lv_label_set_text(guider_ui.main_time, timebuf);
+							ScreenTime = 0;
 						}
 				}
 		}else
 		{
 		}
 		
-		if(BatteryCount > 500)
+		if(BatteryTime > 500)
 		{
-			BatteryCount = 0;
+			BatteryTime = 0;
 			
 			if((BoostLevel < SendBatteryStateData) && (SendBatteryStateData >= Boost_Level1))
 			{
@@ -200,34 +199,34 @@ void Screen_Boost(void)
 				switch(BoostLevel)
 				{
 					case Boost_Level1:
-						lv_obj_add_flag(guider_ui.main_label_9, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_10, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_11, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat1, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat2, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat3, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat4, LV_OBJ_FLAG_HIDDEN);
 						break;
 					case Boost_Level2:
-						lv_obj_clear_flag(guider_ui.main_label_9, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_10, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_11, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat1, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat2, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat3, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat4, LV_OBJ_FLAG_HIDDEN);
 						break;
 					case Boost_Level3:
-						lv_obj_clear_flag(guider_ui.main_label_9, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_clear_flag(guider_ui.main_label_10, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_11, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat1, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat2, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat3, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat4, LV_OBJ_FLAG_HIDDEN);
 						break;
 					case Boost_Level4:
-						lv_obj_clear_flag(guider_ui.main_label_9, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_clear_flag(guider_ui.main_label_10, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_clear_flag(guider_ui.main_label_11, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat1, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat2, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat3, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_grat4, LV_OBJ_FLAG_HIDDEN);
 						break;
 					case Boost_Level5:
-						lv_obj_clear_flag(guider_ui.main_label_9, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_clear_flag(guider_ui.main_label_10, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_clear_flag(guider_ui.main_label_11, LV_OBJ_FLAG_HIDDEN);
-						lv_obj_clear_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat1, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat2, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat3, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_clear_flag(guider_ui.main_grat4, LV_OBJ_FLAG_HIDDEN);
 						break;
 					default:
 						break;
@@ -236,7 +235,7 @@ void Screen_Boost(void)
 		}
 }
 
-void Screen_Charge(void)
+static void Screen_Charge(void)
 {
 		uint8_t id;
 		uint8_t chargelevel = 0;
@@ -281,8 +280,9 @@ void Screen_Charge(void)
 		if(Screen_Id == CHAREG_SCREEN)
 		{
 				RefreshCount++;
-				if(RefreshCount > 60)
+				if(RefreshCount > 80)
 				{
+						//HAL_UART_Transmit(&huart1,test,5,0xFFFF);
 					  RefreshCount = 0;
 						if((chact < Boost_Level1) && (chact >= SendBatteryStateData))
 						{

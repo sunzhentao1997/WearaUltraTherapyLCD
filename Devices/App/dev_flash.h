@@ -9,7 +9,6 @@
 #define DEV_FLASH_H_
 
 #include "main.h"
-#include <stdint.h>
 
 typedef struct
 {

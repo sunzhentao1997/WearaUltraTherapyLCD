@@ -53,7 +53,9 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-extern uint32_t BackLedCount;
+extern uint32_t BackLedTime;
+
+
 /* USER CODE END Variables */
 /* Definitions for ScreenRGB */
 osThreadId_t ScreenRGBHandle;
@@ -150,7 +152,7 @@ void ScreenRGBTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		if((StartFlg == 0) && (BackLedCount > 1500))
+		if((StartFlg == 0) && (BackLedTime > 1500))
 		{
 			  tempval = LightLevel * 10;
 				StartFlg = 1;
@@ -160,7 +162,7 @@ void ScreenRGBTask(void *argument)
 		{
 				ScreenFunc();
 		}
-
+		Beep_MainFunc();
 		lv_timer_handler();
     osDelay(5);
   }
@@ -177,7 +179,7 @@ void ScreenRGBTask(void *argument)
 void UltraAppTask(void *argument)
 {
   /* USER CODE BEGIN UltraAppTask */
-	static uint8_t count = 0;
+//	static uint8_t count = 0;
 	
 	DevSystem_Init();
 	DevAdc_Init();
@@ -189,14 +191,7 @@ void UltraAppTask(void *argument)
 		DevMPC5043_MainFunc();
 		UltraParam_Set();
 		Low_Battery_Warning();
-		
-		count++;
-		if(count > 12)
-		{
-			count = 0;
-			Beep_MainFunc();
-		}
-		
+				
     osDelay(20);
   }
   /* USER CODE END UltraAppTask */

@@ -7,12 +7,12 @@
 
 #include "dev_app.h"
 
-uint8_t ShuntDownFlg = 0;
-uint8_t StartFlg = 0;
-uint8_t RecvMPC5043Val = 0;
-uint8_t BatteryLevelBuff[4] = {0};
 Battery_Level SendBatteryStateData = Boost_Level5;
-uint32_t ChargeRecvTime = 0;
+
+static uint8_t ShuntDownFlg = 2;						//充电后关机标志位
+static uint8_t RecvMPC5043Flg = 0;   				//接收MPC5043数据标志位
+static uint8_t RecvMPC5043Val = 0;					//接收MPC5043数据
+static uint8_t BatteryLevelBuff[4] = {0}; 	//电压等级滤波
 
 void DevMPC5043_MainFunc(void)
 {
@@ -100,7 +100,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	static uint8_t Count = 0;
 	if(GPIO_Pin == CHARGE_STATE_Pin)
 	{
-		if(StartFlg == 0)
+		if(RecvMPC5043Flg == 0)
 		{
 			if(HAL_GPIO_ReadPin(CHARGE_STATE_GPIO_Port, CHARGE_STATE_Pin))
 			{
@@ -109,7 +109,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			{
 				if(((ChargeRecvTime - ChargeRecvTime_old) > 38) && ((ChargeRecvTime - ChargeRecvTime_old) <= 41))
 				{
-					StartFlg = 1;
+					RecvMPC5043Flg = 1;
 					ChargeRecvTime_old = ChargeRecvTime;
 				}else
 				{
@@ -173,7 +173,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			RecvCount = 0;
 			ChargeRecvTime = 0;
 			ChargeRecvTime_old = 0;
-			StartFlg = 0;
+			RecvMPC5043Flg = 0;
 		}
 	}
 }

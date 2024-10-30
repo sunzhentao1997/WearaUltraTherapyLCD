@@ -6,16 +6,14 @@
  */
 
 #include "dev_adc.h"
-#include "stdint.h"
 
 extern ADC_HandleTypeDef hadc1;
 
-uint32_t AdcVal = 0;
 uint16_t BatteryVol = 3500;
-uint16_t BatVolFilter[15] = {0};
+static uint32_t AdcVal = 0;
+static uint16_t BatVolFilter[15] = {0};
 
 static uint16_t AdcSampleFilt(uint16_t *buff,uint8_t len);
-
 
 void DevAdc_Init(void)
 {

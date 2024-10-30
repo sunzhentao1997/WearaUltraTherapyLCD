@@ -131,6 +131,7 @@ weaultratherapylcd\events_init.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets
 weaultratherapylcd\events_init.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h
 weaultratherapylcd\events_init.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h
 weaultratherapylcd\events_init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+weaultratherapylcd\events_init.o: ../Core/Inc/tim.h
 weaultratherapylcd\events_init.o: ../Core/Inc/main.h
 weaultratherapylcd\events_init.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 weaultratherapylcd\events_init.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -169,7 +170,6 @@ weaultratherapylcd\events_init.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_
 weaultratherapylcd\events_init.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 weaultratherapylcd\events_init.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\events_init.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-weaultratherapylcd\events_init.o: ../Core/Inc/tim.h
 weaultratherapylcd\events_init.o: ..\Middlewares\LVGL\GUI_APP\lv_mainstart.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_app.h
 weaultratherapylcd\events_init.o: ../Devices/App/dev_ad9833.h

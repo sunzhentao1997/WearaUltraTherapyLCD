@@ -22,7 +22,7 @@ typedef struct
 	bool main_del;
 	lv_obj_t *main_label_3;
 	lv_obj_t *main_label_5;
-	lv_obj_t *main_label_6;
+	lv_obj_t *main_UltraPower;
 	lv_obj_t *main_paging;
 	lv_obj_t *main_paging_label;
 	lv_obj_t *main_change;
@@ -39,13 +39,13 @@ typedef struct
 	lv_obj_t *main_switch2_label;
 	lv_obj_t *main_switch1;
 	lv_obj_t *main_switch1_label;
-	lv_obj_t *main_label_2;
+	lv_obj_t *main_time;
 	lv_obj_t *main_label_7;
 	lv_obj_t *main_label_8;
-	lv_obj_t *main_label_9;
-	lv_obj_t *main_label_10;
-	lv_obj_t *main_label_11;
-	lv_obj_t *main_label_12;
+	lv_obj_t *main_grat1;
+	lv_obj_t *main_grat2;
+	lv_obj_t *main_grat3;
+	lv_obj_t *main_grat4;
 	lv_obj_t *main_arc_1;
 	lv_obj_t *config;
 	bool config_del;
@@ -197,7 +197,7 @@ LV_IMG_DECLARE(_charge_220x400);
 LV_IMG_DECLARE(_lowBatt_41x70);
 
 LV_IMG_DECLARE(_success_74x74);
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
+//LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_customer_font_NSHMedium_50)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_70)

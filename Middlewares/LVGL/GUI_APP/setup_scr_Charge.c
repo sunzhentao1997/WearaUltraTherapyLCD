@@ -14,8 +14,6 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-
-
 void setup_scr_Charge(lv_ui *ui)
 {
 	//Write codes Charge

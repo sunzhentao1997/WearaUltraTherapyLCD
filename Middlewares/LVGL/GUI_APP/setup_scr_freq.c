@@ -32,7 +32,7 @@ void setup_scr_freq(lv_ui *ui)
 	ui->freq_label_1 = lv_label_create(ui->freq);
 	lv_label_set_text(ui->freq_label_1, "LIUS");
 	lv_label_set_long_mode(ui->freq_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->freq_label_1, 24, 27);
+	lv_obj_set_pos(ui->freq_label_1, 19, 29);
 	lv_obj_set_size(ui->freq_label_1, 84, 45);
 
 	//Write style for freq_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

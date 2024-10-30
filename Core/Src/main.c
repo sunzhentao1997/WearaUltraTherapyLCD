@@ -33,7 +33,7 @@
 #include "dev_malloc.h"
 #include "lv_port_disp_template.h"
 #include "lv_port_indev_template.h"
-#include "ST7701.h"
+#include "dev_st7701.h"
 #include "dev_app.h"
 /* USER CODE END Includes */
 
@@ -55,13 +55,15 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern uint32_t ScreenCount;
-extern uint32_t StandyTime;
-extern uint32_t ChargeRecvTime;
-extern uint32_t BatteryCount;
-uint32_t BackLedCount = 0;
-uint32_t PowerOnCount = 0;
-extern uint32_t Charge_Time;
+uint32_t ScreenTime = 0;										//屏幕主界面数据刷新时�?
+uint32_t StandyTime = 0;										//待机时间
+uint32_t ChargeRecvTime = 0;								//充电接收时间
+uint32_t BatteryTime = 0;										//主界面电量刷新时�?
+uint32_t BackLedTime = 0;			  						//背光�?启时�?
+uint32_t PowerOnTime = 0;										//正式�?机时�?
+uint32_t Charge_Time = 0;										//充电时长
+uint8_t CompleteFlg = 0;										//�?机成功标志位
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -113,18 +115,18 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM5_Init();
   MX_TIM9_Init();
-  MX_USART1_UART_Init();
   MX_TIM3_Init();
   MX_TIM12_Init();
   MX_TIM8_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	UltraParam_Init();
 	st7701_init();
-	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
-	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
-	lv_init();                                          /* lvgl系统初始�? */
-	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
-	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
+	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存池 */
+	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
+	lv_init();                                          /* lvgl系统初始�? */
+	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
+	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
 	
 	HAL_TIM_Base_Start(&htim2);
 	HAL_TIM_Base_Start(&htim3);
@@ -240,13 +242,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	//1ms周期
 	if(htim->Instance == TIM8)
 	{
-		  BackLedCount++;
+		  BackLedTime++;
 		  StandyTime++;
-			ScreenCount++;
-		  BatteryCount++;
+			ScreenTime++;
+		  BatteryTime++;
+			PowerOnTime++;
 		
-			PowerOnCount++;
-			if(PowerOnCount > 1500)
+			if(PowerOnTime > 1500)
 			{
 					CompleteFlg = 1;
 			}

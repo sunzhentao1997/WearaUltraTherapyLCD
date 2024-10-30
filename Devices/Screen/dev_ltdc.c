@@ -25,8 +25,8 @@
 #include "dev_touch.h"
 #include "ltdc.h"
 
-extern uint8_t PressFlg;
-extern uint16_t Gain;
+//extern uint8_t PressFlg;
+//extern uint16_t Gain;
 
 #if !(__ARMCC_VERSION >= 6010050)                                                    /* 不是AC6编译器，即使用AC5编译器时 */
 

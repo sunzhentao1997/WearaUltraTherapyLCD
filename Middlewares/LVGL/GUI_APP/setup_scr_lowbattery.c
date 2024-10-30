@@ -14,8 +14,6 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-
-
 void setup_scr_lowbattery(lv_ui *ui)
 {
 	//Write codes lowbattery

@@ -1,74 +1,129 @@
-#include "main.h"
-#include "tim.h"
 #include "dev_app.h"
 
-extern TIM_HandleTypeDef htim9;
-
-#define BEEP_HANDLE			(&htim9)
-#define BEEP_CHANNLE		TIM_CHANNEL_2
-
-#define BEEP_ON()					__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,180)
-#define BEEP_OFF()				__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,0)
+#define BEEPONTIME	24
+#define BEEPOFFTIME 32
 
 int8_t BeepCount = 0;
 uint8_t BeepFlg = 0;
+static uint8_t BeepFlg_old = 0;
 
 void Beep_MainFunc(void)
 {
-		uint8_t tag_i;
+		static uint8_t Beep_On = BEEPONTIME;
+		static uint8_t Beep_Off = BEEPOFFTIME;
 		static uint8_t BeepTim = 0;
 	
 		if(BeepFlg == 1)
 		{
+			  BeepFlg_old = 1;
 				if((BeepCount % 2) == 0)
 				{
+						Beep_On--;
 						BEEP_ON();
+					
+						if(Beep_On == 0)
+						{							
+							BeepCount--;
+							Beep_On = BEEPONTIME;
+							Beep_Off = BEEPOFFTIME;
+						}
+						
 				}else
 				{
+						Beep_Off--;
 						BEEP_OFF();
+					
+						if(Beep_Off == 0)
+						{							
+							BeepCount--;
+							Beep_On = BEEPONTIME;
+							Beep_Off = BEEPOFFTIME;
+						}
 				}
 				
-				BeepCount--;
-				if(BeepCount < 0)
+				if(BeepCount <= 0)
 				{
 						BEEP_OFF();
 						BeepCount = 0;
 						BeepFlg = 0;
+					  BeepFlg_old = 0;
+						Beep_On = BEEPONTIME;
+						Beep_Off = BEEPOFFTIME;
 				}
+		}else if((BeepFlg == 2) && (BeepFlg_old == 1))
+		{
+			  BeepFlg_old = 0;
+				BEEP_OFF();
 		}else if(BeepFlg == 2)
 		{
-				if(BeepCount % 4 == 0)
+				if(BeepCount % 6 == 0)
 				{
 						BeepTim++;
-						if(BeepTim > 3)
+						if(BeepTim > 64)
 						{
-							BeepTim = 0;
+							
 							if((BeepCount % 2) == 0)
 							{
+									Beep_On--;
 									BEEP_ON();
+								
+									if(Beep_On == 0)
+									{							
+										BeepCount--;
+										BeepTim = 0;
+										Beep_On = BEEPONTIME;
+										Beep_Off = BEEPOFFTIME;
+									}
+						
 							}else
 							{
+									Beep_Off--;
 									BEEP_OFF();
+								
+									if(Beep_Off == 0)
+									{							
+										BeepCount--;
+										Beep_On = BEEPONTIME;
+										Beep_Off = BEEPOFFTIME;
+									}
 							}
-							BeepCount--;
 						}
 				}else
 				{
 						if((BeepCount % 2) == 0)
 						{
+								Beep_On--;
 								BEEP_ON();
+							
+								if(Beep_On == 0)
+								{							
+									BeepCount--;
+									Beep_On = BEEPONTIME;
+									Beep_Off = BEEPOFFTIME;
+								}
+					
 						}else
 						{
+								Beep_Off--;
 								BEEP_OFF();
+							
+								if(Beep_Off == 0)
+								{							
+									BeepCount--;
+									Beep_On = BEEPONTIME;
+									Beep_Off = BEEPOFFTIME;
+								}
 						}
-						BeepCount--;
 				}
 				
-				if(BeepCount < 0)
+				if(BeepCount <= 0)
 				{
 						BEEP_OFF();
+					
 						BeepCount = 0;
 						BeepFlg = 0;
+						Beep_On = BEEPONTIME;
+						Beep_Off = BEEPOFFTIME;
 				}
 		}else
 		{

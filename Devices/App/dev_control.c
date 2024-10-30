@@ -1,43 +1,22 @@
 #include "dev_app.h"
 #include "lv_mainstart.h"
 
-extern TIM_HandleTypeDef htim5;
-extern TIM_HandleTypeDef htim3;
+static uint16_t FlashStoreBuff[17] = {0};						//参数配置存储缓存
+static uint8_t ParamChangeFlg[3] = {0};							//超声参数修改标志位
+static uint8_t FreqParam_A = 0;											//A通道频率参数
+static uint8_t FreqParam_B = 0;											//B通道频率参数
+static uint8_t VibraParam = 0;											//马达震动参数
+static uint32_t u32_FreqParam_A = 0;								//A通道驱动频率
+static uint32_t u32_FreqParam_B = 0;								//B通道驱动频率
+static uint32_t u32_VibraParam = 0;									//PWM驱动参数
 
-#define ULTRA_HANDLE	(&htim3)
-#define ULTRA_CHB			TIM_CHANNEL_1
-#define ULTRA_CHA			TIM_CHANNEL_2
+static uint8_t WorkStartFlg = 0;										//工作开始标志
+static uint8_t WorkFinFlg = 0;											//工作结束标志
 
-#define MOTOR_HANDLE 	(&htim5)
-#define MOTOR_CHB			TIM_CHANNEL_2
-#define MOTOR_CHA			TIM_CHANNEL_3
+uint16_t Low_Battery_Flg = 0;												//低电量标志位						
+Dev_Work_State DevWorkState = IDLE_STATE;						//设备工作状态
 
-#define FLASH_LOWBATTERY	  0x81C0000
-#define FLASH_SAVE_ADDR 		0x81E0000
-
-
-uint16_t FlashStoreBuff[17] = {0};
-uint8_t ParamChangeFlg[3] = {0};
-uint8_t FreqParam_A = 0;
-uint8_t FreqParam_B = 0;
-uint8_t VibraParam = 0;
-uint16_t Low_Battery_Flg = 0;
-uint8_t WorkStartFlg = 0;
-uint8_t WorkFinish = 0;
-uint32_t u32_FreqParam_A = 0;
-uint32_t u32_FreqParam_B = 0;
-uint32_t u32_VibraParam = 0;
-uint32_t StandyTime = 0;
-uint8_t CompleteFlg = 0;
-uint32_t Charge_Time = 0;
-
-uint8_t UltraDuty = 0;
 extern SCREENSTATE ScreenState;
-Dev_Work_State DevWorkState = IDLE_STATE;
-
-extern uint32_t MotorLevel;
-extern uint16_t FreqOffset;
-extern uint8_t SlaveFlg;
 
 void UltraParam_Init(void)
 {
@@ -159,7 +138,7 @@ void DevAPP_MainFunc(void)
 				
 				if(WorkStartFlg == 1)
 				{
-						WorkFinish = 1;
+						WorkFinFlg = 1;
 				}
 				StandyTime = 0;
 				

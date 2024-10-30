@@ -14,8 +14,6 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-
-
 void setup_scr_config(lv_ui *ui)
 {
 	//Write codes config
@@ -32,7 +30,7 @@ void setup_scr_config(lv_ui *ui)
 	ui->config_label_1 = lv_label_create(ui->config);
 	lv_label_set_text(ui->config_label_1, "LIUS");
 	lv_label_set_long_mode(ui->config_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->config_label_1, 24, 27);
+	lv_obj_set_pos(ui->config_label_1, 19, 29);
 	lv_obj_set_size(ui->config_label_1, 84, 45);
 
 	//Write style for config_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

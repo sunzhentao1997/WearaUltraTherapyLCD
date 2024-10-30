@@ -170,6 +170,16 @@
           <WinNumber>1</WinNumber>
           <ItemText>BeepCount</ItemText>
         </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>ParamBuff</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>ParamIndex</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
@@ -253,7 +263,7 @@
 
   <Group>
     <GroupName>Application/User/Core</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -2885,7 +2895,7 @@
 
   <Group>
     <GroupName>Middlewares/LVGL/GUI_APP</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -3016,6 +3026,18 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\_success_74x74.c</PathWithFileName>
+      <FilenameWithoutPath>_success_74x74.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>16</GroupNumber>
+      <FileNumber>223</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
       <PathWithFileName>..\Middlewares\LVGL\GUI_APP\_zhendong_42x42.c</PathWithFileName>
       <FilenameWithoutPath>_zhendong_42x42.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
@@ -3023,7 +3045,7 @@
     </File>
     <File>
       <GroupNumber>16</GroupNumber>
-      <FileNumber>223</FileNumber>
+      <FileNumber>224</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3035,7 +3057,7 @@
     </File>
     <File>
       <GroupNumber>16</GroupNumber>
-      <FileNumber>224</FileNumber>
+      <FileNumber>225</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3047,25 +3069,13 @@
     </File>
     <File>
       <GroupNumber>16</GroupNumber>
-      <FileNumber>225</FileNumber>
+      <FileNumber>226</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Middlewares\LVGL\GUI_APP\gui_guider.c</PathWithFileName>
       <FilenameWithoutPath>gui_guider.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>16</GroupNumber>
-      <FileNumber>226</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\lv_mainstart.c</PathWithFileName>
-      <FilenameWithoutPath>lv_mainstart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -3196,8 +3206,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\_success_74x74.c</PathWithFileName>
-      <FilenameWithoutPath>_success_74x74.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\lv_mainstart.c</PathWithFileName>
+      <FilenameWithoutPath>lv_mainstart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -3676,6 +3686,30 @@
     <File>
       <GroupNumber>18</GroupNumber>
       <FileNumber>276</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Devices\Screen\dev_st7701.h</PathWithFileName>
+      <FilenameWithoutPath>dev_st7701.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>18</GroupNumber>
+      <FileNumber>277</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Devices\Screen\dev_st7701.c</PathWithFileName>
+      <FilenameWithoutPath>dev_st7701.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>18</GroupNumber>
+      <FileNumber>278</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3687,7 +3721,7 @@
     </File>
     <File>
       <GroupNumber>18</GroupNumber>
-      <FileNumber>277</FileNumber>
+      <FileNumber>279</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3697,35 +3731,11 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
-    <File>
-      <GroupNumber>18</GroupNumber>
-      <FileNumber>278</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Devices\Screen\ST7701.c</PathWithFileName>
-      <FilenameWithoutPath>ST7701.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>18</GroupNumber>
-      <FileNumber>279</FileNumber>
-      <FileType>5</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Devices\Screen\ST7701.h</PathWithFileName>
-      <FilenameWithoutPath>ST7701.h</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
   </Group>
 
   <Group>
     <GroupName>Devices/UltraApp</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

@@ -32,7 +32,7 @@ void setup_scr_light(lv_ui *ui)
 	ui->light_label_1 = lv_label_create(ui->light);
 	lv_label_set_text(ui->light_label_1, "LIUS");
 	lv_label_set_long_mode(ui->light_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->light_label_1, 24, 27);
+	lv_obj_set_pos(ui->light_label_1, 19, 29);
 	lv_obj_set_size(ui->light_label_1, 84, 45);
 
 	//Write style for light_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -78,7 +78,7 @@ void setup_scr_light(lv_ui *ui)
 	ui->light_slider_1 = lv_slider_create(ui->light);
 	lv_slider_set_range(ui->light_slider_1, 0, 100);
 	lv_slider_set_mode(ui->light_slider_1, LV_SLIDER_MODE_NORMAL);
-	lv_slider_set_value(ui->light_slider_1, 50, LV_ANIM_OFF);
+	lv_slider_set_value(ui->light_slider_1, (int32_t)LightLevel, LV_ANIM_OFF);
 	lv_obj_set_pos(ui->light_slider_1, 176, 215);
 	lv_obj_set_size(ui->light_slider_1, 135, 310);
 
