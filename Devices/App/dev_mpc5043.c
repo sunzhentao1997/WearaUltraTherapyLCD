@@ -150,7 +150,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 					charge_tick_old = charge_tick;
 				}else
 				{
-					if(ShuntDownFlg == 1)
+					
+				}
+			}else
+			{
+				 if(ShuntDownFlg == 1)
 					{
 						BatteryLevelBuff[0] = RecvMPC5043Val;
 						BatteryLevelBuff[1] = RecvMPC5043Val;
@@ -161,9 +165,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 					}
 					charge_tick = HAL_GetTick();
 					charge_tick_old = charge_tick;
-				}
-			}else
-			{
 			}
 			Count++;
 			if(Count > 3)

@@ -179,3 +179,4 @@ weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_flash.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_mpc5043.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_control.h
 weaultratherapylcd\lv_mainstart.o: ../Devices/App/dev_gpio.h
+weaultratherapylcd\lv_mainstart.o: ../Core/Inc/tim.h

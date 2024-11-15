@@ -13,6 +13,8 @@ static uint32_t u32_VibraParam = 0;									//PWM驱动参数
 static uint8_t WorkStartFlg = 0;										//工作开始标志
 static uint8_t WorkFinFlg = 0;											//工作结束标志
 
+static uint16_t PowerFlg = 0;												//充电自动关机
+
 uint16_t Low_Battery_Flg = 0;												//低电量标志位						
 Dev_Work_State DevWorkState = IDLE_STATE;						//设备工作状态
 
@@ -23,6 +25,8 @@ void UltraParam_Init(void)
 		uint8_t tag_i = 0;
 		DevFlash_Read(FLASH_SAVE_ADDR,FlashStoreBuff,17);
 		DevFlash_Read(FLASH_LOWBATTERY,&Low_Battery_Flg,1);
+		DevFlash_Read(FLASH_SHUNTDOWN,&PowerFlg,1);
+		
 	
 		ParamChangeFlg[0] = (uint8_t)FlashStoreBuff[0];
 		ParamChangeFlg[1] = (uint8_t)FlashStoreBuff[1];
@@ -36,7 +40,7 @@ void UltraParam_Init(void)
 					
 				u32_FreqParam_A = 2000 * (551+FreqParam_A);
 				u32_FreqParam_B = 2000 * (551+FreqParam_B);
-			  u32_VibraParam = VibraParam * 212;
+			  u32_VibraParam = VibraParam * 106;
 		}else
 		{
 				FreqParam_A = 0x54;
@@ -45,7 +49,7 @@ void UltraParam_Init(void)
 				
 				u32_FreqParam_A = 2000 * (551+FreqParam_A);
 				u32_FreqParam_B = 2000 * (551+FreqParam_B);
-			  u32_VibraParam = VibraParam * 212;
+			  u32_VibraParam = VibraParam * 106;
 		}
 		
 		LightLevel = FlashStoreBuff[7];
@@ -57,7 +61,17 @@ void UltraParam_Init(void)
 		
 		if(LightLevel == 0xFFFF)
 		{
-				LightLevel = 50;
+				LightLevel = 100;
+		}
+		
+		if(PowerFlg == 0x01)
+		{
+			DevWorkState = CLOSE_STATE;
+		}else if(PowerFlg == 0xFFFF)
+		{
+			PowerFlg = 0;
+		}else
+		{
 		}
 		
 		MotorLevel = VibraParam;
@@ -101,6 +115,11 @@ void DevAPP_MainFunc(void)
 					old_tick = new_tick;
 					BatteryChFlg = 1;
 				}
+				if((BatteryChFlg == 1) && (PowerFlg == 0))
+				{
+					PowerFlg = 1;
+					DevFlash_Write(FLASH_SHUNTDOWN,&PowerFlg,1);
+				}
 		}else
 		{
 				if(BatteryChFlg == 0x01)
@@ -111,18 +130,18 @@ void DevAPP_MainFunc(void)
 				old_tick = new_tick;
 		}
 		
-		ultra_pluse = UltraDuty * 100;
+		ultra_pluse = UltraDuty * 25;
 		
 		switch(DevWorkState)
 		{
 			case IDLE_STATE:
-				if(StandyTime > 45000)
+				if(StandyTime > 120000)
 				{
 						DevWorkState = CLOSE_STATE;
 					  StandyTime = 0;
 				}
 				
-				DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_RESET);			//关闭 45V DCDC
+				DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_SET);			//关闭 45V DCDC
 				DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_RESET);
 				DevGpio_SetOutSta(ULTRA_A_EN,GPIO_PIN_RESET);
 				DevGpio_SetOutSta(ULTRA_B_EN,GPIO_PIN_RESET);
@@ -142,7 +161,7 @@ void DevAPP_MainFunc(void)
 				}
 				StandyTime = 0;
 				
-				DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_RESET);			//关闭 45V DCDC
+				DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_SET);			//关闭 45V DCDC
 				DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_RESET);
 				DevGpio_SetOutSta(ULTRA_A_EN,GPIO_PIN_RESET);
 				DevGpio_SetOutSta(ULTRA_B_EN,GPIO_PIN_RESET);
@@ -163,17 +182,33 @@ void DevAPP_MainFunc(void)
 				
 					WorkStartFlg = 1;
 					StandyTime = 0;
-
+				
 					DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_SET);			
 					DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_SET);
-					DevGpio_SetOutSta(ULTRA_B_EN,GPIO_PIN_SET);
-
+			
 					__HAL_TIM_SetCompare(ULTRA_HANDLE,ULTRA_CHB,ultra_pluse);
-					__HAL_TIM_SetCompare(MOTOR_HANDLE,MOTOR_CHB,u32_VibraParam);
+					DevGpio_SetOutSta(ULTRA_B_EN,GPIO_PIN_SET);
+			
+					if(MotorTime < (UltraDuty * 10))
+					{
+						__HAL_TIM_SetCompare(MOTOR_HANDLE,MOTOR_CHB,u32_VibraParam);
+					}else if((MotorTime >= (UltraDuty * 10)) && (MotorTime < 1000))
+					{
+						__HAL_TIM_SetCompare(MOTOR_HANDLE,MOTOR_CHB,100);
+					}else
+					{
+						MotorTime = 0;
+					}
 					
 				break;
 			
 			case CLOSE_STATE:
+				
+					if((ShuntDownCount > 1300) && (PowerFlg == 1))
+					{
+						PowerFlg = 0;
+						DevFlash_Write(FLASH_SHUNTDOWN,&PowerFlg,1);
+					}
 				
 					DevGpio_SetOutSta(KEY_CONTROL,GPIO_PIN_SET);
 					DevGpio_SetOutSta(CONTROL_CLOSE,GPIO_PIN_SET);
@@ -194,11 +229,11 @@ void UltraParam_Set(void)
 				
 				FreqParam_A = (uint8_t)FreqOffset;
 				FreqParam_B = FreqParam_A;
-				VibraParam = (uint8_t)MotorLevel;
+				VibraParam = MotorLevel;
 			
 				u32_FreqParam_A = 2000 * (FreqParam_A + 551);
 				u32_FreqParam_B = 2000 * (FreqParam_B + 551);
-				u32_VibraParam = VibraParam * 212;
+				u32_VibraParam = VibraParam * 106;
 			
 				ParamChangeFlg[0] = 0xdd;
 				ParamChangeFlg[1] = 0xee;

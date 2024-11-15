@@ -68,16 +68,18 @@ void init_scr_del_flag(lv_ui *ui)
 	ui->config_del = true;
 	ui->param_del = true;
 	ui->light_del = true;
-	ui->freq_del = true;
 	ui->vibra_del = true;
-	ui->Charge_del = true;
-	ui->lowbattery_del = true;
-	ui->success_del = true;
+	ui->vibras_del = true;
+	ui->freq_del = true;
+	ui->password1_del = true;
+	ui->password2_del = true;
+	ui->charge_del = true;
+	ui->boot_del = true;
 }
 
 void setup_ui(lv_ui *ui)
 {
 	init_scr_del_flag(ui);
-	setup_scr_main(ui);
-	lv_scr_load(ui->main);
+	setup_scr_boot(ui);
+	lv_scr_load(ui->boot);
 }

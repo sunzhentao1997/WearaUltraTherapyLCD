@@ -1,4 +1,4 @@
-weaultratherapylcd\setup_scr_charge.o: ..\Middlewares\LVGL\GUI_APP\setup_scr_Charge.c
+weaultratherapylcd\setup_scr_charge.o: ..\Middlewares\LVGL\GUI_APP\setup_scr_charge.c
 weaultratherapylcd\setup_scr_charge.o: ../Middlewares/LVGL/GUI/lvgl/lvgl.h
 weaultratherapylcd\setup_scr_charge.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h
 weaultratherapylcd\setup_scr_charge.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h

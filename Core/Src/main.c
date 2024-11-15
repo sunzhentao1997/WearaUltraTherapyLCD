@@ -62,7 +62,11 @@ uint32_t BatteryTime = 0;										//主界面电量刷新时�?
 uint32_t BackLedTime = 0;			  						//背光�?启时�?
 uint32_t PowerOnTime = 0;										//正式�?机时�?
 uint32_t Charge_Time = 0;										//充电时长
+uint32_t ShuntDownCount = 0;
+uint32_t MotorTime = 0;
 uint8_t CompleteFlg = 0;										//�?机成功标志位
+uint32_t UltraWorkTim = 0;
+uint32_t UnlockCount = 0;
 
 /* USER CODE END PV */
 
@@ -92,7 +96,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+   HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -122,7 +126,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	UltraParam_Init();
 	st7701_init();
-	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存池 */
+	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
 	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
 	lv_init();                                          /* lvgl系统初始�? */
 	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
@@ -247,6 +251,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			ScreenTime++;
 		  BatteryTime++;
 			PowerOnTime++;
+			MotorTime++;
+			ShuntDownCount++;
+			UltraWorkTim++;
+			UnlockCount++;
 		
 			if(PowerOnTime > 1500)
 			{

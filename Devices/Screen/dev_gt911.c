@@ -7,7 +7,7 @@
 uint8_t g_gt_tnum = 5;      /* 默认支持的触摸屏点数(5点触摸) */
 uint8_t PressFlg = 0;
 uint16_t Gain = 0;
-
+uint16_t slider_pos;
 /**
  * @brief       控制I2C速度的延时
  * @param       无
@@ -370,8 +370,10 @@ uint8_t gt9xxx_scan(uint8_t mode)
 
 										tp_dev.x[i] = ((uint16_t)buf[1] << 8) + buf[0];
 										tp_dev.y[i] = ((uint16_t)buf[3] << 8) + buf[2];
+									
+										slider_pos = tp_dev.x[i];
 
-										if((tp_dev.x[i] < 427 && tp_dev.x[i] > 49) && (tp_dev.y[i] > 660) && (tp_dev.y[i] < 760))
+										if((tp_dev.x[i] < 130 && tp_dev.x[i] > 80) && (tp_dev.y[i] > 680) && (tp_dev.y[i] < 738))
 										{
 												PressFlg = 1;
 										}
@@ -441,16 +443,16 @@ void my_slider(void)
 		uint32_t i,j;
 		if(PressFlg == 1)
 		{
-				for(j = 0; j < 480;j++)
+				for(j = 36; j < 444;j++)
 				{
 						for(i = 660;i < 760;i++)
 						{
-								if((j > (old_x-10)) && (j < (old_x + 70)) && (i > 665) && (i < 755))
+								if((j > (old_x-10)) && (j < (old_x + 40)) && (i > 680) && (i < 738))
 								{
 									ltdc_draw_point(j,i,0);
 								}else
 								{
-									ltdc_draw_point(j,i,0x451F);
+									//ltdc_draw_point(j,i,(uint32_t)_suo_1_50x58_map[(i-660)*480]);
 								}
 						}
 				}

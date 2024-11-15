@@ -1,5 +1,6 @@
 weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_adc.c
-weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_adc.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_app.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_ad9833.h
 weaultratherapylcd\dev_adc.o: ../Core/Inc/main.h
 weaultratherapylcd\dev_adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 weaultratherapylcd\dev_adc.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -40,3 +41,9 @@ weaultratherapylcd\dev_adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 weaultratherapylcd\dev_adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 weaultratherapylcd\dev_adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\dev_adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_adc.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_beep.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_flash.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_mpc5043.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_control.h
+weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_gpio.h

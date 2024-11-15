@@ -20,7 +20,7 @@ extern "C" {
 #include "font/lv_font.h"
 #endif
 
-LV_FONT_DECLARE(lv_customer_font_NSHBold_60)
+LV_FONT_DECLARE(lv_customer_font_NSHRegular_60)
 
 
 #ifdef __cplusplus

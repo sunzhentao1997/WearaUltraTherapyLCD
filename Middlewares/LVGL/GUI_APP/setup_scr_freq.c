@@ -14,7 +14,7 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-#include "lv_mainstart.h"
+
 
 void setup_scr_freq(lv_ui *ui)
 {
@@ -28,46 +28,74 @@ void setup_scr_freq(lv_ui *ui)
 	lv_obj_set_style_bg_color(ui->freq, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_grad_dir(ui->freq, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes freq_label_1
-	ui->freq_label_1 = lv_label_create(ui->freq);
-	lv_label_set_text(ui->freq_label_1, "LIUS");
-	lv_label_set_long_mode(ui->freq_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->freq_label_1, 19, 29);
-	lv_obj_set_size(ui->freq_label_1, 84, 45);
+	//Write codes freq_logo
+	ui->freq_logo = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_logo, "LIUS");
+	lv_label_set_long_mode(ui->freq_logo, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_logo, 42, 40);
+	lv_obj_set_size(ui->freq_logo, 87, 37);
 
-	//Write style for freq_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_border_width(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->freq_label_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_label_1, &lv_customer_font_NSHBold_36, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_opa(ui->freq_label_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_letter_space(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_line_space(ui->freq_label_1, 6, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_align(ui->freq_label_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_top(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_right(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_bottom(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_left(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->freq_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for freq_logo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_logo, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_logo, &lv_customer_font_NSHBold_36, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_logo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_logo, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_battery
+	ui->freq_battery = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_battery, " ");
+	lv_label_set_long_mode(ui->freq_battery, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_battery, 371, 44);
+	lv_obj_set_size(ui->freq_battery, 61, 31);
+
+	//Write style for freq_battery, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_battery, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_battery, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_battery, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_battery, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_battery, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_src(ui->freq_battery, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_opa(ui->freq_battery, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes freq_label_2
 	ui->freq_label_2 = lv_label_create(ui->freq);
-	lv_label_set_text(ui->freq_label_2, "频率 ");
+	lv_label_set_text(ui->freq_label_2, " ");
 	lv_label_set_long_mode(ui->freq_label_2, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->freq_label_2, 103, 236);
-	lv_obj_set_size(ui->freq_label_2, 108, 33);
+	lv_obj_set_pos(ui->freq_label_2, 411, 50);
+	lv_obj_set_size(ui->freq_label_2, 9, 19);
 
 	//Write style for freq_label_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->freq_label_2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_label_2, &lv_customer_font_NSHRegular_33, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_2, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_2, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_2, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->freq_label_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_letter_space(ui->freq_label_2, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->freq_label_2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_2, 103, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_label_2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_label_2, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_top(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_right(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_bottom(ui->freq_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -76,104 +104,299 @@ void setup_scr_freq(lv_ui *ui)
 
 	//Write codes freq_label_3
 	ui->freq_label_3 = lv_label_create(ui->freq);
-	lv_label_set_text(ui->freq_label_3, "kHZ");
+	lv_label_set_text(ui->freq_label_3, " ");
 	lv_label_set_long_mode(ui->freq_label_3, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->freq_label_3, 261, 236);
-	lv_obj_set_size(ui->freq_label_3, 108, 33);
+	lv_obj_set_pos(ui->freq_label_3, 400, 50);
+	lv_obj_set_size(ui->freq_label_3, 9, 19);
 
 	//Write style for freq_label_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->freq_label_3, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_label_3, &lv_customer_font_NSHRegular_33, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_3, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_3, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->freq_label_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_letter_space(ui->freq_label_3, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->freq_label_3, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_3, 141, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_label_3, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_label_3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_top(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_right(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_bottom(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->freq_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes freq_label_4
+	ui->freq_label_4 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_4, " ");
+	lv_label_set_long_mode(ui->freq_label_4, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_4, 389, 50);
+	lv_obj_set_size(ui->freq_label_4, 9, 19);
+
+	//Write style for freq_label_4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_4, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_4, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_4, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_4, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_4, 206, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_label_4, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_label_4, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_label_5
+	ui->freq_label_5 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_5, " ");
+	lv_label_set_long_mode(ui->freq_label_5, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_5, 378, 50);
+	lv_obj_set_size(ui->freq_label_5, 9, 19);
+
+	//Write style for freq_label_5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_5, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_5, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_5, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_5, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_label_5, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_label_5, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_label_6
+	ui->freq_label_6 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_6, "频率 ");
+	lv_label_set_long_mode(ui->freq_label_6, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_6, 45, 102);
+	lv_obj_set_size(ui->freq_label_6, 127, 31);
+
+	//Write style for freq_label_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_bg_opa(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_width(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_6, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_6, &lv_customer_font_NSHRegular_24, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_6, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_6, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_back
+	ui->freq_back = lv_btn_create(ui->freq);
+	ui->freq_back_label = lv_label_create(ui->freq_back);
+	lv_label_set_text(ui->freq_back_label, "返     回 ");
+	lv_label_set_long_mode(ui->freq_back_label, LV_LABEL_LONG_WRAP);
+	lv_obj_align(ui->freq_back_label, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_style_pad_all(ui->freq_back, 0, LV_STATE_DEFAULT);
+	lv_obj_set_width(ui->freq_back_label, LV_PCT(100));
+	lv_obj_set_pos(ui->freq_back, 295, 698);
+	lv_obj_set_size(ui->freq_back, 154, 68);
+
+	//Write style for freq_back, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_back, 37, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_back, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_back, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_back, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_src(ui->freq_back, &_back_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_opa(ui->freq_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_save
+	ui->freq_save = lv_btn_create(ui->freq);
+	ui->freq_save_label = lv_label_create(ui->freq_save);
+	lv_label_set_text(ui->freq_save_label, "保     存 ");
+	lv_label_set_long_mode(ui->freq_save_label, LV_LABEL_LONG_WRAP);
+	lv_obj_align(ui->freq_save_label, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_style_pad_all(ui->freq_save, 0, LV_STATE_DEFAULT);
+	lv_obj_set_width(ui->freq_save_label, LV_PCT(100));
+	lv_obj_set_pos(ui->freq_save, 40, 698);
+	lv_obj_set_size(ui->freq_save, 154, 68);
+
+	//Write style for freq_save, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_save, 37, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_save, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_save, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_save, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_src(ui->freq_save, &_save_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_opa(ui->freq_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes freq_roller_1
 	ui->freq_roller_1 = lv_roller_create(ui->freq);
-	lv_roller_set_options(ui->freq_roller_1, "551\n552\n553\n554\n555\n556\n557\n558\n559\n560\n561\n562\n563\n564\n565\n566\n567\n568\n569\n570\n571\n572\n573\n574\n575\n576\n577\n578\n579\n580\n581\n582\n583\n584\n585\n586\n587\n588\n589\n590\n591\n592\n593\n594\n595\n596\n597\n598\n599\n600\n601\n602\n603\n604\n605\n606\n607\n608\n609\n610\n611\n612\n613\n614\n615\n616\n617\n618\n619\n620\n621\n622\n623\n624\n625\n626\n627\n628\n629\n630\n631\n632\n633\n634\n635\n636\n637\n638\n639\n640\n641\n642\n643\n644\n645\n646\n647\n648\n649\n650\n651\n652\n653\n654\n655\n656\n657\n658\n659\n660\n661\n662\n663\n664\n665\n666\n667\n668\n669\n670\n671\n672\n673\n674\n675\n676\n677\n678\n679\n680\n681\n682\n683\n684\n685\n686\n687\n688\n689\n690\n691\n692\n693\n694\n695\n696\n697\n698\n699\n700", LV_ROLLER_MODE_NORMAL);
-	lv_obj_set_pos(ui->freq_roller_1, 207, 171);
-	lv_obj_set_width(ui->freq_roller_1, 56);
-	lv_roller_set_selected(ui->freq_roller_1, FreqOffset, LV_ANIM_ON);
+	lv_roller_set_options(ui->freq_roller_1, "580\n581\n582\n583\n584\n585\n586\n587\n588\n589\n590\n591\n592\n593\n594\n595\n596\n597\n598\n599\n600\n601\n602\n603\n604\n605\n606\n607\n608\n609\n610\n611\n612\n613\n614\n615\n616\n617\n618\n619\n620\n621\n622\n623\n624\n625\n626\n627\n628\n629\n630\n631\n632\n633\n634\n635\n636\n637\n638\n639\n640\n641\n642\n643\n644\n645\n646\n647\n648\n649\n650\n651\n652\n653\n654\n655\n656\n657\n658\n659\n660\n661\n662\n663\n664\n665\n666\n667\n668\n669\n670\n671\n672\n673\n674\n675\n676\n677\n678\n679\n680", LV_ROLLER_MODE_NORMAL);
+	lv_obj_set_pos(ui->freq_roller_1, 188, 303);
+	lv_obj_set_width(ui->freq_roller_1, 113);
 
 	//Write style for freq_roller_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_radius(ui->freq_roller_1, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->freq_roller_1, 6, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->freq_roller_1, lv_color_hex(0xff6500), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_grad_dir(ui->freq_roller_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_width(ui->freq_roller_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_roller_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->freq_roller_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_roller_1, &lv_customer_font_NSHRegular_33, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_roller_1, &lv_customer_font_NSHRegular_48, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->freq_roller_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->freq_roller_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_width(ui->freq_roller_1, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_opa(ui->freq_roller_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(ui->freq_roller_1, lv_color_hex(0xe6e6e6), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_side(ui->freq_roller_1, LV_BORDER_SIDE_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_left(ui->freq_roller_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_roller_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_roller_1, lv_color_hex(0x114c8b), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_roller_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_right(ui->freq_roller_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_roller_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->freq_roller_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write style for freq_roller_1, Part: LV_PART_SELECTED, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->freq_roller_1, 0, LV_PART_SELECTED|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_roller_1, 255, LV_PART_SELECTED|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_roller_1, lv_color_hex(0x114C8B), LV_PART_SELECTED|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_roller_1, LV_GRAD_DIR_NONE, LV_PART_SELECTED|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->freq_roller_1, lv_color_hex(0xFFFFFF), LV_PART_SELECTED|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_roller_1, &lv_customer_font_NSHRegular_33, LV_PART_SELECTED|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_roller_1, &lv_customer_font_NSHRegular_60, LV_PART_SELECTED|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->freq_roller_1, 255, LV_PART_SELECTED|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->freq_roller_1, LV_TEXT_ALIGN_CENTER, LV_PART_SELECTED|LV_STATE_DEFAULT);
 
 	lv_roller_set_visible_row_count(ui->freq_roller_1, 3);
+	//Write codes freq_label_7
+	ui->freq_label_7 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_7, "kHz");
+	lv_label_set_long_mode(ui->freq_label_7, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_7, 323, 392);
+	lv_obj_set_size(ui->freq_label_7, 100, 32);
+
+	//Write style for freq_label_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_bg_opa(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_width(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_7, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_7, &lv_customer_font_NSHRegular_33, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_7, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_7, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_label_8
+	ui->freq_label_8 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_8, " ");
+	lv_label_set_long_mode(ui->freq_label_8, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_8, 0, 0);
+	lv_obj_set_size(ui->freq_label_8, 480, 800);
+
+	//Write style for freq_label_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_8, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_8, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_8, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_8, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_8, 172, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_label_8, lv_color_hex(0x114c8b), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_label_8, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_label_9
+	ui->freq_label_9 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_9, "保存成功 ");
+	lv_label_set_long_mode(ui->freq_label_9, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_9, 55, 323);
+	lv_obj_set_size(ui->freq_label_9, 368, 206);
+
+	//Write style for freq_label_9, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_9, 30, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_9, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_9, &lv_customer_font_AlibabaMed_50, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_9, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_9, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->freq_label_9, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->freq_label_9, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_9, 121, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes freq_label_10
+	ui->freq_label_10 = lv_label_create(ui->freq);
+	lv_label_set_text(ui->freq_label_10, " ");
+	lv_label_set_long_mode(ui->freq_label_10, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->freq_label_10, 199, 350);
+	lv_obj_set_size(ui->freq_label_10, 75, 75);
+
+	//Write style for freq_label_10, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_label_10, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_label_10, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_opa(ui->freq_label_10, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->freq_label_10, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->freq_label_10, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_src(ui->freq_label_10, &_success_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_opa(ui->freq_label_10, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes freq_btn_1
 	ui->freq_btn_1 = lv_btn_create(ui->freq);
 	ui->freq_btn_1_label = lv_label_create(ui->freq_btn_1);
-	lv_label_set_text(ui->freq_btn_1_label, "保  存 ");
+	lv_label_set_text(ui->freq_btn_1_label, "×");
 	lv_label_set_long_mode(ui->freq_btn_1_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->freq_btn_1_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->freq_btn_1, 0, LV_STATE_DEFAULT);
 	lv_obj_set_width(ui->freq_btn_1_label, LV_PCT(100));
-	lv_obj_set_pos(ui->freq_btn_1, 37, 695);
-	lv_obj_set_size(ui->freq_btn_1, 153, 67);
+	lv_obj_set_pos(ui->freq_btn_1, 364, 335);
+	lv_obj_set_size(ui->freq_btn_1, 45, 41);
 
 	//Write style for freq_btn_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->freq_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->freq_btn_1, lv_color_hex(0x00baab), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_grad_dir(ui->freq_btn_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->freq_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->freq_btn_1, 7, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->freq_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->freq_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->freq_btn_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_btn_1, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->freq_btn_1, lv_color_hex(0x808080), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->freq_btn_1, &lv_customer_font_NSHBlack_43, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->freq_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->freq_btn_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-	//Write codes freq_btn_2
-	ui->freq_btn_2 = lv_btn_create(ui->freq);
-	ui->freq_btn_2_label = lv_label_create(ui->freq_btn_2);
-	lv_label_set_text(ui->freq_btn_2_label, "返  回 ");
-	lv_label_set_long_mode(ui->freq_btn_2_label, LV_LABEL_LONG_WRAP);
-	lv_obj_align(ui->freq_btn_2_label, LV_ALIGN_CENTER, 0, 0);
-	lv_obj_set_style_pad_all(ui->freq_btn_2, 0, LV_STATE_DEFAULT);
-	lv_obj_set_width(ui->freq_btn_2_label, LV_PCT(100));
-	lv_obj_set_pos(ui->freq_btn_2, 287, 695);
-	lv_obj_set_size(ui->freq_btn_2, 153, 67);
-
-	//Write style for freq_btn_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->freq_btn_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->freq_btn_2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_grad_dir(ui->freq_btn_2, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_width(ui->freq_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->freq_btn_2, 7, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->freq_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->freq_btn_2, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->freq_btn_2, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_opa(ui->freq_btn_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_align(ui->freq_btn_2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//The custom code of freq.
 	

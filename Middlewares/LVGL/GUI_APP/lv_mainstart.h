@@ -42,6 +42,10 @@ extern uint32_t MotorLevel;
 extern SCREENID Screen_Id;
 extern SCREENSTATE ScreenState;
 extern DEVICESPARAM DevicesParam;
+extern uint8_t ClickCount;
+extern uint16_t slider_pos;
+extern uint32_t UnlockCount;
+extern uint8_t UnlockFlg;
 
 
 void lv_mainstart(void);

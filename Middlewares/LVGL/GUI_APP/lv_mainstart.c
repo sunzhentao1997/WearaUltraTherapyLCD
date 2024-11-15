@@ -6,6 +6,7 @@
 #include "usart.h"
 
 #include "dev_app.h"
+#include "tim.h"
 
 static void Screen_Boost(void);
 static void Screen_Charge(void);
@@ -16,15 +17,19 @@ SCREENSTATE ScreenState = READY;										//屏幕状态
 SCREENSTATE ScreenState_old = READY;								//屏幕历史状态
 lv_ui guider_ui;																		//GUI句柄
 
+uint8_t ClickCount = 0;
 uint8_t SlaveFlg = 0;																//数据保存标志位
 uint8_t UltraDuty = 0;															//脉冲占空比
 uint16_t FreqOffset = 0;														//频率偏移
-uint16_t LightLevel = 50;														//亮度
+uint16_t LightLevel = 100;														//亮度
 uint32_t MotorLevel = 0;														//震动等级
 
-static int16_t SliderVal = 1800;										//滑块值
+static int16_t SliderVal = 1200;										//滑块值
 static uint8_t LowBatteryFlg = 0;										//低电量标志位
-static char timebuf[] = "30:00";										//时间显示
+static char timebuf[] = "20:00";										//时间显示
+static uint16_t ClickTime = 0;
+
+extern uint16_t back_pos;
 
 void lv_mainstart(void)
 {
@@ -42,11 +47,29 @@ static void get_time_buff(void)
 
 void ScreenFunc(void)
 {
+	
+	#if 0
 		uint8_t id = 0;
 		static uint8_t BatteryStaOld = Boost_Level5;
 //		SendBatteryStateData = Boost_Level3;
-//		LowBatteryFlg = 1;
-	
+//		LowBatteryFlg = 0;
+		if(ClickCount == 1)
+		{
+			ClickTime++;	
+			if(ClickTime > 200)
+			{
+				ClickTime = 0;
+				ClickCount = 0;
+			}
+		}else if(ClickCount == 2)
+		{
+			ClickTime = 0;
+			ClickCount = 0;
+		}else
+		{
+				ClickTime = 0;
+		}
+		
 		if(SendBatteryStateData < Boost_Level1)
 		{
 				/*进入充电界面*/
@@ -92,11 +115,36 @@ void ScreenFunc(void)
 				}
 				Screen_Boost();
 		}
+		
+		if(UnlockFlg == 1 && (UnlockCount > 500))
+		{
+				lv_obj_add_flag(guider_ui.main_switch1, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_switch2, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_label_9, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_set_pos(guider_ui.main_btn_1, 70, 662);
+				UnlockFlg = 0;
+		}else if(UnlockFlg == 2)
+		{
+			back_pos -= 20;
+			if(back_pos < 70)
+			{
+				back_pos = 70;
+				UnlockFlg = 0;
+			}
+			lv_obj_set_pos(guider_ui.main_btn_1, (lv_coord_t)back_pos, 662);
+		}
+		#endif
 }
 
 uint8_t test[5] = {0x31,0x32,0x33,0x34,0x35}; 
 static void Screen_Boost(void)
 {
+	#if 0
 		static uint8_t BoostLevel = Boost_Level5;
 		if(ScreenState == WORK)
 		{
@@ -118,11 +166,11 @@ static void Screen_Boost(void)
 		{
 				if(ScreenState != ScreenState_old)
 				{
-						SliderVal = 1800;
+						SliderVal = 1200;
 						ScreenState_old = ScreenState;
 						ScreenTime = 0;
 					
-						memcpy(timebuf,"30:00",5);
+						memcpy(timebuf,"20:00",5);
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
 						lv_label_set_text(guider_ui.main_time, timebuf);
 						
@@ -130,10 +178,10 @@ static void Screen_Boost(void)
 				{
 					if(ScreenTime >= 1500)
 					{
-						SliderVal = 1800;
+						SliderVal = 1200;
 						ScreenTime = 0;
 						
-						memcpy(timebuf,"30:00",5);
+						memcpy(timebuf,"20:00",5);
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
 						lv_label_set_text(guider_ui.main_time, timebuf);
 					}
@@ -153,10 +201,11 @@ static void Screen_Boost(void)
 						memcpy(timebuf,"00:00",5);
 					
 						lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+						lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 						lv_obj_clear_flag(guider_ui.main_switch2, LV_OBJ_FLAG_HIDDEN);
 						lv_obj_clear_flag(guider_ui.main_switch1, LV_OBJ_FLAG_HIDDEN);
 					
-						lv_label_set_text(guider_ui.main_UltraPower, "— — ");
+						lv_label_set_text(guider_ui.main_UltraPower, "—— ");
 					  lv_label_set_text(guider_ui.main_change_label, "请选择 ");
 						lv_label_set_text(guider_ui.main_label_3, "治疗已完成 ");
 						lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
@@ -233,10 +282,12 @@ static void Screen_Boost(void)
 				}
 			}
 		}
+	#endif
 }
 
 static void Screen_Charge(void)
 {
+	#if 0
 		uint8_t id;
 		uint8_t chargelevel = 0;
 		static uint8_t Send_Val = 0;
@@ -283,6 +334,7 @@ static void Screen_Charge(void)
 				if(RefreshCount > 80)
 				{
 						//HAL_UART_Transmit(&huart1,test,5,0xFFFF);
+						__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, 500);
 					  RefreshCount = 0;
 						if((chact < Boost_Level1) && (chact >= SendBatteryStateData))
 						{
@@ -331,5 +383,6 @@ static void Screen_Charge(void)
 					}
 				}
 		}
+		#endif
 }
 
