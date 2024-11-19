@@ -220,13 +220,13 @@ typedef struct
 	lv_obj_t *password2_btn_1_label;
 	lv_obj_t *password2_label_14;
 	lv_obj_t *password2_label_15;
-	lv_obj_t *password2_label_18;
 	lv_obj_t *password2_btn_2;
 	lv_obj_t *password2_btn_2_label;
+	lv_obj_t *password2_label_19;
 	lv_obj_t *password2_label_17;
 	lv_obj_t *password2_btn_3;
 	lv_obj_t *password2_btn_3_label;
-	lv_obj_t *password2_label_19;
+	lv_obj_t *password2_label_18;
 	lv_obj_t *charge;
 	bool charge_del;
 	lv_obj_t *charge_label_1;

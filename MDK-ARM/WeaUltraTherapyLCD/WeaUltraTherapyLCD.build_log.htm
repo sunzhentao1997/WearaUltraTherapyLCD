@@ -27,16 +27,34 @@ Project File Date:  11/15/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'WeaUltraTherapyLCD'
-compiling freertos.c...
-../Core/Src/freertos.c(152): warning:  #177-D: variable "tag_j"  was declared but never referenced
-  	static uint16_t tag_j = 150;
-../Core/Src/freertos.c(153): warning:  #550-D: variable "tempval"  was set but never used
-  	uint16_t tempval = 0;
-../Core/Src/freertos.c: 2 warnings, 0 errors
+compiling setup_scr_vibra.c...
+..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(206): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->vibra_back_label, " è¿?     å›? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(206): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->vibra_back_label, " è¿?     å›? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(231): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->vibra_save_label, " ä¿?     å­? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(231): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->vibra_save_label, " ä¿?     å­? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c: 4 warnings, 0 errors
+compiling setup_scr_light.c...
+..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(255): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->light_back_label, " è¿?     å›? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(255): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->light_back_label, " è¿?     å›? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(280): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->light_save_label, " ä¿?     å­? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(280): warning:  #870-D: invalid multibyte character sequence
+  	lv_label_set_text(ui->light_save_label, " ä¿?     å­? ");
+..\Middlewares\LVGL\GUI_APP\setup_scr_light.c: 4 warnings, 0 errors
+compiling events_init.c...
+..\Middlewares\LVGL\GUI_APP\events_init.c(73): warning:  #111-D: statement is unreachable
+  	break;
+..\Middlewares\LVGL\GUI_APP\events_init.c: 1 warning, 0 errors
 linking...
-Program Size: Code=252956 RO-data=328464 RW-data=1228 ZI-data=3085300  
+Program Size: Code=298260 RO-data=501444 RW-data=1416 ZI-data=3085304  
 FromELF: creating hex file...
-"WeaUltraTherapyLCD\WeaUltraTherapyLCD.axf" - 0 Error(s), 2 Warning(s).
+"WeaUltraTherapyLCD\WeaUltraTherapyLCD.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,7 +77,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.2.0
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

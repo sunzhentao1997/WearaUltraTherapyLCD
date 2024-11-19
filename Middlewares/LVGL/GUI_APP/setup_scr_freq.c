@@ -179,31 +179,31 @@ void setup_scr_freq(lv_ui *ui)
 
 	//Write codes freq_label_6
 	ui->freq_label_6 = lv_label_create(ui->freq);
-	lv_label_set_text(ui->freq_label_6, "频率 ");
+	lv_label_set_text(ui->freq_label_6, " 频率 ");
 	lv_label_set_long_mode(ui->freq_label_6, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->freq_label_6, 45, 102);
+	lv_obj_set_pos(ui->freq_label_6, 45, 101);
 	lv_obj_set_size(ui->freq_label_6, 127, 31);
 
 	//Write style for freq_label_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->freq_label_6, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->freq_label_6, &lv_customer_font_NSHRegular_24, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->freq_label_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->freq_label_6, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->freq_label_6, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_top(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_right(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_bottom(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->freq_label_6, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes freq_back
 	ui->freq_back = lv_btn_create(ui->freq);
 	ui->freq_back_label = lv_label_create(ui->freq_back);
-	lv_label_set_text(ui->freq_back_label, "返     回 ");
+	lv_label_set_text(ui->freq_back_label, " 返     回 ");
 	lv_label_set_long_mode(ui->freq_back_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->freq_back_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->freq_back, 0, LV_STATE_DEFAULT);
@@ -221,18 +221,19 @@ void setup_scr_freq(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_src(ui->freq_back, &_back_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_opa(ui->freq_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_recolor_opa(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor(ui->freq_back, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->freq_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->freq_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes freq_save
 	ui->freq_save = lv_btn_create(ui->freq);
 	ui->freq_save_label = lv_label_create(ui->freq_save);
-	lv_label_set_text(ui->freq_save_label, "保     存 ");
+	lv_label_set_text(ui->freq_save_label, " 保     存 ");
 	lv_label_set_long_mode(ui->freq_save_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->freq_save_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->freq_save, 0, LV_STATE_DEFAULT);
 	lv_obj_set_width(ui->freq_save_label, LV_PCT(100));
-	lv_obj_set_pos(ui->freq_save, 40, 698);
+	lv_obj_set_pos(ui->freq_save, 42, 698);
 	lv_obj_set_size(ui->freq_save, 154, 68);
 
 	//Write style for freq_save, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -245,13 +246,14 @@ void setup_scr_freq(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_src(ui->freq_save, &_save_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_opa(ui->freq_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_recolor_opa(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor(ui->freq_save, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->freq_save, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->freq_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes freq_roller_1
 	ui->freq_roller_1 = lv_roller_create(ui->freq);
 	lv_roller_set_options(ui->freq_roller_1, "580\n581\n582\n583\n584\n585\n586\n587\n588\n589\n590\n591\n592\n593\n594\n595\n596\n597\n598\n599\n600\n601\n602\n603\n604\n605\n606\n607\n608\n609\n610\n611\n612\n613\n614\n615\n616\n617\n618\n619\n620\n621\n622\n623\n624\n625\n626\n627\n628\n629\n630\n631\n632\n633\n634\n635\n636\n637\n638\n639\n640\n641\n642\n643\n644\n645\n646\n647\n648\n649\n650\n651\n652\n653\n654\n655\n656\n657\n658\n659\n660\n661\n662\n663\n664\n665\n666\n667\n668\n669\n670\n671\n672\n673\n674\n675\n676\n677\n678\n679\n680", LV_ROLLER_MODE_NORMAL);
-	lv_obj_set_pos(ui->freq_roller_1, 188, 303);
+	lv_obj_set_pos(ui->freq_roller_1, 188, 313);
 	lv_obj_set_width(ui->freq_roller_1, 113);
 
 	//Write style for freq_roller_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -280,7 +282,7 @@ void setup_scr_freq(lv_ui *ui)
 	lv_roller_set_visible_row_count(ui->freq_roller_1, 3);
 	//Write codes freq_label_7
 	ui->freq_label_7 = lv_label_create(ui->freq);
-	lv_label_set_text(ui->freq_label_7, "kHz");
+	lv_label_set_text(ui->freq_label_7, " kHz ");
 	lv_label_set_long_mode(ui->freq_label_7, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->freq_label_7, 323, 392);
 	lv_obj_set_size(ui->freq_label_7, 100, 32);
@@ -307,6 +309,7 @@ void setup_scr_freq(lv_ui *ui)
 	lv_label_set_long_mode(ui->freq_label_8, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->freq_label_8, 0, 0);
 	lv_obj_set_size(ui->freq_label_8, 480, 800);
+	lv_obj_add_flag(ui->freq_label_8, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for freq_label_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->freq_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -328,10 +331,11 @@ void setup_scr_freq(lv_ui *ui)
 
 	//Write codes freq_label_9
 	ui->freq_label_9 = lv_label_create(ui->freq);
-	lv_label_set_text(ui->freq_label_9, "保存成功 ");
+	lv_label_set_text(ui->freq_label_9, " 保存成功 ");
 	lv_label_set_long_mode(ui->freq_label_9, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->freq_label_9, 55, 323);
 	lv_obj_set_size(ui->freq_label_9, 368, 206);
+	lv_obj_add_flag(ui->freq_label_9, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for freq_label_9, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->freq_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -357,6 +361,7 @@ void setup_scr_freq(lv_ui *ui)
 	lv_label_set_long_mode(ui->freq_label_10, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->freq_label_10, 199, 350);
 	lv_obj_set_size(ui->freq_label_10, 75, 75);
+	lv_obj_add_flag(ui->freq_label_10, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for freq_label_10, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -387,6 +392,7 @@ void setup_scr_freq(lv_ui *ui)
 	lv_obj_set_width(ui->freq_btn_1_label, LV_PCT(100));
 	lv_obj_set_pos(ui->freq_btn_1, 364, 335);
 	lv_obj_set_size(ui->freq_btn_1, 45, 41);
+	lv_obj_add_flag(ui->freq_btn_1, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for freq_btn_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->freq_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

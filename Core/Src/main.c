@@ -55,18 +55,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t ScreenTime = 0;										//屏幕主界面数据刷新时�?
+uint32_t ScreenTime = 0;										//屝幕主界面数杮刷新时�?
 uint32_t StandyTime = 0;										//待机时间
 uint32_t ChargeRecvTime = 0;								//充电接收时间
-uint32_t BatteryTime = 0;										//主界面电量刷新时�?
-uint32_t BackLedTime = 0;			  						//背光�?启时�?
-uint32_t PowerOnTime = 0;										//正式�?机时�?
+uint32_t BatteryTime = 0;										//主界面电針刷新时�?
+uint32_t BackLedTime = 0;			  						//背光�?坯时�?
+uint32_t PowerOnTime = 0;										//正弝�?机时�?
 uint32_t Charge_Time = 0;										//充电时长
 uint32_t ShuntDownCount = 0;
 uint32_t MotorTime = 0;
-uint8_t CompleteFlg = 0;										//�?机成功标志位
+uint8_t CompleteFlg = 0;										//�?机戝功标志佝
 uint32_t UltraWorkTim = 0;
 uint32_t UnlockCount = 0;
+uint32_t VibraFeedBackTime = 0;												//震动反馈时间
 
 /* USER CODE END PV */
 
@@ -129,8 +130,8 @@ int main(void)
 	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
 	my_mem_init(SRAMEX);                        				/* 初始化外部SRAM内存�? */
 	lv_init();                                          /* lvgl系统初始�? */
-	lv_port_disp_init();                                /* lvgl显示接口初始�?,放在lv_init()的后�? */
-	lv_port_indev_init();                               /* lvgl输入接口初始�?,放在lv_init()的后�? */
+	lv_port_disp_init();                                /* lvgl显示接坣初始�?,放在lv_init()的坎�? */
+	lv_port_indev_init();                               /* lvgl输入接坣初始�?,放在lv_init()的坎�? */
 	
 	HAL_TIM_Base_Start(&htim2);
 	HAL_TIM_Base_Start(&htim3);
@@ -255,6 +256,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			ShuntDownCount++;
 			UltraWorkTim++;
 			UnlockCount++;
+      VibraFeedBackTime++;
 		
 			if(PowerOnTime > 1500)
 			{

@@ -10,6 +10,7 @@
 
 static void Screen_Boost(void);
 static void Screen_Charge(void);
+static void Vibration_Feedback(void);
 
 DEVICESPARAM DevicesParam;													//设备出厂参数
 SCREENID Screen_Id = MAIN_SCREEN;										//屏幕ID
@@ -17,12 +18,13 @@ SCREENSTATE ScreenState = READY;										//屏幕状态
 SCREENSTATE ScreenState_old = READY;								//屏幕历史状态
 lv_ui guider_ui;																		//GUI句柄
 
+uint8_t VibraChangeFlg = 0;													//震动修改标志位
 uint8_t ClickCount = 0;
 uint8_t SlaveFlg = 0;																//数据保存标志位
 uint8_t UltraDuty = 0;															//脉冲占空比
 uint16_t FreqOffset = 0;														//频率偏移
 uint16_t LightLevel = 100;														//亮度
-uint32_t MotorLevel = 0;														//震动等级
+uint32_t MotorLevel = 0;														//震动等级						
 
 static int16_t SliderVal = 1200;										//滑块值
 static uint8_t LowBatteryFlg = 0;										//低电量标志位
@@ -47,7 +49,7 @@ static void get_time_buff(void)
 
 void ScreenFunc(void)
 {
-	
+		Vibration_Feedback();
 	#if 0
 		uint8_t id = 0;
 		static uint8_t BatteryStaOld = Boost_Level5;
@@ -384,5 +386,47 @@ static void Screen_Charge(void)
 				}
 		}
 		#endif
+}
+
+static void Vibration_Feedback(void)
+{
+	uint32_t vibra_value = 0;
+	if(VibraChangeFlg == 1)
+	{
+		vibra_value = (uint32_t)MotorLevel * 106;
+		DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_SET);
+		__HAL_TIM_SetCompare(MOTOR_HANDLE,MOTOR_CHB,vibra_value);
+
+		if(VibraFeedBackTime > 2000)
+		{
+			VibraChangeFlg = 0;
+			VibraFeedBackTime = 0;
+			DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_RESET);
+			__HAL_TIM_SetCompare(MOTOR_HANDLE,MOTOR_CHB,0);
+		}
+	}
+	else
+	{
+		VibraFeedBackTime = 0;
+	}
+}
+
+uint32_t DisplayTime = 0;
+uint8_t DisplayFlg = 1;
+static void  ScreenOfInterest(void)
+{
+
+	if(DisplayTime > 120000)
+	{
+		DisplayFlg = 0;
+	}
+
+	if((DisplayFlg == 1) && (DevWorkState == WORK_STATE))
+	{
+		__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, LightLevel*10);
+	}else if((DisplayFlg == 0) && (DevWorkState == WORK_STATE))	
+	{
+		__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, 10);
+	}
 }
 

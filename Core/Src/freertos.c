@@ -171,51 +171,42 @@ void ScreenRGBTask(void *argument)
 		}else if(StartFlg == 1)
 		{
 				ScreenFunc();
-				tick = HAL_GetTick();
-				if((tick - old_tick) > 100)
-				{
-					old_tick = tick;
-					if(tag_i == 50)
-					{
-						lv_obj_set_size(guider_ui.main_label_14, 50, 50);
-						lv_obj_set_pos(guider_ui.main_label_14, (191+25), (497+25));
-						tag_i = 60;	
-					}else if(tag_i == 60)
-					{
-						lv_obj_set_size(guider_ui.main_label_14, 60, 60);
-						lv_obj_set_pos(guider_ui.main_label_14, (191+20), (497+20));
-						tag_i = 70;
-					}else if(tag_i == 70)
-					{
-						lv_obj_set_size(guider_ui.main_label_14, 70, 70);
-						lv_obj_set_pos(guider_ui.main_label_14, (191+15), (497+15));
-						tag_i = 80;
-					}else if(tag_i == 80)
-					{
-						lv_obj_set_size(guider_ui.main_label_14, 80, 80);
-						lv_obj_set_pos(guider_ui.main_label_14, (191+10), (497+10));
-						tag_i = 90;
-					}else if(tag_i == 90)
-					{
-						lv_obj_set_size(guider_ui.main_label_14, 90, 90);
-						lv_obj_set_pos(guider_ui.main_label_14, (191+5), (497+5));
-						tag_i = 100;
-					}else if(tag_i == 100)
-					{
-						lv_obj_set_size(guider_ui.main_label_14, 100, 100);
-						lv_obj_set_pos(guider_ui.main_label_14, (191), (497));
-						tag_i = 50;
-					}
-				}
-				
-//				tag_i += 50;
-//				
-//				if(tag_j > 150)
+//				tick = HAL_GetTick();
+//				if((tick - old_tick) > 100)
 //				{
-//					tag_j = 50;	
+//					old_tick = tick;
+//					if(tag_i == 50)
+//					{
+//						lv_obj_set_size(guider_ui.main_label_14, 50, 50);
+//						lv_obj_set_pos(guider_ui.main_label_14, (191+25), (497+25));
+//						tag_i = 60;	
+//					}else if(tag_i == 60)
+//					{
+//						lv_obj_set_size(guider_ui.main_label_14, 60, 60);
+//						lv_obj_set_pos(guider_ui.main_label_14, (191+20), (497+20));
+//						tag_i = 70;
+//					}else if(tag_i == 70)
+//					{
+//						lv_obj_set_size(guider_ui.main_label_14, 70, 70);
+//						lv_obj_set_pos(guider_ui.main_label_14, (191+15), (497+15));
+//						tag_i = 80;
+//					}else if(tag_i == 80)
+//					{
+//						lv_obj_set_size(guider_ui.main_label_14, 80, 80);
+//						lv_obj_set_pos(guider_ui.main_label_14, (191+10), (497+10));
+//						tag_i = 90;
+//					}else if(tag_i == 90)
+//					{
+//						lv_obj_set_size(guider_ui.main_label_14, 90, 90);
+//						lv_obj_set_pos(guider_ui.main_label_14, (191+5), (497+5));
+//						tag_i = 100;
+//					}else if(tag_i == 100)
+//					{
+//						lv_obj_set_size(guider_ui.main_label_14, 100, 100);
+//						lv_obj_set_pos(guider_ui.main_label_14, (191), (497));
+//						tag_i = 50;
+//					}
 //				}
-//				lv_obj_set_size(guider_ui.main_label_15, tag_j, tag_j);
-//				tag_j += 50;
 		}
 		Beep_MainFunc();
 		lv_timer_handler();

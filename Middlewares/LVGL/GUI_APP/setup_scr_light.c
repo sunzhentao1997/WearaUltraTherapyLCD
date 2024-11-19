@@ -179,7 +179,7 @@ void setup_scr_light(lv_ui *ui)
 
 	//Write codes light_label_6
 	ui->light_label_6 = lv_label_create(ui->light);
-	lv_label_set_text(ui->light_label_6, "亮度 ");
+	lv_label_set_text(ui->light_label_6, " 亮度 ");
 	lv_label_set_long_mode(ui->light_label_6, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->light_label_6, 45, 102);
 	lv_obj_set_size(ui->light_label_6, 127, 31);
@@ -202,10 +202,10 @@ void setup_scr_light(lv_ui *ui)
 
 	//Write codes light_slider_1
 	ui->light_slider_1 = lv_slider_create(ui->light);
-	lv_slider_set_range(ui->light_slider_1, 0, 100);
+	lv_slider_set_range(ui->light_slider_1, 1, 100);
 	lv_slider_set_mode(ui->light_slider_1, LV_SLIDER_MODE_NORMAL);
 	lv_slider_set_value(ui->light_slider_1, 100, LV_ANIM_OFF);
-	lv_obj_set_pos(ui->light_slider_1, 154, 193);
+	lv_obj_set_pos(ui->light_slider_1, 138, 194);
 	lv_obj_set_size(ui->light_slider_1, 207, 424);
 
 	//Write style for light_slider_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -228,9 +228,9 @@ void setup_scr_light(lv_ui *ui)
 
 	//Write codes light_precent
 	ui->light_precent = lv_label_create(ui->light);
-	lv_label_set_text(ui->light_precent, "50%");
+	lv_label_set_text(ui->light_precent, " 50% ");
 	lv_label_set_long_mode(ui->light_precent, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->light_precent, 207, 158);
+	lv_obj_set_pos(ui->light_precent, 190, 158);
 	lv_obj_set_size(ui->light_precent, 100, 32);
 
 	//Write style for light_precent, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -252,7 +252,7 @@ void setup_scr_light(lv_ui *ui)
 	//Write codes light_back
 	ui->light_back = lv_btn_create(ui->light);
 	ui->light_back_label = lv_label_create(ui->light_back);
-	lv_label_set_text(ui->light_back_label, "返     回 ");
+	lv_label_set_text(ui->light_back_label, " 返     回 ");
 	lv_label_set_long_mode(ui->light_back_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->light_back_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->light_back, 0, LV_STATE_DEFAULT);
@@ -265,7 +265,7 @@ void setup_scr_light(lv_ui *ui)
 	lv_obj_set_style_radius(ui->light_back, 37, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_src(ui->light_back, &_back_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_opa(ui->light_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_recolor(ui->light_back, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor(ui->light_back, lv_color_hex(0x0A2847), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_recolor_opa(ui->light_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->light_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->light_back, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -277,12 +277,12 @@ void setup_scr_light(lv_ui *ui)
 	//Write codes light_save
 	ui->light_save = lv_btn_create(ui->light);
 	ui->light_save_label = lv_label_create(ui->light_save);
-	lv_label_set_text(ui->light_save_label, "保     存 ");
+	lv_label_set_text(ui->light_save_label, " 保     存 ");
 	lv_label_set_long_mode(ui->light_save_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->light_save_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->light_save, 0, LV_STATE_DEFAULT);
 	lv_obj_set_width(ui->light_save_label, LV_PCT(100));
-	lv_obj_set_pos(ui->light_save, 40, 698);
+	lv_obj_set_pos(ui->light_save, 42, 698);
 	lv_obj_set_size(ui->light_save, 154, 68);
 
 	//Write style for light_save, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -295,7 +295,7 @@ void setup_scr_light(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->light_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_src(ui->light_save, &_save_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_opa(ui->light_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_recolor(ui->light_save, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor(ui->light_save, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_img_recolor_opa(ui->light_save, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->light_save, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
@@ -305,6 +305,7 @@ void setup_scr_light(lv_ui *ui)
 	lv_label_set_long_mode(ui->light_label_7, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->light_label_7, 0, 0);
 	lv_obj_set_size(ui->light_label_7, 480, 800);
+	lv_obj_add_flag(ui->light_label_7, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for light_label_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->light_label_7, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -326,10 +327,11 @@ void setup_scr_light(lv_ui *ui)
 
 	//Write codes light_label_8
 	ui->light_label_8 = lv_label_create(ui->light);
-	lv_label_set_text(ui->light_label_8, "保存成功 ");
+	lv_label_set_text(ui->light_label_8, " 保存成功 ");
 	lv_label_set_long_mode(ui->light_label_8, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->light_label_8, 55, 323);
 	lv_obj_set_size(ui->light_label_8, 368, 206);
+	lv_obj_add_flag(ui->light_label_8, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for light_label_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->light_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -359,16 +361,17 @@ void setup_scr_light(lv_ui *ui)
 	lv_obj_set_width(ui->light_btn_1_label, LV_PCT(100));
 	lv_obj_set_pos(ui->light_btn_1, 364, 335);
 	lv_obj_set_size(ui->light_btn_1, 45, 41);
+	lv_obj_add_flag(ui->light_btn_1, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for light_btn_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->light_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->light_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->light_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->light_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->light_btn_1, lv_color_hex(0x808080), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->light_btn_1, &lv_customer_font_NSHBlack_43, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->light_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->light_btn_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->light_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->light_btn_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes light_label_9
 	ui->light_label_9 = lv_label_create(ui->light);
@@ -376,25 +379,26 @@ void setup_scr_light(lv_ui *ui)
 	lv_label_set_long_mode(ui->light_label_9, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->light_label_9, 199, 350);
 	lv_obj_set_size(ui->light_label_9, 75, 75);
+	lv_obj_add_flag(ui->light_label_9, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for light_label_9, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_bg_opa(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_src(ui->light_label_9, &_success_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_opa(ui->light_label_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_recolor_opa(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(ui->light_label_9, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->light_label_9, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_opa(ui->light_label_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->light_label_9, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(ui->light_label_9, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_top(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_right(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_bottom(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_src(ui->light_label_9, &_success_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_opa(ui->light_label_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_recolor_opa(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//The custom code of light.
 	

@@ -46,7 +46,8 @@ extern uint8_t ClickCount;
 extern uint16_t slider_pos;
 extern uint32_t UnlockCount;
 extern uint8_t UnlockFlg;
-
+extern uint8_t VibraChangeFlg;	
+extern uint32_t VibraFeedBackTime;
 
 void lv_mainstart(void);
 void ScreenFunc(void);
