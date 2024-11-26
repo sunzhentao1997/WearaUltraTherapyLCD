@@ -54,7 +54,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 extern uint32_t BackLedTime;
-
+static uint8_t StartFlg = 0;
 
 /* USER CODE END Variables */
 /* Definitions for ScreenRGB */
@@ -81,6 +81,18 @@ const osThreadAttr_t UltraApp_attributes = {
   .stack_size = sizeof(UltraAppBuffer),
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for OtherFunc */
+osThreadId_t OtherFuncHandle;
+uint32_t OtherFuncBuffer[ 128 ];
+osStaticThreadDef_t OtherFuncControlBlock;
+const osThreadAttr_t OtherFunc_attributes = {
+  .name = "OtherFunc",
+  .cb_mem = &OtherFuncControlBlock,
+  .cb_size = sizeof(OtherFuncControlBlock),
+  .stack_mem = &OtherFuncBuffer[0],
+  .stack_size = sizeof(OtherFuncBuffer),
+  .priority = (osPriority_t) osPriorityLow,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -89,6 +101,7 @@ const osThreadAttr_t UltraApp_attributes = {
 
 void ScreenRGBTask(void *argument);
 void UltraAppTask(void *argument);
+void OtherFuncTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -125,6 +138,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of UltraApp */
   UltraAppHandle = osThreadNew(UltraAppTask, NULL, &UltraApp_attributes);
 
+  /* creation of OtherFunc */
+  OtherFuncHandle = osThreadNew(OtherFuncTask, NULL, &OtherFunc_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -145,11 +161,6 @@ void MX_FREERTOS_Init(void) {
 void ScreenRGBTask(void *argument)
 {
   /* USER CODE BEGIN ScreenRGBTask */
-	static uint32_t old_tick = 0;
-	uint32_t tick = 0;
-	static uint8_t StartFlg = 0;
-	static uint16_t tag_i = 100;
-	static uint16_t tag_j = 150;
 	uint16_t tempval = 0;
 	lv_mainstart();
   /* Infinite loop */
@@ -161,7 +172,7 @@ void ScreenRGBTask(void *argument)
 								
 				if(BackLedTime > 1500)
 				{
-					__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,1000);
+					__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,tempval);
 				}
 				if(BackLedTime > 3450)
 				{
@@ -171,44 +182,8 @@ void ScreenRGBTask(void *argument)
 		}else if(StartFlg == 1)
 		{
 				ScreenFunc();
-//				tick = HAL_GetTick();
-//				if((tick - old_tick) > 100)
-//				{
-//					old_tick = tick;
-//					if(tag_i == 50)
-//					{
-//						lv_obj_set_size(guider_ui.main_label_14, 50, 50);
-//						lv_obj_set_pos(guider_ui.main_label_14, (191+25), (497+25));
-//						tag_i = 60;	
-//					}else if(tag_i == 60)
-//					{
-//						lv_obj_set_size(guider_ui.main_label_14, 60, 60);
-//						lv_obj_set_pos(guider_ui.main_label_14, (191+20), (497+20));
-//						tag_i = 70;
-//					}else if(tag_i == 70)
-//					{
-//						lv_obj_set_size(guider_ui.main_label_14, 70, 70);
-//						lv_obj_set_pos(guider_ui.main_label_14, (191+15), (497+15));
-//						tag_i = 80;
-//					}else if(tag_i == 80)
-//					{
-//						lv_obj_set_size(guider_ui.main_label_14, 80, 80);
-//						lv_obj_set_pos(guider_ui.main_label_14, (191+10), (497+10));
-//						tag_i = 90;
-//					}else if(tag_i == 90)
-//					{
-//						lv_obj_set_size(guider_ui.main_label_14, 90, 90);
-//						lv_obj_set_pos(guider_ui.main_label_14, (191+5), (497+5));
-//						tag_i = 100;
-//					}else if(tag_i == 100)
-//					{
-//						lv_obj_set_size(guider_ui.main_label_14, 100, 100);
-//						lv_obj_set_pos(guider_ui.main_label_14, (191), (497));
-//						tag_i = 50;
-//					}
-//				}
+        Beep_MainFunc();
 		}
-		Beep_MainFunc();
 		lv_timer_handler();
     osDelay(5);
   }
@@ -232,15 +207,39 @@ void UltraAppTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		DevAdc_MainFunc();
-		DevAPP_MainFunc();
-		DevMPC5043_MainFunc();
-		UltraParam_Set();
-		Low_Battery_Warning();
-				
+    if(StartFlg == 1)
+    {
+      DevAdc_MainFunc();
+      DevAPP_MainFunc();
+      DevMPC5043_MainFunc();
+      UltraParam_Set();
+    }
     osDelay(20);
   }
   /* USER CODE END UltraAppTask */
+}
+
+/* USER CODE BEGIN Header_OtherFuncTask */
+/**
+* @brief Function implementing the OtherFunc thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_OtherFuncTask */
+void OtherFuncTask(void *argument)
+{
+  /* USER CODE BEGIN OtherFuncTask */
+
+  /* Infinite loop */
+  for(;;)
+  {
+    if(StartFlg == 1)
+    {
+      Screen_TriggerFunc();
+    }
+    osDelay(100);
+  }
+  /* USER CODE END OtherFuncTask */
 }
 
 /* Private application code --------------------------------------------------*/

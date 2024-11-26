@@ -20,27 +20,27 @@ static void ElectricityDetectionAlgorithm(void);
 
 const uint8_t BatteryBuff[21] = 
 {
-		Boost_Level1,
-		Boost_Level1,
-		Boost_Level1,
-		Boost_Level1,
-		Boost_Level1,
-		Boost_Level2,
-		Boost_Level2,
-		Boost_Level2,
-		Boost_Level2,
-		Boost_Level3,
-		Boost_Level3,
-		Boost_Level3,
-		Boost_Level3,
-		Boost_Level4,
-		Boost_Level4,
-		Boost_Level4,
-		Boost_Level4,
-		Boost_Level5,
-		Boost_Level5,
-		Boost_Level5,
-		Boost_Level5,
+	Boost_Level1,
+	Boost_Level1,
+	Boost_Level1,
+	Boost_Level1,
+	Boost_Level1,
+	Boost_Level2,
+	Boost_Level2,
+	Boost_Level2,
+	Boost_Level2,
+	Boost_Level3,
+	Boost_Level3,
+	Boost_Level3,
+	Boost_Level3,
+	Boost_Level4,
+	Boost_Level4,
+	Boost_Level4,
+	Boost_Level4,
+	Boost_Level5,
+	Boost_Level5,
+	Boost_Level5,
+	Boost_Level5,
 };
 
 const float battery_voltage[21] = {
@@ -145,7 +145,7 @@ static uint16_t AdcSampleFilt(uint16_t *buff,uint8_t len)
         return 0.0;
     }
 
-    // 找到最大值和最小值
+    // 找到最大值和最小�?
     max_val = buff[0];
     min_val = buff[0];
     for (tag_i = 1; tag_i < len; tag_i++) {
@@ -162,7 +162,7 @@ static uint16_t AdcSampleFilt(uint16_t *buff,uint8_t len)
             sum += buff[tag_i];
     }
 
-    // 计算平均值
+    // 计算平均�?
     average = (float)(sum - max_val - max_val) / (len - 2);
     return (uint16_t)average;
 }
@@ -170,15 +170,15 @@ static uint16_t AdcSampleFilt(uint16_t *buff,uint8_t len)
 
 
 /**
- * @brief 使用二分查找法在查找表中进行插值查找
+ * @brief 使用二分查找法在查找表中进�?�插值查�?
  *
- * 该函数使用二分查找法在查找表中查找给定的输入值 `u0`，并进行插值以获得更精确的结果。
+ * 该函数使用二分查找法在查找表�?查找给定的输入�? `u0`，并进�?�插值以获得更精�?的结果�?
  *
- * @param u0 输入值，用于在查找表中进行查找。
- * @param bp0 查找表的基点数组，包含查找表的各个基点值。
- * @param table 查找表数组，包含与基点对应的值。
- * @param maxIndex 查找表的最大索引值，表示查找表的大小减一。
- * @return 返回通过插值计算得到的查找结果。
+ * @param u0 输入值，用于在查找表�?进�?�查找�?
+ * @param bp0 查找表的基点数组，包�?查找表的各个基点值�?
+ * @param table 查找表数组，包含与基点�?�应的值�?
+ * @param maxIndex 查找表的最大索引值，表示查找表的大小减一�?
+ * @return 返回通过插值�?�算得到的查找结果�?
  */
 static float look1_iflf_binlxpw(float u0, const float bp0[], const float table[], uint32_t maxIndex)
 {

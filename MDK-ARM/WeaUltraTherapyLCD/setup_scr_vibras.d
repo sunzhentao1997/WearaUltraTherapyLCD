@@ -133,3 +133,4 @@ weaultratherapylcd\setup_scr_vibras.o: ..\Middlewares\LVGL\GUI_APP\gui_guider.h
 weaultratherapylcd\setup_scr_vibras.o: ..\Middlewares\LVGL\GUI_APP\events_init.h
 weaultratherapylcd\setup_scr_vibras.o: ..\Middlewares\LVGL\GUI_APP\widgets_init.h
 weaultratherapylcd\setup_scr_vibras.o: ..\Middlewares\LVGL\GUI_APP\custom.h
+weaultratherapylcd\setup_scr_vibras.o: ..\Middlewares\LVGL\GUI_APP\lv_mainstart.h

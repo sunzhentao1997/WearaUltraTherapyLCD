@@ -1,6 +1,6 @@
 Dependencies for Project 'WeaUltraTherapyLCD', Target 'WeaUltraTherapyLCD': (DO NOT MODIFY !)
-F (startup_stm32f429xx.s)(0x672D88C9)(--cpu Cortex-M4.fp -g --apcs=interwork -I ../Core/Inc-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 527" --pd "_RTE_ SETA 1" --pd "STM32F429xx SETA 1"--list startup_stm32f429xx.lst --xref -o weaultratherapylcd\startup_stm32f429xx.o --depend weaultratherapylcd\startup_stm32f429xx.d)
-F (../Core/Src/main.c)(0x673C4FAD)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\main.o --omf_browse weaultratherapylcd\main.crf --depend weaultratherapylcd\main.d)
+F (startup_stm32f429xx.s)(0x673C6B97)(--cpu Cortex-M4.fp -g --apcs=interwork -I ../Core/Inc-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 527" --pd "_RTE_ SETA 1" --pd "STM32F429xx SETA 1"--list startup_stm32f429xx.lst --xref -o weaultratherapylcd\startup_stm32f429xx.o --depend weaultratherapylcd\startup_stm32f429xx.d)
+F (../Core/Src/main.c)(0x6743F02E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\main.o --omf_browse weaultratherapylcd\main.crf --depend weaultratherapylcd\main.d)
 I (../Core/Inc/main.h)(0x67176247)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x670A2300)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67236840)
@@ -189,14 +189,15 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/examples/porting/lv_port_indev_template.h)(0x6111E312)
 I (../Devices/Screen/dev_st7701.h)(0x670C8950)
-I (../Devices/App/dev_app.h)(0x6736ECF7)
+I (../Devices/App/dev_app.h)(0x673D5099)
 I (../Devices/App/dev_ad9833.h)(0x670A164B)
 I (../Devices/App/dev_adc.h)(0x670A164B)
 I (../Devices/App/dev_beep.h)(0x671F63F9)
 I (../Devices/App/dev_flash.h)(0x671B565F)
 I (../Devices/App/dev_mpc5043.h)(0x670A164B)
-I (../Devices/App/dev_control.h)(0x671A0781)
+I (../Devices/App/dev_control.h)(0x673EB3E3)
 I (../Devices/App/dev_gpio.h)(0x670A164B)
+I (../Middlewares/LVGL/GUI_APP/lv_mainstart.h)(0x67441781)
 F (../Core/Src/gpio.c)(0x67176244)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\gpio.o --omf_browse weaultratherapylcd\gpio.crf --depend weaultratherapylcd\gpio.d)
 I (../Core/Inc/gpio.h)(0x670C816F)
 I (../Core/Inc/main.h)(0x67176247)
@@ -238,7 +239,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x670A2300)
-F (../Core/Src/freertos.c)(0x673AD767)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\freertos.o --omf_browse weaultratherapylcd\freertos.crf --depend weaultratherapylcd\freertos.d)
+F (../Core/Src/freertos.c)(0x673EB3D4)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\freertos.o --omf_browse weaultratherapylcd\freertos.crf --depend weaultratherapylcd\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x670A22CC)
 I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
@@ -289,7 +290,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x670A2300)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x670A22CC)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x670A22CC)
-I (../Middlewares/LVGL/GUI_APP/lv_mainstart.h)(0x673C4F1C)
+I (../Middlewares/LVGL/GUI_APP/lv_mainstart.h)(0x67441781)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -420,14 +421,14 @@ I (../Devices/Screen/dev_gt911.h)(0x670CC4B9)
 I (../Devices/Screen/dev_ltdc.h)(0x670C89B2)
 I (../Devices/App/dev_beep.h)(0x671F63F9)
 I (../Middlewares/LVGL/GUI_APP/custom.h)(0x66F6177C)
-I (../Middlewares/LVGL/GUI_APP/gui_guider.h)(0x673B0649)
+I (../Middlewares/LVGL/GUI_APP/gui_guider.h)(0x6743F025)
 I (../Core/Inc/tim.h)(0x67176409)
-I (../Devices/App/dev_app.h)(0x6736ECF7)
+I (../Devices/App/dev_app.h)(0x673D5099)
 I (../Devices/App/dev_ad9833.h)(0x670A164B)
 I (../Devices/App/dev_adc.h)(0x670A164B)
 I (../Devices/App/dev_flash.h)(0x671B565F)
 I (../Devices/App/dev_mpc5043.h)(0x670A164B)
-I (../Devices/App/dev_control.h)(0x671A0781)
+I (../Devices/App/dev_control.h)(0x673EB3E3)
 I (../Devices/App/dev_gpio.h)(0x670A164B)
 F (../Core/Src/adc.c)(0x670C9B79)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\adc.o --omf_browse weaultratherapylcd\adc.crf --depend weaultratherapylcd\adc.d)
 I (../Core/Inc/adc.h)(0x670C9B79)
@@ -15018,10 +15019,10 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-F (..\Middlewares\LVGL\GUI_APP\events_init.c)(0x673C52B1)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\events_init.o --omf_browse weaultratherapylcd\events_init.crf --depend weaultratherapylcd\events_init.d)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+F (..\Middlewares\LVGL\GUI_APP\events_init.c)(0x67454B82)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\events_init.o --omf_browse weaultratherapylcd\events_init.crf --depend weaultratherapylcd\events_init.d)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -15189,16 +15190,16 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x670A2300)
-I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x673C4F1C)
-I (../Devices/App/dev_app.h)(0x6736ECF7)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
+I (../Devices/App/dev_app.h)(0x673D5099)
 I (../Devices/App/dev_ad9833.h)(0x670A164B)
 I (../Devices/App/dev_adc.h)(0x670A164B)
 I (../Devices/App/dev_beep.h)(0x671F63F9)
 I (../Devices/App/dev_flash.h)(0x671B565F)
 I (../Devices/App/dev_mpc5043.h)(0x670A164B)
-I (../Devices/App/dev_control.h)(0x671A0781)
+I (../Devices/App/dev_control.h)(0x673EB3E3)
 I (../Devices/App/dev_gpio.h)(0x670A164B)
-F (..\Middlewares\LVGL\GUI_APP\gui_guider.c)(0x67370646)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\gui_guider.o --omf_browse weaultratherapylcd\gui_guider.crf --depend weaultratherapylcd\gui_guider.d)
+F (..\Middlewares\LVGL\GUI_APP\gui_guider.c)(0x673ED8DF)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\gui_guider.o --omf_browse weaultratherapylcd\gui_guider.crf --depend weaultratherapylcd\gui_guider.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -15328,11 +15329,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-F (..\Middlewares\LVGL\GUI_APP\lv_mainstart.c)(0x673C4FAD)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\lv_mainstart.o --omf_browse weaultratherapylcd\lv_mainstart.crf --depend weaultratherapylcd\lv_mainstart.d)
-I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x673C4F1C)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+F (..\Middlewares\LVGL\GUI_APP\lv_mainstart.c)(0x67454B82)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\lv_mainstart.o --omf_browse weaultratherapylcd\lv_mainstart.crf --depend weaultratherapylcd\lv_mainstart.d)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -15460,7 +15461,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.h)(0x
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (../Core/Inc/usart.h)(0x67209CB9)
 I (../Core/Inc/main.h)(0x67176247)
@@ -15500,16 +15501,16 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x670A2300)
-I (../Devices/App/dev_app.h)(0x6736ECF7)
+I (../Devices/App/dev_app.h)(0x673D5099)
 I (../Devices/App/dev_ad9833.h)(0x670A164B)
 I (../Devices/App/dev_adc.h)(0x670A164B)
 I (../Devices/App/dev_beep.h)(0x671F63F9)
 I (../Devices/App/dev_flash.h)(0x671B565F)
 I (../Devices/App/dev_mpc5043.h)(0x670A164B)
-I (../Devices/App/dev_control.h)(0x671A0781)
+I (../Devices/App/dev_control.h)(0x673EB3E3)
 I (../Devices/App/dev_gpio.h)(0x670A164B)
 I (../Core/Inc/tim.h)(0x67176409)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_boot.c)(0x67370B62)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_boot.o --omf_browse weaultratherapylcd\setup_scr_boot.crf --depend weaultratherapylcd\setup_scr_boot.d)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_boot.c)(0x67402EC5)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_boot.o --omf_browse weaultratherapylcd\setup_scr_boot.crf --depend weaultratherapylcd\setup_scr_boot.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -15639,11 +15640,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_charge.c)(0x6736E70A)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_charge.o --omf_browse weaultratherapylcd\setup_scr_charge.crf --depend weaultratherapylcd\setup_scr_charge.d)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_charge.c)(0x67402DF3)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_charge.o --omf_browse weaultratherapylcd\setup_scr_charge.crf --depend weaultratherapylcd\setup_scr_charge.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -15773,11 +15774,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_config.c)(0x673C02B7)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_config.o --omf_browse weaultratherapylcd\setup_scr_config.crf --depend weaultratherapylcd\setup_scr_config.d)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_config.c)(0x673ED71C)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_config.o --omf_browse weaultratherapylcd\setup_scr_config.crf --depend weaultratherapylcd\setup_scr_config.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -15907,11 +15908,12 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_freq.c)(0x673C0CC6)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_freq.o --omf_browse weaultratherapylcd\setup_scr_freq.crf --depend weaultratherapylcd\setup_scr_freq.d)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_freq.c)(0x673EEFC3)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_freq.o --omf_browse weaultratherapylcd\setup_scr_freq.crf --depend weaultratherapylcd\setup_scr_freq.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16041,11 +16043,12 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_light.c)(0x673C5246)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_light.o --omf_browse weaultratherapylcd\setup_scr_light.crf --depend weaultratherapylcd\setup_scr_light.d)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_light.c)(0x673EE53C)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_light.o --omf_browse weaultratherapylcd\setup_scr_light.crf --depend weaultratherapylcd\setup_scr_light.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16175,11 +16178,12 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_main.c)(0x673C0EFC)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_main.o --omf_browse weaultratherapylcd\setup_scr_main.crf --depend weaultratherapylcd\setup_scr_main.d)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_main.c)(0x674549EB)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_main.o --omf_browse weaultratherapylcd\setup_scr_main.crf --depend weaultratherapylcd\setup_scr_main.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16309,11 +16313,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_param.c)(0x673C3F14)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_param.o --omf_browse weaultratherapylcd\setup_scr_param.crf --depend weaultratherapylcd\setup_scr_param.d)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_param.c)(0x673ED7ED)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_param.o --omf_browse weaultratherapylcd\setup_scr_param.crf --depend weaultratherapylcd\setup_scr_param.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16443,11 +16447,12 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_password1.c)(0x673C0ED2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_password1.o --omf_browse weaultratherapylcd\setup_scr_password1.crf --depend weaultratherapylcd\setup_scr_password1.d)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_password1.c)(0x673EE53C)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_password1.o --omf_browse weaultratherapylcd\setup_scr_password1.crf --depend weaultratherapylcd\setup_scr_password1.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16577,11 +16582,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_password2.c)(0x673C0D70)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_password2.o --omf_browse weaultratherapylcd\setup_scr_password2.crf --depend weaultratherapylcd\setup_scr_password2.d)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_password2.c)(0x673DB102)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_password2.o --omf_browse weaultratherapylcd\setup_scr_password2.crf --depend weaultratherapylcd\setup_scr_password2.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16711,11 +16716,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c)(0x673C525F)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_vibra.o --omf_browse weaultratherapylcd\setup_scr_vibra.crf --depend weaultratherapylcd\setup_scr_vibra.d)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c)(0x673EEEA2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_vibra.o --omf_browse weaultratherapylcd\setup_scr_vibra.crf --depend weaultratherapylcd\setup_scr_vibra.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16845,11 +16850,12 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
-F (..\Middlewares\LVGL\GUI_APP\setup_scr_vibras.c)(0x673C0E3B)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_vibras.o --omf_browse weaultratherapylcd\setup_scr_vibras.crf --depend weaultratherapylcd\setup_scr_vibras.d)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
+F (..\Middlewares\LVGL\GUI_APP\setup_scr_vibras.c)(0x673EE8EC)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\setup_scr_vibras.o --omf_browse weaultratherapylcd\setup_scr_vibras.crf --depend weaultratherapylcd\setup_scr_vibras.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -16979,10 +16985,11 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
-I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x6736DFF6)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
+I (..\Middlewares\LVGL\GUI_APP\events_init.h)(0x673D8D28)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (..\Middlewares\LVGL\GUI_APP\custom.h)(0x66F6177C)
+I (..\Middlewares\LVGL\GUI_APP\lv_mainstart.h)(0x67441781)
 F (..\Middlewares\LVGL\GUI_APP\widgets_init.c)(0x6736DFF7)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\widgets_init.o --omf_browse weaultratherapylcd\widgets_init.crf --depend weaultratherapylcd\widgets_init.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
@@ -17112,7 +17119,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.h)(0x
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
-I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x673B0649)
+I (..\Middlewares\LVGL\GUI_APP\gui_guider.h)(0x6743F025)
 I (..\Middlewares\LVGL\GUI_APP\widgets_init.h)(0x6736DFF7)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 F (..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_Alibaba_25.c)(0x6736E032)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\lv_customer_font_alibaba_25.o --omf_browse weaultratherapylcd\lv_customer_font_alibaba_25.crf --depend weaultratherapylcd\lv_customer_font_alibaba_25.d)
@@ -17244,7 +17251,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.h)(0x
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/led/lv_led.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h)(0x66E6D248)
 I (../Middlewares/LVGL/GUI/lvgl/src/extra/widgets/span/lv_span.h)(0x66E6D248)
-F (..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_AlibabaMed_50.c)(0x6736E049)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\lv_customer_font_alibabamed_50.o --omf_browse weaultratherapylcd\lv_customer_font_alibabamed_50.crf --depend weaultratherapylcd\lv_customer_font_alibabamed_50.d)
+F (..\Middlewares\LVGL\GUI_APP\GUI_FONT\lv_customer_font_AlibabaMed_50.c)(0x67441870)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\lv_customer_font_alibabamed_50.o --omf_browse weaultratherapylcd\lv_customer_font_alibabamed_50.crf --depend weaultratherapylcd\lv_customer_font_alibabamed_50.d)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x66E6D216)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x66E6D24C)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h)(0x66E6D23E)
@@ -20607,8 +20614,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x670A2300)
 F (..\Devices\App\dev_ad9833.h)(0x670A164B)()
-F (..\Devices\App\dev_adc.c)(0x672D7695)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_adc.o --omf_browse weaultratherapylcd\dev_adc.crf --depend weaultratherapylcd\dev_adc.d)
-I (..\Devices\App\dev_app.h)(0x6736ECF7)
+F (..\Devices\App\dev_adc.c)(0x673D7F01)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_adc.o --omf_browse weaultratherapylcd\dev_adc.crf --depend weaultratherapylcd\dev_adc.d)
+I (..\Devices\App\dev_app.h)(0x673D5099)
 I (..\Devices\App\dev_ad9833.h)(0x670A164B)
 I (../Core/Inc/main.h)(0x67176247)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x670A2300)
@@ -20653,11 +20660,11 @@ I (..\Devices\App\dev_adc.h)(0x670A164B)
 I (..\Devices\App\dev_beep.h)(0x671F63F9)
 I (..\Devices\App\dev_flash.h)(0x671B565F)
 I (..\Devices\App\dev_mpc5043.h)(0x670A164B)
-I (..\Devices\App\dev_control.h)(0x671A0781)
+I (..\Devices\App\dev_control.h)(0x673EB3E3)
 I (..\Devices\App\dev_gpio.h)(0x670A164B)
 F (..\Devices\App\dev_adc.h)(0x670A164B)()
 F (..\Devices\App\dev_beep.c)(0x6720B17C)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_beep.o --omf_browse weaultratherapylcd\dev_beep.crf --depend weaultratherapylcd\dev_beep.d)
-I (..\Devices\App\dev_app.h)(0x6736ECF7)
+I (..\Devices\App\dev_app.h)(0x673D5099)
 I (..\Devices\App\dev_ad9833.h)(0x670A164B)
 I (../Core/Inc/main.h)(0x67176247)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x670A2300)
@@ -20702,11 +20709,11 @@ I (..\Devices\App\dev_adc.h)(0x670A164B)
 I (..\Devices\App\dev_beep.h)(0x671F63F9)
 I (..\Devices\App\dev_flash.h)(0x671B565F)
 I (..\Devices\App\dev_mpc5043.h)(0x670A164B)
-I (..\Devices\App\dev_control.h)(0x671A0781)
+I (..\Devices\App\dev_control.h)(0x673EB3E3)
 I (..\Devices\App\dev_gpio.h)(0x670A164B)
 F (..\Devices\App\dev_beep.h)(0x671F63F9)()
-F (..\Devices\App\dev_control.c)(0x6737048F)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_control.o --omf_browse weaultratherapylcd\dev_control.crf --depend weaultratherapylcd\dev_control.d)
-I (..\Devices\App\dev_app.h)(0x6736ECF7)
+F (..\Devices\App\dev_control.c)(0x6743F515)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_control.o --omf_browse weaultratherapylcd\dev_control.crf --depend weaultratherapylcd\dev_control.d)
+I (..\Devices\App\dev_app.h)(0x673D5099)
 I (..\Devices\App\dev_ad9833.h)(0x670A164B)
 I (../Core/Inc/main.h)(0x67176247)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x670A2300)
@@ -20751,10 +20758,10 @@ I (..\Devices\App\dev_adc.h)(0x670A164B)
 I (..\Devices\App\dev_beep.h)(0x671F63F9)
 I (..\Devices\App\dev_flash.h)(0x671B565F)
 I (..\Devices\App\dev_mpc5043.h)(0x670A164B)
-I (..\Devices\App\dev_control.h)(0x671A0781)
+I (..\Devices\App\dev_control.h)(0x673EB3E3)
 I (..\Devices\App\dev_gpio.h)(0x670A164B)
-I (../Middlewares/LVGL/GUI_APP/lv_mainstart.h)(0x673C4F1C)
-F (..\Devices\App\dev_control.h)(0x671A0781)()
+I (../Middlewares/LVGL/GUI_APP/lv_mainstart.h)(0x67441781)
+F (..\Devices\App\dev_control.h)(0x673EB3E3)()
 F (..\Devices\App\dev_flash.c)(0x6721DD16)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_flash.o --omf_browse weaultratherapylcd\dev_flash.crf --depend weaultratherapylcd\dev_flash.d)
 I (..\Devices\App\dev_flash.h)(0x671B565F)
 I (../Core/Inc/main.h)(0x67176247)
@@ -20840,7 +20847,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x670A2300)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x670A2300)
 F (..\Devices\App\dev_gpio.h)(0x670A164B)()
 F (..\Devices\App\dev_mpc5043.c)(0x6721D221)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Devices/App -I ../Devices/Screen -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl/examples/porting -I ../Middlewares/LVGL/GUI_APP -I ../Middlewares/LVGL-I.\RTE\_WeaUltraTherapyLCD-ID:\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-ID:\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o weaultratherapylcd\dev_mpc5043.o --omf_browse weaultratherapylcd\dev_mpc5043.crf --depend weaultratherapylcd\dev_mpc5043.d)
-I (..\Devices\App\dev_app.h)(0x6736ECF7)
+I (..\Devices\App\dev_app.h)(0x673D5099)
 I (..\Devices\App\dev_ad9833.h)(0x670A164B)
 I (../Core/Inc/main.h)(0x67176247)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x670A2300)
@@ -20885,7 +20892,7 @@ I (..\Devices\App\dev_adc.h)(0x670A164B)
 I (..\Devices\App\dev_beep.h)(0x671F63F9)
 I (..\Devices\App\dev_flash.h)(0x671B565F)
 I (..\Devices\App\dev_mpc5043.h)(0x670A164B)
-I (..\Devices\App\dev_control.h)(0x671A0781)
+I (..\Devices\App\dev_control.h)(0x673EB3E3)
 I (..\Devices\App\dev_gpio.h)(0x670A164B)
 F (..\Devices\App\dev_mpc5043.h)(0x670A164B)()
-F (..\Devices\App\dev_app.h)(0x6736ECF7)()
+F (..\Devices\App\dev_app.h)(0x673D5099)()

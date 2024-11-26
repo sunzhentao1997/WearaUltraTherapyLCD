@@ -22,39 +22,33 @@ Dialog DLL:      TCM.DLL V1.36.1.0
  
 <h2>Project:</h2>
 D:\Keil_Project\WeaUltraTherapyLCD\MDK-ARM\WeaUltraTherapyLCD.uvprojx
-Project File Date:  11/15/2024
+Project File Date:  11/19/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'WeaUltraTherapyLCD'
-compiling setup_scr_vibra.c...
-..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(206): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->vibra_back_label, " Ëø?     Âõ? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(206): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->vibra_back_label, " Ëø?     Âõ? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(231): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->vibra_save_label, " ‰ø?     Â≠? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c(231): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->vibra_save_label, " ‰ø?     Â≠? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_vibra.c: 4 warnings, 0 errors
-compiling setup_scr_light.c...
-..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(255): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->light_back_label, " Ëø?     Âõ? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(255): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->light_back_label, " Ëø?     Âõ? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(280): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->light_save_label, " ‰ø?     Â≠? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_light.c(280): warning:  #870-D: invalid multibyte character sequence
-  	lv_label_set_text(ui->light_save_label, " ‰ø?     Â≠? ");
-..\Middlewares\LVGL\GUI_APP\setup_scr_light.c: 4 warnings, 0 errors
 compiling events_init.c...
-..\Middlewares\LVGL\GUI_APP\events_init.c(73): warning:  #111-D: statement is unreachable
+..\Middlewares\LVGL\GUI_APP\events_init.c(101): warning:  #111-D: statement is unreachable
   	break;
 ..\Middlewares\LVGL\GUI_APP\events_init.c: 1 warning, 0 errors
+compiling lv_mainstart.c...
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(80): warning:  #177-D: variable "id"  was declared but never referenced
+  	uint8_t id = 0;
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(134): warning:  #177-D: variable "Send_Val"  was declared but never referenced
+  	static uint8_t Send_Val = 0;
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(136): warning:  #177-D: variable "ChargeFlg"  was declared but never referenced
+  	static uint8_t ChargeFlg = 0;
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(130): warning:  #177-D: function "Screen_Charge"  was declared but never referenced
+  static void Screen_Charge(void)
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(59): warning:  #177-D: variable "LowBatteryFlg"  was declared but never referenced
+  static uint8_t LowBatteryFlg = 0; // ‰ΩéÁîµÈáèÊ†áÂøó‰Ωç
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(61): warning:  #177-D: variable "ClickTime"  was declared but never referenced
+  static uint16_t ClickTime = 0;	  // ÁÇπÂáªÊó∂Èó¥
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c: 6 warnings, 0 errors
 linking...
-Program Size: Code=298260 RO-data=501444 RW-data=1416 ZI-data=3085304  
+Program Size: Code=311068 RO-data=508060 RW-data=1440 ZI-data=3085992  
 FromELF: creating hex file...
-"WeaUltraTherapyLCD\WeaUltraTherapyLCD.axf" - 0 Error(s), 9 Warning(s).
+"WeaUltraTherapyLCD\WeaUltraTherapyLCD.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -77,7 +71,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.2.0
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

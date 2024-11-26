@@ -23,9 +23,11 @@ void events_init_config(lv_ui *ui);
 void events_init_param(lv_ui *ui);
 void events_init_light(lv_ui *ui);
 void events_init_vibra(lv_ui *ui);
+void events_init_vibras(lv_ui *ui);
 void events_init_freq(lv_ui *ui);
 void events_init_password1(lv_ui *ui);
 void events_init_password2(lv_ui *ui);
+void events_init_charge(lv_ui *ui);
 
 #ifdef __cplusplus
 }
