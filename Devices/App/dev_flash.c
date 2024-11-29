@@ -11,7 +11,7 @@
 
 const FLASH_BLOCK Flash_Block[FLASH_BANK_NUM] =
 {
-	{.bank = FLASH_SECTOR_21,.start_addr = 0x81A0000,.stop_addr = 0x81BFFFF,.size = 131072},
+	{.bank = FLASH_SECTOR_21,.start_addr = 0x81A0000,.stop_addr = 0x81BFFFF,.size = 131072},   
 	{.bank = FLASH_SECTOR_22,.start_addr = 0x81C0000,.stop_addr = 0x81DFFFF,.size = 131072},
 	{.bank = FLASH_SECTOR_23,.start_addr = 0x81E0000,.stop_addr = 0x81FFFFF,.size = 131072},
 };

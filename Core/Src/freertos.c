@@ -176,7 +176,7 @@ void ScreenRGBTask(void *argument)
 				}
 				if(BackLedTime > 3450)
 				{
-					  ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 0, 0, false, true);
+					  ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 50, false, true);
 						StartFlg = 1;
 				}
 		}else if(StartFlg == 1)
@@ -207,9 +207,10 @@ void UltraAppTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
+		DevAdc_MainFunc();
     if(StartFlg == 1)
     {
-      DevAdc_MainFunc();
+      
       DevAPP_MainFunc();
       DevMPC5043_MainFunc();
       UltraParam_Set();
@@ -235,8 +236,11 @@ void OtherFuncTask(void *argument)
   {
     if(StartFlg == 1)
     {
-      Screen_TriggerFunc();
+			Screen_TriggerFunc();
+			BatteryLevelGet();
+		//	printf("%d\n",BatteryVol);
     }
+		
     osDelay(100);
   }
   /* USER CODE END OtherFuncTask */

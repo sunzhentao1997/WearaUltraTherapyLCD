@@ -40,3 +40,4 @@ weaultratherapylcd\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pw
 weaultratherapylcd\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 weaultratherapylcd\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 weaultratherapylcd\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+weaultratherapylcd\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -10,18 +10,17 @@
 
 #include "main.h"
 
+#define BOOST						1
+#define CHARGE 					2
+#define CHARGE_FINISH		3
+
 typedef enum
 {
-	Charge_Level1 = 1,
-	Charge_Level2,
-	Charge_Level3,
-	Charge_Level4,
-	Charge_Level5,
-	Boost_Level1,
-	Boost_Level2,
-	Boost_Level3,
-	Boost_Level4,
-	Boost_Level5,
+	Battery_Level1 = 1,
+	Battery_Level2,
+	Battery_Level3,
+	Battery_Level4,
+	Battery_Level5,
 }Battery_Level;
 
 void DevMPC5043_MainFunc(void);

@@ -12,8 +12,8 @@ static uint32_t u32_VibraParam = 0;		  // PWM驱动参数
 static uint8_t WorkStartFlg = 0;		  // 工作开始标志
 static uint8_t WorkFinFlg = 0;			  // 工作结束标志
 static uint16_t PowerFlg = 0;			  // 充电自动关机
+static uint16_t ReadBattery = 0;
 
-uint16_t Low_Battery_Flg = 0;			  // 低电量标志位
 Dev_Work_State DevWorkState = IDLE_STATE; // 设备工作状态
 
 extern SCREENSTATE ScreenState;
@@ -22,7 +22,7 @@ void UltraParam_Init(void)
 {
 	uint8_t tag_i = 0;
 	DevFlash_Read(FLASH_SAVE_ADDR, FlashStoreBuff, 34);
-	DevFlash_Read(FLASH_LOWBATTERY, &Low_Battery_Flg, 1);
+	DevFlash_Read(FLASH_BATTERYLEVEL, &ReadBattery, 1);
 	DevFlash_Read(FLASH_SHUNTDOWN, &PowerFlg, 1);
 
 	ParamChangeFlg[0] = (uint8_t)FlashStoreBuff[0];
@@ -82,6 +82,15 @@ void UltraParam_Init(void)
 	else
 	{
 	}
+	
+	if(ReadBattery == 0xFFFF)
+	{
+			ReadBattery = Battery_Level5;
+			SendBatteryStateData = ReadBattery;
+	}else
+	{
+			SendBatteryStateData = ReadBattery;
+	}
 
 	MotorLevel = VibraParam;
 	FreqOffset = FreqParam_B;
@@ -114,7 +123,7 @@ void DevAPP_MainFunc(void)
 	uint32_t new_tick = 0;
 	uint16_t ultra_pluse = 0;
 
-	if (SendBatteryStateData < Boost_Level1)
+	if (BatteryState != BOOST)
 	{
 		DevWorkState = CHARGE_STATE;
 		new_tick = HAL_GetTick();
@@ -221,11 +230,11 @@ void DevAPP_MainFunc(void)
 				__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
 		}else
 		{
-			if (MotorTime < (UltraDuty * 10))
+			if (MotorTime < 500)
 			{
 				__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, u32_VibraParam);
 			}
-			else if ((MotorTime >= (UltraDuty * 10)) && (MotorTime < 1000))
+			else if ((MotorTime >= 500) && (MotorTime < 2000))
 			{
 				__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
 			}

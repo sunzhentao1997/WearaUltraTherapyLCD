@@ -47,3 +47,4 @@ weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_flash.h
 weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_mpc5043.h
 weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_control.h
 weaultratherapylcd\dev_adc.o: ..\Devices\App\dev_gpio.h
+weaultratherapylcd\dev_adc.o: ../Core/Inc/usart.h

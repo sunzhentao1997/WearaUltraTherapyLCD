@@ -66,5 +66,6 @@ void lv_mainstart(void);
 void ScreenFunc(void);
 void Screen_TriggerFunc(void);
 typedef void (*BATTERYDISPLAY_FUNC)(uint8_t boostlevel);
+extern const BATTERYDISPLAY_FUNC battery_display_func[ScreenId_Max];
 
 #endif

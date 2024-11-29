@@ -31,7 +31,7 @@ extern TIM_HandleTypeDef htim9;
 #define BEEP_OFF()				__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,0)
 
 #define FLASH_SHUNTDOWN			0x81A0000
-#define FLASH_LOWBATTERY	  0x81C0000
+#define FLASH_BATTERYLEVEL	0x81C0000
 #define FLASH_SAVE_ADDR 		0x81E0000
 
 /*main*/
@@ -46,6 +46,7 @@ extern uint8_t CompleteFlg;										//开机成功标志位
 extern uint32_t ChargeRecvTime;
 extern uint32_t ShuntDownCount;
 extern uint32_t MotorTime;
+extern uint32_t BeatTime;
 
 /*adc*/
 extern uint16_t BatteryVol;										//adc电压采样
@@ -55,12 +56,12 @@ extern uint32_t UltraWorkTim;									//超声工作时间
 extern int8_t BeepCount;											//蜂鸣器启动�?�数
 extern uint8_t BeepFlg;												//蜂鸣器启动标�?
 
-/*control*/
-extern uint16_t Low_Battery_Flg;							//低电量标志位						
+/*control*/					
 extern Dev_Work_State DevWorkState;						//设�?�工作状�?
 
 /*mpc5043*/
 extern Battery_Level SendBatteryStateData;	 //电池电量数据
+extern uint8_t BatteryState;
 
 /*LCD*/
 extern uint16_t slider_pos;

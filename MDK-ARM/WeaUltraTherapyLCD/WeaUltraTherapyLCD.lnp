@@ -240,6 +240,11 @@
 "weaultratherapylcd\setup_scr_vibra.o"
 "weaultratherapylcd\setup_scr_vibras.o"
 "weaultratherapylcd\widgets_init.o"
+"weaultratherapylcd\_wave1_27x27.o"
+"weaultratherapylcd\_wave2_16x47.o"
+"weaultratherapylcd\_wave3_16x57.o"
+"weaultratherapylcd\_wave4_19x68.o"
+"weaultratherapylcd\_wave5_21x79.o"
 "weaultratherapylcd\lv_customer_font_alibaba_25.o"
 "weaultratherapylcd\lv_customer_font_alibabamed_50.o"
 "weaultratherapylcd\lv_customer_font_alimama_28.o"
@@ -278,7 +283,7 @@
 "weaultratherapylcd\dev_flash.o"
 "weaultratherapylcd\dev_gpio.o"
 "weaultratherapylcd\dev_mpc5043.o"
---strict --scatter "WeaUltraTherapyLCD\WeaUltraTherapyLCD.sct"
+--library_type=microlib --strict --scatter "WeaUltraTherapyLCD\WeaUltraTherapyLCD.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "WeaUltraTherapyLCD.map" -o WeaUltraTherapyLCD\WeaUltraTherapyLCD.axf

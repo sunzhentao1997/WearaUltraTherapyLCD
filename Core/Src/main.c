@@ -70,6 +70,7 @@ uint32_t UltraWorkTim = 0;
 uint32_t UnlockCount = 0;
 uint32_t VibraFeedBackTime = 0;												//震动反馈时间
 uint32_t DisplayTime = 0;
+uint32_t BeatTime = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -258,23 +259,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			UltraWorkTim++;
 			UnlockCount++;
       VibraFeedBackTime++;
+      BeatTime++;
 
       if (DisplayFlg == 1)
       {
          DisplayTime++;
       }
       
-		
 			if(PowerOnTime > 1500)
 			{
 					CompleteFlg = 1;
 			}
-			
-			if((Low_Battery_Flg == 1) && (SendBatteryStateData < Boost_Level1))
-			{
-					Charge_Time++;
-			}
-		
 	}
 	
 	if(htim->Instance == TIM12)

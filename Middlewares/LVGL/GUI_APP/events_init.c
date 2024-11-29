@@ -1,11 +1,11 @@
 /*
- * Copyright 2024 NXP
- * NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be used strictly in
- * accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
- * activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
- * comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
- * terms, then you may not retain, install, activate or otherwise use the software.
- */
+* Copyright 2024 NXP
+* NXP Proprietary. This software is owned or controlled by NXP and may only be used strictly in
+* accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
+* activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
+* comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
+* terms, then you may not retain, install, activate or otherwise use the software.
+*/
 
 #include "events_init.h"
 #include <stdio.h>
@@ -26,56 +26,61 @@ uint8_t UnlockFlg = 0;
  *										主页事件处理
  *
  ****************************************************************************************************/
-static void main_event_handler(lv_event_t *e)
+static void main_event_handler (lv_event_t *e)
 {
-	lv_event_code_t code = lv_event_get_code(e);
+    lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
-	case LV_EVENT_SCREEN_LOAD_START:
-	{
+    case LV_EVENT_SCREEN_LOAD_START:
+    {
 		Screen_Id = MAIN_SCREEN;
-
-		lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+		DevWorkState = IDLE_STATE;
+		
+		battery_display_func[Screen_Id](SendBatteryStateData);
+        lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 //		lv_label_set_text(guider_ui.main_time, "20:00");
 //		lv_label_set_text(guider_ui.main_label_3, " 剩余治疗时间 ");
-//		lv_arc_set_value(guider_ui.main_arc_1, 1200);
-		
-		break;
-	}
-	case LV_EVENT_CLICKED:
-	{
-		DisplayFlg = 1;
-		DisplayTime = 0;
-		if((ScreenState == COMPLETE) || (ScreenState == STOP))
-		{
-			ScreenState = IDLE;
-			lv_label_set_text(guider_ui.main_time, "20:00");
-			lv_arc_set_value(guider_ui.main_arc_1, 1200);
-			lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
-			lv_obj_add_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
-		}
-		break;
-	}
-	default:
-		break;
-	}
+        lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+        break;
+    }
+    case LV_EVENT_CLICKED:
+    {
+				DisplayFlg = 1;
+				DisplayTime = 0;
+				if((ScreenState == COMPLETE) || (ScreenState == STOP))
+				{
+					ScreenState = IDLE;
+					lv_label_set_text(guider_ui.main_time, "20:00");
+					lv_arc_set_value(guider_ui.main_arc_1, 1200);
+					lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
+					lv_obj_add_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
+				}
+        break;
+    }
+    default:
+        break;
+    }
 }
 
-static void main_paging_event_handler(lv_event_t *e)
+static void main_paging_event_handler (lv_event_t *e)
 {
-	lv_event_code_t code = lv_event_get_code(e);
+    lv_event_code_t code = lv_event_get_code(e);
 	
 	if((ScreenState == WORK) || (ScreenState == PAUSE))
 	{
@@ -83,15 +88,15 @@ static void main_paging_event_handler(lv_event_t *e)
 	}
 	switch (code)
 	{
-	case LV_EVENT_CLICKED:
-	{
+    case LV_EVENT_CLICKED:
+    {
 		ScreenState = PAGING;
 		Screen_Id = CONFIG_SCREEN;
 		DevWorkState = ADMIN_STATE;
 
 		ui_load_scr_animation(&guider_ui, &guider_ui.password1, guider_ui.password1_del, &guider_ui.main_del, setup_scr_password1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, false);
-		break;
-	}
+        break;
+    }
 	case LV_EVENT_PRESSED:
 	{
 		BeepFlg = 1;
@@ -99,75 +104,75 @@ static void main_paging_event_handler(lv_event_t *e)
 		break;
 	}
 	break;
-	default:
-		break;
-	}
+    default:
+        break;
+    }
 }
 
-static void main_stop_event_handler(lv_event_t *e)
+static void main_stop_event_handler (lv_event_t *e)
 {
-	lv_event_code_t code = lv_event_get_code(e);
+    lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
-	case LV_EVENT_PRESSING:
-	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 200, LV_PART_MAIN);
-		break;
-	}
-	case LV_EVENT_RELEASED:
-	{
+    case LV_EVENT_PRESSING:
+    {
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 200, LV_PART_MAIN);
+        break;
+    }
+    case LV_EVENT_RELEASED:
+    {
 		DevWorkState = IDLE_STATE;
 		ScreenState = STOP;
 
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
-		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-		break;
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
+        lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+        break;
 	}
 	case LV_EVENT_PRESSED:
 	{
 		BeepFlg = 1;
 		BeepCount = 2;
-	}
-	default:
-		break;
-	}
+    }
+    default:
+        break;
+    }
 }
 
-static void main_pause_event_handler(lv_event_t *e)
+static void main_pause_event_handler (lv_event_t *e)
 {
-	lv_event_code_t code = lv_event_get_code(e);
+    lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
-	case LV_EVENT_PRESSING:
-	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 200, LV_PART_MAIN);
-		break;
-	}
-	case LV_EVENT_RELEASED:
-	{
+    case LV_EVENT_PRESSING:
+    {
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 200, LV_PART_MAIN);
+        break;
+    }
+    case LV_EVENT_RELEASED:
+    {
 		DevWorkState = PASUE_STATE;
 		ScreenState = PAUSE;
 
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 0, LV_PART_MAIN);
-		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-		break;
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 0, LV_PART_MAIN);
+        lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+        break;
 	}
 	case LV_EVENT_PRESSED:
 	{
 		BeepFlg = 1;
 		BeepCount = 2;
-	}
-	default:
-		break;
-	}
+    }
+    default:
+        break;
+    }
 }
 
-static void main_continue_event_handler(lv_event_t *e)
+static void main_continue_event_handler (lv_event_t *e)
 {
-	lv_event_code_t code = lv_event_get_code(e);
+    lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
 	case LV_EVENT_PRESSING:
@@ -180,35 +185,35 @@ static void main_continue_event_handler(lv_event_t *e)
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 
-		lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 0, LV_PART_MAIN);
-		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-		break;
-	}
+        lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 0, LV_PART_MAIN);
+        lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+        break;
+    }
 	case LV_EVENT_PRESSED:
 	{
 		BeepFlg = 1;
 		BeepCount = 2;
 	}
-	default:
-		break;
-	}
+    default:
+        break;
+    }
 }
 
-static void main_suo_event_handler(lv_event_t *e)
+static void main_suo_event_handler (lv_event_t *e)
 {
 	static int32_t old_x = 70;
 	static int8_t step = 5;
 	static uint16_t slider_pos_old = 95;
 
-	lv_event_code_t code = lv_event_get_code(e);
+    lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
-	case LV_EVENT_PRESSING:
-	{
+    case LV_EVENT_PRESSING:
+    {
 		if (slider_pos < 95)
 		{
 			slider_pos = 95;
@@ -226,7 +231,7 @@ static void main_suo_event_handler(lv_event_t *e)
 		{
 		}
 
-		step = (slider_pos_old - old_x) / 2;
+		step = (slider_pos_old - old_x);
 
 		old_x = old_x + step;
 
@@ -416,6 +421,7 @@ static void config_event_handler(lv_event_t *e)
 	case LV_EVENT_SCREEN_LOAD_START:
 	{
 		Screen_Id = CONFIG_SCREEN;
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		break;
 	}
 	default:
@@ -973,6 +979,7 @@ static void light_event_handler(lv_event_t *e)
 	{
 		Screen_Id = LIGHT_SCREEN;
 
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		lv_obj_add_flag(guider_ui.light_label_9, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_label_8, LV_OBJ_FLAG_HIDDEN);
@@ -1122,6 +1129,7 @@ static void vibra_event_handler(lv_event_t *e)
 	{
 		Screen_Id = VIBRA_SCREEN;
 
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		lv_obj_add_flag(guider_ui.vibra_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_label_10, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_label_9, LV_OBJ_FLAG_HIDDEN);
@@ -1192,24 +1200,35 @@ static void vibra_save_event_handler(lv_event_t *e)
 
 static void vibra_slider_1_event_handler(lv_event_t *e)
 {
+	static uint8_t pressed = 0;
 	int32_t value = 0;
 	lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
 	case LV_EVENT_VALUE_CHANGED:
 	{
-		VibraChangeFlg = 1;
 		value = lv_slider_get_value(guider_ui.vibra_slider_1);
 		MotorLevel = value;
 		value = MotorLevel * 5;
-		VibraFeedBackTime = 0;
 		lv_label_set_text_fmt(guider_ui.vibra_label_7, "%d%%", value);
 		break;
 	}
 	case LV_EVENT_PRESSED:
 	{
+		pressed = 1;
 		BeepFlg = 1;
 		BeepCount = 2;
+	}
+	case LV_EVENT_RELEASED:
+	{
+		if(pressed == 0)
+		{
+			VibraChangeFlg = 1;
+			VibraFeedBackTime = 0;
+		}else
+		{
+				pressed = 0;
+		}
 	}
 	default:
 		break;
@@ -1260,7 +1279,7 @@ static void vibras_event_handler(lv_event_t *e)
 	case LV_EVENT_SCREEN_LOAD_START:
 	{
 		Screen_Id = VIBRAS_SCREEN;
-
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		break;
 	}
 	default:
@@ -1341,6 +1360,7 @@ static void freq_event_handler(lv_event_t *e)
 	{
 		Screen_Id = FREQ_SCREEN;
 
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		lv_obj_add_flag(guider_ui.freq_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_label_10, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_label_9, LV_OBJ_FLAG_HIDDEN);
@@ -1458,6 +1478,7 @@ static void password1_event_handler(lv_event_t *e)
 		password_index = 0;
 		
 		memset(passwordbuff, 0, 6);
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		lv_obj_add_flag(guider_ui.password1_label_14, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_btn_2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_label_16, LV_OBJ_FLAG_HIDDEN);
@@ -1596,44 +1617,44 @@ static void password1_btnm_1_event_handler(lv_event_t *e)
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 0, LV_PART_MAIN);
 		break;
 	case 1:
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_5, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_4, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 255, LV_PART_MAIN);
 		break;
 	case 2:
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_5, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_4, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 255, LV_PART_MAIN);
 		break;
 	case 3:
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_5, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_4, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_5, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_4, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 255, LV_PART_MAIN);
 		break;
 	case 4:
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_5, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_4, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 255, LV_PART_MAIN);
 		break;
 	case 5:
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_6, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_5, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_4, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_3, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password1_label_2, 255, LV_PART_MAIN);
 		break;
 	case 6:
 		lv_obj_set_style_bg_opa(guider_ui.password1_label_7, 255, LV_PART_MAIN);
@@ -1734,6 +1755,7 @@ static void password2_event_handler(lv_event_t *e)
 		LockPasswordIndex = 0;
 		memset(LockPasswordBuff, 0, 7);
 
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		lv_obj_add_flag(guider_ui.password2_label_18, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_btn_3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_label_17, LV_OBJ_FLAG_HIDDEN);
@@ -1880,44 +1902,44 @@ static void password2_btnm_1_event_handler(lv_event_t *e)
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 0, LV_PART_MAIN);
 		break;
 	case 1:
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_5, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_4, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 255, LV_PART_MAIN);
 		break;
 	case 2:
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_5, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_4, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 255, LV_PART_MAIN);
 		break;
 	case 3:
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_5, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_4, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_5, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_4, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 255, LV_PART_MAIN);
 		break;
 	case 4:
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_5, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_4, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 255, LV_PART_MAIN);
 		break;
 	case 5:
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 255, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 0, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_6, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_5, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_4, 255, LV_PART_MAIN);
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_3, 255, LV_PART_MAIN);
-		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_opa(guider_ui.password2_label_2, 255, LV_PART_MAIN);
 		break;
 	case 6:
 		lv_obj_set_style_bg_opa(guider_ui.password2_label_7, 255, LV_PART_MAIN);
@@ -2027,6 +2049,8 @@ static void charge_event_handler(lv_event_t *e)
 	case LV_EVENT_SCREEN_LOAD_START:
 	{
 		Screen_Id = PARAM_SCREEN;
+		
+		battery_display_func[Screen_Id](SendBatteryStateData);
 		break;
 	}
 	default:

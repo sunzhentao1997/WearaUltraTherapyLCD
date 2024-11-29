@@ -52,6 +52,11 @@ typedef struct
 	lv_obj_t *main_btn_2_label;
 	lv_obj_t *main_complete;
 	lv_obj_t *main_finish;
+	lv_obj_t *main_wave1;
+	lv_obj_t *main_wave2;
+	lv_obj_t *main_wave3;
+	lv_obj_t *main_wave4;
+	lv_obj_t *main_wave5;
 	lv_obj_t *config;
 	bool config_del;
 	lv_obj_t *config_logo;
@@ -76,6 +81,10 @@ typedef struct
 	lv_obj_t *config_label_2;
 	lv_obj_t *config_label_3;
 	lv_obj_t *config_label_4;
+	lv_obj_t *config_label_5;
+	lv_obj_t *config_label_6;
+	lv_obj_t *config_label_7;
+	lv_obj_t *config_label_8;
 	lv_obj_t *param;
 	bool param_del;
 	lv_obj_t *param_logo;
@@ -297,6 +306,16 @@ LV_IMG_DECLARE(_3232_60x123);
 
 LV_IMG_DECLARE(_pressed_406x100);
 
+LV_IMG_DECLARE(_wave1_27x27);
+
+LV_IMG_DECLARE(_wave2_16x47);
+
+LV_IMG_DECLARE(_wave3_16x57);
+
+LV_IMG_DECLARE(_wave4_19x68);
+
+LV_IMG_DECLARE(_wave5_21x79);
+
 LV_IMG_DECLARE(_battery_1_61x31);
 
 LV_IMG_DECLARE(_back_154x68);
@@ -356,6 +375,7 @@ LV_FONT_DECLARE(lv_customer_font_NSHMedium_40)
 LV_FONT_DECLARE(lv_customer_font_alimama_70)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_18)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_40)
+LV_FONT_DECLARE(lv_customer_font_NSHBold_45)
 LV_FONT_DECLARE(lv_customer_font_alimama_45)
 LV_FONT_DECLARE(lv_customer_font_NSHBold_60)
 LV_FONT_DECLARE(lv_customer_font_NSHRegular_28)

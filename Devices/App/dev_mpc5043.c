@@ -7,12 +7,13 @@
 
 #include "dev_app.h"
 
-Battery_Level SendBatteryStateData = Boost_Level5;
+Battery_Level SendBatteryStateData = Battery_Level5;
 
 static uint8_t ShuntDownFlg = 2;						//充电后关机标志位
 static uint8_t RecvMPC5043Flg = 0;   				//接收MPC5043数据标志位
 static uint8_t RecvMPC5043Val = 0;					//接收MPC5043数据
 static uint8_t BatteryLevelBuff[4] = {0}; 	//电压等级滤波
+uint8_t BatteryState = BOOST;
 
 void DevMPC5043_MainFunc(void)
 {
@@ -24,71 +25,21 @@ void DevMPC5043_MainFunc(void)
 	   (BatteryLevelBuff[1] == BatteryLevelBuff[2]) &&
 	   (BatteryLevelBuff[2] == BatteryLevelBuff[3]))
 	{
-		if((BatteryLevelBuff[0] == 0x80) || (BatteryLevelBuff[0] == 0x84))   //判断充放电状态是顺便判断电流，防止误判
-		{
-			battery_voltage_data = 0xAA;
-		}else
-		{
-			if(((BatteryLevelBuff[0] & 0x02) == 0) && ((BatteryLevelBuff[0] & 0x80) == 0x80))    //第二位为0的时候为放电
+			if(((BatteryLevelBuff[0] & 0x80) == 0x80) && ((BatteryLevelBuff[0] & 0x02) == 0))
 			{
-				battery_voltage_data = BatteryLevelBuff[0] & 0xf0;
-			}else
+					BatteryState = BOOST;
+			}else if((BatteryLevelBuff[0] & 0x80) == 0)
 			{
-				battery_voltage_data = BatteryLevelBuff[0] & 0x70;
+					if(BatteryLevelBuff[0] & 0x40)
+					{
+							BatteryState = CHARGE_FINISH;
+					}else if(((BatteryLevelBuff[0] & 0x02) != 0) || (BatteryLevelBuff[0] == 0x38))
+					{
+							BatteryState = CHARGE;
+					}
 			}
-		}
-
-
-		switch(battery_voltage_data)
-		{
-			//0x00 - 0x70电池处于充电状态
-			case	0x00:
-					battery_level_state =  Charge_Level1;
-						break;
-
-			case	0x10:
-					battery_level_state =  Charge_Level2;
-						break;
-
-			case	0x20:
-					battery_level_state =  Charge_Level3;
-						break;
-
-			case	0x30:
-					battery_level_state =  Charge_Level4;
-						break;
-
-			case	0x70:
-					battery_level_state =  Charge_Level5;
-						break;
-
-			//Boost 放电状态
-			case	0xAA:
-					battery_level_state =  Boost_Level1;
-						break;
-
-			case	0x80:
-					battery_level_state =  Boost_Level2;
-						break;
-
-			case	0x90:
-					battery_level_state =  Boost_Level3;
-						break;
-
-			case	0xA0:
-					battery_level_state =  Boost_Level4;
-						break;
-			case	0xB0:
-
-					battery_level_state =  Boost_Level5;
-
-						break;
-			default :
-						break;
-
-		}
-		SendBatteryStateData = battery_level_state;
 	}
+		
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
