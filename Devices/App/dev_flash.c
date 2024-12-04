@@ -16,6 +16,40 @@ const FLASH_BLOCK Flash_Block[FLASH_BANK_NUM] =
 	{.bank = FLASH_SECTOR_23,.start_addr = 0x81E0000,.stop_addr = 0x81FFFFF,.size = 131072},
 };
 
+HAL_StatusTypeDef EraseFlash(uint32_t addr)
+{
+	uint8_t tag_i = 0;
+	uint32_t sector = 0;
+	uint32_t sectorerror;
+	HAL_StatusTypeDef status = HAL_BUSY;
+	FLASH_EraseInitTypeDef EraseInitStruct;
+
+	if((addr < Flash_Block[0].start_addr) && (addr > Flash_Block[FLASH_BANK_NUM-1].stop_addr))
+	{
+		return HAL_ERROR;
+	}
+
+	HAL_FLASH_Unlock();
+	
+	for(tag_i = 0;tag_i < FLASH_BANK_NUM;tag_i++)
+	{
+		if((addr >= Flash_Block[tag_i].start_addr) && (addr <= Flash_Block[tag_i].stop_addr))
+		{
+				sector = Flash_Block[tag_i].bank;
+		}
+		
+	}
+
+	EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
+	EraseInitStruct.NbSectors = 1;
+	EraseInitStruct.Sector = sector;
+	EraseInitStruct.VoltageRange = FLASH_VOLTAGE_RANGE_3;
+
+	status = HAL_FLASHEx_Erase(&EraseInitStruct, &sectorerror);
+
+	return status;
+}
+
 HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 {
 	uint8_t tag_i = 0;

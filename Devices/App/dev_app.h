@@ -47,7 +47,7 @@ extern uint32_t ChargeRecvTime;
 extern uint32_t ShuntDownCount;
 extern uint32_t MotorTime;
 extern uint32_t BeatTime;
-
+extern uint32_t HintTime;
 /*adc*/
 extern uint16_t BatteryVol;										//adc电压采样
 extern uint32_t UltraWorkTim;									//超声工作时间

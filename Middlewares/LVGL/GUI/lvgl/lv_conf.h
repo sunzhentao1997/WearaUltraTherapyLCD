@@ -85,7 +85,7 @@
                                         
  ***********************************************************************************/
 /* 默认的显示刷新周期。LVGL使用这个周期重绘修改过的区域 */
-#define LV_DISP_DEF_REFR_PERIOD             10     /*[ms]*/
+#define LV_DISP_DEF_REFR_PERIOD             16     /*[ms]*/
 
 /* 输入设备的读取周期(以毫秒为单位) */
 #define LV_INDEV_DEF_READ_PERIOD            30     /*[ms]*/

@@ -121,22 +121,29 @@ static void main_stop_event_handler (lv_event_t *e)
     }
     case LV_EVENT_RELEASED:
     {
-		DevWorkState = IDLE_STATE;
-		ScreenState = STOP;
+			DevWorkState = IDLE_STATE;
+			ScreenState = STOP;
 
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
-        lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+//			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+//			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+//			lv_obj_clear_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+//			lv_obj_clear_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
+//			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+//			lv_obj_clear_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
+//			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
+			lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
+			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
         break;
-	}
-	case LV_EVENT_PRESSED:
-	{
-		BeepFlg = 1;
-		BeepCount = 2;
+		}
+		case LV_EVENT_PRESSED:
+		{
+			BeepFlg = 1;
+			BeepCount = 2;
     }
     default:
         break;
-    }
+	}
 }
 
 static void main_pause_event_handler (lv_event_t *e)
@@ -2047,10 +2054,9 @@ static void charge_event_handler(lv_event_t *e)
 	switch (code)
 	{
 	case LV_EVENT_SCREEN_LOAD_START:
-	{
-		Screen_Id = PARAM_SCREEN;
-		
-		battery_display_func[Screen_Id](SendBatteryStateData);
+	{	
+		//Screen_Id = CHAREG_SCREEN;
+		//battery_display_func[Screen_Id](SendBatteryStateData);
 		break;
 	}
 	default:

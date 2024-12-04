@@ -18,6 +18,7 @@ typedef struct
 	uint32_t size;
 }FLASH_BLOCK;
 
+HAL_StatusTypeDef EraseFlash(uint32_t addr);
 HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len);
 void DevFlash_Read(uint32_t addr,uint16_t* buff,uint16_t len);
 

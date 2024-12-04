@@ -204,13 +204,15 @@ void UltraAppTask(void *argument)
 	
 	DevSystem_Init();
 	DevAdc_Init();
+	DevMPC5043_MainFunc();
+	BatteryLevelInit();
   /* Infinite loop */
   for(;;)
   {
 		DevAdc_MainFunc();
     if(StartFlg == 1)
     {
-      
+			BatteryLevelGet();
       DevAPP_MainFunc();
       DevMPC5043_MainFunc();
       UltraParam_Set();
@@ -237,7 +239,6 @@ void OtherFuncTask(void *argument)
     if(StartFlg == 1)
     {
 			Screen_TriggerFunc();
-			BatteryLevelGet();
 		//	printf("%d\n",BatteryVol);
     }
 		

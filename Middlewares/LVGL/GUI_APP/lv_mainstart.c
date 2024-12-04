@@ -91,7 +91,7 @@ void ScreenFunc(void)
 		/*充电结束跳转放电界面*/
 		if (BatteryStaOld != BOOST)
 		{
-			ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.charge_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 50, 50, false, true);
+			ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.charge_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 0, 0, false, true);
 			BatteryStaOld = BOOST;
 		}
 		Screen_Boost();
@@ -133,6 +133,7 @@ static void Screen_Charge(void)
 	static uint8_t chact = 0;
 	static uint8_t ChargeFlg = 0;
 	static uint16_t RefreshCount = 0;
+	//SendBatteryStateData = Battery_Level1;
 
 	id = Screen_Id;
 
@@ -178,7 +179,7 @@ static void Screen_Charge(void)
 	if (Screen_Id == CHAREG_SCREEN)
 	{
 		RefreshCount++;
-		if (RefreshCount > 100)
+		if (RefreshCount > 120)
 		{
 			RefreshCount = 0;
 			if ((chact <= Battery_Level5) && (chact >= SendBatteryStateData))
@@ -194,36 +195,47 @@ static void Screen_Charge(void)
 
 			switch (chargelevel)
 			{
-			case 1:
+			case Battery_Level1:
+				
 				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
 				break;
-			case 2:
+			case Battery_Level2:
+				
 				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
 				break;
-			case 3:
+			case Battery_Level3:
+				
 				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
 				break;
-			case 4:
+			case Battery_Level4:
+				
 				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
 				break;
-			case 5:
+			case Battery_Level5:
+				
 				lv_obj_clear_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
 				break;
+			
 			default:
 				break;
 			}
@@ -281,7 +293,7 @@ static void Screen_MainFunc(void)
 			if (SliderVal < 0)
 			{
 				SliderVal = 0;
-				ScreenState = STOP;
+				ScreenState = COMPLETE;
 			}
 			get_time_buff();
 			lv_arc_set_value(guider_ui.main_arc_1, SliderVal);
@@ -366,7 +378,19 @@ static void Screen_MainFunc(void)
 			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
 			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
+			
 		}
+		if(HintTime > 2000)
+			{
+					ScreenState = IDLE;
+					lv_label_set_text(guider_ui.main_time, "20:00");
+					lv_arc_set_value(guider_ui.main_arc_1, 1200);
+					lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
+					lv_obj_add_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
+			}
 		break;
 	case STOP:
 		if (ScreenState != ScreenState_old)
@@ -384,6 +408,18 @@ static void Screen_MainFunc(void)
 			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
 			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
+			
+		}
+		if(HintTime > 2000)
+		{
+				ScreenState = IDLE;
+				lv_label_set_text(guider_ui.main_time, "20:00");
+				lv_arc_set_value(guider_ui.main_arc_1, 1200);
+				lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
+				lv_obj_add_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
 		}
 		break;
 	case PAGING:
