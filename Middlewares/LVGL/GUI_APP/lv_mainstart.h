@@ -44,7 +44,7 @@ extern uint8_t UltraDuty;
 extern uint8_t SlaveFlg;
 extern uint16_t FreqOffset;
 extern uint16_t LightLevel;
-extern uint32_t MotorLevel;
+extern uint16_t MotorLevel;
 extern SCREENID Screen_Id;
 extern SCREENSTATE ScreenState;
 extern DEVICESPARAM DevicesParam;

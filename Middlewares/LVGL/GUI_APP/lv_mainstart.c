@@ -48,7 +48,7 @@ uint8_t UltraDuty = 25;		   // 脉冲占空比
 uint16_t FreqOffset = 0;	   // 频率偏移
 uint16_t LightLevel = 100;	   // 亮度
 uint16_t LightLevel_old = 100; // 历史亮度
-uint32_t MotorLevel = 0;	   // 震动等级
+uint16_t MotorLevel = 0;	   // 震动等级
 uint16_t back_pos = 40;
 uint8_t DisplayFlg = 1;
 uint8_t ParamLockFlg = 0;
@@ -79,6 +79,7 @@ void ScreenFunc(void)
 {
 	uint8_t id = 0;
 	static uint8_t BatteryStaOld = BOOST;
+	BatteryState = BOOST;
 
 	if (BatteryState != BOOST)
 	{
@@ -380,7 +381,7 @@ static void Screen_MainFunc(void)
 			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
 			
 		}
-		if(HintTime > 2000)
+		if(HintTime > 2500)
 			{
 					ScreenState = IDLE;
 					lv_label_set_text(guider_ui.main_time, "20:00");
@@ -410,7 +411,7 @@ static void Screen_MainFunc(void)
 			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
 			
 		}
-		if(HintTime > 2000)
+		if(HintTime > 2500)
 		{
 				ScreenState = IDLE;
 				lv_label_set_text(guider_ui.main_time, "20:00");

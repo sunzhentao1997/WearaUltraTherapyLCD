@@ -62,6 +62,13 @@ weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/s
 weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/sw/lv_draw_sw.h
 weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/sw/lv_draw_sw_blend.h
 weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/stm32_dma2d/lv_gpu_stm32_dma2d.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Include/core_cm4.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Include/cmsis_version.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+weaultratherapylcd\lv_hal_disp.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/swm341_dma2d/lv_gpu_swm341_dma2d.h
 weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/arm2d/lv_gpu_arm2d.h
 weaultratherapylcd\lv_hal_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\hal\../draw/nxp/vglite/lv_draw_vglite.h

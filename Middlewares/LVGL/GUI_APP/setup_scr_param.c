@@ -16,7 +16,7 @@
 
 #include "lv_mainstart.h"
 
-static uint8_t ParamTempBuff[6] = {0};
+static uint8_t ParamTempBuff[10] = {0};
 
 void setup_scr_param(lv_ui *ui)
 {
@@ -353,6 +353,9 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_text_align(ui->param_back, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes param_DeviceId
+		memset(ParamTempBuff,0,10);
+		memcpy(ParamTempBuff,DevicesParam.DevParam.DeviceIdBuff,10);
+		
     ui->param_DeviceId = lv_btn_create(ui->param);
     ui->param_DeviceId_label = lv_label_create(ui->param_DeviceId);
 	lv_label_set_text(ui->param_DeviceId_label, (const char*)&ParamTempBuff);
@@ -374,8 +377,8 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_text_align(ui->param_DeviceId, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes param_Power
-	memset(ParamTempBuff,0,6);
-	memcpy(ParamTempBuff,DevicesParam.DevParam.PowerBuff,6);
+	memset(ParamTempBuff,0,10);
+	memcpy(ParamTempBuff,DevicesParam.DevParam.PowerBuff,10);
 	
     ui->param_Power = lv_btn_create(ui->param);
     ui->param_Power_label = lv_label_create(ui->param_Power);
@@ -398,8 +401,8 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_text_align(ui->param_Power, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes param_Temp
-	memset(ParamTempBuff,0,6);
-	memcpy(ParamTempBuff,DevicesParam.DevParam.TemperatureBuff,6);
+		memset(ParamTempBuff,0,10);
+		memcpy(ParamTempBuff,DevicesParam.DevParam.TemperatureBuff,10);
 	
     ui->param_Temp = lv_btn_create(ui->param);
     ui->param_Temp_label = lv_label_create(ui->param_Temp);

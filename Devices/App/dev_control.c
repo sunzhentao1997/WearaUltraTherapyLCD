@@ -35,8 +35,8 @@ void UltraParam_Init(void)
 		FreqParam_B = (uint8_t)FlashStoreBuff[4];
 		VibraParam = (uint8_t)FlashStoreBuff[5];
 
-		u32_FreqParam_A = 2000 * (551 + FreqParam_A);
-		u32_FreqParam_B = 2000 * (551 + FreqParam_B);
+		u32_FreqParam_A = 2000 * (580 + FreqParam_A);
+		u32_FreqParam_B = 2000 * (580 + FreqParam_B);
 		u32_VibraParam = VibraParam * 106;
 	}
 	else
@@ -45,8 +45,8 @@ void UltraParam_Init(void)
 		FreqParam_B = 0x54;
 		VibraParam = 0x0A;
 
-		u32_FreqParam_A = 2000 * (551 + FreqParam_A);
-		u32_FreqParam_B = 2000 * (551 + FreqParam_B);
+		u32_FreqParam_A = 2000 * (580 + FreqParam_A);
+		u32_FreqParam_B = 2000 * (580 + FreqParam_B);
 		u32_VibraParam = VibraParam * 106;
 	}
 
@@ -275,8 +275,8 @@ void UltraParam_Set(void)
 		FreqParam_B = FreqOffset;
 		VibraParam = MotorLevel;
 
-		u32_FreqParam_A = 2000 * (FreqParam_A + 551);
-		u32_FreqParam_B = 2000 * (FreqParam_B + 551);
+		u32_FreqParam_A = 2000 * (FreqParam_A + 580);
+		u32_FreqParam_B = 2000 * (FreqParam_B + 580);
 		u32_VibraParam = VibraParam * 106;
 
 		ParamChangeFlg[0] = 0xdd;

@@ -163,7 +163,7 @@
  *-----------*/
 
 /* 使用STM32的DMA2D(又名Chrom Art) GPU */
-#define LV_USE_GPU_STM32_DMA2D              0
+#define LV_USE_GPU_STM32_DMA2D              1
 #if LV_USE_GPU_STM32_DMA2D
     /* 必须定义包括目标处理器的CMSIS头的路径
        如。“stm32f769xx.h”或“stm32f429xx.h”*/

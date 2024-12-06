@@ -130,3 +130,13 @@ weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../extra/widg
 weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../extra/widgets/led/lv_led.h
 weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../extra/widgets/imgbtn/lv_imgbtn.h
 weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../extra/widgets/span/lv_span.h
+weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../draw/stm32_dma2d/lv_gpu_stm32_dma2d.h
+weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../draw/stm32_dma2d/../sw/lv_draw_sw.h
+weaultratherapylcd\lv_obj.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../draw/stm32_dma2d/../sw/lv_draw_sw_blend.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Include/core_cm4.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Include/cmsis_version.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+weaultratherapylcd\lv_obj.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h

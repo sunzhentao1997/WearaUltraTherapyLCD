@@ -52,26 +52,6 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
-/**
- * @brief       LCD加速绘制函数
- * @param       (sx,sy),(ex,ey):填充矩形对角坐标,区域大小为:(ex - sx + 1) * (ey - sy + 1)
- * @param       color:要填充的颜色
- * @retval      无
- */
-//void lcd_draw_fast_rgb_color(int16_t sx, int16_t sy,int16_t ex, int16_t ey, uint16_t *color)
-//{
-//    uint16_t w = ex-sx+1;
-//    uint16_t h = ey-sy+1;
-
-//    lcd_set_window(sx, sy, w, h);
-//    uint32_t draw_size = w * h;
-//    lcd_write_ram_prepare();
-
-//    for(uint32_t i = 0; i < draw_size; i++)
-//    {
-//        lcd_wr_data(color[i]);
-//    }
-//}
 
 /**
  * @brief       初始化并注册显示设备
@@ -110,14 +90,14 @@ void lv_port_disp_init(void)
      */
 
     /* 单缓冲区示例) */
-    static lv_disp_draw_buf_t draw_buf_dsc_1;
-#if USE_SRAM
-    lv_color_t* buf_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);              /* ���û������Ĵ�СΪ��Ļ��ȫ�ߴ��С */
-    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * MY_DISP_VER_RES);     /* ��ʼ����ʾ������ */
-#else
-    static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                                              /* ���û������Ĵ�СΪ 10 ����Ļ�Ĵ�С */
-    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 10);                  /* ��ʼ����ʾ������ */
-#endif
+//    static lv_disp_draw_buf_t draw_buf_dsc_1;
+//#if USE_SRAM
+//    lv_color_t* buf_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);             
+//    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * MY_DISP_VER_RES);     
+//#else
+//    static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                                              
+//    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 10);                  
+//#endif
 
     /* 双缓冲区示例) */
 //    static lv_disp_draw_buf_t draw_buf_dsc_2;
@@ -126,10 +106,10 @@ void lv_port_disp_init(void)
 //    lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 10);             /* 初始化显示缓冲区 */
 
     /* 全尺寸双缓冲区示例) 并且在下面设置 disp_drv.full_refresh = 1 */
-//    static lv_disp_draw_buf_t draw_buf_dsc_3;
-//    lv_color_t* buf_3_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);                               /* 设置一个全尺寸的缓冲区 */
-//    lv_color_t* buf_3_2 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);                               /* 设置另一个全尺寸的缓冲区 */
-//    lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_HOR_RES * MY_DISP_VER_RES);/* 初始化显示缓冲区 */
+    static lv_disp_draw_buf_t draw_buf_dsc_3;
+    lv_color_t* buf_3_1 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);                               /* 设置一个全尺寸的缓冲区 */
+    lv_color_t* buf_3_2 = (lv_color_t*)mymalloc(SRAMEX, MY_DISP_HOR_RES * MY_DISP_VER_RES);                               /* 设置另一个全尺寸的缓冲区 */
+    lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_HOR_RES * MY_DISP_VER_RES);/* 初始化显示缓冲区 */
 
     /*-----------------------------------
      * 在 LVGL 中注册显示设备
@@ -150,7 +130,7 @@ void lv_port_disp_init(void)
     disp_drv.flush_cb = disp_flush;
 
     /* 设置显示缓冲区 */
-    disp_drv.draw_buf = &draw_buf_dsc_1;
+    disp_drv.draw_buf = &draw_buf_dsc_3;
 
     /* 全尺寸双缓冲区示例)*/
     //disp_drv.full_refresh = 1;
@@ -214,8 +194,6 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
      * 通知图形库，已经刷新完毕了 */
     lv_disp_flush_ready(disp_drv);
 }
-
-/* ��ѡ: GPU �ӿ� */
 
 /* 如果你的 MCU 有硬件加速器 (GPU) 那么你可以使用它来为内存填充颜色 */
 /**

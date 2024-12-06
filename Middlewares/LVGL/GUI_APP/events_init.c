@@ -20,6 +20,8 @@
 #include "dev_app.h"
 
 uint8_t UnlockFlg = 0;
+static uint16_t MotorLevelTemp = 0;
+static uint16_t FreqOffsetTemp = 0;
 
 /*****************************************************************************************************
  *
@@ -1127,6 +1129,7 @@ void events_init_light(lv_ui *ui)
  *										震动参数事件处理
  *
  ****************************************************************************************************/
+
 static void vibra_event_handler(lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
@@ -1187,6 +1190,7 @@ static void vibra_save_event_handler(lv_event_t *e)
 	case LV_EVENT_RELEASED:
 	{
 		SlaveFlg = 1;
+		MotorLevel = MotorLevelTemp;
 		
 		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 0, LV_PART_MAIN);
 		lv_obj_clear_flag(guider_ui.vibra_btn_1, LV_OBJ_FLAG_HIDDEN);
@@ -1215,8 +1219,8 @@ static void vibra_slider_1_event_handler(lv_event_t *e)
 	case LV_EVENT_VALUE_CHANGED:
 	{
 		value = lv_slider_get_value(guider_ui.vibra_slider_1);
-		MotorLevel = value;
-		value = MotorLevel * 5;
+		MotorLevelTemp = value;
+		value = MotorLevelTemp * 5;
 		lv_label_set_text_fmt(guider_ui.vibra_label_7, "%d%%", value);
 		break;
 	}
@@ -1419,6 +1423,8 @@ static void freq_save_event_handler(lv_event_t *e)
 	case LV_EVENT_RELEASED:
 	{
 		SlaveFlg = 1;
+		FreqOffset = FreqOffsetTemp;
+		
 		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_save, 0, LV_PART_MAIN);
 		lv_obj_clear_flag(guider_ui.freq_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_label_10, LV_OBJ_FLAG_HIDDEN);
@@ -1434,6 +1440,26 @@ static void freq_save_event_handler(lv_event_t *e)
 	default:
 		break;
 	}
+}
+
+static void freq_roller_1_event_handler (lv_event_t *e)
+{
+		uint16_t tempval = 0;
+
+		lv_obj_t *target = lv_event_get_target(e);
+		lv_event_code_t code = lv_event_get_code(e);
+
+		tempval = lv_roller_get_selected(target);
+
+		FreqOffsetTemp = tempval;
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        break;
+    }
+    default:
+        break;
+    }
 }
 
 static void freq_btn_1_event_handler(lv_event_t *e)
@@ -1459,12 +1485,13 @@ static void freq_btn_1_event_handler(lv_event_t *e)
 	}
 }
 
-void events_init_freq(lv_ui *ui)
+void events_init_freq (lv_ui *ui)
 {
-	lv_obj_add_event_cb(ui->freq, freq_event_handler, LV_EVENT_ALL, ui);
-	lv_obj_add_event_cb(ui->freq_back, freq_back_event_handler, LV_EVENT_ALL, ui);
-	lv_obj_add_event_cb(ui->freq_save, freq_save_event_handler, LV_EVENT_ALL, ui);
-	lv_obj_add_event_cb(ui->freq_btn_1, freq_btn_1_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->freq, freq_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->freq_back, freq_back_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->freq_save, freq_save_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->freq_roller_1, freq_roller_1_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->freq_btn_1, freq_btn_1_event_handler, LV_EVENT_ALL, ui);
 }
 /*****************************************************************************************************
  *

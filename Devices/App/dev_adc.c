@@ -356,6 +356,10 @@ void BatteryLevelGet(void)
 									if((batval > battery_voltage_charge[tag_i]) && (batval <= battery_voltage_charge[tag_i+1]))
 									{
 											BatLevel = BatLevelBuff[tag_i];
+										if(BatLevel == Battery_Level5)
+										{
+												BatLevel = Battery_Level4;
+										}
 									}
 							}
 					}

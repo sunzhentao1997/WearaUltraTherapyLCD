@@ -49,6 +49,13 @@ weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\s
 weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../hal/../misc/lv_ll.h
 weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../sw/lv_draw_sw.h
 weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../sw/lv_draw_sw_blend.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Include/core_cm4.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Include/cmsis_version.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+weaultratherapylcd\lv_gpu_stm32_dma2d.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../core/lv_refr.h
 weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../core/lv_obj.h
 weaultratherapylcd\lv_gpu_stm32_dma2d.o: ..\Middlewares\LVGL\GUI\lvgl\src\draw\stm32_dma2d\../../core/lv_obj_tree.h
