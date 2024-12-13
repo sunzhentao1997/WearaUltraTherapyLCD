@@ -379,7 +379,3 @@ void st7701_init(void)
 	SPI_WriteComm(0x29);      //显示开
 	st7701_delay(120);
 }
-
-
-
-

@@ -89,6 +89,6 @@ void init_scr_del_flag(lv_ui *ui)
 void setup_ui(lv_ui *ui)
 {
     init_scr_del_flag(ui);
-    setup_scr_freq(ui);
-    lv_scr_load(ui->freq);
+    setup_scr_main(ui);
+    lv_scr_load(ui->main);
 }

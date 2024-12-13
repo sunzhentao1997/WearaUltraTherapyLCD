@@ -212,96 +212,29 @@ static void main_continue_event_handler (lv_event_t *e)
     }
 }
 
-static void main_suo_event_handler (lv_event_t *e)
+static void main_ulock_event_handler (lv_event_t *e)
 {
-	static int32_t old_x = 70;
-	static int8_t step = 5;
-	static uint16_t slider_pos_old = 95;
-
     lv_event_code_t code = lv_event_get_code(e);
-	switch (code)
-	{
+    switch (code) {
+    case LV_EVENT_LONG_PRESSED:
+    {
+				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
+        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+        break;
+    }
     case LV_EVENT_PRESSING:
     {
-		if (slider_pos < 95)
-		{
-			slider_pos = 95;
-		}
-		else if (slider_pos > 385)
-		{
-			slider_pos = 405;
-		}
-
-		if (((slider_pos - slider_pos_old) < 100) && ((slider_pos - slider_pos_old) > -100))
-		{
-			slider_pos_old = slider_pos;
-		}
-		else
-		{
-		}
-
-		step = (slider_pos_old - old_x);
-
-		old_x = old_x + step;
-
-		if (old_x < 95)
-		{
-			old_x = 95;
-		}
-		else if (old_x > 380)
-		{
-			old_x = 380;
-		}
-
-		lv_obj_set_pos(guider_ui.main_suo, (lv_coord_t)(old_x - 25), 655);
-
-		if (old_x == 380)
-		{
-			UnlockFlg = 1;
-			if (UnlockCount > 500)
-			{
-				lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_set_pos(guider_ui.main_suo, 70, 655);
-				UnlockFlg = 0;
-			}
-		}
-		else
-		{
-			UnlockCount = 0;
-		}
-		break;
-	}
-	case LV_EVENT_RELEASED:
-	{
-		if ((old_x < 405) && (UnlockFlg == 0))
-		{
-			UnlockFlg = 2;
-			back_pos = old_x;
-			old_x = 95;
-			slider_pos_old = 95;
-			// lv_obj_set_pos(guider_ui.main_btn_1, 70, 662);
-		}
-		else
-		{
-			back_pos = old_x;
-			old_x = 95;
-			slider_pos_old = 95;
-		}
-		break;
-	}
-	case LV_EVENT_PRESSED:
-	{
-		BeepFlg = 1;
-		BeepCount = 2;
-	}
-	default:
-		break;
-	}
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
+        break;
+    }
+    default:
+        break;
+    }
 }
 
 static void main_start_event_handler(lv_event_t *e)
@@ -331,22 +264,25 @@ static void main_start_event_handler(lv_event_t *e)
 		ScreenState = WORK;
 
 		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
 		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-		break;
-	}
+
+        break;
+    }
 	case LV_EVENT_PRESSED:
 	{
 		BeepFlg = 1;
 		BeepCount = 2;
 	}
-	default:
-		break;
-	}
+    default:
+        break;
+    }
 }
 
 static void main_btn_1_event_handler(lv_event_t *e)
@@ -359,6 +295,8 @@ static void main_btn_1_event_handler(lv_event_t *e)
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 		
+		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
 		lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
@@ -412,7 +350,7 @@ void events_init_main(lv_ui *ui)
 	lv_obj_add_event_cb(ui->main_stop, main_stop_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->main_pause, main_pause_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->main_continue, main_continue_event_handler, LV_EVENT_ALL, ui);
-	lv_obj_add_event_cb(ui->main_suo, main_suo_event_handler, LV_EVENT_ALL, ui);
+	lv_obj_add_event_cb(ui->main_ulock, main_ulock_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->main_start, main_start_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->main_btn_1, main_btn_1_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->main_btn_2, main_btn_2_event_handler, LV_EVENT_ALL, ui);

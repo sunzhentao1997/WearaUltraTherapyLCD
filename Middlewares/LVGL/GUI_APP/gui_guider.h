@@ -40,10 +40,15 @@ typedef struct
 	lv_obj_t *main_continue;
 	lv_obj_t *main_continue_label;
 	lv_obj_t *main_ulock;
+	lv_obj_t *main_ulock_label;
 	lv_obj_t *main_suo;
-	lv_obj_t *main_suo_label;
 	lv_obj_t *main_start;
 	lv_obj_t *main_start_label;
+	lv_obj_t *main_wave1;
+	lv_obj_t *main_wave2;
+	lv_obj_t *main_wave3;
+	lv_obj_t *main_wave4;
+	lv_obj_t *main_wave5;
 	lv_obj_t *main_label_13;
 	lv_obj_t *main_label_12;
 	lv_obj_t *main_btn_1;
@@ -52,11 +57,6 @@ typedef struct
 	lv_obj_t *main_btn_2_label;
 	lv_obj_t *main_complete;
 	lv_obj_t *main_finish;
-	lv_obj_t *main_wave1;
-	lv_obj_t *main_wave2;
-	lv_obj_t *main_wave3;
-	lv_obj_t *main_wave4;
-	lv_obj_t *main_wave5;
 	lv_obj_t *config;
 	bool config_del;
 	lv_obj_t *config_logo;
@@ -302,7 +302,7 @@ LV_IMG_DECLARE(_pressing2_181x100);
 
 LV_IMG_DECLARE(_pressed_406x100);
 
-LV_IMG_DECLARE(_3232_60x123);
+LV_IMG_DECLARE(_suo_1_58x58);
 
 LV_IMG_DECLARE(_pressed_406x100);
 
@@ -331,6 +331,10 @@ LV_IMG_DECLARE(_freq_38x38);
 LV_IMG_DECLARE(_battery_1_61x31);
 
 LV_IMG_DECLARE(_back_154x68);
+
+LV_IMG_DECLARE(_save_154x68);
+
+LV_IMG_DECLARE(_success_75x75);
 
 LV_IMG_DECLARE(_battery_1_61x31);
 
@@ -366,9 +370,10 @@ LV_IMG_DECLARE(_erro_75x75);
 
 LV_IMG_DECLARE(_battery_1_61x31);
 
+LV_IMG_DECLARE(_erro_88x88);
+
 LV_IMG_DECLARE(_locked_88x88);
 
-LV_IMG_DECLARE(_erro_88x88);
 
 LV_FONT_DECLARE(lv_customer_font_NSHBold_36)
 LV_FONT_DECLARE(lv_customer_font_NSHMedium_40)

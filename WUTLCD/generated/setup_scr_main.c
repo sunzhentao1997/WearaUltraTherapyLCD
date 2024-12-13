@@ -402,55 +402,56 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_text_align(ui->main_continue, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_ulock
-    ui->main_ulock = lv_label_create(ui->main);
-    lv_label_set_text(ui->main_ulock, "    滑动解锁 ");
-    lv_label_set_long_mode(ui->main_ulock, LV_LABEL_LONG_WRAP);
+    ui->main_ulock = lv_btn_create(ui->main);
+    ui->main_ulock_label = lv_label_create(ui->main_ulock);
+    lv_label_set_text(ui->main_ulock_label, "      长 按 解 锁 ");
+    lv_label_set_long_mode(ui->main_ulock_label, LV_LABEL_LONG_WRAP);
+    lv_obj_align(ui->main_ulock_label, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_style_pad_all(ui->main_ulock, 0, LV_STATE_DEFAULT);
+    lv_obj_set_width(ui->main_ulock_label, LV_PCT(100));
     lv_obj_set_pos(ui->main_ulock, 36, 659);
     lv_obj_set_size(ui->main_ulock, 406, 100);
 
     //Write style for main_ulock, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->main_ulock, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui->main_ulock, &_pressed_406x100, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_opa(ui->main_ulock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor(ui->main_ulock, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor_opa(ui->main_ulock, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->main_ulock, lv_color_hex(0x139987), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->main_ulock, &lv_font_NSHBold_60, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->main_ulock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->main_ulock, 8, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->main_ulock, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->main_ulock, 20, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->main_ulock, 16, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui->main_ulock, &_pressed_406x100, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_opa(ui->main_ulock, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->main_ulock, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_suo
-    ui->main_suo = lv_btn_create(ui->main);
-    ui->main_suo_label = lv_label_create(ui->main_suo);
-    lv_label_set_text(ui->main_suo_label, " ");
-    lv_label_set_long_mode(ui->main_suo_label, LV_LABEL_LONG_WRAP);
-    lv_obj_align(ui->main_suo_label, LV_ALIGN_CENTER, 0, 0);
-    lv_obj_set_style_pad_all(ui->main_suo, 0, LV_STATE_DEFAULT);
-    lv_obj_set_width(ui->main_suo_label, LV_PCT(100));
-    lv_obj_set_pos(ui->main_suo, 70, 655);
-    lv_obj_set_size(ui->main_suo, 60, 123);
+    ui->main_suo = lv_label_create(ui->main);
+    lv_label_set_text(ui->main_suo, " ");
+    lv_label_set_long_mode(ui->main_suo, LV_LABEL_LONG_WRAP);
+    lv_obj_set_pos(ui->main_suo, 66, 678);
+    lv_obj_set_size(ui->main_suo, 58, 58);
 
     //Write style for main_suo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_bg_opa(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->main_suo, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_src(ui->main_suo, &_3232_60x123, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_opa(ui->main_suo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor(ui->main_suo, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_suo, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->main_suo, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->main_suo, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->main_suo, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->main_suo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->main_suo, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->main_suo, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui->main_suo, &_suo_1_58x58, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_opa(ui->main_suo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor(ui->main_suo, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor_opa(ui->main_suo, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_start
     ui->main_start = lv_btn_create(ui->main);

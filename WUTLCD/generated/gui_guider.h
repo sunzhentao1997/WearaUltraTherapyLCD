@@ -40,8 +40,8 @@ typedef struct
 	lv_obj_t *main_continue;
 	lv_obj_t *main_continue_label;
 	lv_obj_t *main_ulock;
+	lv_obj_t *main_ulock_label;
 	lv_obj_t *main_suo;
-	lv_obj_t *main_suo_label;
 	lv_obj_t *main_start;
 	lv_obj_t *main_start_label;
 	lv_obj_t *main_wave1;
@@ -304,7 +304,7 @@ LV_IMG_DECLARE(_pressing2_181x100);
 
 LV_IMG_DECLARE(_pressed_406x100);
 
-LV_IMG_DECLARE(_3232_60x123);
+LV_IMG_DECLARE(_suo_1_58x58);
 
 LV_IMG_DECLARE(_pressed_406x100);
 

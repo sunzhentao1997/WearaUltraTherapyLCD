@@ -25,8 +25,6 @@ static void main_event_handler (lv_event_t *e)
         lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
@@ -39,6 +37,8 @@ static void main_event_handler (lv_event_t *e)
         lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         break;
     }
     case LV_EVENT_CLICKED:
@@ -118,8 +118,6 @@ static void main_continue_event_handler (lv_event_t *e)
     }
     case LV_EVENT_RELEASED:
     {
-        lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
         lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 0, LV_PART_MAIN);
@@ -131,16 +129,24 @@ static void main_continue_event_handler (lv_event_t *e)
     }
 }
 
-static void main_suo_event_handler (lv_event_t *e)
+static void main_ulock_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_PRESSING:
+    case LV_EVENT_LONG_PRESSED:
     {
+        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
+        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+        lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
         break;
     }
-    case LV_EVENT_RELEASED:
+    case LV_EVENT_PRESSING:
     {
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
+        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
         break;
     }
     default:
@@ -161,11 +167,11 @@ static void main_start_event_handler (lv_event_t *e)
     {
         lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
         lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         break;
     }
     default:
@@ -184,8 +190,6 @@ static void main_btn_1_event_handler (lv_event_t *e)
         lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         break;
     }
     default:
@@ -217,7 +221,7 @@ void events_init_main (lv_ui *ui)
     lv_obj_add_event_cb(ui->main_stop, main_stop_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->main_pause, main_pause_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->main_continue, main_continue_event_handler, LV_EVENT_ALL, ui);
-    lv_obj_add_event_cb(ui->main_suo, main_suo_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->main_ulock, main_ulock_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->main_start, main_start_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->main_btn_1, main_btn_1_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->main_btn_2, main_btn_2_event_handler, LV_EVENT_ALL, ui);

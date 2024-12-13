@@ -97,5 +97,3 @@ void fmc_sdram_read_buffer(uint8_t *pbuf, uint32_t addr, uint32_t n)
         addr++;
     }
 }
-
-

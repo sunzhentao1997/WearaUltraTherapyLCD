@@ -1868,11 +1868,6 @@
           <GroupName>Middlewares/LVGL/GUI_APP</GroupName>
           <Files>
             <File>
-              <FileName>_3232_60x123.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\_3232_60x123.c</FilePath>
-            </File>
-            <File>
               <FileName>_back_154x68.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\_back_154x68.c</FilePath>
@@ -2041,6 +2036,11 @@
               <FileName>_wave5_21x79.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\_wave5_21x79.c</FilePath>
+            </File>
+            <File>
+              <FileName>_suo_1_58x58.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_suo_1_58x58.c</FilePath>
             </File>
           </Files>
         </Group>

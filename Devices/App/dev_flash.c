@@ -122,6 +122,3 @@ void DevFlash_Read(uint32_t addr,uint16_t* buff,uint16_t len)
 	// 锁定闪存
 	HAL_FLASH_Lock();
 }
-
-
-

@@ -79,7 +79,7 @@ void ScreenFunc(void)
 {
 	uint8_t id = 0;
 	static uint8_t BatteryStaOld = BOOST;
-	BatteryState = BOOST;
+	//BatteryState = BOOST;
 
 	if (BatteryState != BOOST)
 	{
@@ -372,6 +372,11 @@ static void Screen_MainFunc(void)
 			
 			DevFlash_Write(FLASH_BATTERYLEVEL,(uint16_t *)&SendBatteryStateData,1);
 			
+			lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
@@ -402,6 +407,12 @@ static void Screen_MainFunc(void)
 			DevWorkState = IDLE_STATE;
 
 			DevFlash_Write(FLASH_BATTERYLEVEL,(uint16_t *)&SendBatteryStateData,1);
+			
+			lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);

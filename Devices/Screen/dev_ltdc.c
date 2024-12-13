@@ -1,26 +1,3 @@
-/**
- ****************************************************************************************************
- * @file        ltdc.c
- * @author      正点原子团队(ALIENTEK)
- * @version     V1.0
- * @date        2022-4-20
- * @brief       LTDC 驱动代码
- * @license     Copyright (c) 2020-2032, 广州市星翼电子科技有限公司
- ****************************************************************************************************
- * @attention
- *
- * 实验平台:正点原子 阿波罗 F429开发板
- * 在线视频:www.yuanzige.com
- * 技术论坛:www.openedv.com
- * 公司网址:www.alientek.com
- * 购买地址:openedv.taobao.com
- *
- * 修改说明
- * V1.0 20220420
- * 第一次发布
- *
- ****************************************************************************************************
- */
 #include "dev_ltdc.h"
 #include "dev_touch.h"
 #include "ltdc.h"
@@ -291,13 +268,10 @@ void ltdc_init(void)
     lcdltdc.pixsize = 4;                        /* 每个像素占4个字节 */
 #else
     g_ltdc_framebuf[0] = (uint32_t*)&ltdc_lcd_framebuf;
-//  g_ltdc_framebuf[1] = (uint32_t*)&ltdc_lcd_framebuf1;
     lcdltdc.pixsize = 2;                        /* 每个像素占2个字节 */
 #endif 
     /* 层配置 */
-    ltdc_layer_window_config(0, 0, 0, lcdltdc.pwidth, lcdltdc.pheight);                                  /* 层窗口配置,以LCD面板坐标系为基准,不要随便修改! */
-//	ltdc_layer_window_config(1,0,0,lcdltdc.pwidth,lcdltdc.pheight);                                    /* 层窗口配置,以LCD面板坐标系为基准,不要随便修改! */
+    ltdc_layer_window_config(0, 0, 0, lcdltdc.pwidth, lcdltdc.pheight);                                  /* 层窗口配置,以LCD面板坐标系为基准,不要随便修改! */                                 /* 层窗口配置,以LCD面板坐标系为基准,不要随便修改! */
     ltdc_select_layer(0);                 /* 选择第1层 */
-//    LTDC_BL(1);                           /* 点亮背光 */
     ltdc_clear(0XFFFFFFFF);               /* 清屏 */
 }

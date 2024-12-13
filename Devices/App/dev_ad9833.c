@@ -189,28 +189,22 @@ void AD9833_InitIo(uint8_t ch)
  */
 void AD9833_SetPara(uint8_t ch,uint32_t Freq_SFR,double Freq,uint32_t Phase_SFR,uint32_t Phase,uint32_t WaveMode)
 {
-	unsigned int Fsel,Psel;
-	//第一次设置数据时要先复位
-	AD9833_SendData(ch,0x0100);
-	AD9833_SendData(ch,0x2100);
-	AD9833_SendFrequency(ch,Freq_SFR,Freq);
-	AD9833_SendPhase(ch,Phase_SFR,Phase);
-	if(Freq_SFR == AD9833_REG_FREQ0)
-	{
-		Fsel = AD9833_FSEL0;
-	}
-	else
-	{
-		Fsel = AD9833_FSEL1;
-	}
-	if(Phase_SFR == AD9833_REG_PHASE0)
-	{
-		Psel = AD9833_PSEL0;
-	}
-	else
-	{
-		Psel = AD9833_PSEL1;
-	}
-	AD9833_SendWave(ch,WaveMode,Fsel,Psel);
-}
+	// 参数有效性检查
+    if (ch >= AD9833_MaxCh || (Freq_SFR != AD9833_REG_FREQ0 && Freq_SFR != AD9833_REG_FREQ1) || 
+        (Phase_SFR != AD9833_REG_PHASE0 && Phase_SFR != AD9833_REG_PHASE1)) {
+        // 错误处理：通道号或寄存器选择不合法
+        return; // 这里可以根据实际需求选择返回值或其他错误处理机制
+    }
 
+    uint32_t Fsel = (Freq_SFR == AD9833_REG_FREQ0) ? AD9833_FSEL0 : AD9833_FSEL1;
+    uint32_t Psel = (Phase_SFR == AD9833_REG_PHASE0) ? AD9833_PSEL0 : AD9833_PSEL1;
+
+    // 第一次设置数据时要先复位
+    AD9833_SendData(ch, 0x0100);
+    AD9833_SendData(ch, 0x2100);
+    
+    AD9833_SendFrequency(ch, Freq_SFR, Freq);
+    AD9833_SendPhase(ch, Phase_SFR, Phase);
+
+    AD9833_SendWave(ch, WaveMode, Fsel, Psel);
+}

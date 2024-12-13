@@ -1250,7 +1250,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave5.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave5.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -1350,7 +1350,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave4.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave4.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -1450,7 +1450,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave3.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave3.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -1550,7 +1550,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave2.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave2.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -1650,7 +1650,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -1742,7 +1742,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressed.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressed.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#b5b5b5",
 							"bg_img_recolor_opa": 1,
@@ -1923,24 +1923,6 @@
 										}
 									},
 									{
-										"dst": "48t6l4l5",
-										"bindCondi": "",
-										"actionList": {
-											"isVisible": {
-												"value": true
-											}
-										}
-									},
-									{
-										"dst": "iwd57ize",
-										"bindCondi": "",
-										"actionList": {
-											"isVisible": {
-												"value": true
-											}
-										}
-									},
-									{
 										"dst": "wfli4h93",
 										"bindCondi": "",
 										"actionList": {
@@ -1966,6 +1948,24 @@
 												"value": false
 											}
 										}
+									},
+									{
+										"dst": "v65np41p",
+										"bindCondi": "",
+										"actionList": {
+											"isVisible": {
+												"value": true
+											}
+										}
+									},
+									{
+										"dst": "am186sbh",
+										"bindCondi": "",
+										"actionList": {
+											"isVisible": {
+												"value": true
+											}
+										}
 									}
 								]
 							}
@@ -1975,18 +1975,118 @@
 				},
 				{
 					"name": "suo",
-					"id": "iwd57ize",
-					"type": "btn",
-					"left": 70,
-					"top": 655,
+					"id": "v65np41p",
+					"type": "label",
+					"left": 66,
+					"top": 678,
 					"visible": true,
 					"isLock": false,
 					"flag": [],
-					"width": 60,
-					"height": 123,
+					"width": 58,
+					"height": 58,
+					"default_style": false,
+					"text": " ",
+					"long_mode": "LV_LABEL_LONG_WRAP",
+					"custom_attribute": [],
+					"attribute_type": "",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 0,
+							"text_color": "#000000",
+							"text_opa": 255,
+							"font": 16,
+							"text_align": "LV_TEXT_ALIGN_CENTER",
+							"font_family": "montserratMedium",
+							"letter_space": 2,
+							"line_space": 0,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 0,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_dither_mode": "LV_DITHER_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"padding_top": 0,
+							"padding_right": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\suo_1.png",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#b5b5b5",
+							"bg_img_recolor_opa": 1,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DISABLED",
+							"disable": true,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 0,
+							"text_color": "#000000",
+							"text_opa": 255,
+							"font": 16,
+							"font_family": "montserratMedium",
+							"text_align": "LV_TEXT_ALIGN_CENTER",
+							"letter_space": 2,
+							"line_space": 0,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 0,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_dither_mode": "LV_DITHER_NONE",
+							"bg_main_stop": 0,
+							"bg_grad_stop": 255,
+							"padding_top": 0,
+							"padding_right": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						}
+					],
+					"layerName": "main"
+				},
+				{
+					"name": "ulock",
+					"id": "am186sbh",
+					"type": "btn",
+					"left": 36,
+					"top": 659,
+					"visible": true,
+					"isLock": false,
+					"flag": [],
+					"width": 406,
+					"height": 100,
 					"default_style": false,
 					"long_mode": "LV_LABEL_LONG_WRAP",
-					"text": " ",
+					"text": "      长 按 解 锁 ",
 					"toggle": false,
 					"style": [
 						{
@@ -2013,13 +2113,13 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\3232.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressed.png",
 							"bg_img_opa": 255,
-							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor": "#b5b5b5",
 							"bg_img_recolor_opa": 1,
-							"font": 16,
-							"font_family": "montserratMedium",
-							"text_color": "#ffffff",
+							"font": 60,
+							"font_family": "NSHBold",
+							"text_color": "#139987",
 							"text_opa": 255,
 							"text_align": "LV_TEXT_ALIGN_CENTER"
 						},
@@ -2158,118 +2258,77 @@
 					],
 					"event": {
 						"widget": {
+							"long_pressed": {
+								"condition": [],
+								"action": [
+									{
+										"dst": "v65np41p",
+										"bindCondi": "",
+										"actionList": {
+											"isVisible": {
+												"value": false
+											},
+											"bg_img_recolor_opa": {
+												"value": 0
+											}
+										}
+									},
+									{
+										"dst": "am186sbh",
+										"bindCondi": "",
+										"actionList": {
+											"isVisible": {
+												"value": false
+											},
+											"bg_img_recolor_opa": {
+												"value": 0
+											}
+										}
+									},
+									{
+										"dst": "orkj7rme",
+										"bindCondi": "",
+										"actionList": {
+											"isVisible": {
+												"value": true
+											}
+										}
+									},
+									{
+										"dst": "p6uhcy8x",
+										"bindCondi": "",
+										"actionList": {
+											"isVisible": {
+												"value": true
+											}
+										}
+									}
+								]
+							},
 							"pressing": {
 								"condition": [],
-								"action": []
-							},
-							"released": {
-								"condition": [],
-								"action": []
+								"action": [
+									{
+										"dst": "v65np41p",
+										"bindCondi": "",
+										"actionList": {
+											"bg_img_recolor_opa": {
+												"value": 255
+											}
+										}
+									},
+									{
+										"dst": "am186sbh",
+										"bindCondi": "",
+										"actionList": {
+											"bg_img_recolor_opa": {
+												"value": 255
+											}
+										}
+									}
+								]
 							}
 						}
-					},
-					"layerName": "main"
-				},
-				{
-					"name": "ulock",
-					"id": "48t6l4l5",
-					"type": "label",
-					"left": 36,
-					"top": 659,
-					"visible": true,
-					"isLock": false,
-					"flag": [],
-					"width": 406,
-					"height": 100,
-					"default_style": false,
-					"text": "    滑动解锁 ",
-					"long_mode": "LV_LABEL_LONG_WRAP",
-					"custom_attribute": [],
-					"attribute_type": "",
-					"style": [
-						{
-							"part": "LV_PART_MAIN",
-							"state": "LV_STATE_DEFAULT",
-							"disable": false,
-							"border_side": [
-								"LV_BORDER_SIDE_FULL"
-							],
-							"border_width": 0,
-							"border_opa": 255,
-							"border_color": "#2195f6",
-							"radius": 0,
-							"text_color": "#139987",
-							"text_opa": 255,
-							"font": 60,
-							"text_align": "LV_TEXT_ALIGN_CENTER",
-							"font_family": "NSHBold",
-							"letter_space": 8,
-							"line_space": 0,
-							"bg_color": "#2195f6",
-							"bg_grad_color": "#2195f6",
-							"bg_opa": 0,
-							"bg_grad_dir": "LV_GRAD_DIR_NONE",
-							"bg_dither_mode": "LV_DITHER_NONE",
-							"bg_main_stop": 0,
-							"bg_grad_stop": 255,
-							"padding_top": 20,
-							"padding_right": 0,
-							"padding_bottom": 0,
-							"padding_left": 16,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressed.png",
-							"bg_img_opa": 255,
-							"bg_img_recolor": "#ffffff",
-							"bg_img_recolor_opa": 0,
-							"shadow_color": "#2195f6",
-							"shadow_opa": 255,
-							"shadow_width": 0,
-							"shadow_spread": 0,
-							"shadow_ofs_x": 0,
-							"shadow_ofs_y": 0
-						},
-						{
-							"part": "LV_PART_MAIN",
-							"state": "LV_STATE_DISABLED",
-							"disable": true,
-							"border_side": [
-								"LV_BORDER_SIDE_FULL"
-							],
-							"border_width": 0,
-							"border_opa": 255,
-							"border_color": "#2195f6",
-							"radius": 0,
-							"text_color": "#000000",
-							"text_opa": 255,
-							"font": 16,
-							"font_family": "montserratMedium",
-							"text_align": "LV_TEXT_ALIGN_CENTER",
-							"letter_space": 2,
-							"line_space": 0,
-							"bg_color": "#2195f6",
-							"bg_grad_color": "#2195f6",
-							"bg_opa": 0,
-							"bg_grad_dir": "LV_GRAD_DIR_NONE",
-							"bg_dither_mode": "LV_DITHER_NONE",
-							"bg_main_stop": 0,
-							"bg_grad_stop": 255,
-							"padding_top": 0,
-							"padding_right": 0,
-							"padding_bottom": 0,
-							"padding_left": 0,
-							"bg_img_src": "",
-							"bg_img_opa": 255,
-							"bg_img_recolor": "#ffffff",
-							"bg_img_recolor_opa": 0,
-							"shadow_color": "#2195f6",
-							"shadow_opa": 255,
-							"shadow_width": 0,
-							"shadow_spread": 0,
-							"shadow_ofs_x": 0,
-							"shadow_ofs_y": 0
-						}
-					],
-					"event": {
-						"widget": {}
 					},
 					"layerName": "main"
 				},
@@ -2311,7 +2370,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressing2.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressing2.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#b5b5b5",
 							"bg_img_recolor_opa": 1,
@@ -2567,7 +2626,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressing2.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressing2.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#b5b5b5",
 							"bg_img_recolor_opa": 1,
@@ -2805,7 +2864,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressing2.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressing2.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#b5b5b5",
 							"bg_img_recolor_opa": 1,
@@ -3423,7 +3482,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -4410,24 +4469,6 @@
 								}
 							},
 							{
-								"dst": "iwd57ize",
-								"bindCondi": "",
-								"actionList": {
-									"isVisible": {
-										"value": false
-									}
-								}
-							},
-							{
-								"dst": "48t6l4l5",
-								"bindCondi": "",
-								"actionList": {
-									"isVisible": {
-										"value": false
-									}
-								}
-							},
-							{
 								"dst": "8t16kqz4",
 								"bindCondi": "",
 								"actionList": {
@@ -4533,6 +4574,24 @@
 							},
 							{
 								"dst": "rd15ogfq",
+								"bindCondi": "",
+								"actionList": {
+									"isVisible": {
+										"value": false
+									}
+								}
+							},
+							{
+								"dst": "v65np41p",
+								"bindCondi": "",
+								"actionList": {
+									"isVisible": {
+										"value": false
+									}
+								}
+							},
+							{
+								"dst": "am186sbh",
 								"bindCondi": "",
 								"actionList": {
 									"isVisible": {
@@ -5027,7 +5086,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\freq.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\freq.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -5126,7 +5185,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\vibra.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\vibra.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -5225,7 +5284,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\light.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\light.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -5324,7 +5383,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\param.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\param.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -5417,7 +5476,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -7085,7 +7144,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -7559,7 +7618,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -8738,7 +8797,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -9682,7 +9741,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -10918,7 +10977,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -11235,7 +11294,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -11762,7 +11821,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -12015,7 +12074,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0A2847",
 							"bg_img_recolor_opa": 1,
@@ -13038,7 +13097,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -13549,7 +13608,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -14134,7 +14193,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -14387,7 +14446,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -15119,7 +15178,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -15747,7 +15806,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0A2847",
 							"bg_img_recolor_opa": 1,
@@ -16483,7 +16542,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -16956,7 +17015,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -17816,7 +17875,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -18069,7 +18128,7 @@
 							"shadow_spread": 0,
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#0a2847",
 							"bg_img_recolor_opa": 1,
@@ -18801,7 +18860,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -19366,7 +19425,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\erro.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\erro.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -20371,7 +20430,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -21587,7 +21646,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\locked.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\locked.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -22031,7 +22090,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\erro.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\erro.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -23268,7 +23327,7 @@
 							"padding_right": 0,
 							"padding_bottom": 0,
 							"padding_left": 0,
-							"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#ffffff",
 							"bg_img_recolor_opa": 0,
@@ -25627,7 +25686,7 @@
 			"keyboard_font_type": "SourceHanSerifSC_Regular",
 			"keyboard_font_size": 18
 		},
-		"default_scr": "freq",
+		"default_scr": "main",
 		"theme": "LV_THEME_MATERIAL_FLAG_LIGHT",
 		"screen": [
 			{
@@ -25680,26 +25739,6 @@
 										}
 									},
 									"dst_type": "btn"
-								},
-								{
-									"dst": "main_suo",
-									"bindCondi": "",
-									"actionList": {
-										"isVisible": {
-											"value": false
-										}
-									},
-									"dst_type": "btn"
-								},
-								{
-									"dst": "main_ulock",
-									"bindCondi": "",
-									"actionList": {
-										"isVisible": {
-											"value": false
-										}
-									},
-									"dst_type": "label"
 								},
 								{
 									"dst": "main_start",
@@ -25826,6 +25865,26 @@
 										}
 									},
 									"dst_type": "label"
+								},
+								{
+									"dst": "main_suo",
+									"bindCondi": "",
+									"actionList": {
+										"isVisible": {
+											"value": false
+										}
+									},
+									"dst_type": "label"
+								},
+								{
+									"dst": "main_ulock",
+									"bindCondi": "",
+									"actionList": {
+										"isVisible": {
+											"value": false
+										}
+									},
+									"dst_type": "btn"
 								}
 							]
 						},
@@ -26831,7 +26890,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -27371,7 +27430,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressing2.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressing2.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#b5b5b5",
 								"bg_img_recolor_opa": 1,
@@ -27616,7 +27675,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressing2.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressing2.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#b5b5b5",
 								"bg_img_recolor_opa": 1,
@@ -27799,24 +27858,14 @@
 									"condition": [],
 									"action": [
 										{
-											"dst": "main_suo",
+											"dst": "",
 											"bindCondi": "",
-											"actionList": {
-												"isVisible": {
-													"value": true
-												}
-											},
-											"dst_type": "btn"
+											"actionList": {}
 										},
 										{
-											"dst": "main_ulock",
+											"dst": "",
 											"bindCondi": "",
-											"actionList": {
-												"isVisible": {
-													"value": true
-												}
-											},
-											"dst_type": "label"
+											"actionList": {}
 										},
 										{
 											"dst": "main_pause",
@@ -27879,7 +27928,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressing2.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressing2.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#b5b5b5",
 								"bg_img_recolor_opa": 1,
@@ -28028,8 +28077,8 @@
 					},
 					{
 						"name": "main_ulock",
-						"id": "48t6l4l5",
-						"type": "label",
+						"id": "am186sbh",
+						"type": "btn",
 						"visible": true,
 						"flag": [],
 						"pos": [
@@ -28041,120 +28090,83 @@
 							100
 						],
 						"default_style": false,
-						"attribute_type": "",
-						"custom_attribute": [],
-						"event": {
-							"widget": {}
-						},
-						"text": "    滑动解锁 ",
-						"long_mode": "LV_LABEL_LONG_WRAP",
-						"style": [
-							{
-								"part": "LV_PART_MAIN",
-								"state": "LV_STATE_DEFAULT",
-								"disable": false,
-								"border_side": [
-									"LV_BORDER_SIDE_FULL"
-								],
-								"border_width": 0,
-								"border_opa": 255,
-								"border_color": "#2195f6",
-								"radius": 0,
-								"text_color": "#139987",
-								"text_opa": 255,
-								"font": 60,
-								"text_align": "LV_TEXT_ALIGN_CENTER",
-								"font_family": "NSHBold",
-								"letter_space": 8,
-								"line_space": 0,
-								"bg_color": "#2195f6",
-								"bg_grad_color": "#2195f6",
-								"bg_opa": 0,
-								"bg_grad_dir": "LV_GRAD_DIR_NONE",
-								"bg_dither_mode": "LV_DITHER_NONE",
-								"bg_main_stop": 0,
-								"bg_grad_stop": 255,
-								"padding_top": 20,
-								"padding_right": 0,
-								"padding_bottom": 0,
-								"padding_left": 16,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressed.png",
-								"bg_img_opa": 255,
-								"bg_img_recolor": "#ffffff",
-								"bg_img_recolor_opa": 0,
-								"shadow_color": "#2195f6",
-								"shadow_opa": 255,
-								"shadow_width": 0,
-								"shadow_spread": 0,
-								"shadow_ofs_x": 0,
-								"shadow_ofs_y": 0
-							},
-							{
-								"part": "LV_PART_MAIN",
-								"state": "LV_STATE_DISABLED",
-								"disable": true,
-								"border_side": [
-									"LV_BORDER_SIDE_FULL"
-								],
-								"border_width": 0,
-								"border_opa": 255,
-								"border_color": "#2195f6",
-								"radius": 0,
-								"text_color": "#000000",
-								"text_opa": 255,
-								"font": 16,
-								"font_family": "montserratMedium",
-								"text_align": "LV_TEXT_ALIGN_CENTER",
-								"letter_space": 2,
-								"line_space": 0,
-								"bg_color": "#2195f6",
-								"bg_grad_color": "#2195f6",
-								"bg_opa": 0,
-								"bg_grad_dir": "LV_GRAD_DIR_NONE",
-								"bg_dither_mode": "LV_DITHER_NONE",
-								"bg_main_stop": 0,
-								"bg_grad_stop": 255,
-								"padding_top": 0,
-								"padding_right": 0,
-								"padding_bottom": 0,
-								"padding_left": 0,
-								"bg_img_src": "",
-								"bg_img_opa": 255,
-								"bg_img_recolor": "#ffffff",
-								"bg_img_recolor_opa": 0,
-								"shadow_color": "#2195f6",
-								"shadow_opa": 255,
-								"shadow_width": 0,
-								"shadow_spread": 0,
-								"shadow_ofs_x": 0,
-								"shadow_ofs_y": 0
-							}
-						]
-					},
-					{
-						"name": "main_suo",
-						"id": "iwd57ize",
-						"type": "btn",
-						"visible": true,
-						"flag": [],
-						"pos": [
-							70,
-							655
-						],
-						"size": [
-							60,
-							123
-						],
-						"default_style": false,
 						"event": {
 							"widget": {
+								"long_pressed": {
+									"condition": [],
+									"action": [
+										{
+											"dst": "main_suo",
+											"bindCondi": "",
+											"actionList": {
+												"isVisible": {
+													"value": false
+												},
+												"bg_img_recolor_opa": {
+													"value": 0
+												}
+											},
+											"dst_type": "label"
+										},
+										{
+											"dst": "main_ulock",
+											"bindCondi": "",
+											"actionList": {
+												"isVisible": {
+													"value": false
+												},
+												"bg_img_recolor_opa": {
+													"value": 0
+												}
+											},
+											"dst_type": "btn"
+										},
+										{
+											"dst": "main_pause",
+											"bindCondi": "",
+											"actionList": {
+												"isVisible": {
+													"value": true
+												}
+											},
+											"dst_type": "btn"
+										},
+										{
+											"dst": "main_stop",
+											"bindCondi": "",
+											"actionList": {
+												"isVisible": {
+													"value": true
+												}
+											},
+											"dst_type": "btn"
+										}
+									]
+								},
 								"pressing": {
 									"condition": [],
-									"action": []
-								},
-								"released": {
-									"condition": [],
-									"action": []
+									"action": [
+										{
+											"dst": "main_suo",
+											"bindCondi": "",
+											"actionList": {
+												"bg_img_recolor_opa": {
+													"value": 255
+												}
+											},
+											"dst_type": "label"
+										},
+										{
+											"dst": "main_ulock",
+											"bindCondi": "",
+											"actionList": {
+												"bg_img_recolor_opa": {
+													"value": 255
+												}
+											},
+											"dst_type": "btn"
+										}
+									]
 								}
 							}
 						},
@@ -28184,13 +28196,13 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\3232.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressed.png",
 								"bg_img_opa": 255,
-								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor": "#b5b5b5",
 								"bg_img_recolor_opa": 1,
-								"font": 16,
-								"font_family": "montserratMedium",
-								"text_color": "#ffffff",
+								"font": 60,
+								"font_family": "NSHBold",
+								"text_color": "#139987",
 								"text_opa": 255,
 								"text_align": "LV_TEXT_ALIGN_CENTER"
 							},
@@ -28327,9 +28339,111 @@
 								"text_color": "#000000"
 							}
 						],
-						"text": " ",
+						"text": "      长 按 解 锁 ",
 						"long_mode": "LV_LABEL_LONG_WRAP",
 						"toggle": false
+					},
+					{
+						"name": "main_suo",
+						"id": "v65np41p",
+						"type": "label",
+						"visible": true,
+						"flag": [],
+						"pos": [
+							66,
+							678
+						],
+						"size": [
+							58,
+							58
+						],
+						"default_style": false,
+						"attribute_type": "",
+						"custom_attribute": [],
+						"text": " ",
+						"long_mode": "LV_LABEL_LONG_WRAP",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 0,
+								"text_color": "#000000",
+								"text_opa": 255,
+								"font": 16,
+								"text_align": "LV_TEXT_ALIGN_CENTER",
+								"font_family": "montserratMedium",
+								"letter_space": 2,
+								"line_space": 0,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 0,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_dither_mode": "LV_DITHER_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"padding_top": 0,
+								"padding_right": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\suo_1.png",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#b5b5b5",
+								"bg_img_recolor_opa": 1,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DISABLED",
+								"disable": true,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 0,
+								"text_color": "#000000",
+								"text_opa": 255,
+								"font": 16,
+								"font_family": "montserratMedium",
+								"text_align": "LV_TEXT_ALIGN_CENTER",
+								"letter_space": 2,
+								"line_space": 0,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 0,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_dither_mode": "LV_DITHER_NONE",
+								"bg_main_stop": 0,
+								"bg_grad_stop": 255,
+								"padding_top": 0,
+								"padding_right": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							}
+						]
 					},
 					{
 						"name": "main_start",
@@ -28387,26 +28501,6 @@
 											"dst_type": "btn"
 										},
 										{
-											"dst": "main_ulock",
-											"bindCondi": "",
-											"actionList": {
-												"isVisible": {
-													"value": true
-												}
-											},
-											"dst_type": "label"
-										},
-										{
-											"dst": "main_suo",
-											"bindCondi": "",
-											"actionList": {
-												"isVisible": {
-													"value": true
-												}
-											},
-											"dst_type": "btn"
-										},
-										{
 											"dst": "main_continue",
 											"bindCondi": "",
 											"actionList": {
@@ -28432,6 +28526,26 @@
 											"actionList": {
 												"isVisible": {
 													"value": false
+												}
+											},
+											"dst_type": "btn"
+										},
+										{
+											"dst": "main_suo",
+											"bindCondi": "",
+											"actionList": {
+												"isVisible": {
+													"value": true
+												}
+											},
+											"dst_type": "label"
+										},
+										{
+											"dst": "main_ulock",
+											"bindCondi": "",
+											"actionList": {
+												"isVisible": {
+													"value": true
 												}
 											},
 											"dst_type": "btn"
@@ -28464,7 +28578,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\pressed.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\pressed.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#b5b5b5",
 								"bg_img_recolor_opa": 1,
@@ -28660,7 +28774,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -28762,7 +28876,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave2.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave2.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -28864,7 +28978,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave3.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave3.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -28966,7 +29080,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave4.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave4.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -29068,7 +29182,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\wave5.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\wave5.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -29396,24 +29510,14 @@
 											"dst_type": "btn"
 										},
 										{
-											"dst": "main_suo",
+											"dst": "",
 											"bindCondi": "",
-											"actionList": {
-												"isVisible": {
-													"value": true
-												}
-											},
-											"dst_type": "btn"
+											"actionList": {}
 										},
 										{
-											"dst": "main_ulock",
+											"dst": "",
 											"bindCondi": "",
-											"actionList": {
-												"isVisible": {
-													"value": true
-												}
-											},
-											"dst_type": "label"
+											"actionList": {}
 										}
 									]
 								}
@@ -30299,7 +30403,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -31910,7 +32014,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -32106,7 +32210,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\param.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\param.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -32208,7 +32312,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\light.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\light.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -32310,7 +32414,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\vibra.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\vibra.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -32412,7 +32516,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\freq.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\freq.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -33155,7 +33259,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -34318,7 +34422,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -35295,7 +35399,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -36613,7 +36717,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -37145,7 +37249,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -38099,7 +38203,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0A2847",
 								"bg_img_recolor_opa": 1,
@@ -38361,7 +38465,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -39001,7 +39105,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -39296,7 +39400,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -39949,7 +40053,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -40211,7 +40315,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -40912,7 +41016,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -41402,7 +41506,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -42059,7 +42163,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0A2847",
 								"bg_img_recolor_opa": 1,
@@ -42807,7 +42911,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -43460,7 +43564,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\back.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\back.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -43722,7 +43826,7 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\save.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\save.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#0a2847",
 								"bg_img_recolor_opa": 1,
@@ -44493,7 +44597,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\success.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\success.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -45990,7 +46094,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -47018,7 +47122,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\erro.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\erro.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -48601,7 +48705,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\battery_1.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\battery_1.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -49866,7 +49970,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\erro.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\erro.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
@@ -50322,7 +50426,7 @@
 								"padding_right": 0,
 								"padding_bottom": 0,
 								"padding_left": 0,
-								"bg_img_src": "C:\\Users\\15754\\Desktop\\LCD\\WUTLCD\\import\\image\\locked.png",
+								"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\locked.png",
 								"bg_img_opa": 255,
 								"bg_img_recolor": "#ffffff",
 								"bg_img_recolor_opa": 0,
