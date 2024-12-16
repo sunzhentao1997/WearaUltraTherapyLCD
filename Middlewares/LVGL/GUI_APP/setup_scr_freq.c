@@ -74,7 +74,7 @@ void setup_scr_freq(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->freq_battery, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->freq_battery, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->freq_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes freq_grate4
@@ -219,7 +219,7 @@ void setup_scr_freq(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->freq_back, &_back_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->freq_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->freq_back, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->freq_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->freq_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->freq_back, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->freq_back, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->freq_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -244,7 +244,7 @@ void setup_scr_freq(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->freq_save, &_save_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->freq_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->freq_save, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->freq_save, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->freq_save, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->freq_save, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->freq_save, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->freq_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -379,7 +379,7 @@ void setup_scr_freq(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->freq_label_10, &_success_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->freq_label_10, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->freq_label_10, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes freq_btn_1

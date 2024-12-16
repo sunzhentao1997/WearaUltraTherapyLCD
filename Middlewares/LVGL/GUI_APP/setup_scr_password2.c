@@ -270,7 +270,7 @@ void setup_scr_password2(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->password2_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->password2_label_8, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->password2_label_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->password2_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->password2_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->password2_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes password2_grate4
@@ -515,7 +515,7 @@ void setup_scr_password2(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->password2_label_19, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->password2_label_19, &_erro_88x88, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->password2_label_19, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->password2_label_19, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->password2_label_19, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->password2_label_19, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes password2_label_17
@@ -590,7 +590,7 @@ void setup_scr_password2(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->password2_label_18, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->password2_label_18, &_locked_88x88, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->password2_label_18, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->password2_label_18, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->password2_label_18, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->password2_label_18, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of password2.

@@ -269,7 +269,7 @@ void UltraParam_Set(void)
 
 	if (SlaveFlg == 1)
 	{
-		SlaveFlg = 0;
+		
 
 		FreqParam_A = (uint8_t)FreqOffset;
 		FreqParam_B = FreqOffset;
@@ -304,6 +304,7 @@ void UltraParam_Set(void)
 		FlashStoreBuff[33] = (uint16_t)ParamLockFlg;
 
 		DevFlash_Write(FLASH_SAVE_ADDR, FlashStoreBuff, 34);
+		SlaveFlg = 0;
 	}
 	else
 	{

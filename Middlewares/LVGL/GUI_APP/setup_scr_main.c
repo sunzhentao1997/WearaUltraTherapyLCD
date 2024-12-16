@@ -241,7 +241,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->main_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->main_label_11, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_label_11, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_label_11, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_label_4
@@ -343,7 +343,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->main_stop, &_pressing2_181x100, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_stop, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->main_stop, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_stop, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_stop, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->main_stop, lv_color_hex(0xed610d), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->main_stop, &lv_customer_font_NSHBold_60, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->main_stop, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -368,7 +368,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->main_pause, &_pressing2_181x100, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_pause, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->main_pause, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_pause, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_pause, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->main_pause, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
 		lv_obj_set_style_text_font(ui->main_pause, &lv_customer_font_NSHBold_60, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->main_pause, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -393,7 +393,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->main_continue, &_pressing2_181x100, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_continue, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->main_continue, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_continue, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_continue, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->main_continue, lv_color_hex(0x139987), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->main_continue, &lv_customer_font_NSHBold_60, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->main_continue, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -448,7 +448,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->main_suo, &_suo_1_58x58, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_suo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->main_suo, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_suo, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_suo, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_suo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_start
@@ -470,7 +470,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->main_start, &_pressed_406x100, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_start, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->main_start, lv_color_hex(0xb5b5b5), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_start, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_start, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->main_start, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
 		lv_obj_set_style_text_font(ui->main_start, &lv_customer_font_NSHBold_60, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->main_start, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -499,7 +499,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->main_wave1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->main_wave1, &_wave1_27x27, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_wave1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_wave1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_wave2
@@ -525,7 +525,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->main_wave2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->main_wave2, &_wave2_16x47, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_wave2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_wave2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_wave3
@@ -551,7 +551,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->main_wave3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->main_wave3, &_wave3_16x57, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_wave3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_wave3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_wave4
@@ -577,7 +577,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->main_wave4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->main_wave4, &_wave4_19x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_wave4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_wave4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_wave5
@@ -603,7 +603,7 @@ void setup_scr_main(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->main_wave5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->main_wave5, &_wave5_21x79, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->main_wave5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->main_wave5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->main_wave5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes main_label_13
