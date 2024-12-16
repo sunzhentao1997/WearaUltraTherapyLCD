@@ -8,6 +8,7 @@
 #include "dev_flash.h"
 
 #define FLASH_BANK_NUM	3
+#define FLASH_WAITETIME         50000  
 
 const FLASH_BLOCK Flash_Block[FLASH_BANK_NUM] =
 {
@@ -20,7 +21,7 @@ HAL_StatusTypeDef EraseFlash(uint32_t addr)
 {
 	uint8_t tag_i = 0;
 	uint32_t sector = 0;
-	uint32_t sectorerror;
+	uint32_t sectorerror = 0;
 	HAL_StatusTypeDef status = HAL_BUSY;
 	FLASH_EraseInitTypeDef EraseInitStruct;
 
@@ -56,7 +57,8 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 	uint32_t sector = 0;
 	uint32_t writeaddr = 0;
 	uint32_t writedata = 0;
-	uint32_t sectorerror;
+	uint32_t sectorerror = 0;
+	
 	HAL_StatusTypeDef status = HAL_BUSY;
 	FLASH_EraseInitTypeDef EraseInitStruct;
 
@@ -66,12 +68,15 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 	}
 
 	HAL_FLASH_Unlock();
+	FLASH_WaitForLastOperation(FLASH_WAITETIME);
+	__HAL_FLASH_DATA_CACHE_DISABLE();
 	
 	for(tag_i = 0;tag_i < FLASH_BANK_NUM;tag_i++)
 	{
 		if((addr >= Flash_Block[tag_i].start_addr) && (addr <= Flash_Block[tag_i].stop_addr))
 		{
 				sector = Flash_Block[tag_i].bank;
+				break;
 		}
 		
 	}
@@ -101,6 +106,7 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 			writeaddr += 2;
 		}
 	}
+	__HAL_FLASH_DATA_CACHE_ENABLE();
 	HAL_FLASH_Lock();
 
 	return status;

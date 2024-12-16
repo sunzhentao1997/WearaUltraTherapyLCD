@@ -18,7 +18,7 @@ extern TIM_HandleTypeDef htim12;
 #define ULTRA_CHB			TIM_CHANNEL_1
 
 #define MOTOR_HANDLE 	(&htim12)
-#define MOTOR_CHB			TIM_CHANNEL_2
+#define MOTOR_CHB			TIM_CHANNEL_1
 
 #define BEEP_HANDLE			(&htim9)
 #define BEEP_CHANNLE		TIM_CHANNEL_2

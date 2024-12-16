@@ -90,8 +90,8 @@ void Error_Handler(void);
 #define LCD_SPI_SDA_GPIO_Port GPIOB
 #define PWM_WAVE_B_EN_Pin GPIO_PIN_3
 #define PWM_WAVE_B_EN_GPIO_Port GPIOG
-#define MPDCDC_EN_Pin GPIO_PIN_8
-#define MPDCDC_EN_GPIO_Port GPIOA
+#define LTDCDC_EN_Pin GPIO_PIN_8
+#define LTDCDC_EN_GPIO_Port GPIOA
 #define WAVE_B_EN_Pin GPIO_PIN_15
 #define WAVE_B_EN_GPIO_Port GPIOA
 #define B_SCLK_Pin GPIO_PIN_6
@@ -100,8 +100,8 @@ void Error_Handler(void);
 #define B_SDATA_GPIO_Port GPIOD
 #define B_FSYNC_Pin GPIO_PIN_9
 #define B_FSYNC_GPIO_Port GPIOG
-#define LTDCDC_EN_Pin GPIO_PIN_3
-#define LTDCDC_EN_GPIO_Port GPIOB
+#define MPDCDC_EN_Pin GPIO_PIN_3
+#define MPDCDC_EN_GPIO_Port GPIOB
 #define CT_SCK_Pin GPIO_PIN_6
 #define CT_SCK_GPIO_Port GPIOB
 #define CT_SDA_Pin GPIO_PIN_7

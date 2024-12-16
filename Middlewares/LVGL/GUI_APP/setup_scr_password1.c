@@ -270,7 +270,7 @@ void setup_scr_password1(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->password1_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->password1_label_8, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->password1_label_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->password1_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->password1_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->password1_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes password1_grate4
@@ -493,7 +493,7 @@ void setup_scr_password1(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->password1_label_16, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->password1_label_16, &_erro_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->password1_label_16, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->password1_label_16, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->password1_label_16, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->password1_label_16, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes password1_btn_2

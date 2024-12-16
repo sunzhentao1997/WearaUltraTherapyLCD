@@ -101,8 +101,8 @@ static void main_paging_event_handler (lv_event_t *e)
     }
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 		break;
 	}
 	break;
@@ -140,8 +140,8 @@ static void main_stop_event_handler (lv_event_t *e)
 		}
 		case LV_EVENT_PRESSED:
 		{
-			BeepFlg = 1;
-			BeepCount = 2;
+//			BeepFlg = 1;
+//			BeepCount = 2;
     }
     default:
         break;
@@ -171,8 +171,8 @@ static void main_pause_event_handler (lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
     }
     default:
         break;
@@ -204,8 +204,8 @@ static void main_continue_event_handler (lv_event_t *e)
     }
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
     default:
         break;
@@ -228,8 +228,8 @@ static void main_ulock_event_handler (lv_event_t *e)
     }
     case LV_EVENT_PRESSING:
     {
-			BeepFlg = 1;
-			BeepCount = 2;
+//			BeepFlg = 1;
+//			BeepCount = 2;
 //        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
 //        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
         break;
@@ -279,8 +279,8 @@ static void main_start_event_handler(lv_event_t *e)
     }
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
     default:
         break;
@@ -312,8 +312,8 @@ static void main_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -337,8 +337,8 @@ static void main_btn_2_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -390,8 +390,8 @@ static void config_param_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -410,8 +410,8 @@ static void config_light_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -437,8 +437,8 @@ static void config_vibra_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -457,8 +457,8 @@ static void config_freq_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -477,8 +477,8 @@ static void config_lock_on_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -503,8 +503,8 @@ static void config_back_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 		ScreenState = IDLE;
 	}
 	default:
@@ -577,8 +577,8 @@ static void param_back_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -603,8 +603,8 @@ static void param_DeviceId_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -629,8 +629,8 @@ static void param_Power_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -655,8 +655,8 @@ static void param_Temp_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -790,8 +790,8 @@ static void param_btnm_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -817,8 +817,8 @@ static void param_back_p_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -844,8 +844,8 @@ static void param_Del_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -859,8 +859,8 @@ static void param_btn_1_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 		break;
 	}
 	case LV_EVENT_PRESSING:
@@ -964,8 +964,8 @@ static void light_slider_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -994,8 +994,8 @@ static void light_back_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1025,8 +1025,8 @@ static void light_save_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1048,8 +1048,8 @@ static void light_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1109,8 +1109,8 @@ static void vibra_back_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1141,8 +1141,8 @@ static void vibra_save_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1167,8 +1167,8 @@ static void vibra_slider_1_event_handler(lv_event_t *e)
 	case LV_EVENT_PRESSED:
 	{
 		pressed = 1;
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	case LV_EVENT_RELEASED:
 	{
@@ -1201,8 +1201,8 @@ static void vibra_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1260,8 +1260,8 @@ static void vibras_back_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1283,8 +1283,8 @@ static void vibras_sw_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1342,8 +1342,8 @@ static void freq_back_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1374,8 +1374,8 @@ static void freq_save_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1417,8 +1417,8 @@ static void freq_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1573,8 +1573,8 @@ static void password1_btnm_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1665,8 +1665,8 @@ static void password1_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 		ScreenState = IDLE;
 	}
 	default:
@@ -1695,8 +1695,8 @@ static void password1_btn_2_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1859,8 +1859,8 @@ static void password2_btnm_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1948,8 +1948,8 @@ static void password2_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1971,8 +1971,8 @@ static void password2_btn_2_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//		BeepCount = 2;
 	}
 	default:
 		break;
@@ -1998,8 +1998,8 @@ static void password2_btn_3_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		BeepFlg = 1;
-		BeepCount = 2;
+//		BeepFlg = 1;
+//  	BeepCount = 2;
 	}
 	default:
 		break;

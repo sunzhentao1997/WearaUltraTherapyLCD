@@ -61,11 +61,11 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LCD_RESET_GPIO_Port, LCD_RESET_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, KEY_CONTROL_Pin|CONTROL_CLOSE_Pin|MOTOR_GATE_Pin|MPDCDC_EN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, KEY_CONTROL_Pin|CONTROL_CLOSE_Pin|MOTOR_GATE_Pin|LTDCDC_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, BOOT1_Pin|LCD_SPI_CS_Pin|LCD_SPI_SCL_Pin|LCD_SPI_SDA_Pin
-                          |LTDCDC_EN_Pin|CT_SCK_Pin|CT_SDA_Pin, GPIO_PIN_RESET);
+                          |MPDCDC_EN_Pin|CT_SCK_Pin|CT_SDA_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOG, PWM_WAVE_B_EN_Pin|B_FSYNC_Pin, GPIO_PIN_RESET);
@@ -93,8 +93,8 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LCD_RESET_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PAPin PAPin PAPin PAPin */
-  GPIO_InitStruct.Pin = KEY_CONTROL_Pin|CONTROL_CLOSE_Pin|MOTOR_GATE_Pin|MPDCDC_EN_Pin;
+  /*Configure GPIO pins : PAPin PAPin PAPin */
+  GPIO_InitStruct.Pin = KEY_CONTROL_Pin|CONTROL_CLOSE_Pin|LTDCDC_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -102,9 +102,16 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = CHARGE_STATE_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CHARGE_STATE_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = MOTOR_GATE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(MOTOR_GATE_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = BOOT1_Pin;
@@ -135,11 +142,11 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = LTDCDC_EN_Pin;
+  GPIO_InitStruct.Pin = MPDCDC_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LTDCDC_EN_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(MPDCDC_EN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin */
   GPIO_InitStruct.Pin = CT_SCK_Pin|CT_SDA_Pin;

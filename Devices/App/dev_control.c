@@ -119,6 +119,7 @@ void DevAPP_MainFunc(void)
 {
 	static uint8_t BatteryChFlg = 0;
 	static uint32_t old_tick = 0;
+	uint16_t clear_flg = 0;
 	uint32_t new_tick = 0;
 	uint16_t ultra_pluse = 0;
 
@@ -158,7 +159,7 @@ void DevAPP_MainFunc(void)
 			StandyTime = 0;
 		}
 
-		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET); // 关闭 45V DCDC
+		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_RESET); //  45V DCDC
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_RESET);
 		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET);
 
@@ -178,7 +179,7 @@ void DevAPP_MainFunc(void)
 			StandyTime = 0;
 			DevWorkState = CLOSE_STATE;
 		}
-		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET); // 关闭 45V DCDC
+		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_RESET); // 关闭 45V DCDC
 		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET);
 
 		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
@@ -191,7 +192,7 @@ void DevAPP_MainFunc(void)
 		}
 		StandyTime = 0;
 
-		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET); // 关闭 45V DCDC
+		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_RESET); // 关闭 45V DCDC
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_RESET);
 		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET);
 
@@ -213,8 +214,8 @@ void DevAPP_MainFunc(void)
 		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET);
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_SET);
 
-		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, ultra_pluse);
 		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_SET);
+		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, ultra_pluse);
 
 		if((VibraEnableFlg == 0) && (ParamLockFlg == 1))
 		{
@@ -238,15 +239,21 @@ void DevAPP_MainFunc(void)
 		break;
 
 	case CLOSE_STATE:
-
-		if ((ShuntDownCount > 1300) && (PowerFlg == 1))
+		DevWorkState = CLOSE_STATE;
+		if(PowerFlg == 1)
 		{
-			PowerFlg = 0;
-			DevFlash_Write(FLASH_SHUNTDOWN, &PowerFlg, 1);
+				if(ShuntDownCount > 1000)
+				{
+					if(DevFlash_Write(FLASH_SHUNTDOWN, &clear_flg, 1) == HAL_OK)
+					{
+						PowerFlg = 0;
+					}
+				}
+		}else
+		{
+				DevGpio_SetOutSta(KEY_CONTROL, GPIO_PIN_SET);
+				DevGpio_SetOutSta(CONTROL_CLOSE, GPIO_PIN_SET);
 		}
-
-		DevGpio_SetOutSta(KEY_CONTROL, GPIO_PIN_SET);
-		DevGpio_SetOutSta(CONTROL_CLOSE, GPIO_PIN_SET);
 		break;
 
 	default:
@@ -260,8 +267,6 @@ void UltraParam_Set(void)
 
 	if (SlaveFlg == 1)
 	{
-		SlaveFlg = 0;
-
 		FreqParam_A = (uint8_t)FreqOffset;
 		FreqParam_B = FreqOffset;
 		VibraParam = MotorLevel;
@@ -294,7 +299,10 @@ void UltraParam_Set(void)
 		FlashStoreBuff[32] = (uint16_t)VibraEnableFlg;
 		FlashStoreBuff[33] = (uint16_t)ParamLockFlg;
 
-		DevFlash_Write(FLASH_SAVE_ADDR, FlashStoreBuff, 34);
+		if(DevFlash_Write(FLASH_SAVE_ADDR, FlashStoreBuff, 34) == HAL_OK)
+		{
+				SlaveFlg = 0;
+		}		
 	}
 	else
 	{

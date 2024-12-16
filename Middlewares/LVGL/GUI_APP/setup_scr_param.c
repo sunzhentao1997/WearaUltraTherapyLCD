@@ -76,7 +76,7 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->param_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->param_battery, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->param_battery, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->param_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->param_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->param_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes param_grate4
@@ -346,7 +346,7 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->param_back, &_back_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->param_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->param_back, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->param_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->param_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->param_back, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->param_back, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->param_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -443,7 +443,7 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->param_btn_1, &_save_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->param_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->param_btn_1, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->param_btn_1, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->param_btn_1, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->param_btn_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->param_btn_1, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->param_btn_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);

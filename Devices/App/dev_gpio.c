@@ -44,11 +44,9 @@ void DevGpio_Init(void)
 {
 		DevGpio_SetOutSta(CONTROL_CLOSE,GPIO_PIN_RESET);
 		DevGpio_SetOutSta(MPDCDC_EN,GPIO_PIN_SET);
-		DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_SET);
+		DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_RESET);
 		DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_RESET);
 	
 		DevGpio_SetOutSta(KEY_CONTROL,GPIO_PIN_RESET);
 		DevGpio_SetOutSta(PWM_WAVE_B_EN,GPIO_PIN_RESET);
-		DevGpio_SetOutSta(PWM_WAVE_B_EN,GPIO_PIN_RESET);
-	
 }

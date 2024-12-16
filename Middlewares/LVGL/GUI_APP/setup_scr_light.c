@@ -74,7 +74,7 @@ void setup_scr_light(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->light_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->light_battery, &_battery_1_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->light_battery, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->light_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->light_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->light_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes light_grate4
@@ -293,7 +293,7 @@ void setup_scr_light(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->light_save, &_save_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->light_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->light_save, lv_color_hex(0x0a2847), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->light_save, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->light_save, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->light_save, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->light_save, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->light_save, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -394,7 +394,7 @@ void setup_scr_light(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->light_label_9, &_success_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->light_label_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->light_label_9, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of light.
