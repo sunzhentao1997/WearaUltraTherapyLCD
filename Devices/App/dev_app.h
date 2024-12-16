@@ -10,22 +10,21 @@
 #include "dev_gpio.h"
 
 extern TIM_HandleTypeDef htim5;
-extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim9;
+extern TIM_HandleTypeDef htim12;
 
-#define ULTRA_HANDLE	(&htim3)
-
+#define ULTRA_HANDLE	(&htim2)
 #define ULTRA_CHB			TIM_CHANNEL_1
-#define ULTRA_CHA			TIM_CHANNEL_2
 
-#define MOTOR_HANDLE 	(&htim5)
-
+#define MOTOR_HANDLE 	(&htim12)
 #define MOTOR_CHB			TIM_CHANNEL_2
-#define MOTOR_CHA			TIM_CHANNEL_3
 
 #define BEEP_HANDLE			(&htim9)
-
 #define BEEP_CHANNLE		TIM_CHANNEL_2
+
+#define LCDBL_HANDLE		(&htim5)
+#define LCDBL_CHANNLE		TIM_CHANNEL_3
 
 #define BEEP_ON()					__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,180)
 #define BEEP_OFF()				__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,0)
@@ -35,10 +34,10 @@ extern TIM_HandleTypeDef htim9;
 #define FLASH_SAVE_ADDR 		0x81E0000
 
 /*main*/
-extern uint32_t ScreenTime;										//屏幕主界面数�?刷新时间
+extern uint32_t ScreenTime;										//屏幕主界面数据刷新时间
 extern uint32_t StandyTime;										//待机时间
 extern uint32_t ChargeRecvTime;								//充电接收时间
-extern uint32_t BatteryTime;									//主界面电量刷新时�?
+extern uint32_t BatteryTime;									//主界面电量刷新时间
 extern uint32_t BackLedTime;			  					//背光开�?时间
 extern uint32_t PowerOnTime;									//正式开机时�?
 extern uint32_t Charge_Time;									//充电时长

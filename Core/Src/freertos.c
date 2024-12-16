@@ -172,7 +172,7 @@ void ScreenRGBTask(void *argument)
 								
 				if(BackLedTime > 1500)
 				{
-					__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,tempval);
+					__HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_3,tempval);
 				}
 				if(BackLedTime > 3450)
 				{

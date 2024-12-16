@@ -7,9 +7,9 @@ typedef struct
 }DevGpioHandleType;
 
 #define GPIO1		MOTOR_GATE_GPIO_Port,MOTOR_GATE_Pin
-#define GPIO2		WAVE_A_EN_GPIO_Port,WAVE_A_EN_Pin
+#define GPIO2		WAVE_B_EN_GPIO_Port,WAVE_B_EN_Pin
 #define GPIO3		WAVE_B_EN_GPIO_Port,WAVE_B_EN_Pin
-#define GPIO4		PWM_WAVE_A_EN_GPIO_Port,PWM_WAVE_A_EN_Pin
+#define GPIO4		PWM_WAVE_B_EN_GPIO_Port,PWM_WAVE_B_EN_Pin
 #define GPIO5		PWM_WAVE_B_EN_GPIO_Port,PWM_WAVE_B_EN_Pin
 #define GPIO6		LTDCDC_EN_GPIO_Port,LTDCDC_EN_Pin
 #define GPIO7		MPDCDC_EN_GPIO_Port,MPDCDC_EN_Pin
@@ -47,10 +47,8 @@ void DevGpio_Init(void)
 		DevGpio_SetOutSta(LTDCDC_EN,GPIO_PIN_SET);
 		DevGpio_SetOutSta(MOTOR_GATE,GPIO_PIN_RESET);
 	
-		DevGpio_SetOutSta(PWM_WAVE_A_EN,GPIO_PIN_RESET);
-		DevGpio_SetOutSta(PWM_WAVE_B_EN,GPIO_PIN_RESET);
 		DevGpio_SetOutSta(KEY_CONTROL,GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_A_EN,GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_B_EN,GPIO_PIN_RESET);
+		DevGpio_SetOutSta(PWM_WAVE_B_EN,GPIO_PIN_RESET);
+		DevGpio_SetOutSta(PWM_WAVE_B_EN,GPIO_PIN_RESET);
 	
 }

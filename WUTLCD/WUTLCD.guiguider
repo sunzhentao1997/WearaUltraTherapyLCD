@@ -744,8 +744,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "btn_1",
@@ -1001,8 +1000,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "label_12",
@@ -1101,8 +1099,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "label_13",
@@ -1201,8 +1198,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "wave5",
@@ -1301,8 +1297,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "wave4",
@@ -1401,8 +1396,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "wave3",
@@ -1501,8 +1495,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "wave2",
@@ -1601,8 +1594,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "wave1",
@@ -1701,8 +1693,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "start",
@@ -1710,7 +1701,7 @@
 					"type": "btn",
 					"left": 36,
 					"top": 659,
-					"visible": true,
+					"visible": false,
 					"isLock": false,
 					"flag": [],
 					"width": 406,
@@ -1970,8 +1961,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "suo",
@@ -2022,7 +2012,7 @@
 							"bg_img_src": "D:\\LiuRen\\WearaUltraTherapyLCD_STM32F429ZIT6\\WUTLCD\\import\\image\\suo_1.png",
 							"bg_img_opa": 255,
 							"bg_img_recolor": "#b5b5b5",
-							"bg_img_recolor_opa": 1,
+							"bg_img_recolor_opa": 0,
 							"shadow_color": "#2195f6",
 							"shadow_opa": 255,
 							"shadow_width": 0,
@@ -2070,8 +2060,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "ulock",
@@ -2329,8 +2318,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "continue",
@@ -2583,8 +2571,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "pause",
@@ -2821,8 +2808,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "stop",
@@ -3050,8 +3036,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "main"
+					}
 				},
 				{
 					"name": "arc_1",
@@ -3235,8 +3220,7 @@
 							"bg_main_stop": 0,
 							"bg_grad_stop": 255
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "label_10",
@@ -4028,8 +4012,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "label_3",
@@ -4128,8 +4111,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main"
+					]
 				},
 				{
 					"name": "label_7",
@@ -4624,8 +4606,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "main"
+			]
 		},
 		{
 			"name": "config",
@@ -5664,8 +5645,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "config"
+					}
 				},
 				{
 					"name": "lock_on",
@@ -7322,8 +7302,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "config"
+			]
 		},
 		{
 			"name": "param",
@@ -7569,8 +7548,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "param"
+					}
 				},
 				{
 					"name": "label_8",
@@ -7669,8 +7647,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_9",
@@ -7769,8 +7746,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_10",
@@ -7869,8 +7845,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "Del",
@@ -8062,8 +8037,7 @@
 								"action": []
 							}
 						}
-					},
-					"layerName": "param"
+					}
 				},
 				{
 					"name": "label_7",
@@ -8162,8 +8136,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "back_p",
@@ -8392,8 +8365,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "param"
+					}
 				},
 				{
 					"name": "btnm_1",
@@ -8754,8 +8726,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "param"
+					}
 				},
 				{
 					"name": "btn_1",
@@ -9011,8 +8982,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "param"
+					}
 				},
 				{
 					"name": "Temp",
@@ -9929,8 +9899,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "param"
+					}
 				},
 				{
 					"name": "label_6",
@@ -10029,8 +9998,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_5",
@@ -10129,8 +10097,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_4",
@@ -10229,8 +10196,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_3",
@@ -10329,8 +10295,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_2",
@@ -10429,8 +10394,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "label_1",
@@ -10529,8 +10493,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "grate1",
@@ -10629,8 +10592,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "grate2",
@@ -10729,8 +10691,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "grate3",
@@ -10829,8 +10790,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "param"
+					]
 				},
 				{
 					"name": "grate4",
@@ -11228,8 +11188,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "param"
+			]
 		},
 		{
 			"name": "light",
@@ -11348,8 +11307,7 @@
 					],
 					"event": {
 						"widget": {}
-					},
-					"layerName": "light"
+					}
 				},
 				{
 					"name": "btn_1",
@@ -11578,8 +11536,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "light"
+					}
 				},
 				{
 					"name": "label_8",
@@ -11678,8 +11635,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "light"
+					]
 				},
 				{
 					"name": "label_7",
@@ -11778,8 +11734,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "light"
+					]
 				},
 				{
 					"name": "save",
@@ -12031,8 +11986,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "light"
+					}
 				},
 				{
 					"name": "back",
@@ -12262,8 +12216,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "light"
+					}
 				},
 				{
 					"name": "precent",
@@ -13312,8 +13265,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "light"
+			]
 		},
 		{
 			"name": "vibra",
@@ -13559,8 +13511,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "vibra"
+					}
 				},
 				{
 					"name": "label_10",
@@ -13659,8 +13610,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "vibra"
+					]
 				},
 				{
 					"name": "label_9",
@@ -13759,8 +13709,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "vibra"
+					]
 				},
 				{
 					"name": "label_8",
@@ -13859,8 +13808,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "vibra"
+					]
 				},
 				{
 					"name": "label_7",
@@ -14403,8 +14351,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "vibra"
+					}
 				},
 				{
 					"name": "back",
@@ -14634,8 +14581,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "vibra"
+					}
 				},
 				{
 					"name": "label_6",
@@ -15393,8 +15339,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "vibra"
+			]
 		},
 		{
 			"name": "vibras",
@@ -15998,8 +15943,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "vibras"
+					}
 				},
 				{
 					"name": "label_6",
@@ -16966,8 +16910,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "freq"
+					}
 				},
 				{
 					"name": "label_10",
@@ -17066,8 +17009,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "freq"
+					]
 				},
 				{
 					"name": "label_9",
@@ -17166,8 +17108,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "freq"
+					]
 				},
 				{
 					"name": "label_8",
@@ -17266,8 +17207,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "freq"
+					]
 				},
 				{
 					"name": "label_7",
@@ -18085,8 +18025,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "freq"
+					}
 				},
 				{
 					"name": "back",
@@ -18316,8 +18255,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "freq"
+					}
 				},
 				{
 					"name": "label_6",
@@ -19075,8 +19013,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "freq"
+			]
 		},
 		{
 			"name": "password1",
@@ -19376,8 +19313,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "password1"
+					}
 				},
 				{
 					"name": "label_16",
@@ -19476,8 +19412,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_15",
@@ -19576,8 +19511,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_14",
@@ -19676,8 +19610,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "btn_1",
@@ -19884,8 +19817,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "password1"
+					}
 				},
 				{
 					"name": "label_13",
@@ -19984,8 +19916,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "grate1",
@@ -20084,8 +20015,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "grate2",
@@ -20580,8 +20510,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_6",
@@ -20680,8 +20609,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_5",
@@ -20780,8 +20708,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_4",
@@ -20880,8 +20807,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_3",
@@ -20980,8 +20906,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "label_2",
@@ -21080,8 +21005,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password1"
+					]
 				},
 				{
 					"name": "btnm_1",
@@ -21411,8 +21335,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "password1"
+					}
 				},
 				{
 					"name": "label_1",
@@ -21580,8 +21503,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "password1"
+			]
 		},
 		{
 			"name": "password2",
@@ -21697,8 +21619,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "btn_3",
@@ -21941,8 +21862,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "password2"
+					}
 				},
 				{
 					"name": "label_17",
@@ -22041,8 +21961,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "label_19",
@@ -22141,8 +22060,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "btn_2",
@@ -22371,8 +22289,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "password2"
+					}
 				},
 				{
 					"name": "label_15",
@@ -22471,8 +22388,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "label_14",
@@ -22571,8 +22487,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "btn_1",
@@ -22779,8 +22694,7 @@
 								]
 							}
 						}
-					},
-					"layerName": "password2"
+					}
 				},
 				{
 					"name": "label_13",
@@ -22879,8 +22793,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "grate1",
@@ -22979,8 +22892,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "grate2",
@@ -23079,8 +22991,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "grate3",
@@ -23179,8 +23090,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "password2"
+					]
 				},
 				{
 					"name": "grate4",
@@ -24493,8 +24403,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "password2"
+			]
 		},
 		{
 			"name": "charge",

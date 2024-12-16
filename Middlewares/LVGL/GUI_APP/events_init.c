@@ -118,7 +118,7 @@ static void main_stop_event_handler (lv_event_t *e)
 	{
     case LV_EVENT_PRESSING:
     {
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 200, LV_PART_MAIN);
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 200, LV_PART_MAIN);
         break;
     }
     case LV_EVENT_RELEASED:
@@ -133,7 +133,7 @@ static void main_stop_event_handler (lv_event_t *e)
 //			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 //			lv_obj_clear_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
 //			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
-			lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
+//			lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
 			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
         break;
@@ -155,7 +155,7 @@ static void main_pause_event_handler (lv_event_t *e)
 	{
     case LV_EVENT_PRESSING:
     {
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 200, LV_PART_MAIN);
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 200, LV_PART_MAIN);
         break;
     }
     case LV_EVENT_RELEASED:
@@ -163,7 +163,7 @@ static void main_pause_event_handler (lv_event_t *e)
 		DevWorkState = PASUE_STATE;
 		ScreenState = PAUSE;
 
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 0, LV_PART_MAIN);
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 0, LV_PART_MAIN);
         lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
@@ -186,7 +186,7 @@ static void main_continue_event_handler (lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 200, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 200, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -198,7 +198,7 @@ static void main_continue_event_handler (lv_event_t *e)
         lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 0, LV_PART_MAIN);
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 0, LV_PART_MAIN);
         lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
         break;
     }
@@ -218,9 +218,9 @@ static void main_ulock_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_LONG_PRESSED:
     {
-				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
+//				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
         lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
         lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
@@ -228,8 +228,10 @@ static void main_ulock_event_handler (lv_event_t *e)
     }
     case LV_EVENT_PRESSING:
     {
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
-        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
+			BeepFlg = 1;
+			BeepCount = 2;
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
+//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
         break;
     }
     default:
@@ -244,7 +246,7 @@ static void main_start_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 255, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 255, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -257,15 +259,15 @@ static void main_start_event_handler(lv_event_t *e)
 				lv_obj_clear_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
 				lv_obj_add_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);				
-				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
+//				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
 				return ;
 		}
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
 		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
@@ -295,8 +297,8 @@ static void main_btn_1_event_handler(lv_event_t *e)
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 		
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
 		lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
@@ -490,12 +492,12 @@ static void config_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.config_back, 200, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.config_back, 200, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.config_back, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.config_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.config_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -564,12 +566,12 @@ static void param_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_back, 128, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_back, 128, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_back, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.param_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -863,13 +865,13 @@ static void param_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_btn_1, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_btn_1, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
 		SlaveFlg = 1;
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_btn_1, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_btn_1, 0, LV_PART_MAIN);
 		lv_obj_clear_flag(guider_ui.param_btn_2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_label_8, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_label_9, LV_OBJ_FLAG_HIDDEN);
@@ -977,7 +979,7 @@ static void light_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_back, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_back, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -986,7 +988,7 @@ static void light_back_event_handler(lv_event_t *e)
 		{
 			SlaveFlg = 1;
 		}
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_back, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.light_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -1007,7 +1009,7 @@ static void light_save_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_save, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_save, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -1018,7 +1020,7 @@ static void light_save_event_handler(lv_event_t *e)
 		lv_obj_clear_flag(guider_ui.light_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_label_8, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_label_7, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_save, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_save, 0, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_PRESSED:
@@ -1096,12 +1098,12 @@ static void vibra_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_back, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_back, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.vibra_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -1122,7 +1124,7 @@ static void vibra_save_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -1130,7 +1132,7 @@ static void vibra_save_event_handler(lv_event_t *e)
 		SlaveFlg = 1;
 		MotorLevel = MotorLevelTemp;
 		
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibra_save, 0, LV_PART_MAIN);
 		lv_obj_clear_flag(guider_ui.vibra_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_label_10, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_label_9, LV_OBJ_FLAG_HIDDEN);
@@ -1243,7 +1245,7 @@ static void vibras_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibras_back, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibras_back, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -1252,7 +1254,7 @@ static void vibras_back_event_handler(lv_event_t *e)
 		{
 			SlaveFlg = 1;
 		}
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibras_back, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibras_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.vibras_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -1329,12 +1331,12 @@ static void freq_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_back, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_back, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_back, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.freq_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -1355,7 +1357,7 @@ static void freq_save_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_save, 125, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_save, 125, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -1363,7 +1365,7 @@ static void freq_save_event_handler(lv_event_t *e)
 		SlaveFlg = 1;
 		FreqOffset = FreqOffsetTemp;
 		
-		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_save, 0, LV_PART_MAIN);
+//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.freq_save, 0, LV_PART_MAIN);
 		lv_obj_clear_flag(guider_ui.freq_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_label_10, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_label_9, LV_OBJ_FLAG_HIDDEN);

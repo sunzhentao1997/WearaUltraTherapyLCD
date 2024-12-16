@@ -100,9 +100,8 @@ static void DevPWM_Init(void)
 {
 
 	__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
-	__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHA, 0);
 	__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
-	__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHA, 0);
+
 }
 
 void DevSystem_Init(void)
@@ -161,13 +160,10 @@ void DevAPP_MainFunc(void)
 
 		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET); // 关闭 45V DCDC
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_A_EN, GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_B_EN, GPIO_PIN_RESET);
+		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET);
 
 		__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
-		__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHA, 0);
 		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
-		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHA, 0);
 
 		break;
 
@@ -183,11 +179,9 @@ void DevAPP_MainFunc(void)
 			DevWorkState = CLOSE_STATE;
 		}
 		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET); // 关闭 45V DCDC
-		DevGpio_SetOutSta(ULTRA_A_EN, GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_B_EN, GPIO_PIN_RESET);
+		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET);
 
 		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
-		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHA, 0);
 		break;
 	case PASUE_STATE:
 
@@ -199,13 +193,10 @@ void DevAPP_MainFunc(void)
 
 		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET); // 关闭 45V DCDC
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_A_EN, GPIO_PIN_RESET);
-		DevGpio_SetOutSta(ULTRA_B_EN, GPIO_PIN_RESET);
+		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET);
 
 		__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
-		__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHA, 0);
 		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
-		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHA, 0);
 
 		break;
 
@@ -223,7 +214,7 @@ void DevAPP_MainFunc(void)
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_SET);
 
 		__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, ultra_pluse);
-		DevGpio_SetOutSta(ULTRA_B_EN, GPIO_PIN_SET);
+		DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_SET);
 
 		if((VibraEnableFlg == 0) && (ParamLockFlg == 1))
 		{
