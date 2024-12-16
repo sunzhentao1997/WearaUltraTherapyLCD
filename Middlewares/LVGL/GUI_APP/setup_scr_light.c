@@ -268,7 +268,7 @@ void setup_scr_light(lv_ui *ui)
     lv_obj_set_style_bg_img_src(ui->light_back, &_back_154x68, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->light_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_recolor(ui->light_back, lv_color_hex(0x0A2847), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->light_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->light_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->light_back, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->light_back, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->light_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);

@@ -647,7 +647,7 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->param_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->param_label_8, &_success_75x75, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->param_label_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_img_recolor_opa(ui->param_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+//    lv_obj_set_style_bg_img_recolor_opa(ui->param_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->param_label_8, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes param_btn_2
