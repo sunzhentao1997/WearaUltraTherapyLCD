@@ -170,16 +170,6 @@
           <WinNumber>1</WinNumber>
           <ItemText>RefreshCount,0x0A</ItemText>
         </Ww>
-        <Ww>
-          <count>4</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>DevicesParam</ItemText>
-        </Ww>
-        <Ww>
-          <count>5</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>BatteryVol,0x0A</ItemText>
-        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>

@@ -35,28 +35,29 @@ static void main_event_handler (lv_event_t *e)
 	{
     case LV_EVENT_SCREEN_LOAD_START:
     {
-		Screen_Id = MAIN_SCREEN;
-		DevWorkState = IDLE_STATE;
+			Screen_Id = MAIN_SCREEN;
+			DevWorkState = IDLE_STATE;
 		
-		battery_display_func[Screen_Id](SendBatteryStateData);
-        lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+			battery_display_func[Screen_Id](SendBatteryStateData);
+			
+			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 //		lv_label_set_text(guider_ui.main_time, "20:00");
 //		lv_label_set_text(guider_ui.main_label_3, " 剩余治疗时间 ");
-        lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
-        break;
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			break;
     }
     case LV_EVENT_CLICKED:
     {
@@ -125,18 +126,15 @@ static void main_stop_event_handler (lv_event_t *e)
     {
 			DevWorkState = IDLE_STATE;
 			ScreenState = STOP;
-
-//			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-//			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-//			lv_obj_clear_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
-//			lv_obj_clear_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
-//			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-//			lv_obj_clear_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
-//			lv_obj_clear_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);
-//			lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 0, LV_PART_MAIN);
+			
+			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-        break;
+
+       break;
 		}
 		case LV_EVENT_PRESSED:
 		{
@@ -160,14 +158,17 @@ static void main_pause_event_handler (lv_event_t *e)
     }
     case LV_EVENT_RELEASED:
     {
-		DevWorkState = PASUE_STATE;
-		ScreenState = PAUSE;
+			DevWorkState = PASUE_STATE;
+			ScreenState = PAUSE;
+			
+			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 0, LV_PART_MAIN);
-        lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-        break;
+      break;
 	}
 	case LV_EVENT_PRESSED:
 	{
@@ -193,15 +194,16 @@ static void main_continue_event_handler (lv_event_t *e)
 	{
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
+		
+		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 
-        lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 0, LV_PART_MAIN);
-        lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-        break;
-    }
+    break;
+   }
 	case LV_EVENT_PRESSED:
 	{
 //		BeepFlg = 1;
@@ -218,13 +220,14 @@ static void main_ulock_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_LONG_PRESSED:
     {
-//				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
-        lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
-        lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-        break;
+
+			lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+			break;
     }
     case LV_EVENT_PRESSING:
     {
@@ -249,7 +252,10 @@ static void main_start_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_RELEASED:
 	{
-		if(BatteryVol < 3700)
+		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
+		if(SendBatteryStateData < Battery_Level2)
 		{
 				lv_obj_clear_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
