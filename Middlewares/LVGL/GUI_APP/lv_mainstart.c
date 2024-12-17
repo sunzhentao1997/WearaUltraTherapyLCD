@@ -860,12 +860,12 @@ static void ScreenOfInterest(void)
 		if ((DisplayFlg == 1) && (DisplayFlg != DisplayFlg_old))
 		{
 			DisplayFlg_old = DisplayFlg;
-			__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, LightLevel * 10);
+			__HAL_TIM_SetCompare(LCDBL_HANDLE, LCDBL_CHANNLE, LightLevel * 10);
 		}
 		else if ((DisplayFlg == 0) && (DisplayFlg != DisplayFlg_old))
 		{
 			DisplayFlg_old = DisplayFlg;
-			__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, 10);
+			__HAL_TIM_SetCompare(LCDBL_HANDLE, LCDBL_CHANNLE, 10);
 		}
 	}
 	else

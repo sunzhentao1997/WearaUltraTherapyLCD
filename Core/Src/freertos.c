@@ -168,11 +168,11 @@ void ScreenRGBTask(void *argument)
   {
 		if((StartFlg == 0) && (BackLedTime < 3500))
 		{
-			  tempval = LightLevel * 10;
+			  tempval = LightLevel * 43;
 								
 				if(BackLedTime > 1500)
 				{
-					__HAL_TIM_SetCompare(&htim5,TIM_CHANNEL_3,tempval);
+					__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
 				}
 				if(BackLedTime > 3450)
 				{
