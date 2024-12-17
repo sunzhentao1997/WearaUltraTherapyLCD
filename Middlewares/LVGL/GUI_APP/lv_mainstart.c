@@ -365,8 +365,8 @@ static void Screen_MainFunc(void)
 	case COMPLETE:
 		if (ScreenState != ScreenState_old)
 		{
-			BeepFlg = 2;
-			BeepCount = 12;
+//			BeepFlg = 2;
+//			BeepCount = 12;
 			ScreenState_old = ScreenState;
 			DevWorkState = IDLE_STATE;
 			
@@ -401,8 +401,8 @@ static void Screen_MainFunc(void)
 	case STOP:
 		if (ScreenState != ScreenState_old)
 		{
-			BeepFlg = 2;
-			BeepCount = 12;
+//			BeepFlg = 2;
+//			BeepCount = 12;
 			ScreenState_old = ScreenState;
 			DevWorkState = IDLE_STATE;
 

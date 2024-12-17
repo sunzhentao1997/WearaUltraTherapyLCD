@@ -148,7 +148,7 @@ void DevAPP_MainFunc(void)
 		old_tick = new_tick;
 	}
 
-	ultra_pluse = UltraDuty * 25;
+	ultra_pluse = UltraDuty * 40;
 
 	switch (DevWorkState)
 	{

@@ -35,6 +35,7 @@ static void main_event_handler (lv_event_t *e)
 	{
     case LV_EVENT_SCREEN_LOAD_START:
     {
+			StandyTime = 0;
 			Screen_Id = MAIN_SCREEN;
 			DevWorkState = IDLE_STATE;
 		
@@ -128,10 +129,10 @@ static void main_stop_event_handler (lv_event_t *e)
 			ScreenState = STOP;
 			
 			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 
        break;
@@ -161,10 +162,10 @@ static void main_pause_event_handler (lv_event_t *e)
 			DevWorkState = PASUE_STATE;
 			ScreenState = PAUSE;
 			
-			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 
@@ -197,8 +198,8 @@ static void main_continue_event_handler (lv_event_t *e)
 		
 		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 
@@ -255,7 +256,7 @@ static void main_start_event_handler(lv_event_t *e)
 		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
-		if(SendBatteryStateData < Battery_Level2)
+		if(BatteryVol < 3500)
 		{
 				lv_obj_clear_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
