@@ -256,7 +256,7 @@ static void main_start_event_handler(lv_event_t *e)
 		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
-		if(BatteryVol < 3500)
+		if(SendBatteryStateData == Battery_Level1)
 		{
 				lv_obj_clear_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
