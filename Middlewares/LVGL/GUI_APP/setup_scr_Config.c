@@ -51,6 +51,32 @@ void setup_scr_config(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->config_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->config_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+    //Write codes config_lowpower
+    ui->config_lowpower = lv_label_create(ui->config);
+    lv_label_set_text(ui->config_lowpower, "");
+    lv_label_set_long_mode(ui->config_lowpower, LV_LABEL_LONG_WRAP);
+    lv_obj_set_pos(ui->config_lowpower, 371, 44);
+    lv_obj_set_size(ui->config_lowpower, 61, 31);
+
+    //Write style for config_lowpower, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->config_lowpower, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->config_lowpower, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->config_lowpower, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->config_lowpower, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->config_lowpower, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui->config_lowpower, &_low_power_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_opa(ui->config_lowpower, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor_opa(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->config_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
     //Write codes config_battery
     ui->config_battery = lv_label_create(ui->config);
     lv_label_set_text(ui->config_battery, " ");
@@ -406,7 +432,7 @@ void setup_scr_config(lv_ui *ui)
     lv_obj_set_style_border_width(ui->config_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_radius(ui->config_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->config_label_4, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->config_label_4, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+	  lv_obj_set_style_text_font(ui->config_label_4, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->config_label_4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui->config_label_4, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui->config_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -418,7 +444,7 @@ void setup_scr_config(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->config_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_src(ui->config_label_4, &_freq_38x38, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_img_opa(ui->config_label_4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-//    lv_obj_set_style_bg_img_recolor_opa(ui->config_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
     lv_obj_set_style_shadow_width(ui->config_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes config_label_5
@@ -522,6 +548,7 @@ void setup_scr_config(lv_ui *ui)
 		lv_obj_add_flag(ui->config_freq, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(ui->config_label_4, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(ui->config_lock_on, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(ui->config_label_6, LV_OBJ_FLAG_HIDDEN);
 	}
     lv_obj_update_layout(ui->config);
 

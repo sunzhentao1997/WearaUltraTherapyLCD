@@ -29,7 +29,8 @@ typedef struct
 	lv_obj_t *main_grate2;
 	lv_obj_t *main_grate3;
 	lv_obj_t *main_grate4;
-	lv_obj_t *main_label_11;
+	lv_obj_t *main_lowpower;
+	lv_obj_t *main_battery;
 	lv_obj_t *main_label_4;
 	lv_obj_t *main_label_10;
 	lv_obj_t *main_arc_1;
@@ -60,6 +61,7 @@ typedef struct
 	lv_obj_t *config;
 	bool config_del;
 	lv_obj_t *config_logo;
+	lv_obj_t *config_lowpower;
 	lv_obj_t *config_battery;
 	lv_obj_t *config_grate4;
 	lv_obj_t *config_grate3;
@@ -88,6 +90,7 @@ typedef struct
 	lv_obj_t *param;
 	bool param_del;
 	lv_obj_t *param_logo;
+	lv_obj_t *param_lowpower;
 	lv_obj_t *param_battery;
 	lv_obj_t *param_grate4;
 	lv_obj_t *param_grate3;
@@ -123,6 +126,7 @@ typedef struct
 	lv_obj_t *light;
 	bool light_del;
 	lv_obj_t *light_logo;
+	lv_obj_t *light_lowpower;
 	lv_obj_t *light_battery;
 	lv_obj_t *light_grate4;
 	lv_obj_t *light_grate3;
@@ -143,6 +147,7 @@ typedef struct
 	lv_obj_t *vibra;
 	bool vibra_del;
 	lv_obj_t *vibra_logo;
+	lv_obj_t *vibra_lowpower;
 	lv_obj_t *vibra_battery;
 	lv_obj_t *vibra_grate4;
 	lv_obj_t *vibra_grate3;
@@ -163,6 +168,7 @@ typedef struct
 	lv_obj_t *vibras;
 	bool vibras_del;
 	lv_obj_t *vibras_logo;
+	lv_obj_t *vibras_lowpower;
 	lv_obj_t *vibras_battery;
 	lv_obj_t *vibras_grate4;
 	lv_obj_t *vibras_grate3;
@@ -176,6 +182,7 @@ typedef struct
 	lv_obj_t *freq;
 	bool freq_del;
 	lv_obj_t *freq_logo;
+	lv_obj_t *freq_lowpower;
 	lv_obj_t *freq_battery;
 	lv_obj_t *freq_grate4;
 	lv_obj_t *freq_grate3;
@@ -203,7 +210,8 @@ typedef struct
 	lv_obj_t *password1_label_5;
 	lv_obj_t *password1_label_6;
 	lv_obj_t *password1_label_7;
-	lv_obj_t *password1_label_8;
+	lv_obj_t *password1_lowpower;
+	lv_obj_t *password1_battery;
 	lv_obj_t *password1_grate4;
 	lv_obj_t *password1_grate3;
 	lv_obj_t *password1_grate2;
@@ -226,7 +234,8 @@ typedef struct
 	lv_obj_t *password2_label_5;
 	lv_obj_t *password2_label_6;
 	lv_obj_t *password2_label_7;
-	lv_obj_t *password2_label_8;
+	lv_obj_t *password2_lowpower;
+	lv_obj_t *password2_battery;
 	lv_obj_t *password2_grate4;
 	lv_obj_t *password2_grate3;
 	lv_obj_t *password2_grate2;
@@ -292,6 +301,8 @@ void setup_scr_password2(lv_ui *ui);
 void setup_scr_charge(lv_ui *ui);
 void setup_scr_boot(lv_ui *ui);
 
+LV_IMG_DECLARE(_low_power_61x31);
+
 LV_IMG_DECLARE(_battery_1_61x31);
 
 LV_IMG_DECLARE(_pressing2_181x100);
@@ -316,6 +327,8 @@ LV_IMG_DECLARE(_wave4_19x68);
 
 LV_IMG_DECLARE(_wave5_21x79);
 
+LV_IMG_DECLARE(_low_power_61x31);
+
 LV_IMG_DECLARE(_battery_1_61x31);
 
 LV_IMG_DECLARE(_back_154x68);
@@ -328,13 +341,7 @@ LV_IMG_DECLARE(_vibra_38x38);
 
 LV_IMG_DECLARE(_freq_38x38);
 
-LV_IMG_DECLARE(_battery_1_61x31);
-
-LV_IMG_DECLARE(_back_154x68);
-
-LV_IMG_DECLARE(_save_154x68);
-
-LV_IMG_DECLARE(_success_75x75);
+LV_IMG_DECLARE(_low_power_61x31);
 
 LV_IMG_DECLARE(_battery_1_61x31);
 
@@ -344,17 +351,7 @@ LV_IMG_DECLARE(_save_154x68);
 
 LV_IMG_DECLARE(_success_75x75);
 
-LV_IMG_DECLARE(_battery_1_61x31);
-
-LV_IMG_DECLARE(_back_154x68);
-
-LV_IMG_DECLARE(_save_154x68);
-
-LV_IMG_DECLARE(_success_75x75);
-
-LV_IMG_DECLARE(_battery_1_61x31);
-
-LV_IMG_DECLARE(_back_154x68);
+LV_IMG_DECLARE(_low_power_61x31);
 
 LV_IMG_DECLARE(_battery_1_61x31);
 
@@ -363,10 +360,40 @@ LV_IMG_DECLARE(_back_154x68);
 LV_IMG_DECLARE(_save_154x68);
 
 LV_IMG_DECLARE(_success_75x75);
+
+LV_IMG_DECLARE(_low_power_61x31);
+
+LV_IMG_DECLARE(_battery_1_61x31);
+
+LV_IMG_DECLARE(_back_154x68);
+
+LV_IMG_DECLARE(_save_154x68);
+
+LV_IMG_DECLARE(_success_75x75);
+
+LV_IMG_DECLARE(_low_power_61x31);
+
+LV_IMG_DECLARE(_battery_1_61x31);
+
+LV_IMG_DECLARE(_back_154x68);
+
+LV_IMG_DECLARE(_low_power_61x31);
+
+LV_IMG_DECLARE(_battery_1_61x31);
+
+LV_IMG_DECLARE(_back_154x68);
+
+LV_IMG_DECLARE(_save_154x68);
+
+LV_IMG_DECLARE(_success_75x75);
+
+LV_IMG_DECLARE(_low_power_61x31);
 
 LV_IMG_DECLARE(_battery_1_61x31);
 
 LV_IMG_DECLARE(_erro_75x75);
+
+LV_IMG_DECLARE(_low_power_61x31);
 
 LV_IMG_DECLARE(_battery_1_61x31);
 

@@ -15,11 +15,13 @@
 #include "custom.h"
 
 #include "lv_mainstart.h"
+#include "dev_app.h"
 
 static uint8_t ParamTempBuff[10] = {0};
 
 void setup_scr_param(lv_ui *ui)
 {
+		uint8_t boostlevel = SendBatteryStateData;
     //Write codes param
     ui->param = lv_obj_create(NULL);
     lv_obj_set_size(ui->param, 480, 800);
@@ -52,6 +54,32 @@ void setup_scr_param(lv_ui *ui)
     lv_obj_set_style_pad_bottom(ui->param_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_left(ui->param_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->param_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes param_lowpower
+    ui->param_lowpower = lv_label_create(ui->param);
+    lv_label_set_text(ui->param_lowpower, "");
+    lv_label_set_long_mode(ui->param_lowpower, LV_LABEL_LONG_WRAP);
+    lv_obj_set_pos(ui->param_lowpower, 371, 44);
+    lv_obj_set_size(ui->param_lowpower, 61, 31);
+
+    //Write style for param_lowpower, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->param_lowpower, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->param_lowpower, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->param_lowpower, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->param_lowpower, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->param_lowpower, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui->param_lowpower, &_low_power_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_opa(ui->param_lowpower, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor_opa(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->param_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes param_battery
     ui->param_battery = lv_label_create(ui->param);
@@ -676,12 +704,67 @@ void setup_scr_param(lv_ui *ui)
 
 
     //Update current screen layout.
-	if(ParamLockFlg == 1) 
+		if(ParamLockFlg == 1) 
+		{
+			lv_obj_add_flag(ui->param_btn_1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(ui->param_label_5, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(ui->param_label_6, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(ui->param_Power, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(ui->param_Temp, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(ui->param_DeviceId, LV_OBJ_FLAG_CLICKABLE);
+			lv_obj_clear_flag(ui->param_Power, LV_OBJ_FLAG_CLICKABLE);
+			lv_obj_clear_flag(ui->param_Temp, LV_OBJ_FLAG_CLICKABLE);
+		}
+	
+	switch (boostlevel)
 	{
-		lv_obj_add_flag(ui->param_btn_1, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(ui->param_DeviceId, LV_OBJ_FLAG_CLICKABLE);
-		lv_obj_clear_flag(ui->param_Power, LV_OBJ_FLAG_CLICKABLE);
-		lv_obj_clear_flag(ui->param_Temp, LV_OBJ_FLAG_CLICKABLE);
+	case Battery_Level1:
+		lv_obj_add_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
+		break;
+	
+	case Battery_Level2:
+		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);	
+		break;
+	
+	case Battery_Level3:
+		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
+		break;
+	
+	case Battery_Level4:
+		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
+		break;
+	
+	case Battery_Level5:
+		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
+		break;
+	
+	default:
+		break;
 	}
     lv_obj_update_layout(ui->param);
 

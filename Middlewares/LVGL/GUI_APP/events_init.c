@@ -22,6 +22,7 @@
 uint8_t UnlockFlg = 0;
 static uint16_t MotorLevelTemp = 0;
 static uint16_t FreqOffsetTemp = 0;
+static uint8_t PagingDisableFlg = 0;
 
 /*****************************************************************************************************
  *
@@ -38,6 +39,7 @@ static void main_event_handler (lv_event_t *e)
 			Screen_Id = MAIN_SCREEN;
 			DevWorkState = IDLE_STATE;
 			StandyTime = 0;
+			PagingDisableFlg = 0;
 		
 			battery_display_func[Screen_Id](SendBatteryStateData);
 			
@@ -86,31 +88,31 @@ static void main_paging_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
 	
-	if((ScreenState == WORK) || (ScreenState == PAUSE))
+	if((ScreenState == WORK) || (ScreenState == PAUSE) || (PagingDisableFlg == 1))
 	{
 			return ;
 	}
+	
 	switch (code)
 	{
     case LV_EVENT_CLICKED:
     {
-		ScreenState = PAGING;
-		Screen_Id = CONFIG_SCREEN;
-		DevWorkState = ADMIN_STATE;
+			ScreenState = PAGING;
+			Screen_Id = CONFIG_SCREEN;
+			DevWorkState = ADMIN_STATE;
 
-		ui_load_scr_animation(&guider_ui, &guider_ui.password1, guider_ui.password1_del, &guider_ui.main_del, setup_scr_password1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, false);
-        break;
-    }
-	case LV_EVENT_PRESSED:
-	{
+			ui_load_scr_animation(&guider_ui, &guider_ui.password1, guider_ui.password1_del, &guider_ui.main_del, setup_scr_password1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, false);
+			break;
+		}
+		case LV_EVENT_PRESSED:
+		{
 //		BeepFlg = 1;
 //		BeepCount = 2;
-		break;
-	}
-	break;
+			break;
+		}
     default:
-        break;
-    }
+			break;
+  }
 }
 
 static void main_stop_event_handler (lv_event_t *e)
@@ -127,6 +129,7 @@ static void main_stop_event_handler (lv_event_t *e)
     {
 			DevWorkState = IDLE_STATE;
 			ScreenState = STOP;
+			PagingDisableFlg = 0;
 			
 			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
@@ -175,10 +178,12 @@ static void main_pause_event_handler (lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
-    }
+		
+		break;
+	}
     default:
         break;
-    }
+	}
 }
 
 static void main_continue_event_handler (lv_event_t *e)
@@ -209,6 +214,7 @@ static void main_continue_event_handler (lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
     default:
         break;
@@ -248,15 +254,16 @@ static void main_start_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 255, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
+		PagingDisableFlg = 1;
+		
 		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_finish, LV_OBJ_FLAG_HIDDEN);
-		if(BatteryVol < 3500)
+		if(SendBatteryStateData == Battery_Level1)
 		{
 				lv_obj_clear_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_clear_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
@@ -264,15 +271,12 @@ static void main_start_event_handler(lv_event_t *e)
 				lv_obj_clear_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 				lv_obj_add_flag(guider_ui.main_start,LV_OBJ_FLAG_CLICKABLE);
 				lv_obj_add_flag(guider_ui.main_paging,LV_OBJ_FLAG_CLICKABLE);				
-//				lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
+
 				return ;
 		}
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_start, 0, LV_PART_MAIN);
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
 		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
@@ -286,6 +290,7 @@ static void main_start_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
     default:
         break;
@@ -302,8 +307,6 @@ static void main_btn_1_event_handler(lv_event_t *e)
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 		
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 0, LV_PART_MAIN);
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 0, LV_PART_MAIN);
 		lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
@@ -319,6 +322,7 @@ static void main_btn_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -344,6 +348,7 @@ static void main_btn_2_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -397,6 +402,7 @@ static void config_param_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -417,6 +423,7 @@ static void config_light_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -444,6 +451,7 @@ static void config_vibra_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -464,6 +472,7 @@ static void config_freq_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -484,6 +493,7 @@ static void config_lock_on_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -497,12 +507,10 @@ static void config_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.config_back, 200, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.config_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.config_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -511,6 +519,7 @@ static void config_back_event_handler(lv_event_t *e)
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		ScreenState = IDLE;
+		break;
 	}
 	default:
 		break;
@@ -571,12 +580,10 @@ static void param_back_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_back, 128, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.param_back, 0, LV_PART_MAIN);
 		ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.param_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, true);
 		break;
 	}
@@ -584,6 +591,7 @@ static void param_back_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -610,6 +618,7 @@ static void param_DeviceId_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -636,6 +645,7 @@ static void param_Power_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -662,6 +672,7 @@ static void param_Temp_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -797,6 +808,7 @@ static void param_btnm_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -824,6 +836,7 @@ static void param_back_p_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -851,6 +864,7 @@ static void param_Del_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -971,6 +985,7 @@ static void light_slider_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1001,6 +1016,7 @@ static void light_back_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1032,6 +1048,7 @@ static void light_save_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1055,6 +1072,7 @@ static void light_btn_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1116,6 +1134,7 @@ static void vibra_back_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1148,6 +1167,7 @@ static void vibra_save_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1174,6 +1194,7 @@ static void vibra_slider_1_event_handler(lv_event_t *e)
 		pressed = 1;
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
@@ -1185,6 +1206,7 @@ static void vibra_slider_1_event_handler(lv_event_t *e)
 		{
 				pressed = 0;
 		}
+		break;
 	}
 	default:
 		break;
@@ -1208,6 +1230,7 @@ static void vibra_btn_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1267,6 +1290,7 @@ static void vibras_back_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1290,6 +1314,7 @@ static void vibras_sw_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1349,6 +1374,7 @@ static void freq_back_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1381,6 +1407,7 @@ static void freq_save_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1424,6 +1451,7 @@ static void freq_btn_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1580,6 +1608,7 @@ static void password1_btnm_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1673,6 +1702,7 @@ static void password1_btn_1_event_handler(lv_event_t *e)
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		ScreenState = IDLE;
+		break;
 	}
 	default:
 		break;
@@ -1702,6 +1732,7 @@ static void password1_btn_2_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1866,6 +1897,7 @@ static void password2_btnm_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1955,6 +1987,7 @@ static void password2_btn_1_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -1978,6 +2011,7 @@ static void password2_btn_2_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //		BeepCount = 2;
+		break;
 	}
 	default:
 		break;
@@ -2005,6 +2039,7 @@ static void password2_btn_3_event_handler(lv_event_t *e)
 	{
 //		BeepFlg = 1;
 //  	BeepCount = 2;
+		break;
 	}
 	default:
 		break;

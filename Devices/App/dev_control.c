@@ -9,8 +9,6 @@ static uint8_t VibraParam = 0;			  // 马达震动参数
 static uint32_t u32_FreqParam_A = 0;	  // A通道驱动频率
 static uint32_t u32_FreqParam_B = 0;	  // B通道驱动频率
 static uint32_t u32_VibraParam = 0;		  // PWM驱动参数
-static uint8_t WorkStartFlg = 0;		  // 工作开始标志
-static uint8_t WorkFinFlg = 0;			  // 工作结束标志
 static uint16_t PowerFlg = 0;			  // 充电自动关机
 static uint16_t ReadBattery = 0;
 
@@ -86,10 +84,10 @@ void UltraParam_Init(void)
 	if(ReadBattery == 0xFFFF)
 	{
 			ReadBattery = Battery_Level5;
-			SendBatteryStateData = ReadBattery;
+			SendBatteryStateData = (Battery_Level)ReadBattery;
 	}else
 	{
-			SendBatteryStateData = ReadBattery;
+			SendBatteryStateData = (Battery_Level)ReadBattery;
 	}
 
 	MotorLevel = VibraParam;
@@ -169,10 +167,6 @@ void DevAPP_MainFunc(void)
 		break;
 
 	case ADMIN_STATE:
-		if (WorkStartFlg == 1)
-		{
-			WorkFinFlg = 1;
-		}
 
 		if(StandyTime > 600000)
 		{
@@ -186,10 +180,6 @@ void DevAPP_MainFunc(void)
 		break;
 	case PASUE_STATE:
 
-		if (WorkStartFlg == 1)
-		{
-			WorkFinFlg = 1;
-		}
 		StandyTime = 0;
 
 		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_RESET); // 关闭 45V DCDC
@@ -208,7 +198,6 @@ void DevAPP_MainFunc(void)
 
 	case WORK_STATE:
 
-		WorkStartFlg = 1;
 		StandyTime = 0;
 
 		DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_SET);

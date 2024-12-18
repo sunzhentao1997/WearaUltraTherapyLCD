@@ -51,6 +51,32 @@ void setup_scr_freq(lv_ui *ui)
     lv_obj_set_style_pad_left(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->freq_logo, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+    //Write codes freq_lowpower
+    ui->freq_lowpower = lv_label_create(ui->freq);
+    lv_label_set_text(ui->freq_lowpower, "");
+    lv_label_set_long_mode(ui->freq_lowpower, LV_LABEL_LONG_WRAP);
+    lv_obj_set_pos(ui->freq_lowpower, 371, 44);
+    lv_obj_set_size(ui->freq_lowpower, 61, 31);
+
+    //Write style for freq_lowpower, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->freq_lowpower, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->freq_lowpower, &lv_customer_font_NSHRegular_18, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->freq_lowpower, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->freq_lowpower, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->freq_lowpower, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_src(ui->freq_lowpower, &_low_power_61x31, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_opa(ui->freq_lowpower, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_img_recolor_opa(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->freq_lowpower, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
     //Write codes freq_battery
     ui->freq_battery = lv_label_create(ui->freq);
     lv_label_set_text(ui->freq_battery, " ");

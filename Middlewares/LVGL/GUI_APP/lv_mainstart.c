@@ -56,9 +56,7 @@ uint8_t VibraEnableFlg = 1;
 uint8_t VibraEnableFlg_old = 1;
 
 static int16_t SliderVal = 1200;  // 滑块值
-static uint8_t LowBatteryFlg = 0; // 低电量标志位
 static char timebuf[] = "20:00";  // 时间显示
-static uint16_t ClickTime = 0;	  // 点击时间
 
 void lv_mainstart(void)
 {
@@ -77,7 +75,6 @@ static void get_time_buff(void)
 /* 屏幕主功能 */
 void ScreenFunc(void)
 {
-	uint8_t id = 0;
 	static uint8_t BatteryStaOld = BOOST;
 	//BatteryState = BOOST;
 
@@ -130,9 +127,7 @@ static void Screen_Charge(void)
 {
 	uint8_t id;
 	uint8_t chargelevel = 0;
-	static uint8_t Send_Val = 0;
 	static uint8_t chact = 0;
-	static uint8_t ChargeFlg = 0;
 	static uint16_t RefreshCount = 0;
 	//SendBatteryStateData = Battery_Level1;
 
@@ -365,8 +360,8 @@ static void Screen_MainFunc(void)
 	case COMPLETE:
 		if (ScreenState != ScreenState_old)
 		{
-//			BeepFlg = 2;
-//			BeepCount = 12;
+			BeepFlg = 2;
+			BeepCount = 12;
 			ScreenState_old = ScreenState;
 			DevWorkState = IDLE_STATE;
 			
@@ -401,8 +396,8 @@ static void Screen_MainFunc(void)
 	case STOP:
 		if (ScreenState != ScreenState_old)
 		{
-//			BeepFlg = 2;
-//			BeepCount = 12;
+			BeepFlg = 2;
+			BeepCount = 12;
 			ScreenState_old = ScreenState;
 			DevWorkState = IDLE_STATE;
 
@@ -463,6 +458,12 @@ static void Screen_MainFunc(void)
 	}
 }
 
+/********************************************************************************************************
+*
+*																		电量显示
+*
+********************************************************************************************************/
+
 static void BatteryDisplay_Config(uint8_t boostlevel)
 {
 	switch (boostlevel)
@@ -472,31 +473,46 @@ static void BatteryDisplay_Config(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.config_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.config_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.config_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.config_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.config_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.config_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.config_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.config_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.config_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.config_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.config_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.config_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.config_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.config_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.config_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.config_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.config_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.config_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.config_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.config_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.config_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.config_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -511,31 +527,46 @@ static void BatteryDisplay_Freq(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.freq_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.freq_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.freq_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.freq_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.freq_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.freq_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.freq_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.freq_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.freq_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.freq_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.freq_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.freq_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.freq_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.freq_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.freq_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.freq_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.freq_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -550,31 +581,46 @@ static void BatteryDisplay_Light(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.light_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.light_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.light_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.light_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.light_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.light_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.light_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.light_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.light_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.light_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.light_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.light_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.light_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.light_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.light_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.light_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.light_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -589,31 +635,46 @@ static void BatteryDisplay_Main(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.main_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.main_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.main_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.main_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.main_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.main_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.main_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.main_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -628,31 +689,46 @@ static void BatteryDisplay_Param(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);	
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.param_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.param_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.param_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.param_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -666,31 +742,46 @@ static void BatteryDisplay_Password1(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.password1_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password1_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password1_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.password1_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password1_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password1_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.password1_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password1_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password1_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password1_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.password1_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password1_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password1_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password1_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password1_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password1_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.password1_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password1_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password1_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password1_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password1_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password1_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -705,31 +796,46 @@ static void BatteryDisplay_Password2(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.password2_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password2_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password2_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.password2_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password2_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password2_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.password2_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password2_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password2_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password2_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.password2_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password2_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password2_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.password2_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password2_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password2_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.password2_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password2_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password2_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.password2_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.password2_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.password2_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -744,31 +850,46 @@ static void BatteryDisplay_Vibra(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.vibra_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibra_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibra_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.vibra_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibra_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibra_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.vibra_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibra_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibra_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.vibra_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibra_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibra_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibra_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.vibra_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibra_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibra_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibra_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -783,31 +904,46 @@ static void BatteryDisplay_Vibras(uint8_t boostlevel)
 		lv_obj_add_flag(guider_ui.vibras_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibras_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibras_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level2:
 		lv_obj_clear_flag(guider_ui.vibras_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibras_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibras_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level3:
 		lv_obj_clear_flag(guider_ui.vibras_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibras_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibras_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibras_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level4:
 		lv_obj_clear_flag(guider_ui.vibras_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibras_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibras_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.vibras_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibras_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibras_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	case Battery_Level5:
 		lv_obj_clear_flag(guider_ui.vibras_grate1, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibras_grate2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibras_grate3, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_clear_flag(guider_ui.vibras_grate4, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_clear_flag(guider_ui.vibras_battery, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(guider_ui.vibras_lowpower, LV_OBJ_FLAG_HIDDEN);
 		break;
+	
 	default:
 		break;
 	}
@@ -860,7 +996,7 @@ static void ScreenOfInterest(void)
 		if ((DisplayFlg == 1) && (DisplayFlg != DisplayFlg_old))
 		{
 			DisplayFlg_old = DisplayFlg;
-			__HAL_TIM_SetCompare(LCDBL_HANDLE, LCDBL_CHANNLE, LightLevel * 10);
+			__HAL_TIM_SetCompare(LCDBL_HANDLE, LCDBL_CHANNLE, LightLevel * 43);
 		}
 		else if ((DisplayFlg == 0) && (DisplayFlg != DisplayFlg_old))
 		{
@@ -873,7 +1009,7 @@ static void ScreenOfInterest(void)
 		if ((DisplayFlg == 1) && (DisplayFlg != DisplayFlg_old))
 		{
 			DisplayFlg_old = DisplayFlg;
-			__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, LightLevel * 10);
+			__HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, LightLevel * 43);
 		}
 		DisplayTime = 0;
 	}

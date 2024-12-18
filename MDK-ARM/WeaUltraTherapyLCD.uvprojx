@@ -2042,6 +2042,11 @@
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\_suo_1_58x58.c</FilePath>
             </File>
+            <File>
+              <FileName>_low_power_61x31.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\_low_power_61x31.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

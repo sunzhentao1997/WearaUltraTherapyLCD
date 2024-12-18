@@ -953,16 +953,16 @@ static void password1_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
+    case LV_EVENT_SCREEN_LOAD_START:
+    {
+        break;
+    }
     case LV_EVENT_SCREEN_UNLOADED:
     {
         lv_obj_add_flag(guider_ui.password1_label_14, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.password1_btn_2, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.password1_label_16, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.password1_label_15, LV_OBJ_FLAG_HIDDEN);
-        break;
-    }
-    case LV_EVENT_SCREEN_LOAD_START:
-    {
         break;
     }
     default:
