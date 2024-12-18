@@ -27,7 +27,73 @@ Project File Date:  12/17/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'WeaUltraTherapyLCD'
-"WeaUltraTherapyLCD\TFB-ULT.axf" - 0 Error(s), 0 Warning(s).
+compiling dev_adc.c...
+..\Devices\App\dev_adc.c(127): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		BatVolTemp = BatVolTemp / 0.9936;
+..\Devices\App\dev_adc.c(128): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		BatVolTemp = BatVolTemp / 0.66385;
+..\Devices\App\dev_adc.c(146): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	BatVolTemp = BatVolTemp / 0.9936;
+..\Devices\App\dev_adc.c(147): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	BatVolTemp = BatVolTemp / 0.66385;
+..\Devices\App\dev_adc.c(136): warning:  #177-D: variable "AdcInitFlg"  was declared but never referenced
+  	static uint8_t AdcInitFlg = 0;
+..\Devices\App\dev_adc.c(138): warning:  #177-D: variable "battery_voltage_input"  was declared but never referenced
+  	float battery_voltage_input = 4.2;
+..\Devices\App\dev_adc.c(140): warning:  #177-D: variable "tag_i"  was declared but never referenced
+  	uint8_t tag_i = 0;
+..\Devices\App\dev_adc.c(230): warning:  #188-D: enumerated type mixed with another type
+  						SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c(265): warning:  #188-D: enumerated type mixed with another type
+  						SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c(338): warning:  #188-D: enumerated type mixed with another type
+  						SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c(341): warning:  #188-D: enumerated type mixed with another type
+  						SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c(370): warning:  #188-D: enumerated type mixed with another type
+  							SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c(378): warning:  #188-D: enumerated type mixed with another type
+  							SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c(385): warning:  #188-D: enumerated type mixed with another type
+  				SendBatteryStateData = BatLevel_old;
+..\Devices\App\dev_adc.c: 14 warnings, 0 errors
+compiling dev_mpc5043.c...
+..\Devices\App\dev_mpc5043.c(20): warning:  #177-D: variable "battery_level_state"  was declared but never referenced
+  	uint8_t battery_level_state = 0;
+..\Devices\App\dev_mpc5043.c(21): warning:  #177-D: variable "battery_voltage_data"  was declared but never referenced
+  	static uint8_t	battery_voltage_data = 0xff;
+..\Devices\App\dev_mpc5043.c: 2 warnings, 0 errors
+compiling dev_control.c...
+..\Devices\App\dev_control.c(89): warning:  #188-D: enumerated type mixed with another type
+  			SendBatteryStateData = ReadBattery;
+..\Devices\App\dev_control.c(92): warning:  #188-D: enumerated type mixed with another type
+  			SendBatteryStateData = ReadBattery;
+..\Devices\App\dev_control.c(13): warning:  #550-D: variable "WorkFinFlg"  was set but never used
+  static uint8_t WorkFinFlg = 0;			  // 工作结束标志
+..\Devices\App\dev_control.c: 3 warnings, 0 errors
+compiling events_init.c...
+..\Middlewares\LVGL\GUI_APP\events_init.c(110): warning:  #111-D: statement is unreachable
+  	break;
+..\Middlewares\LVGL\GUI_APP\events_init.c: 1 warning, 0 errors
+compiling dev_beep.c...
+compiling freertos.c...
+compiling main.c...
+compiling lv_mainstart.c...
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(80): warning:  #177-D: variable "id"  was declared but never referenced
+  	uint8_t id = 0;
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(133): warning:  #177-D: variable "Send_Val"  was declared but never referenced
+  	static uint8_t Send_Val = 0;
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(135): warning:  #177-D: variable "ChargeFlg"  was declared but never referenced
+  	static uint8_t ChargeFlg = 0;
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(59): warning:  #177-D: variable "LowBatteryFlg"  was declared but never referenced
+  static uint8_t LowBatteryFlg = 0; // 低电量标志位
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c(61): warning:  #177-D: variable "ClickTime"  was declared but never referenced
+  static uint16_t ClickTime = 0;	  // 点击时间
+..\Middlewares\LVGL\GUI_APP\lv_mainstart.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=317520 RO-data=513024 RW-data=1432 ZI-data=3085424  
+FromELF: creating hex file...
+"WeaUltraTherapyLCD\TFB-ULT.axf" - 0 Error(s), 25 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +116,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.2.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>

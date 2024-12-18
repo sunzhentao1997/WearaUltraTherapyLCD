@@ -522,6 +522,7 @@ void setup_scr_config(lv_ui *ui)
 		lv_obj_add_flag(ui->config_freq, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(ui->config_label_4, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(ui->config_lock_on, LV_OBJ_FLAG_HIDDEN);
+		lv_obj_add_flag(ui->config_label_6, LV_OBJ_FLAG_HIDDEN);
 	}
     lv_obj_update_layout(ui->config);
 

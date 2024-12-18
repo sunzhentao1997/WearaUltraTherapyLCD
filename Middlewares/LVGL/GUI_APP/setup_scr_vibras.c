@@ -221,6 +221,7 @@ void setup_scr_vibras(lv_ui *ui)
     lv_obj_set_style_bg_img_recolor(ui->vibras_back, lv_color_hex(0x0A2847), LV_PART_MAIN|LV_STATE_DEFAULT);
 //    lv_obj_set_style_bg_img_recolor_opa(ui->vibras_back, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->vibras_back, lv_color_hex(0x114C8B), LV_PART_MAIN|LV_STATE_DEFAULT);
+		lv_obj_set_style_text_font(ui->vibras_back, &lv_customer_font_NSHBold_30, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->vibras_back, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->vibras_back, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 

@@ -14,17 +14,14 @@ extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim9;
 
 #define ULTRA_HANDLE	(&htim3)
-
 #define ULTRA_CHB			TIM_CHANNEL_1
 #define ULTRA_CHA			TIM_CHANNEL_2
 
 #define MOTOR_HANDLE 	(&htim5)
-
 #define MOTOR_CHB			TIM_CHANNEL_2
 #define MOTOR_CHA			TIM_CHANNEL_3
 
 #define BEEP_HANDLE			(&htim9)
-
 #define BEEP_CHANNLE		TIM_CHANNEL_2
 
 #define BEEP_ON()					__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,180)
