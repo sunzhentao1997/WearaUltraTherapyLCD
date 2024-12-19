@@ -297,6 +297,9 @@ void BatteryLevelGet(void)
 {
 		uint8_t bat_sta = 0;
 		uint8_t tag_i = 0;
+		uint32_t new_tick;
+		static uint32_t old_tick;
+		static uint8_t SaveBatteryFlg = 0;
   	float batval = 0.0f; 
 		static uint8_t DevSta_old = IDLE_STATE;
 		static uint8_t RefreshFlg = 0;
@@ -404,10 +407,26 @@ void BatteryLevelGet(void)
 		
 		if((DevSta_old == WORK_STATE) && (DevWorkState != WORK_STATE))
 		{
-				DevFlash_Write(FLASH_BATTERYLEVEL, (uint16_t *)&SendBatteryStateData, 1);
+			  SaveBatteryFlg = 1;
 		}else if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
 		{
-				DevFlash_Write(FLASH_BATTERYLEVEL, (uint16_t *)&SendBatteryStateData, 1);
+				SaveBatteryFlg = 1;
+		}
+		
+		new_tick = HAL_GetTick();
+		if(SaveBatteryFlg == 1)
+		{
+				if((new_tick - old_tick) > 1000)
+				{
+						old_tick = new_tick;
+						if(DevFlash_Write(FLASH_BATTERYLEVEL, (uint16_t *)&SendBatteryStateData, 1) == HAL_OK)
+						{
+							 SaveBatteryFlg = 0;
+						}
+				}
+		}else
+		{
+				old_tick = new_tick;
 		}
 		
 		DevSta_old = DevWorkState;

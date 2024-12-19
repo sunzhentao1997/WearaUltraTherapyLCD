@@ -13,9 +13,11 @@
 const FLASH_BLOCK Flash_Block[FLASH_BANK_NUM] =
 {
 	{.bank = FLASH_SECTOR_21,.start_addr = 0x81A0000,.stop_addr = 0x81BFFFF,.size = 131072},   
-	{.bank = FLASH_SECTOR_22,.start_addr = 0x81C0000,.stop_addr = 0x81DFFFF,.size = 131072},
+	{.bank = FLASH_SECTOR_20,.start_addr = 0x8180000,.stop_addr = 0x819FFFF,.size = 131072},
 	{.bank = FLASH_SECTOR_23,.start_addr = 0x81E0000,.stop_addr = 0x81FFFFF,.size = 131072},
 };
+
+uint16_t ReadFlashBuff[128];
 
 HAL_StatusTypeDef EraseFlash(uint32_t addr)
 {
@@ -68,8 +70,9 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 	}
 
 	HAL_FLASH_Unlock();
-	FLASH_WaitForLastOperation(FLASH_WAITETIME);
-	__HAL_FLASH_DATA_CACHE_DISABLE();
+	
+	//FLASH_WaitForLastOperation(FLASH_WAITETIME);
+	//__HAL_FLASH_DATA_CACHE_DISABLE();
 	
 	for(tag_i = 0;tag_i < FLASH_BANK_NUM;tag_i++)
 	{
@@ -80,18 +83,28 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 		}
 		
 	}
-
-	EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
-	EraseInitStruct.NbSectors = 1;
-	EraseInitStruct.Sector = sector;
-	EraseInitStruct.VoltageRange = FLASH_VOLTAGE_RANGE_3;
-
-	status = HAL_FLASHEx_Erase(&EraseInitStruct, &sectorerror);
-	if(status != HAL_OK)
+	
+	DevFlash_Read(addr,ReadFlashBuff,len);
+	
+	for(tag_i = 0;tag_i < len;tag_i++)
 	{
-		return status;
-	}
+		 if(ReadFlashBuff[tag_i] != 0xFFFF)
+		 {
+				EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
+				EraseInitStruct.NbSectors = 1;
+				EraseInitStruct.Sector = sector;
+				EraseInitStruct.VoltageRange = FLASH_VOLTAGE_RANGE_3;
 
+				status = HAL_FLASHEx_Erase(&EraseInitStruct, &sectorerror);
+				if(status != HAL_OK)
+				{
+					HAL_FLASH_Lock();
+					return status;
+				}
+				break;
+		 }
+	}
+	
 	writeaddr = addr;
 
 	for(tag_i = 0;tag_i < len;tag_i++)
@@ -100,13 +113,14 @@ HAL_StatusTypeDef DevFlash_Write(uint32_t addr,uint16_t* buff,uint16_t len)
 		status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, writeaddr, (uint64_t)writedata);
 		if(status != HAL_OK)
 		{
+			HAL_FLASH_Lock();
 			return status;
 		}else
 		{
 			writeaddr += 2;
 		}
 	}
-	__HAL_FLASH_DATA_CACHE_ENABLE();
+	//__HAL_FLASH_DATA_CACHE_ENABLE();
 	HAL_FLASH_Lock();
 
 	return status;

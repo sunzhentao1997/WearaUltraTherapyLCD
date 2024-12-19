@@ -30,7 +30,7 @@ extern TIM_HandleTypeDef htim12;
 #define BEEP_OFF()				__HAL_TIM_SetCompare(BEEP_HANDLE,BEEP_CHANNLE,0)
 
 #define FLASH_SHUNTDOWN			0x81A0000
-#define FLASH_BATTERYLEVEL	0x81C0000
+#define FLASH_BATTERYLEVEL	0x8180000
 #define FLASH_SAVE_ADDR 		0x81E0000
 
 /*main*/
@@ -47,6 +47,8 @@ extern uint32_t ShuntDownCount;
 extern uint32_t MotorTime;
 extern uint32_t BeatTime;
 extern uint32_t HintTime;
+extern uint8_t LongPressFlg;
+extern uint32_t LongPressTime;
 /*adc*/
 extern uint16_t BatteryVol;										//adc电压采样
 extern uint32_t UltraWorkTim;									//超声工作时间

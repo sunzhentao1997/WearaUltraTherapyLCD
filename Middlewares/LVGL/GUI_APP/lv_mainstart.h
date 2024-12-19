@@ -61,6 +61,7 @@ extern uint8_t ParamLockFlg;
 extern uint8_t VibraEnableFlg;
 extern uint8_t VibraEnableFlg_old;
 extern uint16_t LightLevel_old;
+extern uint16_t MotorLevelTemp;
 
 void lv_mainstart(void);
 void ScreenFunc(void);

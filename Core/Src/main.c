@@ -72,6 +72,8 @@ uint32_t VibraFeedBackTime = 0;												//震动反馈时间
 uint32_t DisplayTime = 0;
 uint32_t BeatTime = 0;
 uint32_t HintTime = 0;
+uint8_t LongPressFlg = 0;
+uint32_t LongPressTime = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -276,6 +278,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			if(PowerOnTime > 1500)
 			{
 					CompleteFlg = 1;
+			}
+			
+			if(LongPressFlg == 1)
+			{
+				LongPressTime++;
+			}else
+			{
+				LongPressTime = 0;
 			}
 	}
 	

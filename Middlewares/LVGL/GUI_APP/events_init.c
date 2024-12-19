@@ -20,7 +20,7 @@
 #include "dev_app.h"
 
 uint8_t UnlockFlg = 0;
-static uint16_t MotorLevelTemp = 0;
+uint16_t MotorLevelTemp = 0;
 static uint16_t FreqOffsetTemp = 0;
 static uint8_t PagingDisableFlg = 0;
 
@@ -40,6 +40,7 @@ static void main_event_handler (lv_event_t *e)
 			DevWorkState = IDLE_STATE;
 			StandyTime = 0;
 			PagingDisableFlg = 0;
+			DisplayFlg = 1;
 		
 			battery_display_func[Screen_Id](SendBatteryStateData);
 			
@@ -106,6 +107,8 @@ static void main_paging_event_handler (lv_event_t *e)
 		}
 		case LV_EVENT_PRESSED:
 		{
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 			break;
@@ -142,6 +145,9 @@ static void main_stop_event_handler (lv_event_t *e)
 		}
 		case LV_EVENT_PRESSED:
 		{
+			LongPressFlg = 0;
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //			BeepFlg = 1;
 //			BeepCount = 2;
     }
@@ -176,6 +182,8 @@ static void main_pause_event_handler (lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		
@@ -212,6 +220,9 @@ static void main_continue_event_handler (lv_event_t *e)
    }
 	case LV_EVENT_PRESSED:
 	{
+			LongPressFlg = 0;
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		break;
@@ -225,23 +236,37 @@ static void main_ulock_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_LONG_PRESSED:
-    {
-
-			lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-			break;
-    }
     case LV_EVENT_PRESSING:
     {
+			LongPressFlg = 1;
+			if(LongPressTime > 1500)
+			{
+				lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+				
+				LongPressFlg = 0;
+			}
+			break;
+    }
+//    case LV_EVENT_PRESSING:
+//    {
 //        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
 //        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
-        break;
-    }
+//        break;
+//    }
+		case LV_EVENT_PRESSED:
+		{
+			LongPressFlg = 0;
+			DisplayFlg = 1;
+			DisplayTime = 0;
+//		BeepFlg = 1;
+//		BeepCount = 2;
+			break;
+		}
     default:
         break;
     }
@@ -288,6 +313,8 @@ static void main_start_event_handler(lv_event_t *e)
     }
 	case LV_EVENT_PRESSED:
 	{
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		break;
@@ -320,6 +347,8 @@ static void main_btn_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		break;
@@ -346,6 +375,8 @@ static void main_btn_2_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
+			DisplayFlg = 1;
+			DisplayTime = 0;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		break;
@@ -1191,21 +1222,21 @@ static void vibra_slider_1_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
-		pressed = 1;
+//		pressed = 1;
 //		BeepFlg = 1;
 //		BeepCount = 2;
 		break;
 	}
 	case LV_EVENT_RELEASED:
 	{
-		if(pressed == 0)
-		{
+		//if(pressed == 0)
+	//	{
 			VibraChangeFlg = 1;
 			VibraFeedBackTime = 0;
-		}else
-		{
-				pressed = 0;
-		}
+	//	}else
+	//	{
+	//			pressed = 0;
+	//	}
 		break;
 	}
 	default:

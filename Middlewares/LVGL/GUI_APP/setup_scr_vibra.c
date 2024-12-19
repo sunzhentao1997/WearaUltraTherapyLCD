@@ -280,7 +280,7 @@ void setup_scr_vibra(lv_ui *ui)
     ui->vibra_slider_1 = lv_slider_create(ui->vibra);
     lv_slider_set_range(ui->vibra_slider_1, 0, 20);
     lv_slider_set_mode(ui->vibra_slider_1, LV_SLIDER_MODE_NORMAL);
-	lv_slider_set_value(ui->vibra_slider_1, (int32_t)MotorLevel, LV_ANIM_OFF);
+	  lv_slider_set_value(ui->vibra_slider_1, (int32_t)MotorLevel, LV_ANIM_OFF);
     lv_obj_set_pos(ui->vibra_slider_1, 50, 385);
     lv_obj_set_size(ui->vibra_slider_1, 381, 37);
 
