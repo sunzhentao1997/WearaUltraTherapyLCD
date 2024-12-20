@@ -45,26 +45,26 @@ const uint8_t BatLevelBuff[21] =
 
 const float battery_voltage_idle[21] = {
 	3.000, // 0%
-	3.501, // 5%
-	3.584, // 10%
-	3.618, // 15%
-	3.653, // 20%
-	3.679, // 25%
-	3.695, // 30%
-	3.707, // 35%
-	3.719, // 40%
-	3.735, // 45%
-	3.752, // 50%
-	3.773, // 55%
-	3.803, // 60%
-	3.834, // 65%
-	3.868, // 70%
-	3.903, // 75%
-	3.942, // 80%
-	3.989, // 85%
-	4.031, // 90%
-	4.082, // 95%
-	4.198, // 100%
+	3.301, // 5%
+	3.384, // 10%
+	3.418, // 15%
+	3.453, // 20%
+	3.479, // 25%
+	3.495, // 30%
+	3.507, // 35%
+	3.519, // 40%
+	3.535, // 45%
+	3.552, // 50%
+	3.573, // 55%
+	3.603, // 60%
+	3.634, // 65%
+	3.668, // 70%
+	3.703, // 75%
+	3.742, // 80%
+	3.789, // 85%
+	3.831, // 90%
+	3.882, // 95%
+	3.998, // 100%
 };
 
 const float battery_voltage_work[21] = {
@@ -154,7 +154,7 @@ void DevAdc_MainFunc(void)
 
     // 计算ADC值对应的电压值
     BatVolTemp = (float)AdcVal * 3300.0f / 4096.0f;
-    BatVolTemp /= (0.9936f * 0.66385f);
+    BatVolTemp = (BatVolTemp / 0.66666f);
     
     // 将转换后的电压值存储到滤波数组中，并更新采样计数
     BatVolFilter[SampleCount] = (uint16_t)BatVolTemp;
@@ -373,12 +373,13 @@ void BatteryLevelGet(void)
 									if((batval > battery_voltage_charge[tag_i]) && (batval <= battery_voltage_charge[tag_i+1]))
 									{
 											BatLevel = BatLevelBuff[tag_i];
-										if(BatLevel == Battery_Level5)
-										{
-												BatLevel = Battery_Level4;
-										}
 									}
 							}
+					}
+					
+					if(BatLevel == Battery_Level5)
+					{
+						BatLevel = Battery_Level4;
 					}
 					
 					if(BatLevel > BatLevel_old)

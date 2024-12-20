@@ -149,6 +149,8 @@ int main(void)
 	HAL_TIM_PWM_Start(&htim5,TIM_CHANNEL_3);
 	HAL_TIM_PWM_Start(&htim9,TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim12,TIM_CHANNEL_1);
+	
+	HAL_Delay(500);
 
   /* USER CODE END 2 */
 

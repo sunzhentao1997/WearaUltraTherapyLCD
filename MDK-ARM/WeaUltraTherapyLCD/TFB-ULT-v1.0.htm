@@ -3,7 +3,7 @@
 <title>Static Call Graph - [WeaUltraTherapyLCD\TFB-ULT-v1.0.0]</title></head>
 <body><HR>
 <H1>Static Call Graph for image WeaUltraTherapyLCD\TFB-ULT-v1.0.0</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Dec 19 12:18:53 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Dec 20 10:22:11 2024
 <BR><P>
 <H3>Maximum Stack Usage =       1124 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -871,7 +871,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraParam_Set
-<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
+<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
 </UL>
 
 <P><STRONG><a name="[182]"></a>__aeabi_d2iz</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, dfixi.o(.text))
@@ -954,7 +954,7 @@ Global Symbols
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_SCLKSet
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_FSYNCSet
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
+<BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
 </UL>
 
 <P><STRONG><a name="[190]"></a>AD9833_SetPara</STRONG> (Thumb, 158 bytes, Stack size 40 bytes, dev_ad9833.o(i.AD9833_SetPara))
@@ -966,10 +966,10 @@ Global Symbols
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_SendData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraParam_Set
-<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
+<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
 </UL>
 
-<P><STRONG><a name="[196]"></a>BatteryLevelGet</STRONG> (Thumb, 672 bytes, Stack size 24 bytes, dev_adc.o(i.BatteryLevelGet))
+<P><STRONG><a name="[196]"></a>BatteryLevelGet</STRONG> (Thumb, 674 bytes, Stack size 24 bytes, dev_adc.o(i.BatteryLevelGet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = BatteryLevelGet &rArr; DevFlash_Write &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -1000,7 +1000,7 @@ Global Symbols
 <P><STRONG><a name="[12]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[19b]"></a>DevAPP_MainFunc</STRONG> (Thumb, 494 bytes, Stack size 16 bytes, dev_control.o(i.DevAPP_MainFunc))
+<P><STRONG><a name="[19b]"></a>DevAPP_MainFunc</STRONG> (Thumb, 492 bytes, Stack size 16 bytes, dev_control.o(i.DevAPP_MainFunc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = DevAPP_MainFunc &rArr; DevFlash_Write &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -1042,13 +1042,14 @@ Global Symbols
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevFlash_Write
 </UL>
 
-<P><STRONG><a name="[199]"></a>DevFlash_Write</STRONG> (Thumb, 234 bytes, Stack size 64 bytes, dev_flash.o(i.DevFlash_Write))
+<P><STRONG><a name="[199]"></a>DevFlash_Write</STRONG> (Thumb, 278 bytes, Stack size 64 bytes, dev_flash.o(i.DevFlash_Write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = DevFlash_Write &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<BR>[Calls]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Unlock
-<LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Lock
+<LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
 <LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevFlash_Read
 </UL>
 <BR>[Called By]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraParam_Set
@@ -1061,7 +1062,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevGpio_SetOutSta
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
+<BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevAPP_MainFunc
 </UL>
 
@@ -1079,12 +1080,12 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraAppTask
 </UL>
 
-<P><STRONG><a name="[1a8]"></a>DevSystem_Init</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, dev_control.o(i.DevSystem_Init))
+<P><STRONG><a name="[1a9]"></a>DevSystem_Init</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, dev_control.o(i.DevSystem_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = DevSystem_Init &rArr; AD9833_SetPara &rArr; AD9833_SendFrequency &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevGpio_Init
-<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevPWM_Init
+<LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevPWM_Init
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_SetPara
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_InitIo
 </UL>
@@ -1094,14 +1095,14 @@ Global Symbols
 <P><STRONG><a name="[2c]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_it.o(i.EXTI9_5_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = EXTI9_5_IRQHandler &rArr; HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
+<BR>[Calls]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
 <P><STRONG><a name="[197]"></a>EraseFlash</STRONG> (Thumb, 114 bytes, Stack size 48 bytes, dev_flash.o(i.EraseFlash))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = EraseFlash &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<BR>[Calls]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Unlock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BatteryLevelGet
@@ -1127,21 +1128,22 @@ Global Symbols
 <P><STRONG><a name="[1bd]"></a>FLASH_Erase_Sector</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, stm32f4xx_hal_flash_ex.o(i.FLASH_Erase_Sector))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = FLASH_Erase_Sector
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
 </UL>
 
 <P><STRONG><a name="[1be]"></a>FLASH_FlushCaches</STRONG> (Thumb, 114 bytes, Stack size 0 bytes, stm32f4xx_hal_flash_ex.o(i.FLASH_FlushCaches))
-<BR><BR>[Called By]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<BR><BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
 </UL>
 
-<P><STRONG><a name="[1ab]"></a>FLASH_WaitForLastOperation</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32f4xx_hal_flash.o(i.FLASH_WaitForLastOperation))
+<P><STRONG><a name="[1a6]"></a>FLASH_WaitForLastOperation</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32f4xx_hal_flash.o(i.FLASH_WaitForLastOperation))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_SetErrorCode
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
-<LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevFlash_Write
 </UL>
 
 <P><STRONG><a name="[1e2]"></a>FMC_SDRAM_Init</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, stm32f4xx_ll_fmc.o(i.FMC_SDRAM_Init))
@@ -1259,16 +1261,17 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdram_initialization_sequence
 <LI><a href="#[6a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st7701_init
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[459]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gt9xxx_init
 </UL>
 
-<P><STRONG><a name="[1a6]"></a>HAL_FLASHEx_Erase</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, stm32f4xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase))
+<P><STRONG><a name="[1a7]"></a>HAL_FLASHEx_Erase</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, stm32f4xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_MassErase
 <LI><a href="#[1be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_FlushCaches
 <LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_Erase_Sector
-<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
+<LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
 </UL>
 <BR>[Called By]<UL><LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EraseFlash
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevFlash_Write
@@ -1279,10 +1282,10 @@ Global Symbols
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevFlash_Write
 </UL>
 
-<P><STRONG><a name="[1a7]"></a>HAL_FLASH_Program</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, stm32f4xx_hal_flash.o(i.HAL_FLASH_Program))
+<P><STRONG><a name="[1a8]"></a>HAL_FLASH_Program</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, stm32f4xx_hal_flash.o(i.HAL_FLASH_Program))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
+<BR>[Calls]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
 <LI><a href="#[1c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_Program_Word
 <LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_Program_HalfWord
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_Program_DoubleWord
@@ -1303,10 +1306,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 </UL>
 
-<P><STRONG><a name="[1aa]"></a>HAL_GPIO_EXTI_IRQHandler</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler))
+<P><STRONG><a name="[1ab]"></a>HAL_GPIO_EXTI_IRQHandler</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
@@ -1354,7 +1357,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[198]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
-<BR><BR>[Called By]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
+<BR><BR>[Called By]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevAPP_MainFunc
@@ -1936,7 +1939,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ScreenRGBTask
 </UL>
 
-<P><STRONG><a name="[75]"></a>ScreenRGBTask</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, freertos.o(i.ScreenRGBTask))
+<P><STRONG><a name="[75]"></a>ScreenRGBTask</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, freertos.o(i.ScreenRGBTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1124<LI>Call Chain = ScreenRGBTask &rArr; ScreenFunc &rArr; Screen_Charge &rArr; ui_load_scr_animation &rArr; lv_scr_load_anim &rArr; lv_obj_del &rArr; lv_obj_update_layout &rArr; layout_update_core &rArr;  layout_update_core (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ui_load_scr_animation
@@ -2045,7 +2048,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraParam_Set
-<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
+<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevMPC5043_MainFunc
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevAdc_MainFunc
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevAdc_Init
@@ -10665,7 +10668,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_lv_txt_set_text_vfmt
 </UL>
 
-<P><STRONG><a name="[6f]"></a>main</STRONG> (Thumb, 176 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[6f]"></a>main</STRONG> (Thumb, 184 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 612<LI>Call Chain = main &rArr; lv_port_disp_init &rArr; lv_disp_drv_register &rArr; lv_obj_create &rArr; lv_obj_class_init_obj &rArr; lv_theme_apply &rArr; lv_obj_remove_style &rArr; lv_obj_refresh_style &rArr; refresh_children_style &rArr;  refresh_children_style (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;st7701_init
@@ -10694,6 +10697,7 @@ Global Symbols
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[6a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
 <LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
@@ -11795,29 +11799,29 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1bf]"></a>FLASH_Program_Byte</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f4xx_hal_flash.o(i.FLASH_Program_Byte))
-<BR><BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<BR><BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
 </UL>
 
 <P><STRONG><a name="[1c2]"></a>FLASH_Program_DoubleWord</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32f4xx_hal_flash.o(i.FLASH_Program_DoubleWord))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = FLASH_Program_DoubleWord
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
 </UL>
 
 <P><STRONG><a name="[1c0]"></a>FLASH_Program_HalfWord</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, stm32f4xx_hal_flash.o(i.FLASH_Program_HalfWord))
-<BR><BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<BR><BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
 </UL>
 
 <P><STRONG><a name="[1c1]"></a>FLASH_Program_Word</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, stm32f4xx_hal_flash.o(i.FLASH_Program_Word))
-<BR><BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
+<BR><BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASH_Program
 </UL>
 
 <P><STRONG><a name="[1ac]"></a>FLASH_SetErrorCode</STRONG> (Thumb, 172 bytes, Stack size 0 bytes, stm32f4xx_hal_flash.o(i.FLASH_SetErrorCode))
-<BR><BR>[Called By]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
+<BR><BR>[Called By]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
 </UL>
 
 <P><STRONG><a name="[1bc]"></a>FLASH_MassErase</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, stm32f4xx_hal_flash_ex.o(i.FLASH_MassErase))
-<BR><BR>[Called By]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
+<BR><BR>[Called By]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FLASHEx_Erase
 </UL>
 
 <P><STRONG><a name="[1b9]"></a>DMA_CalcBaseAndBitshift</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, stm32f4xx_hal_dma.o(i.DMA_CalcBaseAndBitshift))
@@ -20565,8 +20569,8 @@ Local Symbols
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevAdc_Init
 </UL>
 
-<P><STRONG><a name="[1a9]"></a>DevPWM_Init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, dev_control.o(i.DevPWM_Init))
-<BR><BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
+<P><STRONG><a name="[1aa]"></a>DevPWM_Init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, dev_control.o(i.DevPWM_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DevSystem_Init
 </UL>
 <P>
 <H3>

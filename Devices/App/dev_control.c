@@ -84,10 +84,10 @@ void UltraParam_Init(void)
 	if(ReadBattery == 0xFFFF)
 	{
 			ReadBattery = Battery_Level5;
-			SendBatteryStateData = (Battery_Level)ReadBattery;
+			SendBatteryStateData = ReadBattery;
 	}else
 	{
-			SendBatteryStateData = (Battery_Level)ReadBattery;
+			SendBatteryStateData = ReadBattery;
 	}
 
 	MotorLevel = VibraParam;
@@ -146,7 +146,7 @@ void DevAPP_MainFunc(void)
 		old_tick = new_tick;
 	}
 
-	ultra_pluse = UltraDuty * 25;
+	ultra_pluse = UltraDuty * 40;
 
 	switch (DevWorkState)
 	{

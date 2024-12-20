@@ -166,15 +166,15 @@ void ScreenRGBTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		if((StartFlg == 0) && (BackLedTime < 3500))
+		if((StartFlg == 0) && (BackLedTime < 3100))
 		{
 			  tempval = LightLevel * 43;
 								
-				if(BackLedTime > 1500)
+				if(BackLedTime > 1000)
 				{
 					__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
 				}
-				if(BackLedTime > 3450)
+				if(BackLedTime > 3050)
 				{
 					  ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 50, false, true);
 						StartFlg = 1;

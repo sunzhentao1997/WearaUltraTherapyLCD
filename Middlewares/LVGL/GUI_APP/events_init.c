@@ -89,15 +89,14 @@ static void main_paging_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
 	
-	if((ScreenState == WORK) || (ScreenState == PAUSE) || (PagingDisableFlg == 1))
-	{
-			return ;
-	}
-	
 	switch (code)
 	{
     case LV_EVENT_CLICKED:
     {
+			if((ScreenState == WORK) || (ScreenState == PAUSE) || (PagingDisableFlg == 1))
+			{
+					return ;
+			}
 			ScreenState = PAGING;
 			Screen_Id = CONFIG_SCREEN;
 			DevWorkState = ADMIN_STATE;
@@ -125,7 +124,6 @@ static void main_stop_event_handler (lv_event_t *e)
 	{
     case LV_EVENT_PRESSING:
     {
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_stop, 200, LV_PART_MAIN);
         break;
     }
     case LV_EVENT_RELEASED:
@@ -163,7 +161,6 @@ static void main_pause_event_handler (lv_event_t *e)
 	{
     case LV_EVENT_PRESSING:
     {
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_pause, 200, LV_PART_MAIN);
         break;
     }
     case LV_EVENT_RELEASED:
@@ -201,7 +198,6 @@ static void main_continue_event_handler (lv_event_t *e)
 	{
 	case LV_EVENT_PRESSING:
 	{
-//		lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_continue, 200, LV_PART_MAIN);
 		break;
 	}
 	case LV_EVENT_RELEASED:
@@ -252,12 +248,6 @@ static void main_ulock_event_handler (lv_event_t *e)
 			}
 			break;
     }
-//    case LV_EVENT_PRESSING:
-//    {
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_suo, 255, LV_PART_MAIN);
-//        lv_obj_set_style_bg_img_recolor_opa(guider_ui.main_ulock, 255, LV_PART_MAIN);
-//        break;
-//    }
 		case LV_EVENT_PRESSED:
 		{
 			LongPressFlg = 0;
