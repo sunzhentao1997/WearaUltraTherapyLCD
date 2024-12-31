@@ -1,7 +1,7 @@
 #include "dev_app.h"
 
-#define BEEPONTIME 24
-#define BEEPOFFTIME 32
+#define BEEPONTIME 20
+#define BEEPOFFTIME 24
 
 int8_t BeepCount = 0;
 uint8_t BeepFlg = 0;

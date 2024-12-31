@@ -1,6 +1,8 @@
 #include "dev_app.h"
 #include "lv_mainstart.h"
 
+#define ULTRA_BASE  550
+
 static uint16_t FlashStoreBuff[34] = {0}; // 参数配置存储缓存
 static uint8_t ParamChangeFlg[3] = {0};	  // 超声参数修改标志位
 static uint8_t FreqParam_A = 0;			  // A通道频率参数
@@ -13,7 +15,6 @@ static uint16_t PowerFlg = 0;			  // 充电自动关机
 static uint16_t ReadBattery = 0;
 
 Dev_Work_State DevWorkState = IDLE_STATE; // 设备工作状态
-
 extern SCREENSTATE ScreenState;
 
 void UltraParam_Init(void)
@@ -33,19 +34,19 @@ void UltraParam_Init(void)
 		FreqParam_B = (uint8_t)FlashStoreBuff[4];
 		VibraParam = (uint8_t)FlashStoreBuff[5];
 
-		u32_FreqParam_A = 2000 * (580 + FreqParam_A);
-		u32_FreqParam_B = 2000 * (580 + FreqParam_B);
-		u32_VibraParam = VibraParam * 106;
+		u32_FreqParam_A = 2000 * (ULTRA_BASE + FreqParam_A);
+		u32_FreqParam_B = 2000 * (ULTRA_BASE + FreqParam_B);
+		u32_VibraParam = VibraParam * 212;
 	}
 	else
 	{
-		FreqParam_A = 0x54;
-		FreqParam_B = 0x54;
-		VibraParam = 0x0A;
+		FreqParam_A = 0x14;
+		FreqParam_B = 0x14;
+		VibraParam = 0x05;
 
-		u32_FreqParam_A = 2000 * (580 + FreqParam_A);
-		u32_FreqParam_B = 2000 * (580 + FreqParam_B);
-		u32_VibraParam = VibraParam * 106;
+		u32_FreqParam_A = 2000 * (ULTRA_BASE + FreqParam_A);
+		u32_FreqParam_B = 2000 * (ULTRA_BASE + FreqParam_B);
+		u32_VibraParam = VibraParam * 212;
 	}
 
 	LightLevel = FlashStoreBuff[7];
@@ -96,10 +97,8 @@ void UltraParam_Init(void)
 
 static void DevPWM_Init(void)
 {
-
 	__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
 	__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
-
 }
 
 void DevSystem_Init(void)
@@ -146,7 +145,7 @@ void DevAPP_MainFunc(void)
 		old_tick = new_tick;
 	}
 
-	ultra_pluse = UltraDuty * 40;
+	ultra_pluse = UltraDuty * 36;
 
 	switch (DevWorkState)
 	{
@@ -260,9 +259,9 @@ void UltraParam_Set(void)
 		FreqParam_B = FreqOffset;
 		VibraParam = MotorLevel;
 
-		u32_FreqParam_A = 2000 * (FreqParam_A + 580);
-		u32_FreqParam_B = 2000 * (FreqParam_B + 580);
-		u32_VibraParam = VibraParam * 106;
+		u32_FreqParam_A = 2000 * (FreqParam_A + ULTRA_BASE);
+		u32_FreqParam_B = 2000 * (FreqParam_B + ULTRA_BASE);
+		u32_VibraParam = VibraParam * 212;
 
 		ParamChangeFlg[0] = 0xdd;
 		ParamChangeFlg[1] = 0xee;

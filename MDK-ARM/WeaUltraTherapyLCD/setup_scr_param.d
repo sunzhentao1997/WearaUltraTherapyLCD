@@ -167,6 +167,7 @@ weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f
 weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h
 weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h
+weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h
 weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h
 weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h
 weaultratherapylcd\setup_scr_param.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h

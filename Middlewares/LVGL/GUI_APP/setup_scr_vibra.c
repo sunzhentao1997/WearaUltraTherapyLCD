@@ -278,7 +278,7 @@ void setup_scr_vibra(lv_ui *ui)
 
     //Write codes vibra_slider_1
     ui->vibra_slider_1 = lv_slider_create(ui->vibra);
-    lv_slider_set_range(ui->vibra_slider_1, 0, 20);
+    lv_slider_set_range(ui->vibra_slider_1, 0, 10);
     lv_slider_set_mode(ui->vibra_slider_1, LV_SLIDER_MODE_NORMAL);
 	  lv_slider_set_value(ui->vibra_slider_1, (int32_t)MotorLevel, LV_ANIM_OFF);
     lv_obj_set_pos(ui->vibra_slider_1, 50, 385);
@@ -306,7 +306,7 @@ void setup_scr_vibra(lv_ui *ui)
 
     //Write codes vibra_label_7
     ui->vibra_label_7 = lv_label_create(ui->vibra);
-	lv_label_set_text_fmt(ui->vibra_label_7, "%d%%",(MotorLevel * 5));
+	lv_label_set_text_fmt(ui->vibra_label_7, "%d%%",(MotorLevel * 10));
     lv_label_set_long_mode(ui->vibra_label_7, LV_LABEL_LONG_WRAP);
     lv_obj_set_pos(ui->vibra_label_7, 63, 353);
     lv_obj_set_size(ui->vibra_label_7, 100, 32);

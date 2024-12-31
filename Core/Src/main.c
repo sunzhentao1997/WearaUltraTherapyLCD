@@ -22,6 +22,7 @@
 #include "adc.h"
 #include "dma.h"
 #include "dma2d.h"
+#include "iwdg.h"
 #include "ltdc.h"
 #include "tim.h"
 #include "usart.h"
@@ -129,7 +130,9 @@ int main(void)
   MX_TIM12_Init();
   MX_TIM8_Init();
   MX_USART1_UART_Init();
+  //MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
+	HAL_IWDG_Refresh(&hiwdg);
 	UltraParam_Init();
 	st7701_init();
 	my_mem_init(SRAMIN);                        				/* 初始化内部SRAM内存�? */
@@ -150,7 +153,9 @@ int main(void)
 	HAL_TIM_PWM_Start(&htim9,TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim12,TIM_CHANNEL_1);
 	
-	HAL_Delay(500);
+	//HAL_IWDG_Refresh(&hiwdg);
+	//HAL_Delay(500);
+	//HAL_IWDG_Refresh(&hiwdg);
 
   /* USER CODE END 2 */
 
@@ -193,8 +198,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 8;
@@ -243,6 +249,7 @@ void SystemClock_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
+	static uint8_t BeepTime = 0;
 
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM14) {
@@ -288,6 +295,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			}else
 			{
 				LongPressTime = 0;
+			}
+			
+			BeepTime++;
+			if(BeepTime > 8)
+			{
+					Beep_MainFunc();
+					BeepTime = 0;
 			}
 	}
 	

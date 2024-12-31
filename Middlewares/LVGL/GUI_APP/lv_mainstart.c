@@ -129,7 +129,6 @@ static void Screen_Charge(void)
 	uint8_t chargelevel = 0;
 	static uint8_t chact = 0;
 	static uint16_t RefreshCount = 0;
-	//SendBatteryStateData = Battery_Level1;
 
 	id = Screen_Id;
 
@@ -366,7 +365,8 @@ static void Screen_MainFunc(void)
 			DevWorkState = IDLE_STATE;
 			
 //			DevFlash_Write(FLASH_BATTERYLEVEL,(uint16_t *)&SendBatteryStateData,1);
-			
+			__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
+			__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
 			lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
@@ -402,7 +402,8 @@ static void Screen_MainFunc(void)
 			DevWorkState = IDLE_STATE;
 
 //			DevFlash_Write(FLASH_BATTERYLEVEL,(uint16_t *)&SendBatteryStateData,1);
-			
+			__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
+			__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
 			lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
@@ -434,27 +435,6 @@ static void Screen_MainFunc(void)
 		break;
 	default:
 		break;
-	}
-
-	if (UnlockFlg == 1 && (UnlockCount > 500))
-	{
-		lv_obj_clear_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-		lv_obj_set_pos(guider_ui.main_suo, 70, 655);
-		UnlockFlg = 0;
-	}
-	else if (UnlockFlg == 2)
-	{
-		back_pos -= 20;
-		if (back_pos < 70)
-		{
-			back_pos = 70;
-			UnlockFlg = 0;
-		}
-		lv_obj_set_pos(guider_ui.main_suo, (lv_coord_t)back_pos, 655);
 	}
 }
 
@@ -964,7 +944,7 @@ static void Vibration_Feedback(void)
 	uint32_t vibra_value = 0;
 	if (VibraChangeFlg == 1)
 	{
-		vibra_value = (uint32_t)MotorLevelTemp * 106;
+		vibra_value = (uint32_t)MotorLevelTemp * 212;
 		DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_SET);
 		__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, vibra_value);
 
@@ -982,11 +962,11 @@ static void Vibration_Feedback(void)
 	}
 }
 
-/*工作期间2min无操作息屏*/
+/*工作期间1min无操作息屏*/
 static void ScreenOfInterest(void)
 {
 	static uint8_t DisplayFlg_old = 0;
-	if (DisplayTime > 60000)
+	if (DisplayTime >= 60000)
 	{
 		DisplayFlg = 0;
 	}
@@ -1002,12 +982,16 @@ static void ScreenOfInterest(void)
 		{
 			DisplayFlg_old = DisplayFlg;
 			__HAL_TIM_SetCompare(LCDBL_HANDLE, LCDBL_CHANNLE, 43);
-			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
-			lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+			if(DevWorkState != PASUE_STATE)
+			{
+				LongPressFlg = 0;
+				lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.main_ulock, LV_OBJ_FLAG_HIDDEN);
+			}
 		}
 	}
 	else

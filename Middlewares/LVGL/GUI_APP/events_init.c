@@ -43,7 +43,6 @@ static void main_event_handler (lv_event_t *e)
 			DisplayFlg = 1;
 		
 			battery_display_func[Screen_Id](SendBatteryStateData);
-			
 			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
@@ -54,8 +53,6 @@ static void main_event_handler (lv_event_t *e)
 			lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_label_12, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
-//		lv_label_set_text(guider_ui.main_time, "20:00");
-//		lv_label_set_text(guider_ui.main_label_3, " 剩余治疗时间 ");
 			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
@@ -108,8 +105,6 @@ static void main_paging_event_handler (lv_event_t *e)
 		{
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//		BeepFlg = 1;
-//		BeepCount = 2;
 			break;
 		}
     default:
@@ -131,6 +126,7 @@ static void main_stop_event_handler (lv_event_t *e)
 			DevWorkState = IDLE_STATE;
 			ScreenState = STOP;
 			PagingDisableFlg = 0;
+			LongPressFlg = 0;
 			
 			lv_obj_add_flag(guider_ui.main_continue, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
@@ -146,8 +142,6 @@ static void main_stop_event_handler (lv_event_t *e)
 			LongPressFlg = 0;
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//			BeepFlg = 1;
-//			BeepCount = 2;
     }
     default:
         break;
@@ -167,6 +161,7 @@ static void main_pause_event_handler (lv_event_t *e)
     {
 			DevWorkState = PASUE_STATE;
 			ScreenState = PAUSE;
+			LongPressFlg = 0;
 			
 			lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 			lv_obj_add_flag(guider_ui.main_suo, LV_OBJ_FLAG_HIDDEN);
@@ -181,8 +176,6 @@ static void main_pause_event_handler (lv_event_t *e)
 	{
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//		BeepFlg = 1;
-//		BeepCount = 2;
 		
 		break;
 	}
@@ -204,6 +197,7 @@ static void main_continue_event_handler (lv_event_t *e)
 	{
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
+		LongPressFlg = 0;
 		
 		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_start, LV_OBJ_FLAG_HIDDEN);
@@ -216,11 +210,8 @@ static void main_continue_event_handler (lv_event_t *e)
    }
 	case LV_EVENT_PRESSED:
 	{
-			LongPressFlg = 0;
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//		BeepFlg = 1;
-//		BeepCount = 2;
 		break;
 	}
     default:
@@ -245,6 +236,7 @@ static void main_ulock_event_handler (lv_event_t *e)
 				lv_obj_clear_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 				
 				LongPressFlg = 0;
+				LongPressTime = 0;
 			}
 			break;
     }
@@ -253,8 +245,6 @@ static void main_ulock_event_handler (lv_event_t *e)
 			LongPressFlg = 0;
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//		BeepFlg = 1;
-//		BeepCount = 2;
 			break;
 		}
     default:
@@ -274,6 +264,7 @@ static void main_start_event_handler(lv_event_t *e)
 	case LV_EVENT_RELEASED:
 	{
 		PagingDisableFlg = 1;
+		LongPressFlg = 0;
 		
 		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_complete, LV_OBJ_FLAG_HIDDEN);
@@ -299,14 +290,12 @@ static void main_start_event_handler(lv_event_t *e)
 		lv_obj_add_flag(guider_ui.main_stop, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_pause, LV_OBJ_FLAG_HIDDEN);
 
-        break;
+    break;
     }
 	case LV_EVENT_PRESSED:
 	{
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//		BeepFlg = 1;
-//		BeepCount = 2;
 		break;
 	}
     default:
@@ -323,6 +312,7 @@ static void main_btn_1_event_handler(lv_event_t *e)
 	{
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
+		LongPressFlg = 0;
 		
 		lv_obj_add_flag(guider_ui.main_btn_2, LV_OBJ_FLAG_HIDDEN);
 		lv_obj_add_flag(guider_ui.main_btn_1, LV_OBJ_FLAG_HIDDEN);
@@ -339,8 +329,6 @@ static void main_btn_1_event_handler(lv_event_t *e)
 	{
 			DisplayFlg = 1;
 			DisplayTime = 0;
-//		BeepFlg = 1;
-//		BeepCount = 2;
 		break;
 	}
 	default:
@@ -1206,7 +1194,7 @@ static void vibra_slider_1_event_handler(lv_event_t *e)
 	{
 		value = lv_slider_get_value(guider_ui.vibra_slider_1);
 		MotorLevelTemp = value;
-		value = MotorLevelTemp * 5;
+		value = MotorLevelTemp * 10;
 		lv_label_set_text_fmt(guider_ui.vibra_label_7, "%d%%", value);
 		break;
 	}

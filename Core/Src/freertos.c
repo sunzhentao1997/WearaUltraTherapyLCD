@@ -53,6 +53,8 @@ typedef StaticTask_t osStaticThreadDef_t;
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+extern IWDG_HandleTypeDef hiwdg;
+
 extern uint32_t BackLedTime;
 static uint8_t StartFlg = 0;
 
@@ -166,15 +168,15 @@ void ScreenRGBTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		if((StartFlg == 0) && (BackLedTime < 3100))
+		if(StartFlg == 0)
 		{
 			  tempval = LightLevel * 43;
 								
-				if(BackLedTime > 1000)
+				if(BackLedTime >= 100)
 				{
 					__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
 				}
-				if(BackLedTime > 3050)
+				if(BackLedTime > 2000)
 				{
 					  ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 50, false, true);
 						StartFlg = 1;
@@ -182,7 +184,6 @@ void ScreenRGBTask(void *argument)
 		}else if(StartFlg == 1)
 		{
 				ScreenFunc();
-        Beep_MainFunc();
 		}
 		lv_timer_handler();
     osDelay(5);
@@ -200,23 +201,27 @@ void ScreenRGBTask(void *argument)
 void UltraAppTask(void *argument)
 {
   /* USER CODE BEGIN UltraAppTask */
+	static uint8_t BatLevelInitFlg = 0;
 //	static uint8_t count = 0;
-	
 	DevSystem_Init();
 	DevAdc_Init();
-	DevMPC5043_MainFunc();
-	BatteryLevelInit();
   /* Infinite loop */
   for(;;)
   {
-		DevAdc_MainFunc();
+		if((BatLevelInitFlg == 0) && (BackLedTime > 1500))
+		{
+				BatteryLevelInit();
+				BatLevelInitFlg = 1;
+		}
     if(StartFlg == 1)
     {
 			BatteryLevelGet();
       DevAPP_MainFunc();
-      DevMPC5043_MainFunc();
+      
       UltraParam_Set();
     }
+		DevMPC5043_MainFunc();
+		DevAdc_MainFunc();
     osDelay(20);
   }
   /* USER CODE END UltraAppTask */
@@ -239,9 +244,8 @@ void OtherFuncTask(void *argument)
     if(StartFlg == 1)
     {
 			Screen_TriggerFunc();
-		//	printf("%d\n",BatteryVol);
     }
-		
+		//HAL_IWDG_Refresh(&hiwdg);
     osDelay(100);
   }
   /* USER CODE END OtherFuncTask */

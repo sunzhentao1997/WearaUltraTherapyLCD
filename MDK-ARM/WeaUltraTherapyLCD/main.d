@@ -32,6 +32,7 @@ weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fla
 weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h
 weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h
+weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h
 weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h
 weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h
 weaultratherapylcd\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
@@ -53,6 +54,7 @@ weaultratherapylcd\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS
 weaultratherapylcd\main.o: ../Core/Inc/adc.h
 weaultratherapylcd\main.o: ../Core/Inc/dma.h
 weaultratherapylcd\main.o: ../Core/Inc/dma2d.h
+weaultratherapylcd\main.o: ../Core/Inc/iwdg.h
 weaultratherapylcd\main.o: ../Core/Inc/ltdc.h
 weaultratherapylcd\main.o: ../Core/Inc/tim.h
 weaultratherapylcd\main.o: ../Core/Inc/usart.h
