@@ -14,12 +14,10 @@ uint16_t BatteryVol = 3500;
 float battery_percent_output = 100;
 static uint32_t AdcVal = 0;
 static uint16_t BatVolFilter[15] = {0};
-static uint8_t BatLevel = 0;
-static uint8_t BatLevel_old = 0;
 static uint16_t DevAdc_SampleFilt(uint16_t *buff, uint8_t len);
 
 const uint8_t BatLevelBuff[21] =
-{
+	{
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
@@ -123,7 +121,7 @@ void DevAdc_Init(void)
 	for (tag_i = 0; tag_i < 15; tag_i++)
 	{
 		HAL_ADC_Start_DMA(&hadc1, &AdcVal, 1);
-	
+
 		BatVolTemp = (float)AdcVal * 3300.0f / 4096.0f;
 		BatVolTemp = BatVolTemp / 0.9936;
 		BatVolTemp = BatVolTemp / 0.66385;
@@ -141,27 +139,27 @@ void DevAdc_Init(void)
  */
 void DevAdc_MainFunc(void)
 {
-    static uint8_t SampleCount = 0;
-    float BatVolTemp = 0.0f;
-    
-    // 启动ADC并使用DMA传输数据
-    HAL_StatusTypeDef adcStatus = HAL_ADC_Start_DMA(&hadc1, &AdcVal, 1);
-    if (adcStatus != HAL_OK) 
-    {
-        // 处理启动ADC失败的情况
-        return;
-    }
+	static uint8_t SampleCount = 0;
+	float BatVolTemp = 0.0f;
 
-    // 计算ADC值对应的电压值
-    BatVolTemp = (float)AdcVal * 3300.0f / 4096.0f;
-    BatVolTemp = (BatVolTemp / 0.66666f / 0.9843f);
-    
-    // 将转换后的电压值存储到滤波数组中，并更新采样计数
-    BatVolFilter[SampleCount] = (uint16_t)BatVolTemp;
-    SampleCount = (SampleCount + 1) % 15; 
+	// 启动ADC并使用DMA传输数据
+	HAL_StatusTypeDef adcStatus = HAL_ADC_Start_DMA(&hadc1, &AdcVal, 1);
+	if (adcStatus != HAL_OK)
+	{
+		// 处理启动ADC失败的情况
+		return;
+	}
 
-    // 对滤波后的电压值进行采样滤波，并更新电池电压值
-    BatteryVol = DevAdc_SampleFilt(BatVolFilter, 15);
+	// 计算ADC值对应的电压值
+	BatVolTemp = (float)AdcVal * 3300.0f / 4096.0f;
+	BatVolTemp = (BatVolTemp / 0.66666f / 0.9843f);
+
+	// 将转换后的电压值存储到滤波数组中，并更新采样计数
+	BatVolFilter[SampleCount] = (uint16_t)BatVolTemp;
+	SampleCount = (SampleCount + 1) % 15;
+
+	// 对滤波后的电压值进行采样滤波，并更新电池电压值
+	BatteryVol = DevAdc_SampleFilt(BatVolFilter, 15);
 }
 
 /*
@@ -210,6 +208,8 @@ static uint16_t DevAdc_SampleFilt(uint16_t *buff, uint8_t len)
 	return (uint16_t)average;
 }
 
+
+#if 0
 /*
  * 函数名：BatteryLevelInit
  * 功能：初始化电池等级
@@ -293,152 +293,171 @@ void BatteryLevelInit(void)
 	BatLevel_old = BatLevel; // 统一更新
 }
 
+/*
+ * 函数名：BatteryLevelGet
+ * 功能：获取电池等级
+ * 输入参数：无
+ * 输出参数：无
+ * 返 回 值：无
+ */
 void BatteryLevelGet(void)
 {
-		uint8_t bat_sta = 0;
-		uint8_t tag_i = 0;
-		uint32_t new_tick;
-		static uint32_t old_tick;
-		static uint8_t SaveBatteryFlg = 0;
-  	float batval = 0.0f; 
-		static uint8_t DevSta_old = IDLE_STATE;
-		static uint8_t RefreshFlg = 0;
-	
-		bat_sta = BatteryState;
-		batval = (float)BatteryVol / 1000.0f;
-		switch(bat_sta)
+	uint8_t bat_sta = 0;
+	uint8_t tag_i = 0;
+	uint32_t new_tick;
+	static uint32_t old_tick;
+	static uint8_t SaveBatteryFlg = 0;
+	float batval = 0.0f;
+	static uint8_t DevSta_old = IDLE_STATE;
+	static uint8_t RefreshFlg = 0;
+
+	bat_sta = BatteryState;
+	batval = (float)BatteryVol / 1000.0f;
+	switch (bat_sta)
+	{
+	case BOOST:
+		RefreshFlg = 0;
+
+		if (DevWorkState != WORK_STATE)
 		{
-			case BOOST:
-				RefreshFlg = 0;
-			
-				if(DevWorkState != WORK_STATE)
-				{
-					if(batval <= battery_voltage_idle[0])
-					{
-							BatLevel = Battery_Level1;
-					}else if(batval >= battery_voltage_idle[20])
-					{
-							BatLevel = Battery_Level5;
-					}else
-					{
-							for(tag_i = 0;tag_i < 21;tag_i++)
-							{
-									if((batval > battery_voltage_idle[tag_i]) && (batval <= battery_voltage_idle[tag_i+1]))
-									{
-											BatLevel = BatLevelBuff[tag_i];
-									}
-							}
-					}
-				}else
-				{
-					if(batval <= battery_voltage_work[0])
-					{
-							BatLevel = Battery_Level1;
-					}else if(batval >= battery_voltage_work[20])
-					{
-							BatLevel = Battery_Level5;
-					}else
-					{
-							for(tag_i = 0;tag_i < 21;tag_i++)
-							{
-									if((batval > battery_voltage_work[tag_i]) && (batval <= battery_voltage_work[tag_i+1]))
-									{
-											batval = BatLevelBuff[tag_i];
-									}
-							}
-					}	
-				}
-				
-				if(BatLevel < BatLevel_old)
-				{
-						BatLevel_old = BatLevel;
-						SendBatteryStateData = BatLevel_old;
-				}else
-				{
-						if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
-						{
-							BatLevel_old = BatLevel;
-						}
-						SendBatteryStateData = BatLevel_old;
-				}
-			break;
-			
-			case CHARGE:
-				if(batval <= battery_voltage_charge[0])
-					{
-							BatLevel = Battery_Level1;
-					}else if(batval >= battery_voltage_charge[20])
-					{
-							BatLevel = Battery_Level5;
-					}else
-					{
-							for(tag_i = 0;tag_i < 21;tag_i++)
-							{
-									if((batval > battery_voltage_charge[tag_i]) && (batval <= battery_voltage_charge[tag_i+1]))
-									{
-											BatLevel = BatLevelBuff[tag_i];
-									}
-							}
-					}
-					
-					if(BatLevel == Battery_Level5)
-					{
-						BatLevel = Battery_Level4;
-					}
-					
-					if(BatLevel_old == Battery_Level5)
-					{
-						BatLevel_old = Battery_Level4;
-					}
-					
-					if(BatLevel >= BatLevel_old)
-					{
-							BatLevel_old = BatLevel;
-							SendBatteryStateData = BatLevel_old;
-							if(RefreshFlg == 0)
-							{
-								EraseFlash(FLASH_BATTERYLEVEL,1);
-								RefreshFlg = 1;
-							}
-					}else
-					{
-							SendBatteryStateData = BatLevel_old;
-					}
-			break;
-			
-			case CHARGE_FINISH:
+			if (batval <= battery_voltage_idle[0])
+			{
+				BatLevel = Battery_Level1;
+			}
+			else if (batval >= battery_voltage_idle[20])
+			{
 				BatLevel = Battery_Level5;
-				BatLevel_old = BatLevel;
-				SendBatteryStateData = BatLevel_old;
-				break;
-			default:
-				break;
-		}
-		
-		if((DevSta_old == WORK_STATE) && (DevWorkState != WORK_STATE))
-		{
-			  SaveBatteryFlg = 1;
-		}
-//		else if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
-//		{
-//				SaveBatteryFlg = 1;
-//		}
-		
-		new_tick = HAL_GetTick();
-		if(SaveBatteryFlg == 1)
-		{
-				if((new_tick - old_tick) > 1000)
+			}
+			else
+			{
+				for (tag_i = 0; tag_i < 21; tag_i++)
 				{
-						old_tick = new_tick;
-						if(DevFlash_Write(FLASH_BATTERYLEVEL, (uint16_t *)&SendBatteryStateData, 1) == HAL_OK)
-						{
-							 SaveBatteryFlg = 0;
-						}
+					if ((batval > battery_voltage_idle[tag_i]) && (batval <= battery_voltage_idle[tag_i + 1]))
+					{
+						BatLevel = BatLevelBuff[tag_i];
+					}
 				}
-		}else
-		{
-				old_tick = new_tick;
+			}
 		}
-		
-		DevSta_old = DevWorkState;
+		else
+		{
+			if (batval <= battery_voltage_work[0])
+			{
+				BatLevel = Battery_Level1;
+			}
+			else if (batval >= battery_voltage_work[20])
+			{
+				BatLevel = Battery_Level5;
+			}
+			else
+			{
+				for (tag_i = 0; tag_i < 21; tag_i++)
+				{
+					if ((batval > battery_voltage_work[tag_i]) && (batval <= battery_voltage_work[tag_i + 1]))
+					{
+						batval = BatLevelBuff[tag_i];
+					}
+				}
+			}
+		}
+
+		if (BatLevel < BatLevel_old)
+		{
+			BatLevel_old = BatLevel;
+			SendBatteryStateData = BatLevel_old;
+		}
+		else
+		{
+			if ((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
+			{
+				BatLevel_old = BatLevel;
+			}
+			SendBatteryStateData = BatLevel_old;
+		}
+		break;
+
+	case CHARGE:
+		if (batval <= battery_voltage_charge[0])
+		{
+			BatLevel = Battery_Level1;
+		}
+		else if (batval >= battery_voltage_charge[20])
+		{
+			BatLevel = Battery_Level5;
+		}
+		else
+		{
+			for (tag_i = 0; tag_i < 21; tag_i++)
+			{
+				if ((batval > battery_voltage_charge[tag_i]) && (batval <= battery_voltage_charge[tag_i + 1]))
+				{
+					BatLevel = BatLevelBuff[tag_i];
+				}
+			}
+		}
+
+		if (BatLevel == Battery_Level5)
+		{
+			BatLevel = Battery_Level4;
+		}
+
+		if (BatLevel_old == Battery_Level5)
+		{
+			BatLevel_old = Battery_Level4;
+		}
+
+		if (BatLevel >= BatLevel_old)
+		{
+			BatLevel_old = BatLevel;
+			SendBatteryStateData = BatLevel_old;
+			if (RefreshFlg == 0)
+			{
+				EraseFlash(FLASH_BATTERYLEVEL, 1);
+				RefreshFlg = 1;
+			}
+		}
+		else
+		{
+			SendBatteryStateData = BatLevel_old;
+		}
+		break;
+
+	case CHARGE_FINISH:
+		BatLevel = Battery_Level5;
+		BatLevel_old = BatLevel;
+		SendBatteryStateData = BatLevel_old;
+		break;
+	default:
+		break;
+	}
+
+	if ((DevSta_old == WORK_STATE) && (DevWorkState != WORK_STATE))
+	{
+		SaveBatteryFlg = 1;
+	}
+	// else if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
+	// {
+	// 		SaveBatteryFlg = 1;
+	// }
+
+	new_tick = HAL_GetTick();
+	if (SaveBatteryFlg == 1)
+	{
+		if ((new_tick - old_tick) > 1000)
+		{
+			old_tick = new_tick;
+			/*完成一次工作状态保存历史电量*/
+			if (DevFlash_Write(FLASH_BATTERYLEVEL, (uint16_t *)&SendBatteryStateData, 1) == HAL_OK)
+			{
+				SaveBatteryFlg = 0;
+			}
+		}
+	}
+	else
+	{
+		old_tick = new_tick;
+	}
+
+	DevSta_old = DevWorkState;
 }
+#endif

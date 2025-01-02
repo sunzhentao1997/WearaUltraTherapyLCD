@@ -22,6 +22,8 @@ static void BatteryDisplay_Vibra(uint8_t boostlevel);
 static void BatteryDisplay_Vibras(uint8_t boostlevel);
 static void BatteryDisplay_Password1(uint8_t boostlevel);
 static void BatteryDisplay_Password2(uint8_t boostlevel);
+
+/* 屏幕电量显示函数 */
 const BATTERYDISPLAY_FUNC battery_display_func[ScreenId_Max] =
 	{
 		[MAIN_SCREEN] = BatteryDisplay_Main,
@@ -371,7 +373,7 @@ static void Screen_MainFunc(void)
 		{
 			PagingDisableFlg = 0;
 			BeepFlg = 2;
-			BeepCount = 12;
+			BeepCount = 6;
 			ScreenState_old = ScreenState;
 			DevWorkState = IDLE_STATE;
 			
@@ -408,11 +410,10 @@ static void Screen_MainFunc(void)
 		if (ScreenState != ScreenState_old)
 		{
 			BeepFlg = 2;
-			BeepCount = 12;
+			BeepCount = 6;
 			ScreenState_old = ScreenState;
 			DevWorkState = IDLE_STATE;
 
-//			DevFlash_Write(FLASH_BATTERYLEVEL,(uint16_t *)&SendBatteryStateData,1);
 			__HAL_TIM_SetCompare(ULTRA_HANDLE, ULTRA_CHB, 0);
 			__HAL_TIM_SetCompare(MOTOR_HANDLE, MOTOR_CHB, 0);
 			lv_obj_add_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);

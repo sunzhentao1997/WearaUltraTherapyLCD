@@ -62,6 +62,7 @@ extern Dev_Work_State DevWorkState;						//设�?�工作状�?
 
 /*mpc5043*/
 extern Battery_Level SendBatteryStateData;	 //电池电量数据
+extern Battery_Level BatLevel_old;
 extern uint8_t BatteryState;
 
 /*LCD*/

@@ -12,7 +12,7 @@
 
 void DevAdc_Init(void);
 void DevAdc_MainFunc(void);
-void BatteryLevelInit(void);
-void BatteryLevelGet(void);
+//void BatteryLevelInit(void);
+//void BatteryLevelGet(void);
 
 #endif /* DEV_ADC_H_ */
