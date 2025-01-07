@@ -24,7 +24,6 @@ const uint8_t BatLevelBuff[21] =
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
-		Battery_Level1,
 		Battery_Level2,
 		Battery_Level2,
 		Battery_Level2,
@@ -37,6 +36,7 @@ const uint8_t BatLevelBuff[21] =
 		Battery_Level4,
 		Battery_Level4,
 		Battery_Level4,
+		Battery_Level5,
 		Battery_Level5,
 		Battery_Level5,
 		Battery_Level5,
@@ -154,7 +154,7 @@ void DevAdc_MainFunc(void)
 
     // 计算ADC值对应的电压值
     BatVolTemp = (float)AdcVal * 3300.0f / 4096.0f;
-    BatVolTemp = (BatVolTemp / 0.66666f);
+    BatVolTemp = (BatVolTemp / 0.66666f / 0.9843f);
     
     // 将转换后的电压值存储到滤波数组中，并更新采样计数
     BatVolFilter[SampleCount] = (uint16_t)BatVolTemp;
@@ -355,6 +355,10 @@ void BatteryLevelGet(void)
 						SendBatteryStateData = BatLevel_old;
 				}else
 				{
+						if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
+						{
+							BatLevel_old = BatLevel;
+						}
 						SendBatteryStateData = BatLevel_old;
 				}
 			break;
@@ -382,13 +386,18 @@ void BatteryLevelGet(void)
 						BatLevel = Battery_Level4;
 					}
 					
-					if(BatLevel > BatLevel_old)
+					if(BatLevel_old == Battery_Level5)
+					{
+						BatLevel_old = Battery_Level4;
+					}
+					
+					if(BatLevel >= BatLevel_old)
 					{
 							BatLevel_old = BatLevel;
 							SendBatteryStateData = BatLevel_old;
 							if(RefreshFlg == 0)
 							{
-								EraseFlash(FLASH_BATTERYLEVEL);
+								EraseFlash(FLASH_BATTERYLEVEL,1);
 								RefreshFlg = 1;
 							}
 					}else
@@ -409,10 +418,11 @@ void BatteryLevelGet(void)
 		if((DevSta_old == WORK_STATE) && (DevWorkState != WORK_STATE))
 		{
 			  SaveBatteryFlg = 1;
-		}else if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
-		{
-				SaveBatteryFlg = 1;
 		}
+//		else if((DevSta_old == CHARGE_STATE) && (DevWorkState != CHARGE_STATE))
+//		{
+//				SaveBatteryFlg = 1;
+//		}
 		
 		new_tick = HAL_GetTick();
 		if(SaveBatteryFlg == 1)

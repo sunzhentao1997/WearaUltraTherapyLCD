@@ -1,7 +1,7 @@
 #include "dev_app.h"
 #include "lv_mainstart.h"
 
-#define ULTRA_BASE  550
+#define ULTRA_BASE  540
 
 static uint16_t FlashStoreBuff[34] = {0}; // 参数配置存储缓存
 static uint8_t ParamChangeFlg[3] = {0};	  // 超声参数修改标志位
@@ -40,8 +40,8 @@ void UltraParam_Init(void)
 	}
 	else
 	{
-		FreqParam_A = 0x14;
-		FreqParam_B = 0x14;
+		FreqParam_A = 0x3C;
+		FreqParam_B = 0x3C;
 		VibraParam = 0x05;
 
 		u32_FreqParam_A = 2000 * (ULTRA_BASE + FreqParam_A);

@@ -20,9 +20,10 @@
 #include "dev_app.h"
 
 uint8_t UnlockFlg = 0;
+uint8_t PagingDisableFlg = 0;
 uint16_t MotorLevelTemp = 0;
 static uint16_t FreqOffsetTemp = 0;
-static uint8_t PagingDisableFlg = 0;
+
 
 /*****************************************************************************************************
  *
@@ -98,7 +99,13 @@ static void main_paging_event_handler (lv_event_t *e)
 			Screen_Id = CONFIG_SCREEN;
 			DevWorkState = ADMIN_STATE;
 
-			ui_load_scr_animation(&guider_ui, &guider_ui.password1, guider_ui.password1_del, &guider_ui.main_del, setup_scr_password1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, false);
+			if(ParamLockFlg != 1)
+			{
+				ui_load_scr_animation(&guider_ui, &guider_ui.password1, guider_ui.password1_del, &guider_ui.main_del, setup_scr_password1, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, false, false);
+			}else
+			{
+				ui_load_scr_animation(&guider_ui, &guider_ui.config, guider_ui.config_del, &guider_ui.main_del, setup_scr_config, LV_SCR_LOAD_ANIM_FADE_ON, 5, 5, false, true);
+			}
 			break;
 		}
 		case LV_EVENT_PRESSED:

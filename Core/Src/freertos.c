@@ -183,9 +183,12 @@ void ScreenRGBTask(void *argument)
 				}
 		}else if(StartFlg == 1)
 		{
+				BatteryLevelGet();
 				ScreenFunc();
 		}
+		
 		lv_timer_handler();
+		HAL_IWDG_Refresh(&hiwdg);
     osDelay(5);
   }
   /* USER CODE END ScreenRGBTask */
@@ -202,12 +205,13 @@ void UltraAppTask(void *argument)
 {
   /* USER CODE BEGIN UltraAppTask */
 	static uint8_t BatLevelInitFlg = 0;
-//	static uint8_t count = 0;
 	DevSystem_Init();
 	DevAdc_Init();
   /* Infinite loop */
   for(;;)
   {
+		DevMPC5043_MainFunc();
+		DevAdc_MainFunc();
 		if((BatLevelInitFlg == 0) && (BackLedTime > 1500))
 		{
 				BatteryLevelInit();
@@ -215,13 +219,9 @@ void UltraAppTask(void *argument)
 		}
     if(StartFlg == 1)
     {
-			BatteryLevelGet();
       DevAPP_MainFunc();
-      
       UltraParam_Set();
     }
-		DevMPC5043_MainFunc();
-		DevAdc_MainFunc();
     osDelay(20);
   }
   /* USER CODE END UltraAppTask */
@@ -245,7 +245,6 @@ void OtherFuncTask(void *argument)
     {
 			Screen_TriggerFunc();
     }
-		//HAL_IWDG_Refresh(&hiwdg);
     osDelay(100);
   }
   /* USER CODE END OtherFuncTask */

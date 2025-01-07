@@ -238,6 +238,54 @@ static void Screen_Charge(void)
 	}
 }
 
+static void Screen_BeatBand(uint8_t wave_num)
+{
+		uint8_t index;
+		
+		index = wave_num;
+	
+		switch (index)
+		{
+		case 1:
+			lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+			break;
+		case 2:
+			lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+			break;
+		case 3:
+			lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+			break;
+		case 4:
+			lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+			break;
+		case 5:
+			lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
+			lv_obj_clear_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
+			break;
+		default:
+			break;
+		}
+}
+
 static void Screen_MainFunc(void)
 {
 	uint8_t state = ScreenState;
@@ -248,6 +296,7 @@ static void Screen_MainFunc(void)
 	case IDLE:
 		if (ScreenState != ScreenState_old)
 		{
+			PagingDisableFlg = 0;
 			SliderVal = 1200;
 			ScreenState_old = ScreenState;
 			ScreenTime = 0;
@@ -297,46 +346,7 @@ static void Screen_MainFunc(void)
 		}
 		if (BeatTime >= 400)
 		{
-			switch (BeatCount)
-			{
-			case 1:
-				lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
-				break;
-			case 2:
-				lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
-				break;
-			case 3:
-				lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
-				break;
-			case 4:
-				lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_add_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
-				break;
-			case 5:
-				lv_obj_clear_flag(guider_ui.main_wave1, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave2, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave3, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave4, LV_OBJ_FLAG_HIDDEN);
-				lv_obj_clear_flag(guider_ui.main_wave5, LV_OBJ_FLAG_HIDDEN);
-				break;
-			default:
-				break;
-			}
+			Screen_BeatBand(BeatCount);
 			if(BeatCount >= 5)
 			{
 				BeatCount = 0;
@@ -359,6 +369,7 @@ static void Screen_MainFunc(void)
 	case COMPLETE:
 		if (ScreenState != ScreenState_old)
 		{
+			PagingDisableFlg = 0;
 			BeepFlg = 2;
 			BeepCount = 12;
 			ScreenState_old = ScreenState;

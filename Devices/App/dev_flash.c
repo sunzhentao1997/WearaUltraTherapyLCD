@@ -19,7 +19,7 @@ const FLASH_BLOCK Flash_Block[FLASH_BANK_NUM] =
 
 uint16_t ReadFlashBuff[128];
 
-HAL_StatusTypeDef EraseFlash(uint32_t addr)
+HAL_StatusTypeDef EraseFlash(uint32_t addr,uint8_t len)
 {
 	uint8_t tag_i = 0;
 	uint32_t sector = 0;
@@ -39,17 +39,35 @@ HAL_StatusTypeDef EraseFlash(uint32_t addr)
 		if((addr >= Flash_Block[tag_i].start_addr) && (addr <= Flash_Block[tag_i].stop_addr))
 		{
 				sector = Flash_Block[tag_i].bank;
+				break;
 		}
-		
 	}
 
-	EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
-	EraseInitStruct.NbSectors = 1;
-	EraseInitStruct.Sector = sector;
-	EraseInitStruct.VoltageRange = FLASH_VOLTAGE_RANGE_3;
+	DevFlash_Read(addr,ReadFlashBuff,len);
+	
+	HAL_FLASH_Unlock();
+	FLASH_WaitForLastOperation(FLASH_WAITETIME);
+	__HAL_FLASH_DATA_CACHE_DISABLE();
+	for(tag_i = 0;tag_i < len;tag_i++)
+	{
+			if(ReadFlashBuff[tag_i] != 0xFFFF)
+			{	
+					EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
+					EraseInitStruct.NbSectors = 1;
+					EraseInitStruct.Sector = sector;
+					EraseInitStruct.VoltageRange = FLASH_VOLTAGE_RANGE_3;
 
-	status = HAL_FLASHEx_Erase(&EraseInitStruct, &sectorerror);
-
+					status = HAL_FLASHEx_Erase(&EraseInitStruct, &sectorerror);
+					if(status != HAL_OK)
+					{
+						HAL_FLASH_Lock();
+						return status;
+					}
+					break;
+			}
+	}
+	HAL_FLASH_Lock();
+	
 	return status;
 }
 

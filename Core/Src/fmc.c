@@ -71,12 +71,12 @@ void MX_FMC_Init(void)
   /* USER CODE BEGIN FMC_Init 2 */
 	sdram_initialization_sequence();  
     /**
-     * 刷新频率计数�?(以SDCLK频率计数),计算方法:
+     * 刷新频率计数是(以SDCLK频率计数),计算方法:
      * COUNT=SDRAM刷新周期/行数-20=SDRAM刷新周期(us)*SDCLK频率(Mhz)/行数
-     * 我们使用的SDRAM刷新周期�?64ms,SDCLK=180/2=90Mhz,行数�?8192(2^13).
-     * 承仿,COUNT=64*1000*96/8192-20=730
+     * 我们使用的SDRAM刷新周期是64ms,SDCLK=180/2=90Mhz,行数是8192(2^13).
+     * 承仿,COUNT=64*1000*90/8192-20=683
      */
-		HAL_SDRAM_ProgramRefreshRate(&hsdram1, 730);
+		HAL_SDRAM_ProgramRefreshRate(&hsdram1, 683);
   /* USER CODE END FMC_Init 2 */
 }
 
