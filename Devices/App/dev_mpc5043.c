@@ -31,6 +31,26 @@ static uint8_t BoostBatLevel[16] =
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
+		Battery_Level1,
+		Battery_Level2,
+		Battery_Level2,
+		Battery_Level2,
+		Battery_Level3,
+		Battery_Level3,
+		Battery_Level4,
+		Battery_Level4,
+		Battery_Level4,
+		Battery_Level5,
+		Battery_Level5,
+		Battery_Level5,
+};
+
+static uint8_t BoostBatLevel_work[16] = 
+{
+		Battery_Level1,
+		Battery_Level1,
+		Battery_Level1,
+		Battery_Level1,
 		Battery_Level2,
 		Battery_Level2,
 		Battery_Level2,
@@ -50,6 +70,8 @@ static uint8_t ChargeBatLevel[17] =
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
+		Battery_Level1,
+		Battery_Level1,
 		Battery_Level2,
 		Battery_Level2,
 		Battery_Level2,
@@ -57,8 +79,6 @@ static uint8_t ChargeBatLevel[17] =
 		Battery_Level3,
 		Battery_Level3,
 		Battery_Level3,
-		Battery_Level4,
-		Battery_Level4,
 		Battery_Level4,
 		Battery_Level4,
 		Battery_Level4,
@@ -188,7 +208,7 @@ static void BatteryLevelGet(void)
 		uint32_t new_tick = 0;
 		uint8_t battery_level_state = 0;
 		uint8_t tag_i = 0;
-	static uint8_t BatteryState_old = BOOST;
+		static uint8_t BatteryState_old = BOOST;
 		static uint8_t DevSta_old = IDLE_STATE;
 		static uint8_t SaveBatteryFlg = 0;
 		static uint8_t battery_voltage_data = 0xff;
@@ -201,9 +221,14 @@ static void BatteryLevelGet(void)
 			{
 					if(BatteryLevelBuff[0] == BoostBatBuff[tag_i])
 					{
-							SendBatteryStateData = BoostBatLevel[tag_i];
-							BatteryState = BOOST;
-						
+							if(DevWorkState == WORK_STATE)
+							{
+									SendBatteryStateData = BoostBatLevel_work[tag_i];
+							}else
+							{
+									SendBatteryStateData = BoostBatLevel[tag_i];
+							}
+												
 							if(SendBatteryStateData >= BatLevel_old)
 							{
 									SendBatteryStateData = BatLevel_old;
@@ -211,6 +236,7 @@ static void BatteryLevelGet(void)
 							{
 									BatLevel_old = SendBatteryStateData;
 							}
+							BatteryState = BOOST;
 							break;
 					}
 			}

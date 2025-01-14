@@ -247,8 +247,9 @@ static void main_ulock_event_handler (lv_event_t *e)
 			}
 			break;
     }
-		case LV_EVENT_PRESSED:
+		case LV_EVENT_RELEASED:
 		{
+			LongPressTime = 0;
 			LongPressFlg = 0;
 			DisplayFlg = 1;
 			DisplayTime = 0;
@@ -270,7 +271,6 @@ static void main_start_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_RELEASED:
 	{
-		PagingDisableFlg = 1;
 		LongPressFlg = 0;
 		
 		lv_obj_add_flag(guider_ui.main_label_13, LV_OBJ_FLAG_HIDDEN);
@@ -287,6 +287,7 @@ static void main_start_event_handler(lv_event_t *e)
 
 				return ;
 		}
+		PagingDisableFlg = 1;
 		DevWorkState = WORK_STATE;
 		ScreenState = WORK;
 
@@ -360,6 +361,7 @@ static void main_btn_2_event_handler(lv_event_t *e)
 	}
 	case LV_EVENT_PRESSED:
 	{
+		  DevWorkState = IDLE_STATE;
 			DisplayFlg = 1;
 			DisplayTime = 0;
 //		BeepFlg = 1;

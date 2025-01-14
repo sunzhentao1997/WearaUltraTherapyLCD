@@ -94,7 +94,7 @@ static void SPI_WriteData(uint8_t data)
 void st7701_init(void)
 {
 	HAL_GPIO_WritePin(LCD_RESET_GPIO_Port, LCD_RESET_Pin, GPIO_PIN_SET);
-	HAL_Delay(50);
+	HAL_Delay(100);
 	ST7701_CS(0);
 	HAL_Delay(1);
 
@@ -392,5 +392,5 @@ void st7701_init(void)
 	st7701_delay(120);
 
 	SPI_WriteComm(0x29); // 显示开
-	st7701_delay(120);
+	st7701_delay(20);
 }

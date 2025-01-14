@@ -163,6 +163,7 @@ void MX_FREERTOS_Init(void) {
 void ScreenRGBTask(void *argument)
 {
   /* USER CODE BEGIN ScreenRGBTask */
+	static uint8_t PagingFLg = 0;
 	uint16_t tempval = 0;
 	lv_mainstart();
   /* Infinite loop */
@@ -171,24 +172,38 @@ void ScreenRGBTask(void *argument)
 		if(StartFlg == 0)
 		{
 			  tempval = LightLevel * 43;
-								
-				if(BackLedTime >= 100)
+			
+				if(BatteryState == CHARGE)
 				{
-					__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
-				}
-				if(BackLedTime > 2000)
+						if(PagingFLg == 0)
+						{
+							ui_load_scr_animation(&guider_ui, &guider_ui.charge, guider_ui.charge_del, &guider_ui.boot_del, setup_scr_charge, LV_SCR_LOAD_ANIM_NONE, 100, 100, false, true);
+							PagingFLg = 1;
+						}
+						if(BackLedTime >= 1000)
+						{
+							__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
+							StartFlg = 1;
+						}
+						
+				}else
 				{
-					  ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 50, false, true);
-						StartFlg = 1;
+						if(BackLedTime >= 1000)
+						{
+							__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
+						}
+						if(BackLedTime >= 3000)
+						{
+								ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 50, false, true);
+								StartFlg = 1;
+						}
 				}
 		}else if(StartFlg == 1)
 		{
-//				BatteryLevelGet();
 				ScreenFunc();
 		}
 		
 		lv_timer_handler();
-		//HAL_IWDG_Refresh(&hiwdg);
     osDelay(5);
   }
   /* USER CODE END ScreenRGBTask */
@@ -212,17 +227,13 @@ void UltraAppTask(void *argument)
   {
 		DevMPC5043_MainFunc();
 		DevAdc_MainFunc();
-//		if((BatLevelInitFlg == 0) && (BackLedTime > 1500))
-//		{
-//				BatteryLevelInit();
-//				BatLevelInitFlg = 1;
-//		}
+
     if(StartFlg == 1)
     {
       DevAPP_MainFunc();
       UltraParam_Set();
     }
-    osDelay(20);
+    osDelay(10);
   }
   /* USER CODE END UltraAppTask */
 }

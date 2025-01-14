@@ -139,6 +139,9 @@ static void Screen_Charge(void)
 	{
 		switch (id)
 		{
+		case BOOST_SCREEN:
+			ui_load_scr_animation(&guider_ui, &guider_ui.charge, guider_ui.charge_del, &guider_ui.boot_del, setup_scr_charge, LV_SCR_LOAD_ANIM_NONE, 100, 100, false, true);
+			break;
 		case MAIN_SCREEN:
 			ui_load_scr_animation(&guider_ui, &guider_ui.charge, guider_ui.charge_del, &guider_ui.main_del, setup_scr_charge, LV_SCR_LOAD_ANIM_NONE, 100, 100, false, true);
 			break;

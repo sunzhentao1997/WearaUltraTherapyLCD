@@ -157,7 +157,6 @@ static void disp_init(void)
 {
     /*You code here*/
     ltdc_init();         /* 初始化LCD */ 
-		//ltdc_display_dir(0);   /* 1:设置横屏 */
 }
 
 /**
