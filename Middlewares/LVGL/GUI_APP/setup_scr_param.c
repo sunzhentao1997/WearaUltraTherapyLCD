@@ -771,3 +771,4 @@ void setup_scr_param(lv_ui *ui)
     //Init events for screen.
     events_init_param(ui);
 }
+

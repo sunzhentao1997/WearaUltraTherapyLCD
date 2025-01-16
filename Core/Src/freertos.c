@@ -54,7 +54,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 extern IWDG_HandleTypeDef hiwdg;
-
+extern uint16_t RefreshCount;
 extern uint32_t BackLedTime;
 static uint8_t StartFlg = 0;
 
@@ -179,20 +179,25 @@ void ScreenRGBTask(void *argument)
 						{
 							ui_load_scr_animation(&guider_ui, &guider_ui.charge, guider_ui.charge_del, &guider_ui.boot_del, setup_scr_charge, LV_SCR_LOAD_ANIM_NONE, 100, 100, false, true);
 							PagingFLg = 1;
+						}else
+						{
+							  RefreshCount = 120;
+								Screen_Id = CHAREG_SCREEN;
+								ChargeBatLevelInit();	
 						}
-						if(BackLedTime >= 1000)
+						
+						if(BackLedTime >= 1500)
 						{
 							__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
 							StartFlg = 1;
 						}
-						
 				}else
 				{
-						if(BackLedTime >= 1000)
+						if(BackLedTime >= 1500)
 						{
 							__HAL_TIM_SetCompare(LCDBL_HANDLE,LCDBL_CHANNLE,tempval);
 						}
-						if(BackLedTime >= 3000)
+						if(BackLedTime >= 3500)
 						{
 								ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.boot_del, setup_scr_main, LV_SCR_LOAD_ANIM_FADE_ON, 0, 50, false, true);
 								StartFlg = 1;

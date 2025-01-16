@@ -15,6 +15,7 @@ static uint8_t RecvMPC5043Flg = 0;		  // 接收MPC5043数据标志位
 static uint8_t RecvMPC5043Val = 0;		  // 接收MPC5043数据
 static uint8_t BatteryLevelBuff[4] = {0}; // 电压等级滤波
 uint8_t BatteryState = BOOST;
+uint8_t ChargeLevel = 0;
 
 static uint8_t BoostBatBuff[16] = 
 {
@@ -32,7 +33,7 @@ static uint8_t BoostBatLevel[16] =
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
-		Battery_Level2,
+		Battery_Level1,
 		Battery_Level2,
 		Battery_Level2,
 		Battery_Level3,
@@ -51,7 +52,7 @@ static uint8_t BoostBatLevel_work[16] =
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
-		Battery_Level2,
+		Battery_Level1,
 		Battery_Level2,
 		Battery_Level2,
 		Battery_Level3,
@@ -72,7 +73,7 @@ static uint8_t ChargeBatLevel[17] =
 		Battery_Level1,
 		Battery_Level1,
 		Battery_Level1,
-		Battery_Level2,
+		Battery_Level1,
 		Battery_Level2,
 		Battery_Level2,
 		Battery_Level2,
@@ -247,6 +248,7 @@ static void BatteryLevelGet(void)
 				if(BatteryLevelBuff[0] == ChargeBatBuff[tag_i])
 				{
 					SendBatteryStateData = ChargeBatLevel[tag_i];
+					ChargeLevel = SendBatteryStateData;
 					BatteryState = CHARGE;
 					
 					if((RefreshFlg == 0) && ((Charge_Time > 120000) || (SendBatteryStateData > BatLevel_old)))

@@ -16,6 +16,7 @@ static uint32_t AdcVal = 0;
 static uint16_t BatVolFilter[15] = {0};
 static uint16_t DevAdc_SampleFilt(uint16_t *buff, uint8_t len);
 
+/*
 const uint8_t BatLevelBuff[21] =
 	{
 		Battery_Level1,
@@ -112,6 +113,7 @@ const float battery_voltage_charge[21] = {
 	4.215, // 95%
 	4.235, // 100%
 };
+*/
 
 void DevAdc_Init(void)
 {

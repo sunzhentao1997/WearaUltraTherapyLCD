@@ -23,6 +23,8 @@ static void BatteryDisplay_Vibras(uint8_t boostlevel);
 static void BatteryDisplay_Password1(uint8_t boostlevel);
 static void BatteryDisplay_Password2(uint8_t boostlevel);
 
+extern uint8_t ChargeLevel;
+
 /* 屏幕电量显示函数 */
 const BATTERYDISPLAY_FUNC battery_display_func[ScreenId_Max] =
 	{
@@ -56,6 +58,7 @@ uint8_t DisplayFlg = 1;
 uint8_t ParamLockFlg = 0;
 uint8_t VibraEnableFlg = 1;
 uint8_t VibraEnableFlg_old = 1;
+uint16_t RefreshCount = 0;
 
 static int16_t SliderVal = 1200;  // 滑块值
 static char timebuf[] = "20:00";  // 时间显示
@@ -78,6 +81,7 @@ static void get_time_buff(void)
 void ScreenFunc(void)
 {
 	static uint8_t BatteryStaOld = BOOST;
+	uint8_t batleve = 0;
 	//BatteryState = BOOST;
 
 	if (BatteryState != BOOST)
@@ -91,8 +95,54 @@ void ScreenFunc(void)
 		/*充电结束跳转放电界面*/
 		if (BatteryStaOld != BOOST)
 		{
-			ui_load_scr_animation(&guider_ui, &guider_ui.main, guider_ui.main_del, &guider_ui.charge_del, setup_scr_main, LV_SCR_LOAD_ANIM_NONE, 0, 0, false, true);
-			BatteryStaOld = BOOST;
+			 batleve = ChargeLevel;
+			 switch (batleve)
+				{
+				case Battery_Level1:
+				
+					lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+				case Battery_Level2:
+				
+					lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+				case Battery_Level3:
+				
+					lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+				
+				break;
+				case Battery_Level4:
+				
+					lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+				case Battery_Level5:
+				
+					lv_obj_clear_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+					lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+			
+			default:
+				break;
+			}
+			 return ;
 		}
 		Screen_Boost();
 	}
@@ -130,7 +180,6 @@ static void Screen_Charge(void)
 	uint8_t id;
 	uint8_t chargelevel = 0;
 	static uint8_t chact = 0;
-	static uint16_t RefreshCount = 0;
 
 	id = Screen_Id;
 
@@ -942,6 +991,59 @@ static void BatteryDisplay_Vibras(uint8_t boostlevel)
 	default:
 		break;
 	}
+}
+
+void ChargeBatLevelInit(void)
+{
+		uint8_t chargelevel = Battery_Level5;
+	
+		chargelevel = SendBatteryStateData;
+		switch (chargelevel)
+			{
+			case Battery_Level1:
+				
+				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+			case Battery_Level2:
+				
+				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+			case Battery_Level3:
+				
+				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_add_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+			case Battery_Level4:
+				
+				lv_obj_add_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+			case Battery_Level5:
+				
+				lv_obj_clear_flag(guider_ui.charge_grate4, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate3, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate2, LV_OBJ_FLAG_HIDDEN);
+				lv_obj_clear_flag(guider_ui.charge_grate1, LV_OBJ_FLAG_HIDDEN);
+			
+				break;
+			
+			default:
+				break;
+			}
 }
 /*******************************************************************************************************************
  *

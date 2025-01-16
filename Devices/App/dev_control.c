@@ -98,6 +98,7 @@ void UltraParam_Init(void)
 	else
 	{
 		BatLevel_old = ReadBattery;
+		SendBatteryStateData = BatLevel_old;
 	}
 
 	MotorLevel = VibraParam;
@@ -180,6 +181,11 @@ void DevAPP_MainFunc(void)
 		}
 		new_tick = HAL_GetTick();
 		old_tick = new_tick;
+	}
+	
+	if(BatteryVol <= 3200)
+	{
+			DevWorkState = CLOSE_STATE;
 	}
 	/*设置超声波脉冲占空比为36%*/
 	ultra_pluse = UltraDuty * ULTRA_DUTY;
@@ -282,8 +288,11 @@ void DevAPP_MainFunc(void)
 		}
 		else
 		{
-			DevGpio_SetOutSta(KEY_CONTROL, GPIO_PIN_SET);
-			DevGpio_SetOutSta(CONTROL_CLOSE, GPIO_PIN_SET);
+				DevGpio_SetOutSta(LTDCDC_EN, GPIO_PIN_RESET);	  //  关闭45V DCDC
+				DevGpio_SetOutSta(MOTOR_GATE, GPIO_PIN_RESET);	  //  关闭马达驱动
+				DevGpio_SetOutSta(PWM_WAVE_B_EN, GPIO_PIN_RESET); //  关闭超声输出
+				DevGpio_SetOutSta(KEY_CONTROL, GPIO_PIN_SET);
+				DevGpio_SetOutSta(CONTROL_CLOSE, GPIO_PIN_SET);
 		}
 		break;
 
