@@ -22,9 +22,9 @@ static uint8_t BoostBatBuff[16] =
 	0x80,0x84,0x88,0x8C,0x90,0x94,0x98,0x9C,0xA0,0xA4,0xA8,0xAC,0xB0,0xB4,0xB8,0xBC
 };
 
-static uint8_t ChargeBatBuff[17] = 
+static uint8_t ChargeBatBuff[18] = 
 {
-	0x02,0x06,0x0A,0x0E,0x12,0x16,0x1A,0x1E,0x22,0x26,0x2A,0x2E,0x32,0x36,0x38,0x3A,0x7C,
+	0x02,0x06,0x0A,0x0E,0x12,0x16,0x1A,0x1E,0x22,0x26,0x2A,0x2E,0x32,0x36,0x38,0x3A,0x3C,0x7C,
 };
 static uint8_t BoostBatLevel[16] = 
 {
@@ -66,7 +66,7 @@ static uint8_t BoostBatLevel_work[16] =
 		Battery_Level5,
 };
 
-static uint8_t ChargeBatLevel[17] = 
+static uint8_t ChargeBatLevel[18] = 
 {
 		Battery_Level1,
 		Battery_Level1,
@@ -80,6 +80,7 @@ static uint8_t ChargeBatLevel[17] =
 		Battery_Level3,
 		Battery_Level3,
 		Battery_Level3,
+		Battery_Level4,
 		Battery_Level4,
 		Battery_Level4,
 		Battery_Level4,
@@ -243,7 +244,7 @@ static void BatteryLevelGet(void)
 			}
 		}else
 		{
-			for(tag_i = 0;tag_i < 17;tag_i++)
+			for(tag_i = 0;tag_i < 18;tag_i++)
 			{
 				if(BatteryLevelBuff[0] == ChargeBatBuff[tag_i])
 				{
