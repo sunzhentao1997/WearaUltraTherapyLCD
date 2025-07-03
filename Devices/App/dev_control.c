@@ -2,7 +2,7 @@
 #include "lv_mainstart.h"
 
 #define ULTRA_BASE 540
-#define ULTRA_DUTY 36
+#define ULTRA_DUTY 101
 
 static uint16_t FlashStoreBuff[34] = {0}; // 参数配置存储缓存
 static uint8_t ParamChangeFlg[3] = {0};	  // 超声参数修改标志位
