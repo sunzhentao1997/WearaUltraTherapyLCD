@@ -289,4 +289,4 @@
 --library_type=microlib --strict --scatter "WeaUltraTherapyLCD\TFB-ULT-v1.0.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list "TFB-ULT-v1.0.map" -o WeaUltraTherapyLCD\TFB-ULT-v1.0.0
+--list "TFB-ULT-v1.0.map" -o WeaUltraTherapyLCD\TFB-ULT-v1.0.1

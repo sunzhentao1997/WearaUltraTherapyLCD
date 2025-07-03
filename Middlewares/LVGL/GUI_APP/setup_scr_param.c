@@ -282,7 +282,7 @@ void setup_scr_param(lv_ui *ui)
 
     //Write codes param_label_4
     ui->param_label_4 = lv_label_create(ui->param);
-    lv_label_set_text(ui->param_label_4, "      软件完整版本:                             TFB-ULT-v1.0.0 ");
+    lv_label_set_text(ui->param_label_4, "      软件完整版本:                             TFB-ULT-v1.0.1 ");
     lv_label_set_long_mode(ui->param_label_4, LV_LABEL_LONG_WRAP);
     lv_obj_set_pos(ui->param_label_4, 28, 374);
     lv_obj_set_size(ui->param_label_4, 424, 95);
