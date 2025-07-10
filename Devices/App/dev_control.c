@@ -76,6 +76,9 @@ void UltraParam_Init(void)
 	if (LightLevel == 0xFFFF)
 	{
 		LightLevel = 100;
+	}else
+	{
+		LightLevel_old = LightLevel;
 	}
 
 	if (PowerFlg == 0x01)

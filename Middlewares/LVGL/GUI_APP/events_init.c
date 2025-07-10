@@ -1024,6 +1024,7 @@ static void light_back_event_handler(lv_event_t *e)
 	{
 		if((ParamLockFlg == 1) && (LightLevel != LightLevel_old))
 		{
+			LightLevel_old = LightLevel;
 			SlaveFlg = 1;
 		}
 //		lv_obj_set_style_bg_img_recolor_opa(guider_ui.light_back, 0, LV_PART_MAIN);
@@ -1298,6 +1299,7 @@ static void vibras_back_event_handler(lv_event_t *e)
 	{
 		if(VibraEnableFlg != VibraEnableFlg_old)
 		{
+			VibraEnableFlg_old = VibraEnableFlg;
 			SlaveFlg = 1;
 		}
 //		lv_obj_set_style_bg_img_recolor_opa(guider_ui.vibras_back, 0, LV_PART_MAIN);
